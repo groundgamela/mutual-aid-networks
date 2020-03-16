@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import configureStore from './state/store';
+// Containers
+import DefaultLayout from './containers/DefaultLayout';
+import './index.css';
+
+// Bootstrap the store
+var Store = configureStore();
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={Store}>
+        <DefaultLayout />
+      </Provider>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
