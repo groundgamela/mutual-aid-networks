@@ -9,7 +9,7 @@ import MapInset from './MapInset';
 import './style.scss';
 import './popover.scss';
 
-const LAYER_NAME = 'networks-dots'
+export const LAYER_NAME = 'networks-dots'
 const mapboxgl = window.mapboxgl;
 class MapView extends React.Component {
   constructor(props) {
@@ -24,8 +24,6 @@ class MapView extends React.Component {
     this.updateData = this.updateData.bind(this);
     this.focusMap = this.focusMap.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.toggleFilters = this.toggleFilters.bind(this);
-    this.removeHighlights = this.removeHighlights.bind(this);
     this.filterForStateInsets = this.filterForStateInsets.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
     this.state = {
@@ -60,32 +58,6 @@ class MapView extends React.Component {
       alaskanetworks,
       hawaiinetworks,
     });
-  }
-
-  filterMap(pledger) {
-    const { district } = pledger;
-
-    if (!district) {
-      if (!pledger.state) {
-        return;
-      }
-      const stateObj = find(states, { USPS: pledger.state });
-      this.includedStates.push(stateObj.Name);
-    }
-
-    const filterSenate = ['all', this.includedStates];
-
-    // Fetch districts w/ town halls occuring
-    if (district) {
-      const districtId = district;
-      const fipsId = find(states, { USPS: pledger.state }).FIPS;
-      const geoid = fipsId + districtId;
-
-      this.filterDistrict.push(['==', 'GEOID', geoid]);
-    }
-    // Apply the filters to each of these layers
-    this.toggleFilters('senate_fill', filterSenate);
-    this.toggleFilters('district_fill', this.filterDistrict);
   }
 
   insetOnClickEvent(e) {
@@ -165,12 +137,6 @@ class MapView extends React.Component {
     });
   }
 
-
-  toggleFilters(layer, filterSettings) {
-    this.map.setFilter(layer, filterSettings);
-    this.map.setLayoutProperty(layer, 'visibility', 'visible');
-  }
-
   addClickListener() {
 
     const { map } = this;
@@ -182,12 +148,9 @@ class MapView extends React.Component {
           layers: [LAYER_NAME],
         },
       );
-      const feature = {};
 
       if (features.length > 0) {
         let bbox = JSON.parse(features[0].properties.bbox);
-        // feature.district = features[0].properties.GEOID.substring(2, 4);
-        // feature.geoID = features[0].properties.GEOID;
         console.log(bbox)
         map.fitBounds(bbox)
       }
@@ -215,13 +178,8 @@ class MapView extends React.Component {
     );
   }
 
-  removeHighlights() {
-    this.map.setLayoutProperty('selected-fill', 'visibility', 'none');
-    this.map.setLayoutProperty('selected-border', 'visibility', 'none');
-  }
 
   handleReset() {
-    this.removeHighlights();
     // this.props.resetSelections();
     this.setState({ inset: true });
   }
@@ -269,14 +227,10 @@ class MapView extends React.Component {
   render() {
     const {
       center,
-      district,
-      type,
       selectedState,
       resetSelections,
       searchByDistrict,
-      refcode,
       setLatLng,
-      distance,
       setUsState,
     } = this.props;
 
@@ -284,40 +238,31 @@ class MapView extends React.Component {
       <React.Fragment>
         <div id="map" className={this.state.popoverColor}>
           <div className="map-overlay" id="legend">
-            {/* <MapInset
+            <MapInset
               networks={this.state.alaskanetworks}
               center={center}
               stateName="AK"
-              district={district}
-              type={type}
               selectedState={selectedState}
               resetSelections={resetSelections}
-              searchByDistrict={searchByDistrict}
-              refcode={refcode}
               setLatLng={setLatLng}
-              distance={distance}
               setUsState={setUsState}
               mapId="map-overlay-alaska"
               bounds={[[-170.15625, 51.72702815704774], [-127.61718749999999, 71.85622888185527]]}
-            /> */}
-            {/* <MapInset
+            />
+            <MapInset
               networks={this.state.hawaiinetworks}
               stateName="HI"
               center={center}
-              district={district}
-              type={type}
               selectedState={selectedState}
               resetSelections={resetSelections}
               searchByDistrict={searchByDistrict}
-              refcode={refcode}
               setLatLng={setLatLng}
-              distance={distance}
               setUsState={setUsState}
               mapId="map-overlay-hawaii"
               bounds={[
                 [-161.03759765625, 18.542116654448996],
                 [-154.22607421875, 22.573438264572406]]}
-            /> */}
+            />
           </div>
         </div>
 
