@@ -1,0 +1,62 @@
+
+/**
+* Create a position for the map
+* on the page */
+
+#map {
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+}
+
+.ant-alert.ant-alert-warning.ant-alert-with-description{
+  flex: 1 100%;
+}
+
+// @media all and (max-width: $tablet-breakpoint) {
+//   #map{
+//     flex: 1 100%;
+//   }
+// }
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  
+  .inset {
+    z-index: 1;
+    width: 230px;
+    height:150px;
+    border:1px solid #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-sizing: content-box;
+    .mapboxgl-control-container{
+      display: none;
+    }
+  }
+}
+
+#features {
+  top: 0;
+  height: 100px;
+  margin-top: 20px;
+  width: 250px;
+}
+
+.usa-icon {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background-image: url('../assets/usa.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
