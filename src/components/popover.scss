@@ -1,0 +1,74 @@
+// default case
+$brand-primary:#057A8F;
+
+.mapboxgl-popup-content {
+       background-color: $brand-primary;
+       color: white;
+}
+
+
+.mapboxgl-popup {
+    max-width: 220px;
+
+}
+
+.mapboxgl-popup-anchor-bottom {
+    padding-bottom: 10px;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: $brand-primary;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+    border-bottom-color: $brand-primary;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: $brand-primary;
+    padding-left: 0.5rem;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: $brand-primary;
+    padding-right: 0.5rem;
+}
+
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+    border-bottom-color: $brand-primary;
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: $brand-primary;
+}
+
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+    border-top-color: $brand-primary;
+    padding-bottom: 10px;
+}
+
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: $brand-primary;
+    padding-bottom: 10px;
+}
+
+.mapbox-popup-title {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+// // group popover icons
+// .facebook-icon {
+//     @include group-popover-icon('../../assets/images/facebook-square-icon.svg');
+// }
+
+// .twitter-icon {
+//     @include group-popover-icon('../../assets/images/twitter-square-icon.svg');
+// }
+
+// .email-icon {
+//     @include group-popover-icon('../../assets/images/envelope-icon.svg');
+// }
