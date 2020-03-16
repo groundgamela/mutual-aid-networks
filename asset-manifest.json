@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f361e03.chunk.css",
-    "main.js": "/static/js/main.c4d5de15.chunk.js",
-    "main.js.map": "/static/js/main.c4d5de15.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.612ffcb9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.612ffcb9.js.map",
-    "static/js/2.53dcb83c.chunk.js": "/static/js/2.53dcb83c.chunk.js",
-    "static/js/2.53dcb83c.chunk.js.map": "/static/js/2.53dcb83c.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.998e3f0644574b16f41bf336b02c6a20.js": "/precache-manifest.998e3f0644574b16f41bf336b02c6a20.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.53dcb83c.chunk.js.LICENSE.txt": "/static/js/2.53dcb83c.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/mutual-aid-networks/static/css/main.5f361e03.chunk.css",
+    "main.js": "/mutual-aid-networks/static/js/main.51976722.chunk.js",
+    "main.js.map": "/mutual-aid-networks/static/js/main.51976722.chunk.js.map",
+    "runtime-main.js": "/mutual-aid-networks/static/js/runtime-main.a00969d2.js",
+    "runtime-main.js.map": "/mutual-aid-networks/static/js/runtime-main.a00969d2.js.map",
+    "static/js/2.53dcb83c.chunk.js": "/mutual-aid-networks/static/js/2.53dcb83c.chunk.js",
+    "static/js/2.53dcb83c.chunk.js.map": "/mutual-aid-networks/static/js/2.53dcb83c.chunk.js.map",
+    "index.html": "/mutual-aid-networks/index.html",
+    "precache-manifest.9d3b5a8abdc92ec8884c41d5bf0f0ef5.js": "/mutual-aid-networks/precache-manifest.9d3b5a8abdc92ec8884c41d5bf0f0ef5.js",
+    "service-worker.js": "/mutual-aid-networks/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/mutual-aid-networks/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.53dcb83c.chunk.js.LICENSE.txt": "/mutual-aid-networks/static/js/2.53dcb83c.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/mutual-aid-networks/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.612ffcb9.js",
+    "static/js/runtime-main.a00969d2.js",
     "static/js/2.53dcb83c.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.c4d5de15.chunk.js"
+    "static/js/main.51976722.chunk.js"
   ]
 }
