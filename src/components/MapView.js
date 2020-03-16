@@ -7,7 +7,9 @@ import states from '../data/states';
 
 import MapInset from './MapInset';
 import './style.scss';
+import './popover.scss';
 
+const LAYER_NAME = 'networks-dots'
 const mapboxgl = window.mapboxgl;
 class MapView extends React.Component {
   constructor(props) {
@@ -21,45 +23,42 @@ class MapView extends React.Component {
     this.createFeatures = this.createFeatures.bind(this);
     this.updateData = this.updateData.bind(this);
     this.focusMap = this.focusMap.bind(this);
-    this.addClusterLayers = this.addClusterLayers.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.toggleFilters = this.toggleFilters.bind(this);
-    this.highlightDistrict = this.highlightDistrict.bind(this);
-    this.districtSelect = this.districtSelect.bind(this);
     this.removeHighlights = this.removeHighlights.bind(this);
     this.filterForStateInsets = this.filterForStateInsets.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
     this.state = {
-      alaskaItems: filter(this.props.items, { state: 'AK' }),
-      hawaiiItems: filter(this.props.items, { state: 'HI' }),
+      alaskanetworks: filter(this.props.networks, { state: 'AK' }),
+      hawaiinetworks: filter(this.props.networks, { state: 'HI' }),
       popoverColor: 'popover-general-icon',
     };
   }
 
   componentDidMount() {
-    const { items } = this.props;
-    // const featuresHome = this.createFeatures(items);
+    const { networks } = this.props;
+    const featuresHome = this.createFeatures(networks);
 
-    this.initializeMap();
+    this.initializeMap(featuresHome);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     const {
       selectedState,
     } = nextProps;
-
+    
     if (selectedState) {
       return this.focusMap();
     }
     return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
   }
 
-  filterForStateInsets(items) {
-    const alaskaItems = filter(items, { state: 'AK' });
-    const hawaiiItems = filter(items, { state: 'HI' });
+  filterForStateInsets(networks) {
+    const alaskanetworks = filter(networks, { state: 'AK' });
+    const hawaiinetworks = filter(networks, { state: 'HI' });
     this.setState({
-      alaskaItems,
-      hawaiiItems,
+      alaskanetworks,
+      hawaiinetworks,
     });
   }
 
@@ -113,8 +112,8 @@ class MapView extends React.Component {
     this.map.flyTo(view);
   }
 
-  updateData(items, layer) {
-    const featuresHome = this.createFeatures(items);
+  updateData(networks, layer) {
+    const featuresHome = this.createFeatures(networks);
     this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
     if (!this.map.getSource(layer)) {
       return;
@@ -122,14 +121,13 @@ class MapView extends React.Component {
     this.map.getSource(layer).setData(featuresHome);
   }
 
-  createFeatures(items) {
+  createFeatures(networks) {
     const featuresHome = {
       features: [],
       type: 'FeatureCollection',
     };
-    featuresHome.features = items.map((indEvent) => {
-      const colorObject = this.getColorForEvents(indEvent);
-      const newFeature = new Point(colorObject);
+    featuresHome.features = networks.map((network) => {
+      const newFeature = new Point(network);
       return newFeature;
     });
     return featuresHome;
@@ -137,10 +135,7 @@ class MapView extends React.Component {
 
   addPopups(layer) {
     const { map } = this;
-    const {
-      type,
-      refcode,
-    } = this.props;
+
     const popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
@@ -154,83 +149,47 @@ class MapView extends React.Component {
       if (features.length) {
         const feature = features[0];
         const { properties } = feature;
-        const linkMapping = {
-          events: `<a target="_blank" href=${properties.rsvpHref}${refcode}>rsvp</a>`,
-          groups: '',
-        };
-        this.setState({ popoverColor: `popover-${feature.properties.icon}` });
 
+        this.setState({
+          popoverColor: `popover-${feature.properties.category}`
+        });
+        const link = properties.form ? `<a href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
         return popup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
-            <h4>${feature.properties.title}</h4>
-            <div>${feature.properties.startsAt}</div>
-            ${linkMapping[type]}
-            `)
+            <h4>${properties.title}</h4>
+            <div>${link}</div>`)
+ 
           .addTo(map);
       }
       return undefined;
     });
   }
 
-  districtSelect(feature) {
-    if (feature.state) {
-      this.highlightDistrict(feature.geoID);
-    } else {
-      const visibility = this.map.getLayoutProperty('selected-fill', 'visibility');
-      if (visibility === 'visible') {
-        this.map.setLayoutProperty('selected-fill', 'visibility', 'none');
-        this.map.setLayoutProperty('selected-border', 'visibility', 'none');
-      }
-    }
-  }
 
   toggleFilters(layer, filterSettings) {
     this.map.setFilter(layer, filterSettings);
     this.map.setLayoutProperty(layer, 'visibility', 'visible');
   }
 
-  // Handles the highlight for districts when clicked on.
-  highlightDistrict(geoid) {
-    let filterSettings;
-    // Filter for which district has been selected.
-    if (typeof geoid === 'object') {
-      filterSettings = ['any'];
-
-      geoid.forEach((i) => {
-        filterSettings.push(['==', 'GEOID', i]);
-      });
-    } else {
-      filterSettings = ['all', ['==', 'GEOID', geoid]];
-    }
-    // Set that layer filter to the selected
-    this.toggleFilters('selected-fill', filterSettings);
-    this.toggleFilters('selected-border', filterSettings);
-  }
-
   addClickListener() {
-    const {
-      searchByDistrict,
-    } = this.props;
+
     const { map } = this;
 
     map.on('click', (e) => {
       const features = map.queryRenderedFeatures(
         e.point,
         {
-          layers: ['district_interactive'],
+          layers: [LAYER_NAME],
         },
       );
       const feature = {};
 
       if (features.length > 0) {
-        feature.state = features[0].properties.ABR;
-        feature.district = features[0].properties.GEOID.substring(2, 4);
-        feature.geoID = features[0].properties.GEOID;
-
-        searchByDistrict({
-          districts: [Number(feature.district)],
-          state: feature.state,
-        });
+        let bbox = JSON.parse(features[0].properties.bbox);
+        // feature.district = features[0].properties.GEOID.substring(2, 4);
+        // feature.geoID = features[0].properties.GEOID;
+        console.log(bbox)
+        map.fitBounds(bbox)
       }
     });
   }
@@ -238,72 +197,22 @@ class MapView extends React.Component {
   addLayer(featuresHome) {
     this.map.addLayer(
       {
-        id: 'events-points',
-        layout: {
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true,
-          'icon-image': '{icon}',
-          'icon-offset': {
-            base: 1,
-            stops: [
-              [0, [0, -15]],
-              [10, [0, -10]],
-              [12, [0, 0]],
-            ],
-          },
-          'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-        },
+        id: LAYER_NAME,
         paint: {
-          'icon-opacity': 1,
+          'circle-color': '#11b4da',
+          'circle-opacity': 0.5,
+          'circle-radius': 4,
+          'circle-stroke-color': '#fff',
+          'circle-stroke-width': 1,
         },
         source: {
           data: featuresHome,
           type: 'geojson',
         },
-        type: 'symbol',
+        type: 'circle',
       },
       'district_interactive',
     );
-  }
-
-  clusterData(featuresHome) {
-    this.map.addSource('groups-points', {
-      cluster: false,
-      data: featuresHome,
-      type: 'geojson',
-    });
-    this.addClusterLayers();
-  }
-
-  addClusterLayers() {
-    this.map.addLayer({
-      filter: ['!has', 'point_count'],
-      id: 'unclustered-point',
-      paint: {
-        'circle-color': '#11b4da',
-        'circle-opacity': 0.5,
-        'circle-radius': 4,
-        'circle-stroke-color': '#fff',
-        'circle-stroke-width': 1,
-      },
-      source: 'groups-points',
-      type: 'circle',
-    });
-
-    // Layer to highlight selected group
-    this.map.addLayer({
-      filter: ['==', 'id', false],
-      id: 'unclustered-point-selected',
-      paint: {
-        'circle-color': '#f00',
-        'circle-opacity': 1,
-        'circle-radius': 6,
-        'circle-stroke-color': '#fff',
-        'circle-stroke-width': 2,
-      },
-      source: 'groups-points',
-      type: 'circle',
-    });
   }
 
   removeHighlights() {
@@ -313,7 +222,7 @@ class MapView extends React.Component {
 
   handleReset() {
     this.removeHighlights();
-    this.props.resetSelections();
+    // this.props.resetSelections();
     this.setState({ inset: true });
   }
   // Creates the button in our zoom controls to go to the national view
@@ -330,7 +239,7 @@ class MapView extends React.Component {
     document.querySelector('.mapboxgl-ctrl-group').appendChild(usaButton);
   }
 
-  initializeMap() {
+  initializeMap(featuresHome) {
 
     mapboxgl.accessToken =
       'pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNqMnRwOG4wOTAwMnMycG1yMGZudHFxbWsifQ.FXyPo3-AD46IuWjjsGPJ3Q';
@@ -351,13 +260,15 @@ class MapView extends React.Component {
     this.map.on('load', () => {
       this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
       this.addClickListener();
+      this.addLayer(featuresHome);
+      this.addPopups(LAYER_NAME);
+      // this.map.getSource(LAYER_NAME).setData(featuresHome);
     });
   }
 
   render() {
     const {
       center,
-      colorMap,
       district,
       type,
       selectedState,
@@ -373,11 +284,10 @@ class MapView extends React.Component {
       <React.Fragment>
         <div id="map" className={this.state.popoverColor}>
           <div className="map-overlay" id="legend">
-            <MapInset
-              items={this.state.alaskaItems}
+            {/* <MapInset
+              networks={this.state.alaskanetworks}
               center={center}
               stateName="AK"
-              colorMap={colorMap}
               district={district}
               type={type}
               selectedState={selectedState}
@@ -389,12 +299,11 @@ class MapView extends React.Component {
               setUsState={setUsState}
               mapId="map-overlay-alaska"
               bounds={[[-170.15625, 51.72702815704774], [-127.61718749999999, 71.85622888185527]]}
-            />
-            <MapInset
-              items={this.state.hawaiiItems}
+            /> */}
+            {/* <MapInset
+              networks={this.state.hawaiinetworks}
               stateName="HI"
               center={center}
-              colorMap={colorMap}
               district={district}
               type={type}
               selectedState={selectedState}
@@ -408,7 +317,7 @@ class MapView extends React.Component {
               bounds={[
                 [-161.03759765625, 18.542116654448996],
                 [-154.22607421875, 22.573438264572406]]}
-            />
+            /> */}
           </div>
         </div>
 
@@ -423,7 +332,7 @@ MapView.propTypes = {
   distance: PropTypes.number,
   district: PropTypes.number,
   filterByValue: PropTypes.shape({}),
-  items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  networks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   refcode: PropTypes.string,
   resetSelections: PropTypes.func.isRequired,
   searchByDistrict: PropTypes.func.isRequired,

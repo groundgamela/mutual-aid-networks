@@ -2,7 +2,7 @@ class Point {
     constructor(network) {
         this.type = 'Feature';
         this.geometry = {
-            coordinates: [Number(network.longitude), Number(network.latitude)],
+            coordinates: [Number(network.lng), Number(network.lat)],
             type: 'Point',
         };
         this.properties = {
@@ -12,7 +12,8 @@ class Point {
             state: network.state,
             title: network.title,
             form: network.form,
-            category: network.category,
+            category: network.category || 'General',
+            bbox: network.bbox,
         };
     }
 }

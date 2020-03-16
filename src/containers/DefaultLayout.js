@@ -5,6 +5,7 @@ import {
 
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
+import MapView from '../components/MapView';
 
 class DefaultLayout extends React.Component {
   componentDidMount() {
@@ -14,22 +15,17 @@ class DefaultLayout extends React.Component {
     requestNetworks();
   }
   render() {
-    console.log('all', this.props.allNetworks)
+    const {
+      allNetworks
+    } = this.props;
+    if (!allNetworks.length) {
+      return null;
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="main-container">
+        <MapView 
+          networks={allNetworks}
+        />
       </div>
     );
   }
