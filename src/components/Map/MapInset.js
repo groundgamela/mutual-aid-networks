@@ -25,7 +25,6 @@ class MapInset extends React.Component {
   componentWillReceiveProps(nextProps) {
     const {
       networks,
-      type,
     } = nextProps;
 
     if (networks.length !== this.props.networks.length) {

@@ -5,6 +5,7 @@ class Point {
             coordinates: [Number(network.lng), Number(network.lat)],
             type: 'Point',
         };
+        const scale = network.bbox[3] - network.bbox[1];
         this.properties = {
             region: network.region,
             contact: network.contact || null,
@@ -16,6 +17,7 @@ class Point {
             bbox: network.bbox,
             lat: network.lat,
             lng: network.lng,
+            scale: scale * 10,
         };
     }
 }
