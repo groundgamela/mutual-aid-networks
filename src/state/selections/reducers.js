@@ -2,23 +2,25 @@
    makeConstant
  } from "../../utils";
 
- const STATE_BRANCH = 'SELECTIONS';
- export const FILTER_BY_CATEGORY = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY')
+const STATE_BRANCH = 'SELECTIONS';
+export const SET_CATEGORY_FILTERS = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY')
+export const options = ["General", "Support Request", "Support Offer", "Other"];
 
 const initialState = {
   searchLatLng: '',
-  category: 'General',
+  categories: options,
   language: '',
   community: ''
 };
 
 const selectionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FILTER_BY_CATEGORY: {
+    case SET_CATEGORY_FILTERS: 
+      console.log(action.payload)
       return {
         ...state, 
-        category: action.payload,
-      }
+        categories: action.payload,
+      
     }
     default:
       return state;

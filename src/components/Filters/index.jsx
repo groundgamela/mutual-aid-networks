@@ -1,32 +1,37 @@
 import React from "react";
 import { Checkbox } from 'antd';
 
+import { options }  from '../../state/selections/reducers';
+
 import './style.scss';
 
 const CheckboxGroup = Checkbox.Group;
-const options = ["General", "Support Request", "Support Offer", "Other"];
 
 class Filters extends React.Component {
     state = {
-        checkedList: options,
+        // checkedList: this.props.selectedCategories,
         indeterminate: false,
         checkAll: true,
     };
 
     onChange = checkedList => {
+        
+        this.props.setFilters(checkedList);
         this.setState({
-            checkedList,
+            // checkedList,
             indeterminate: !!checkedList.length && checkedList.length < options.length,
             checkAll: checkedList.length === options.length,
         });
     };
 
     onCheckAllChange = e => {
+        const checkedList = e.target.checked ? options : [];
         this.setState({
-            checkedList: e.target.checked ? options : [],
+            // checkedList,
             indeterminate: false,
             checkAll: e.target.checked,
         });
+        this.props.setFilters(checkedList);
     };
 
     render() {
@@ -43,7 +48,7 @@ class Filters extends React.Component {
                 </div>
                 <br />
                 <CheckboxGroup
-                    value={this.state.checkedList}
+                    value={this.props.selectedCategories}
                     onChange={this.onChange}
                 >
                     {options.map((ele) => <Checkbox className={ele.replace(' ', '-').toLowerCase()} value={ele}>{ele}</Checkbox>)}

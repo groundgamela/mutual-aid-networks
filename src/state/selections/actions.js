@@ -1,6 +1,6 @@
-import { FILTER_BY_CATEGORY } from "./reducers";
+import { SET_CATEGORY_FILTERS } from "./reducers";
 
-export const filterByCategory = (payload) => ({
-    type: FILTER_BY_CATEGORY,
+export const setCategoryFilters = (payload) => ({
+    type: SET_CATEGORY_FILTERS,
     payload
 });
