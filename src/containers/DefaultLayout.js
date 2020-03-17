@@ -63,8 +63,11 @@ class DefaultLayout extends React.Component {
                 setViewState={setViewState}
                 networks={filteredNetworks}
                 viewState={viewState}
+                setLatLng={setLatLng}
               />
-              <div className="list-container"></div>
+              <ListView 
+                visibleCards={visibleCards}
+              />
             </div>
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
             <StartNetwork />
