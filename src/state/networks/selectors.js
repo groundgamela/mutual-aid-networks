@@ -26,7 +26,7 @@ export const getVisibleCards = createSelector(
     ) => {
         console.log(location)
         if (!location.lat) {
-            return filteredNetworks;
+            return [];
         }
         const lookup = new LatLng(Number(location.lat), Number(location.lng));
         const maxMeters = 50 * 1609.34; // Convert miles to meters before filtering
