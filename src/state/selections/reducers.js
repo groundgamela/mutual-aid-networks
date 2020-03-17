@@ -1,7 +1,9 @@
  import {
    makeConstant
  } from "../../utils";
+
  const STATE_BRANCH = 'SELECTIONS';
+ export const FILTER_BY_CATEGORY = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY')
 
 const initialState = {
   searchLatLng: '',
@@ -12,7 +14,12 @@ const initialState = {
 
 const selectionReducer = (state = initialState, action) => {
   switch (action.type) {
-
+    case FILTER_BY_CATEGORY: {
+      return {
+        ...state, 
+        category: action.payload,
+      }
+    }
     default:
       return state;
   }
