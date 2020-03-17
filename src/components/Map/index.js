@@ -23,7 +23,6 @@ class MapView extends React.Component {
     this.addLayer = this.addLayer.bind(this);
     this.createFeatures = this.createFeatures.bind(this);
     this.updateData = this.updateData.bind(this);
-    this.focusMap = this.focusMap.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.filterForStateInsets = this.filterForStateInsets.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
@@ -37,7 +36,6 @@ class MapView extends React.Component {
   componentDidMount() {
     const { networks } = this.props;
     const featuresHome = this.createFeatures(networks);
-
     this.initializeMap(featuresHome);
   }
 
@@ -48,8 +46,9 @@ class MapView extends React.Component {
     if (networks.length !== this.props.networks.length) {
       this.updateData(this.props.networks)
     }
-
-    // return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+    if (this.props.viewState === 'default') {
+      return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+    }
   }
 
   filterForStateInsets(networks) {
@@ -68,21 +67,6 @@ class MapView extends React.Component {
     const boundsTwo = [Number(dataBounds[2]), Number(dataBounds[3])];
     const bounds = boundsOne.concat(boundsTwo);
     this.map.fitBounds(bounds);
-  }
-
-  focusMap(bb) {
-    if (!bb) {
-      return;
-    }
-    const height = window.innerHeight;
-    const width = window.innerWidth;
-    const view = geoViewport.viewport(bb, [width / 2, height / 2]);
-    if (view.zoom < 2.5) {
-      view.zoom = 2.5;
-    } else {
-      view.zoom -= 0.5;
-    }
-    this.map.flyTo(view);
   }
 
   updateData(networks) {
@@ -141,6 +125,9 @@ class MapView extends React.Component {
   addClickListener() {
 
     const { map } = this;
+    const {
+      setViewState
+    } = this.props;
 
     map.on('click', (e) => {
       const features = map.queryRenderedFeatures(
@@ -152,8 +139,8 @@ class MapView extends React.Component {
 
       if (features.length > 0) {
         let bbox = JSON.parse(features[0].properties.bbox);
-        console.log(bbox)
-        map.fitBounds(bbox)
+        setViewState('list');
+        map.fitBounds(bbox);
       }
     });
   }
@@ -181,8 +168,12 @@ class MapView extends React.Component {
 
 
   handleReset() {
+    const {
+      setViewState
+    } = this.props;
     // this.props.resetSelections();
-    this.setState({ inset: true });
+    // this.setState({ inset: true });
+    setViewState('default');
   }
   // Creates the button in our zoom controls to go to the national view
   makeZoomToNationalButton() {
@@ -199,6 +190,9 @@ class MapView extends React.Component {
   }
 
   initializeMap(featuresHome) {
+    const {
+      setViewState
+    } = this.props;
 
     mapboxgl.accessToken =
       'pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNqMnRwOG4wOTAwMnMycG1yMGZudHFxbWsifQ.FXyPo3-AD46IuWjjsGPJ3Q';
@@ -225,10 +219,10 @@ class MapView extends React.Component {
         zoom: 12,
       })
       .on('clear', function (result) {
-        // this.resetView();
+        setViewState('default');
       })
       .on('result', function (result) {
-        // hideInsets();
+        setViewState('list');
       }),
       'top-left'
     );
@@ -245,11 +239,11 @@ class MapView extends React.Component {
   render() {
     const {
       center,
-      selectedState,
       resetSelections,
       searchByDistrict,
       setLatLng,
       setUsState,
+      viewState,
     } = this.props;
 
     return (
@@ -260,7 +254,7 @@ class MapView extends React.Component {
               networks={this.state.alaskanetworks}
               center={center}
               stateName="AK"
-              selectedState={selectedState}
+              viewState={viewState}
               resetSelections={resetSelections}
               setLatLng={setLatLng}
               setUsState={setUsState}
@@ -271,7 +265,7 @@ class MapView extends React.Component {
               networks={this.state.hawaiinetworks}
               stateName="HI"
               center={center}
-              selectedState={selectedState}
+              viewState={viewState}
               resetSelections={resetSelections}
               searchByDistrict={searchByDistrict}
               setLatLng={setLatLng}

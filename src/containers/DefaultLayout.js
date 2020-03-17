@@ -25,7 +25,9 @@ class DefaultLayout extends React.Component {
     const {
       setFilters,
       selectedCategories,
-      filteredNetworks
+      filteredNetworks,
+      setViewState,
+      viewState,
     } = this.props;
     if (!filteredNetworks.length) {
       return null;
@@ -47,11 +49,13 @@ class DefaultLayout extends React.Component {
         <Content style={{ padding: '0 50px' }}>
           <div className="main-container">
             <Filters 
-            setFilters={setFilters}
-            selectedCategories={selectedCategories}
+              setFilters={setFilters}
+              selectedCategories={selectedCategories}
             />
             <MapView 
+              setViewState={setViewState}
               networks={filteredNetworks}
+              viewState={viewState}
             />
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
             <StartNetwork />
@@ -70,11 +74,13 @@ class DefaultLayout extends React.Component {
 const mapStateToProps = (state) => ({
   filteredNetworks: networkStateBranch.selectors.getFilteredNetworks(state),
   selectedCategories: selectionStateBranch.selectors.getSelectedCategories(state),
+  viewState: selectionStateBranch.selectors.getViewState(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
+  setViewState: (payload) => dispatch(selectionStateBranch.actions.setViewState(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);

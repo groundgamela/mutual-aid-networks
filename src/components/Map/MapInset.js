@@ -127,11 +127,11 @@ class MapInset extends React.Component {
 
   render() {
     const {
-      selectedState,
+      viewState,
       mapId,
     } = this.props;
     const mapClassNames = classNames({
-      hidden: selectedState,
+      hidden: viewState === 'list',
       inset: true,
     });
     return (
