@@ -6,8 +6,9 @@ import { Layout, Menu } from 'antd';
 
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
-import MapView from '../components/MapView';
+import MapView from '../components/Map';
 import StartNetwork from '../components/StartNetwork';
+import Filters from '../components/Filters';
 
 import './style.scss';
 
@@ -22,9 +23,11 @@ class DefaultLayout extends React.Component {
   }
   render() {
     const {
-      allNetworks
+      setFilters,
+      selectedCategories,
+      filteredNetworks
     } = this.props;
-    if (!allNetworks.length) {
+    if (!filteredNetworks.length) {
       return null;
     }
     return (
@@ -43,8 +46,12 @@ class DefaultLayout extends React.Component {
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <div className="main-container">
+            <Filters 
+            setFilters={setFilters}
+            selectedCategories={selectedCategories}
+            />
             <MapView 
-              networks={allNetworks}
+              networks={filteredNetworks}
             />
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
             <StartNetwork />
@@ -61,11 +68,13 @@ class DefaultLayout extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  allNetworks: networkStateBranch.selectors.getAllNetworks(state),
+  filteredNetworks: networkStateBranch.selectors.getFilteredNetworks(state),
+  selectedCategories: selectionStateBranch.selectors.getSelectedCategories(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
+  setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);
