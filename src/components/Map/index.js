@@ -43,11 +43,15 @@ class MapView extends React.Component {
     const {
       networks,
     } = prevProps;
+    this.map.resize();
     if (networks.length !== this.props.networks.length) {
       this.updateData(this.props.networks)
     }
-    if (this.props.viewState === 'default') {
-      return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+    if (prevProps.viewState !== this.props.viewState) {
+      if (this.props.viewState === 'default') {
+        this.setInitialState();
+      }
+
     }
   }
 
@@ -152,11 +156,29 @@ class MapView extends React.Component {
       {
         id: LAYER_NAME,
         paint: {
-          'circle-color': '#11b4da',
           'circle-opacity': 0.5,
-          'circle-radius': 4,
+          'circle-radius': [
+            'interpolate', ['linear'],
+            ['number', ['get', 'scale'], 5],
+              1,
+              5,
+              70,
+              70
+          ], 
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
+          'circle-color': [
+            'match',
+            ['get', 'category'],
+            'Support Request',
+            '#ef4822',
+            'Support Offer',
+            '#6ac1e5',
+            'General',
+            '#8048f3',
+            /* other */
+            '#057A8F'
+          ]
         },
         source: {
           data: featuresHome,
@@ -173,10 +195,19 @@ class MapView extends React.Component {
     const {
       setViewState
     } = this.props;
-    // this.props.resetSelections();
-    // this.setState({ inset: true });
+
+  
     setViewState('default');
   }
+
+  setInitialState() {
+    this.map.fitBounds([
+      [-128.8, 23.6],
+      [-65.4, 50.2]
+    ]);
+    this.map.resize();
+  }
+
   // Creates the button in our zoom controls to go to the national view
   makeZoomToNationalButton() {
     document.querySelector('.mapboxgl-ctrl-compass').remove();
@@ -212,7 +243,7 @@ class MapView extends React.Component {
     this.map.dragRotate.disable();
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
-
+    const { map } = this;
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -226,6 +257,7 @@ class MapView extends React.Component {
       })
       .on('result', function (returned) {
         setViewState('list');
+        map.fitBounds(returned.result.bbox);
         setLatLng({
           lat: returned.result.center[1],
           lng: returned.result.center[0]
@@ -289,25 +321,12 @@ class MapView extends React.Component {
 }
 
 MapView.propTypes = {
-  center: PropTypes.shape({ LAT: PropTypes.string, LNG: PropTypes.string, ZIP: PropTypes.string }),
-  colorMap: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  distance: PropTypes.number,
-  district: PropTypes.number,
-  filterByValue: PropTypes.shape({}),
   networks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  refcode: PropTypes.string,
-  resetSelections: PropTypes.func.isRequired,
-  searchByDistrict: PropTypes.func.isRequired,
-  setUsState: PropTypes.func.isRequired,
   setLatLng: PropTypes.func.isRequired,
 };
 
 MapView.defaultProps = {
-  center: {},
-  distance: 50,
-  district: NaN,
-  filterByValue: {},
-  refcode: '',
+
 };
 
 export default MapView;

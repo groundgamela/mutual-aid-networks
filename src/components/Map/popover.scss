@@ -4,6 +4,9 @@ $brand-primary:#057A8F;
 .mapboxgl-popup-content {
        background-color: $brand-primary;
        color: white;
+       a {
+           color: white;
+       }
 }
 
 

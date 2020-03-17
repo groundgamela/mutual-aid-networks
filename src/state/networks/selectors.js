@@ -24,7 +24,6 @@ export const getVisibleCards = createSelector(
         filteredNetworks,
         location,
     ) => {
-        console.log(location)
         if (!location.lat) {
             return [];
         }
