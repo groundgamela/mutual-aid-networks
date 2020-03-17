@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { find, filter } from 'lodash';
 import geoViewport from '@mapbox/geo-viewport';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
 import Point from './Point';
 
 import MapInset from './MapInset';
@@ -213,6 +215,23 @@ class MapView extends React.Component {
     this.map.dragRotate.disable();
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
+
+    this.map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        countries: 'us',
+        marker: false,
+        zoom: 12,
+      })
+      .on('clear', function (result) {
+        // this.resetView();
+      })
+      .on('result', function (result) {
+        // hideInsets();
+      }),
+      'top-left'
+    );
     // map on 'load'
     this.map.on('load', () => {
       this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
