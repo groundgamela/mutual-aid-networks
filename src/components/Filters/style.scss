@@ -15,6 +15,9 @@
     z-index: 300;
     background: #ffffffb5;
     width: 165px;
+    .ant-checkbox-wrapper {
+        margin-left: 8px;
+    }
     .general {
         @include checkbox(#8048f3)
     }
