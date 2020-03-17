@@ -126,7 +126,8 @@ class MapView extends React.Component {
 
     const { map } = this;
     const {
-      setViewState
+      setViewState,
+      setLatLng
     } = this.props;
 
     map.on('click', (e) => {
@@ -140,6 +141,7 @@ class MapView extends React.Component {
       if (features.length > 0) {
         let bbox = JSON.parse(features[0].properties.bbox);
         setViewState('list');
+        setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng})
         map.fitBounds(bbox);
       }
     });
@@ -191,7 +193,8 @@ class MapView extends React.Component {
 
   initializeMap(featuresHome) {
     const {
-      setViewState
+      setViewState,
+      setLatLng
     } = this.props;
 
     mapboxgl.accessToken =
@@ -221,8 +224,12 @@ class MapView extends React.Component {
       .on('clear', function (result) {
         setViewState('default');
       })
-      .on('result', function (result) {
+      .on('result', function (returned) {
         setViewState('list');
+        setLatLng({
+          lat: returned.result.center[1],
+          lng: returned.result.center[0]
+        })
       }),
       'top-left'
     );
@@ -240,7 +247,6 @@ class MapView extends React.Component {
     const {
       center,
       resetSelections,
-      searchByDistrict,
       setLatLng,
       setUsState,
       viewState,
@@ -267,7 +273,6 @@ class MapView extends React.Component {
               center={center}
               viewState={viewState}
               resetSelections={resetSelections}
-              searchByDistrict={searchByDistrict}
               setLatLng={setLatLng}
               setUsState={setUsState}
               mapId="map-overlay-hawaii"

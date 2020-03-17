@@ -29,7 +29,10 @@ class DefaultLayout extends React.Component {
       filteredNetworks,
       setViewState,
       viewState,
+      setLatLng,
+      visibleCards,
     } = this.props;
+    console.log(visibleCards)
     if (!filteredNetworks.length) {
       return null;
     }
@@ -81,12 +84,15 @@ const mapStateToProps = (state) => ({
   filteredNetworks: networkStateBranch.selectors.getFilteredNetworks(state),
   selectedCategories: selectionStateBranch.selectors.getSelectedCategories(state),
   viewState: selectionStateBranch.selectors.getViewState(state),
+  searchLocation: selectionStateBranch.selectors.getSearchLocation(state),
+  visibleCards: networkStateBranch.selectors.getVisibleCards(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
-  setViewState: (payload) => dispatch(selectionStateBranch.actions.setViewState(payload))
+  setViewState: (payload) => dispatch(selectionStateBranch.actions.setViewState(payload)),
+  setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);
