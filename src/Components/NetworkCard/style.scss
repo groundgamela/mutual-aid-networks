@@ -1,0 +1,26 @@
+.network-card {
+  margin: 30px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.button {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.list-inline {
+  ul {
+    padding-left: 0;
+  }
+  li {
+    display:inline;
+  }
+  li:not(:first-child):before {
+    margin-right: 5px;
+    margin-left: 5px;
+    content: '\2022';
+  }
+}
