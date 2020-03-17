@@ -1,16 +1,11 @@
 import React from 'react';
 import { Button, Table } from 'antd';
+import NetworkCard from '../NetworkCard'
 
 const ListView = ({ visibleCards }) => {
   return (
       <div className="list-container">
-        <ul>
-          {
-            visibleCards.length && visibleCards.map((org) => {
-              return <li>{org.title}</li>
-            })
-          }
-        </ul>
+        <NetworkCard networks={visibleCards} />
       </div>
   )
 };
