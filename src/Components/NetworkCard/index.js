@@ -3,57 +3,52 @@ import {
   Card,
   Row
 } from 'antd';
-import './style.css';
+import './style.scss';
 
-const networkInfo = {
-    resource: 'Org/Resource name',
-    Neighborhood: 'Neighborhood/region',
-    City: 'City',
-    stateAb: 'State',
-    Country: 'Country',
-    Form: 'http://covidmissoula.org/',
-    socialMedia: 'facebook.com',
-    category: 'category',
-    specificCommunity: 'specific community',
-    language: 'language',
-}
 
 const NetworkCard = (props) => {
-  const {
-    resource,
-    Neighborhood,
-    City,
-    stateAb,
-    Country,
-    Form,
-    socialMedia,
-    category,
-    specificCommunity,
-    language
-  } = networkInfo
+
+  const parseNetworks = (networks) => {
+    return networks.map(network => {
+      const {
+        address,
+        title,
+        neighborhood,
+        form,
+        social,
+        category,
+        community,
+        language
+      } = network
+      return (
+        <Card
+          className='network-card'
+          title={title}
+          extra={
+            <ul className='list-inline'>
+            {category && <li>{category}</li>}
+            {community && <li>{community}</li>}
+          </ul>
+          }
+        >
+          <ul className='list-inline'>
+            {neighborhood && <li>{neighborhood}</li>}
+            {address && <li>{address}</li>}
+            {language && <li>{language}</li>}
+          </ul>
+          <Row justify="space-between">
+            {form && <a href={form} className="button">Participate in this community</a>}
+            {social && <a href={social} className="button">Join social media</a>}
+          </Row>
+        </Card>
+      )
+    })
+  }
+
   return (
-    <Card
-      className='network-card'
-      title={resource}
-      extra={
-        <ul className='list-inline'>
-        {category && <li>{category}</li>}
-        {specificCommunity && <li>{specificCommunity}</li>}
-      </ul>
-      }
-    >
-      <ul className='list-inline'>
-        {Neighborhood && <li>{Neighborhood}</li>}
-        {City && <li>{City}</li>}
-        {stateAb && <li>{stateAb}</li>}
-        {Country && <li>{Country}</li>}
-        {language && <li>{language}</li>}
-      </ul>
-      <Row justify="space-between">
-        {Form && <a href={Form} className="button">Participate in this community</a>}
-        {socialMedia && <a href={socialMedia} className="button">Join social media</a>}
-      </Row>
-    </Card>
+    <>
+      {parseNetworks(props.networks)}
+    </>
   )
 }
 

@@ -7,6 +7,7 @@ import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
 import MapView from '../components/Map';
 import Filters from '../components/Filters';
+import NetworkCard from '../components/NetworkCard'
 
 class DefaultLayout extends React.Component {
   componentDidMount() {
@@ -33,7 +34,8 @@ class DefaultLayout extends React.Component {
         <MapView 
           networks={filteredNetworks}
         />
-        
+        {console.log(filteredNetworks)}
+        <NetworkCard networks={filteredNetworks}/>
       </div>
     );
   }
