@@ -10,6 +10,9 @@ import { getSelectedCategories, getSearchLocation } from '../selections/selector
 export const getAllNetworks = state => state.networks.allNetworks;
 
 export const getFilteredNetworks = createSelector([getAllNetworks, getSelectedCategories], (networks, categories) => {
+    if (!categories.length) {
+        return [];
+    }
     return filter(networks, (network) => {
         return categories.includes(network.category)
     })

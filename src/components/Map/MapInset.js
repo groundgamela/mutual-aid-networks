@@ -56,13 +56,13 @@ class MapInset extends React.Component {
 
   addClickListener() {
     const {
-      stateName,
-      setUsState,
+      bounds,
+      setBounds,
     } = this.props;
     const { map } = this;
 
     map.on('click', () => {
-      setUsState({ usState: stateName });
+      setBounds(bounds);
     });
   }
 

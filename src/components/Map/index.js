@@ -26,6 +26,7 @@ class MapView extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.filterForStateInsets = this.filterForStateInsets.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
+    this.handleClickOnInset = this.handleClickOnInset.bind(this);
     this.state = {
       alaskanetworks: filter(this.props.networks, { state: 'AK' }),
       hawaiinetworks: filter(this.props.networks, { state: 'HI' }),
@@ -208,6 +209,19 @@ class MapView extends React.Component {
     this.map.resize();
   }
 
+  handleClickOnInset(bounds) {
+    // this is for clicking on a state inset
+    this.props.setViewState('list');
+    this.map.resize();
+
+    this.map.fitBounds(bounds);
+    this.map.resize();
+
+    const mbBounds = new mapboxgl.LngLatBounds(bounds);
+    const center = mbBounds.getCenter();
+    this.props.setLatLng(center)
+  }
+
   // Creates the button in our zoom controls to go to the national view
   makeZoomToNationalButton() {
     document.querySelector('.mapboxgl-ctrl-compass').remove();
@@ -295,7 +309,7 @@ class MapView extends React.Component {
               viewState={viewState}
               resetSelections={resetSelections}
               setLatLng={setLatLng}
-              setUsState={setUsState}
+              setBounds={this.handleClickOnInset}
               mapId="map-overlay-alaska"
               bounds={[[-170.15625, 51.72702815704774], [-127.61718749999999, 71.85622888185527]]}
             />
@@ -306,7 +320,7 @@ class MapView extends React.Component {
               viewState={viewState}
               resetSelections={resetSelections}
               setLatLng={setLatLng}
-              setUsState={setUsState}
+              setBounds={this.handleClickOnInset}
               mapId="map-overlay-hawaii"
               bounds={[
                 [-161.03759765625, 18.542116654448996],

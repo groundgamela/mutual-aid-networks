@@ -31,25 +31,23 @@ class DefaultLayout extends React.Component {
       viewState,
       setLatLng,
       visibleCards,
+      allNetworks,
     } = this.props;
     
-    if (!filteredNetworks.length) {
+    if (!allNetworks.length) {
       return null;
     }
     // viewState --> list or default
-    console.log(this.props)
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo" />
+          <div className="logo">Mutual Aid Hub</div>
           <Menu
             theme="dark"
             mode="horizontal"
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1">nav 1</Menu.Item>
-            <Menu.Item key="2">nav 2</Menu.Item>
-            <Menu.Item key="3">nav 3</Menu.Item>
+            <Menu.Item key="1">Guides and other resources</Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
@@ -89,6 +87,7 @@ const mapStateToProps = (state) => ({
   viewState: selectionStateBranch.selectors.getViewState(state),
   searchLocation: selectionStateBranch.selectors.getSearchLocation(state),
   visibleCards: networkStateBranch.selectors.getVisibleCards(state),
+  allNetworks: networkStateBranch.selectors.getAllNetworks(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

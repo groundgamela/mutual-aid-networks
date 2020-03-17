@@ -18,7 +18,6 @@ class Filters extends React.Component {
         
         this.props.setFilters(checkedList);
         this.setState({
-            // checkedList,
             indeterminate: !!checkedList.length && checkedList.length < options.length,
             checkAll: checkedList.length === options.length,
         });
@@ -27,7 +26,6 @@ class Filters extends React.Component {
     onCheckAllChange = e => {
         const checkedList = e.target.checked ? options : [];
         this.setState({
-            // checkedList,
             indeterminate: false,
             checkAll: e.target.checked,
         });
