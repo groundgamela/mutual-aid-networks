@@ -23,7 +23,8 @@
         .interactive-content-default {
             display: flex;
             #map {
-                flex-grow: 1;
+                // flex-grow: 1;
+                width: 100%;
             }
             .list-container {
                 display: none;
@@ -33,7 +34,7 @@
         .interactive-content-list {
             display: flex;
             #map {
-                flex-grow: 1;
+                // flex-grow: 1;
                 width:30%
             }
             .list-container {

@@ -47,7 +47,12 @@ class MapView extends React.Component {
       this.updateData(this.props.networks)
     }
     if (this.props.viewState === 'default') {
+      console.log('default')
       return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+    }
+    if (prevProps.viewState !== this.props.viewState) {
+      console.log('list')
+      return this.map.resize();
     }
   }
 

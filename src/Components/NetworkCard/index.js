@@ -37,7 +37,7 @@ const NetworkCard = (props) => {
             {language && <li>{language}</li>}
           </ul>
           <Row justify="space-between">
-            {form && <a href={form} className="button">Participate in this community</a>}
+            {form && <a href={form} target="_blank" className="button">Participate in this community</a>}
             {social && <a href={social} target="_blank" className="button">Join social media</a>}
           </Row>
         </Card>
