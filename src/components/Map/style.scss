@@ -55,20 +55,3 @@
   display: inline-block;
 }
 
-.start-network-container {
-  background-color: lightgrey;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  width: 650px;
-  height: 175px;
-  margin: 20px auto 20px auto;
-  #start-network-button {
-    width: 450px;
-    height: 100px;
-    font-size: 2em;
-    border-radius: 3px;
-  }
-}

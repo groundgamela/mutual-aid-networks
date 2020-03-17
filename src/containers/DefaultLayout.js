@@ -7,7 +7,7 @@ import { Layout, Menu } from 'antd';
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
 import MapView from '../components/Map';
-import StartNetwork from '../components/StartNetwork';
+import SubmitNetwork from '../components/SubmitNetwork';
 import Filters from '../components/Filters';
 import ListView from '../components/ListView';
 
@@ -68,7 +68,7 @@ class DefaultLayout extends React.Component {
               />
             </div>
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
-            <StartNetwork />
+            <SubmitNetwork />
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
