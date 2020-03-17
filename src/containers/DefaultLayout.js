@@ -32,7 +32,7 @@ class DefaultLayout extends React.Component {
       setLatLng,
       visibleCards,
     } = this.props;
-    console.log(visibleCards)
+    
     if (!filteredNetworks.length) {
       return null;
     }
