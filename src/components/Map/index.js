@@ -152,11 +152,29 @@ class MapView extends React.Component {
       {
         id: LAYER_NAME,
         paint: {
-          'circle-color': '#11b4da',
           'circle-opacity': 0.5,
-          'circle-radius': 4,
+          'circle-radius': [
+            'interpolate', ['linear'],
+            ['number', ['get', 'scale'], 5],
+              1,
+              5,
+              70,
+              70
+          ], 
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
+          'circle-color': [
+            'match',
+            ['get', 'category'],
+            'Support Request',
+            '#ef4822',
+            'Support Offer',
+            '#6ac1e5',
+            'General',
+            '#8048f3',
+            /* other */
+            '#057A8F'
+          ]
         },
         source: {
           data: featuresHome,
