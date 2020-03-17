@@ -17,11 +17,11 @@ class DefaultLayout extends React.Component {
   }
   render() {
     const {
-      allNetworks,
       setFilters,
-      selectedCategories
+      selectedCategories,
+      filteredNetworks
     } = this.props;
-    if (!allNetworks.length) {
+    if (!filteredNetworks.length) {
       return null;
     }
     return (
@@ -31,7 +31,7 @@ class DefaultLayout extends React.Component {
           selectedCategories={selectedCategories}
           />
         <MapView 
-          networks={allNetworks}
+          networks={filteredNetworks}
         />
         
       </div>
@@ -40,7 +40,7 @@ class DefaultLayout extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  allNetworks: networkStateBranch.selectors.getAllNetworks(state),
+  filteredNetworks: networkStateBranch.selectors.getFilteredNetworks(state),
   selectedCategories: selectionStateBranch.selectors.getSelectedCategories(state),
 });
 
