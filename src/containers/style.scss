@@ -20,6 +20,32 @@
     .main-container {
         background: #fff;
         padding-bottom: 30px;
+        .interactive-content-default {
+            display: flex;
+            #map {
+                // flex-grow: 1;
+                width: 100%;
+            }
+            .list-container {
+                display: none;
+                width: 0;
+            }
+        }
+        .interactive-content-list {
+            display: flex;
+            #map {
+                // flex-grow: 1;
+                width: 30%
+            }
+            .list-container {
+                background: #025a56;
+                min-height: 70vh;
+                max-height: 70vh;
+                flex-grow: 3;
+                overflow: scroll;
+                width:70%;
+            }
+        }
         .tagline {
             text-align: center;
             padding: 10px;

@@ -9,7 +9,7 @@ import selectionStateBranch from '../state/selections';
 import MapView from '../components/Map';
 import StartNetwork from '../components/StartNetwork';
 import Filters from '../components/Filters';
-import NetworkCard from '../components/NetworkCard'
+import ListView from '../components/ListView';
 
 import './style.scss';
 
@@ -36,6 +36,8 @@ class DefaultLayout extends React.Component {
     if (!filteredNetworks.length) {
       return null;
     }
+    // viewState --> list or default
+    console.log(this.props)
     return (
       <Layout className="layout">
         <Header>
@@ -56,14 +58,17 @@ class DefaultLayout extends React.Component {
               setFilters={setFilters}
               selectedCategories={selectedCategories}
             />
-            <MapView 
-              setViewState={setViewState}
-              networks={filteredNetworks}
-              viewState={viewState}
-              setLatLng={setLatLng}
-            />
-            <NetworkCard networks={filteredNetworks}/>
-
+            <div className={`interactive-content-${viewState}`}>
+              <MapView
+                setViewState={setViewState}
+                networks={filteredNetworks}
+                viewState={viewState}
+                setLatLng={setLatLng}
+              />
+              <ListView 
+                visibleCards={visibleCards}
+              />
+            </div>
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
             <StartNetwork />
           </div>
