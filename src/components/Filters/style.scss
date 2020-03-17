@@ -1,0 +1,22 @@
+@mixin checkbox($color) {
+        .ant-checkbox-checked .ant-checkbox-inner {
+            background-color: $color;
+            border-color: $color;
+        }
+
+        // .ant-checkbox-checked::after {
+        //     border: 
+        // }
+}
+.filter-container {
+    .general {
+        @include checkbox(#8048f3)
+    }
+    .support-offer {
+        @include checkbox(#6ac1e5)
+    }
+    .support-request {
+        @include checkbox(#ef4822)
+
+    }
+}

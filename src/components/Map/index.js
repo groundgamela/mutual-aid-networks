@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { find, filter } from 'lodash';
 import geoViewport from '@mapbox/geo-viewport';
 import Point from './Point';
-import states from '../data/states';
 
 import MapInset from './MapInset';
 import './style.scss';
@@ -40,15 +39,15 @@ class MapView extends React.Component {
     this.initializeMap(featuresHome);
   }
 
-  componentDidUpdate(nextProps) {
+  componentDidUpdate(prevProps) {
     const {
-      selectedState,
-    } = nextProps;
-    
-    if (selectedState) {
-      return this.focusMap();
+      networks,
+    } = prevProps;
+    if (networks.length !== this.props.networks.length) {
+      this.updateData(this.props.networks)
     }
-    return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+
+    // return this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
   }
 
   filterForStateInsets(networks) {
@@ -84,13 +83,13 @@ class MapView extends React.Component {
     this.map.flyTo(view);
   }
 
-  updateData(networks, layer) {
+  updateData(networks) {
     const featuresHome = this.createFeatures(networks);
     this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
-    if (!this.map.getSource(layer)) {
+    if (!this.map.getSource(LAYER_NAME)) {
       return;
     }
-    this.map.getSource(layer).setData(featuresHome);
+    this.map.getSource(LAYER_NAME).setData(featuresHome);
   }
 
   createFeatures(networks) {
