@@ -14,6 +14,8 @@ class Point {
             form: network.form,
             category: network.category || 'General',
             bbox: network.bbox,
+            lat: network.lat,
+            lng: network.lng,
         };
     }
 }
