@@ -5,7 +5,8 @@ import {
 
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
-import MapView from '../components/MapView';
+import MapView from '../components/Map';
+import Filters from '../components/Filters';
 
 class DefaultLayout extends React.Component {
   componentDidMount() {
@@ -23,9 +24,11 @@ class DefaultLayout extends React.Component {
     }
     return (
       <div className="main-container">
+        <Filters />
         <MapView 
           networks={allNetworks}
         />
+        
       </div>
     );
   }
