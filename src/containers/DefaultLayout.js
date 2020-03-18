@@ -46,7 +46,7 @@ class DefaultLayout extends React.Component {
             mode="horizontal"
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1">Guides and other resources</Menu.Item>
+            {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
