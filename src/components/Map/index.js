@@ -11,6 +11,7 @@ import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
 import { LAYER_NAME, accessToken } from './constants';
+import { REQUEST_SUPPORT, OFFER_SUPPORT, GENERAL } from '../../state/constants';
 
 const mapboxgl = window.mapboxgl;
 
@@ -126,8 +127,20 @@ class MapView extends React.Component {
         this.setState({
           popoverColor: popoverClassName
         });
-        this.props.setHoveredPoint(features[0].id)
-        const link = properties.form ? `<a target="_blank" href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
+        this.props.setHoveredPoint(features[0].id);
+        let link;
+        if (properties.generalForm) {
+          link = `<a target="_blank" href=${properties.generalForm}>Link to form</a>`
+        } else if (properties.supportOfferForm && properties.supportRequestForm) {
+          link = `<a class="side-by-side" target="_blank" href=${properties.supportOfferForm}>Offer support</a><a class="side-by-side" target="_blank" href=${properties.supportRequestForm}>Request support</a>`
+        } else if (properties.supportOfferForm) {
+          console.log(properties.supportOfferForm);
+          link = `<a href=${properties.supportOfferForm}>Offer support</a>`;
+        } else if (properties.supportRequestForm) {
+          link = `<a href=${properties.supportRequestForm}>Request support</a>`;
+        } else {
+          link = `<a href=${properties.facebookPage}>Link to group</a>`;
+        }
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
@@ -213,11 +226,11 @@ class MapView extends React.Component {
           'circle-color': [
             'match',
             ['get', 'category'],
-            'Support Request',
+            REQUEST_SUPPORT,
             '#ef4822',
-            'Support Offer',
+            OFFER_SUPPORT,
             '#6ac1e5',
-            'General',
+            GENERAL,
             '#8048f3',
             /* other */
             '#057A8F'

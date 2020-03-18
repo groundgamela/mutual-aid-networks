@@ -22,16 +22,32 @@ $info: #057A8F;
     @include popover-tip($info);
 }
 
-.popover-support-request {
+.popover-request-support {
     .mapboxgl-popup-content {
         @include popover($request);
     }
     @include popover-tip($request);
 }
 
-.popover-support-offer {
+.popover-offer-support {
     .mapboxgl-popup-content {
         @include popover($offer);
     }
     @include popover-tip($offer);
+}
+
+.popover-offer-support {
+    .mapboxgl-popup-content {
+        @include popover($offer);
+    }
+
+    @include popover-tip($offer);
+}
+
+.popover-other {
+    .mapboxgl-popup-content {
+        @include popover($info);
+    }
+
+    @include popover-tip($info);
 }

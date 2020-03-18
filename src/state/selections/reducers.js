@@ -1,13 +1,14 @@
 import {
   makeConstant
 } from "../../utils";
+import { GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION } from "../constants";
 
 const STATE_BRANCH = 'SELECTIONS';
 export const SET_CATEGORY_FILTERS = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY');
 export const SET_LAT_LNG = makeConstant(STATE_BRANCH, 'SET_LAT_LNG');
 export const SET_HOVERED_POINT = makeConstant(STATE_BRANCH, 'SET_HOVERED_POINT');
 
-export const options = ["General", "Support Request", "Support Offer", "Information"];
+export const options = [GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION];
 
 const initialState = {
   view: 'default',

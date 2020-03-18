@@ -21,10 +21,10 @@
     .general {
         @include checkbox(#8048f3)
     }
-    .support-offer {
+    .offer-support {
         @include checkbox(#6ac1e5)
     }
-    .support-request {
+    .request-support {
         @include checkbox(#ef4822)
     }
 }
