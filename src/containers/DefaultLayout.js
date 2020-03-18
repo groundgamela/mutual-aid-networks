@@ -70,7 +70,7 @@ class DefaultLayout extends React.Component {
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          <div class="footer-text">
+          <div className="footer-text">
             We list these networks as a public resource. We cannot verify or vouch for any network or individual offerings. Please exercise all necessary judgement when interacting with community members not previously known to you.
           </div>
         </Footer>
