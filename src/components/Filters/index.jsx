@@ -49,7 +49,7 @@ class Filters extends React.Component {
                     value={this.props.selectedCategories}
                     onChange={this.onChange}
                 >
-                    {options.map((ele) => <Checkbox className={ele.replace(' ', '-').toLowerCase()} value={ele}>{ele}</Checkbox>)}
+                    {options.map((ele) => <Checkbox key={ele.replace(' ', '-').toLowerCase()} className={ele.replace(' ', '-').toLowerCase()} value={ele}>{ele}</Checkbox>)}
                 </CheckboxGroup>
             </div>
         );
