@@ -24,6 +24,7 @@ const NetworkCard = (props) => {
         <Card
           className='network-card'
           title={title}
+          key={title}
           extra={
             <ul className='list-inline'>
             {category && <li>{category}</li>}
