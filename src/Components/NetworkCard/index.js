@@ -15,10 +15,13 @@ const NetworkCard = (props) => {
         title,
         neighborhood,
         form,
-        social,
+        facebookPage,
         category,
         community,
         language,
+        generalForm,
+        supportRequestForm,
+        supportOfferForm,
         id
       } = network;
       return (
@@ -45,8 +48,10 @@ const NetworkCard = (props) => {
             {language && <li>{language}</li>}
           </ul>
           <Row justify="space-between">
-            {form && <a href={form} target="_blank" className="button">Participate in this community</a>}
-            {social && <a href={social} target="_blank" className="button">Join social media</a>}
+            {generalForm && <a href={generalForm} target="_blank" rel="noopener noreferrer" className="button">Offer or request help</a>}
+            {supportRequestForm && <a href={supportRequestForm} rel="noopener noreferrer" target="_blank" className="button">Request help</a>}
+            {supportOfferForm && <a href={supportOfferForm} rel="noopener noreferrer" target="_blank" className="button">Offer help</a>}
+            {facebookPage && <a href={facebookPage} rel="noopener noreferrer" target="_blank" className="button">Join social media</a>}
           </Row>
         </Card>
       )
