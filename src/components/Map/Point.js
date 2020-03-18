@@ -19,6 +19,7 @@ class Point {
             lng: network.lng,
             scale: scale * 10,
         };
+        this.id = network.id;
     }
 }
 

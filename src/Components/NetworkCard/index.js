@@ -18,13 +18,20 @@ const NetworkCard = (props) => {
         social,
         category,
         community,
-        language
-      } = network
+        language,
+        id
+      } = network;
       return (
         <Card
           className='network-card'
           title={title}
-          key={title}
+          key={id}
+          onMouseEnter={
+            () => props.setHoveredPoint(id)
+          }
+          onMouseLeave={
+            () => props.setHoveredPoint(null)
+          }
           extra={
             <ul className='list-inline'>
             {category && <li>{category}</li>}

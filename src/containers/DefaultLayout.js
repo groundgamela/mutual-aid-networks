@@ -31,6 +31,8 @@ class DefaultLayout extends React.Component {
       setLatLng,
       visibleCards,
       allNetworks,
+      setHoveredPoint,
+      hoveredPointId
     } = this.props;
     
     if (!allNetworks.length) {
@@ -60,9 +62,12 @@ class DefaultLayout extends React.Component {
                 networks={filteredNetworks}
                 viewState={viewState}
                 setLatLng={setLatLng}
+                hoveredPointId={hoveredPointId}
+                setHoveredPoint={setHoveredPoint}
               />
               <ListView 
                 visibleCards={visibleCards}
+                setHoveredPoint={setHoveredPoint}
               />
             </div>
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
@@ -86,12 +91,14 @@ const mapStateToProps = (state) => ({
   searchLocation: selectionStateBranch.selectors.getSearchLocation(state),
   visibleCards: networkStateBranch.selectors.getVisibleCards(state),
   allNetworks: networkStateBranch.selectors.getAllNetworks(state),
+  hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
-  setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload))
+  setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload)),
+  setHoveredPoint: (payload) => dispatch(selectionStateBranch.actions.setHoveredPoint(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);

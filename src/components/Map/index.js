@@ -42,25 +42,37 @@ class MapView extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+ 
     const {
-      networks,
-    } = prevProps;
+      hoveredPointId,
+      viewState,
+      networks
+    } = this.props;
     this.map.resize();
-    if (networks.length !== this.props.networks.length) {
+    // changed filters
+    if (networks.length !== prevProps.networks.length) {
       this.updateData(this.props.networks);
     }
-    if (prevProps.viewState !== this.props.viewState) {
+    // toggled view between full map and zoom
+    if (prevProps.viewState !== viewState) {
       this.hoveredPopup.remove(); //close any open popup
-
-      if (this.props.viewState === 'default') {
+      if (viewState === 'default') {
         this.setInitialState();
       }
     }
-    if (this.state.bbox && this.props.viewState === 'list') {
+    // if a bounding box has been set before render, fix the bounds and clear
+    // for changing map zoom and size
+    if (this.state.bbox && viewState === 'list') {
       this.map.fitBounds(this.state.bbox);
       this.setState({
         bbox: null
       })
+    }
+    if (hoveredPointId) {
+      this.hoverPoint(hoveredPointId)
+    } 
+    if (prevProps.hoveredPointId && prevProps.hoveredPointId !== hoveredPointId) {
+      this.unHoverPoint(prevProps.hoveredPointId);
     }
   }
 
@@ -114,6 +126,7 @@ class MapView extends React.Component {
         this.setState({
           popoverColor: popoverClassName
         });
+        this.props.setHoveredPoint(features[0].id)
         const link = properties.form ? `<a target="_blank" href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
@@ -124,6 +137,7 @@ class MapView extends React.Component {
       }
       return undefined;
     });
+  
   }
 
   addClickListener() {
@@ -149,12 +163,36 @@ class MapView extends React.Component {
     });
   }
 
+  hoverPoint(hoveredPinId) {
+    this.map.setFeatureState({
+      source: LAYER_NAME,
+      id: hoveredPinId
+    }, {
+      hover: true
+    });
+  };
+
+  unHoverPoint(hoveredPinId) {
+    this.map.setFeatureState({
+      source: LAYER_NAME,
+      id: hoveredPinId
+    }, {
+      hover: false
+    });
+  };
+
   addLayer(featuresHome) {
     this.map.addLayer(
       {
         id: LAYER_NAME,
         paint: {
-          'circle-opacity': 0.5,
+          // 'circle-opacity': 0.5,
+          'circle-opacity': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            1,
+            0.5
+          ],
           'circle-radius': 8
           // [
           //   'interpolate', ['linear'],
@@ -166,7 +204,12 @@ class MapView extends React.Component {
           // ]
           , 
           'circle-stroke-color': '#fff',
-          'circle-stroke-width': 1,
+          'circle-stroke-width': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            2,
+            1
+          ],
           'circle-color': [
             'match',
             ['get', 'category'],

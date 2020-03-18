@@ -20,9 +20,10 @@ const fetchNetworks = createLogic({
     } = deps;
     return firestore.collection('mutual_aid_networks').get()
       .then((snapshot) => {
-        const allNetworks = snapshot.docs.map(doc => {
+        const allNetworks = snapshot.docs.map((doc, index) => {
           return {
             ...doc.data(),
+            id: index,
             category: doc.data().category || 'General',
           }
         });
