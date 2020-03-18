@@ -1,4 +1,4 @@
-import { SET_CATEGORY_FILTERS, SET_VIEW_STATE, SET_LAT_LNG } from "./reducers";
+import { SET_CATEGORY_FILTERS, SET_LAT_LNG } from "./reducers";
 
 export const setCategoryFilters = (payload) => ({
     type: SET_CATEGORY_FILTERS,

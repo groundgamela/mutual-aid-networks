@@ -192,6 +192,10 @@ class MapView extends React.Component {
       [-128.8, 23.6],
       [-65.4, 50.2]
     ]);
+    document.getElementsByClassName('mapboxgl-ctrl-geocoder--input');
+    Array.from(document.getElementsByClassName('mapboxgl-ctrl-geocoder--input')).forEach(ele => {
+      ele.value = '';
+    })
     this.map.resize();
   }
 
@@ -254,6 +258,7 @@ class MapView extends React.Component {
         setLatLng({});
       })
       .on('result', function (returned) {
+        map.resize();
         map.fitBounds(returned.result.bbox);
         setLatLng({
           lat: returned.result.center[1],

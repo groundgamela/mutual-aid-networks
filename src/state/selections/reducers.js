@@ -4,7 +4,6 @@ import {
 
 const STATE_BRANCH = 'SELECTIONS';
 export const SET_CATEGORY_FILTERS = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY');
-export const SET_VIEW_STATE = makeConstant(STATE_BRANCH, 'SET_VIEW_STATE');
 export const SET_LAT_LNG = makeConstant(STATE_BRANCH, 'SET_LAT_LNG');
 
 export const options = ["General", "Support Request", "Support Offer", "Information"];
