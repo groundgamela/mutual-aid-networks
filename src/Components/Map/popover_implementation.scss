@@ -1,0 +1,35 @@
+@import './popover.scss';
+@import './popovertip.scss';
+
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
+.popover-general {
+    .mapboxgl-popup-content {
+      @include popover($general);
+    }
+    @include popover-tip($general);
+  }
+
+.popover-information {
+    .mapboxgl-popup-content {
+        @include popover($info);
+    }
+    @include popover-tip($info);
+}
+
+.popover-support-request {
+    .mapboxgl-popup-content {
+        @include popover($request);
+    }
+    @include popover-tip($request);
+}
+
+.popover-support-offer {
+    .mapboxgl-popup-content {
+        @include popover($offer);
+    }
+    @include popover-tip($offer);
+}
