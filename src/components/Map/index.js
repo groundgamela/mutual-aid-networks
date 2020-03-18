@@ -114,7 +114,7 @@ class MapView extends React.Component {
         this.setState({
           popoverColor: popoverClassName
         });
-        const link = properties.form ? `<a href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
+        const link = properties.form ? `<a target="_blank" href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
