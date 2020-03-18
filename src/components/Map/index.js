@@ -27,8 +27,10 @@ class MapView extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
     this.handleClickOnInset = this.handleClickOnInset.bind(this);
+    this.initializeMap = this.initializeMap.bind(this);
     this.state = {
       popoverColor: 'popover-general-icon',
+      bbox: null,
     };
   }
 
@@ -44,13 +46,20 @@ class MapView extends React.Component {
     } = prevProps;
     this.map.resize();
     if (networks.length !== this.props.networks.length) {
-      this.updateData(this.props.networks)
+      this.updateData(this.props.networks);
     }
     if (prevProps.viewState !== this.props.viewState) {
+      this.hoveredPopup.remove(); //close any open popup
+
       if (this.props.viewState === 'default') {
         this.setInitialState();
       }
-
+    }
+    if (this.state.bbox) {
+      this.map.fitBounds(this.state.bbox);
+      this.setState({
+        bbox: null
+      })
     }
   }
 
@@ -87,7 +96,7 @@ class MapView extends React.Component {
   addPopups(layer) {
     const { map } = this;
 
-    const popup = new mapboxgl.Popup({
+    this.hoveredPopup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
     });
@@ -105,7 +114,7 @@ class MapView extends React.Component {
           popoverColor: popoverClassName
         });
         const link = properties.form ? `<a href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
-        return popup.setLngLat(feature.geometry.coordinates)
+        return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
             <div>${link}</div>`)
@@ -133,8 +142,8 @@ class MapView extends React.Component {
 
       if (features.length > 0) {
         let bbox = JSON.parse(features[0].properties.bbox);
-        setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng})
-        map.fitBounds(bbox);
+        setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng});
+        this.setState({bbox});
       }
     });
   }
@@ -248,6 +257,7 @@ class MapView extends React.Component {
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
     const { map } = this;
+    const me = this;
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -255,16 +265,19 @@ class MapView extends React.Component {
         countries: 'us',
         marker: false,
         zoom: 12,
+        flyTo: false,
       })
       .on('clear', function (result) {
         setLatLng({});
       })
       .on('result', function (returned) {
         map.resize();
-        map.fitBounds(returned.result.bbox);
         setLatLng({
           lat: returned.result.center[1],
           lng: returned.result.center[0]
+        });
+        me.setState({
+          bbox: returned.result.bbox
         })
       }),
       'top-left'
