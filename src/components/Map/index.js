@@ -8,6 +8,8 @@ import Point from './Point';
 import MapInset from './MapInset';
 import './style.scss';
 import './popover.scss';
+import './popovertip.scss';
+import './popover_implementation.scss';
 
 export const LAYER_NAME = 'networks-dots'
 const mapboxgl = window.mapboxgl;
@@ -98,9 +100,9 @@ class MapView extends React.Component {
       if (features.length) {
         const feature = features[0];
         const { properties } = feature;
-
+        const popoverClassName = `popover-${feature.properties.category.split(' ').join('-').toLowerCase()}`
         this.setState({
-          popoverColor: `popover-${feature.properties.category}`
+          popoverColor: popoverClassName
         });
         const link = properties.form ? `<a href=${properties.form}>Link to form</a>` : `<a href=${properties.socials}>Link to group</a>`;
         return popup.setLngLat(feature.geometry.coordinates)
