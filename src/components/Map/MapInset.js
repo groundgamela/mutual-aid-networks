@@ -13,7 +13,7 @@ class MapInset extends React.Component {
     this.addLayer = this.addLayer.bind(this);
     this.createFeatures = this.createFeatures.bind(this);
     this.updateData = this.updateData.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+
   }
 
   componentDidMount() {
@@ -86,13 +86,6 @@ class MapInset extends React.Component {
     );
   }
 
-
-  handleReset() {
-    this.removeHighlights();
-    // this.props.resetSelections();
-  }
-
-
   initializeMap(featuresHome) {
     const {
       bounds,
@@ -142,14 +135,9 @@ class MapInset extends React.Component {
 
 MapInset.propTypes = {
   bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
-  colorMap: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   networks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   mapId: PropTypes.string.isRequired,
-  resetSelections: PropTypes.func.isRequired,
-  selectedState: PropTypes.string,
-  setUsState: PropTypes.func.isRequired,
   stateName: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 MapInset.defaultProps = {
