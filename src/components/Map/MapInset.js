@@ -28,7 +28,7 @@ class MapInset extends React.Component {
     } = nextProps;
 
     if (networks.length !== this.props.networks.length) {
-      // this.updateData(networks, LAYER_NAME);
+      this.updateData(networks, LAYER_NAME);
     }
   }
 
@@ -45,7 +45,6 @@ class MapInset extends React.Component {
       features: [],
       type: 'FeatureCollection',
     };
-
     featuresHome.features = networks.map((network) => {
 
       const newFeature = new Point(network);
@@ -73,7 +72,7 @@ class MapInset extends React.Component {
         paint: {
           'circle-color': '#11b4da',
           'circle-opacity': 0.5,
-          'circle-radius': 4,
+          'circle-radius': 7,
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
         },

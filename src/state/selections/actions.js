@@ -5,11 +5,6 @@ export const setCategoryFilters = (payload) => ({
     payload
 });
 
-export const setViewState = (payload) => ({
-    type: SET_VIEW_STATE,
-    payload
-});
-
 export const setLatLng = (payload) => ({
     type: SET_LAT_LNG,
     payload,

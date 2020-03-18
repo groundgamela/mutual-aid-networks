@@ -14,6 +14,9 @@ export const getFilteredNetworks = createSelector([getAllNetworks, getSelectedCa
         return [];
     }
     return filter(networks, (network) => {
+        if (network.state === 'AK') {
+            console.log(network.category, categories)
+        }
         return categories.includes(network.category)
     })
 })

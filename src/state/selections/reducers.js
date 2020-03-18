@@ -23,14 +23,7 @@ const selectionReducer = (state = initialState, action) => {
       return {
         ...state,
         categories: action.payload,
-
       }
-      case SET_VIEW_STATE:
-        return {
-          ...state,
-          view: action.payload,
-
-        }
       case SET_LAT_LNG:
         return {
           ...state,

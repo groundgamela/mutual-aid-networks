@@ -27,7 +27,6 @@ class DefaultLayout extends React.Component {
       setFilters,
       selectedCategories,
       filteredNetworks,
-      setViewState,
       viewState,
       setLatLng,
       visibleCards,
@@ -58,7 +57,6 @@ class DefaultLayout extends React.Component {
             />
             <div className={`interactive-content-${viewState}`}>
               <MapView
-                setViewState={setViewState}
                 networks={filteredNetworks}
                 viewState={viewState}
                 setLatLng={setLatLng}
@@ -93,7 +91,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
-  setViewState: (payload) => dispatch(selectionStateBranch.actions.setViewState(payload)),
   setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload))
 });
 

@@ -1,6 +1,12 @@
-import { createLogic } from "redux-logic";
+import {
+  createLogic
+} from "redux-logic";
 
-import { REQUEST_NETWORKS, SET_NETWORKS, REQUEST_FAILED } from "./reducers";
+import {
+  REQUEST_NETWORKS,
+  SET_NETWORKS,
+  REQUEST_FAILED
+} from "./reducers";
 
 const fetchNetworks = createLogic({
   type: REQUEST_NETWORKS,
@@ -9,16 +15,21 @@ const fetchNetworks = createLogic({
     failType: REQUEST_FAILED,
   },
   process(deps) {
-      const {
-        firestore,
+    const {
+      firestore,
     } = deps;
-        return firestore.collection('mutual_aid_networks').get()
-          .then((snapshot) => {
-              const allNetworks = snapshot.docs.map(doc => doc.data());
-              return allNetworks;
-          })
-        }
-  })
+    return firestore.collection('mutual_aid_networks').get()
+      .then((snapshot) => {
+        const allNetworks = snapshot.docs.map(doc => {
+          return {
+            ...doc.data(),
+            category: doc.data().category || 'General',
+          }
+        });
+        return allNetworks;
+      })
+  }
+})
 
 
 export default [

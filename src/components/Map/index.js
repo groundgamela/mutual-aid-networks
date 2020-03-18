@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { find, filter } from 'lodash';
-import geoViewport from '@mapbox/geo-viewport';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import Point from './Point';
@@ -24,12 +23,9 @@ class MapView extends React.Component {
     this.createFeatures = this.createFeatures.bind(this);
     this.updateData = this.updateData.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.filterForStateInsets = this.filterForStateInsets.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
     this.handleClickOnInset = this.handleClickOnInset.bind(this);
     this.state = {
-      alaskanetworks: filter(this.props.networks, { state: 'AK' }),
-      hawaiinetworks: filter(this.props.networks, { state: 'HI' }),
       popoverColor: 'popover-general-icon',
     };
   }
@@ -54,15 +50,6 @@ class MapView extends React.Component {
       }
 
     }
-  }
-
-  filterForStateInsets(networks) {
-    const alaskanetworks = filter(networks, { state: 'AK' });
-    const hawaiinetworks = filter(networks, { state: 'HI' });
-    this.setState({
-      alaskanetworks,
-      hawaiinetworks,
-    });
   }
 
   insetOnClickEvent(e) {
@@ -131,7 +118,6 @@ class MapView extends React.Component {
 
     const { map } = this;
     const {
-      setViewState,
       setLatLng
     } = this.props;
 
@@ -145,7 +131,6 @@ class MapView extends React.Component {
 
       if (features.length > 0) {
         let bbox = JSON.parse(features[0].properties.bbox);
-        setViewState('list');
         setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng})
         map.fitBounds(bbox);
       }
@@ -158,14 +143,16 @@ class MapView extends React.Component {
         id: LAYER_NAME,
         paint: {
           'circle-opacity': 0.5,
-          'circle-radius': [
-            'interpolate', ['linear'],
-            ['number', ['get', 'scale'], 5],
-              1,
-              5,
-              70,
-              70
-          ], 
+          'circle-radius': 8
+          // [
+          //   'interpolate', ['linear'],
+          //   ['number', ['get', 'scale'], 5],
+          //     1,
+          //     5,
+          //     70,
+          //     70
+          // ]
+          , 
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
           'circle-color': [
@@ -194,11 +181,10 @@ class MapView extends React.Component {
 
   handleReset() {
     const {
-      setViewState
+      setLatLng
     } = this.props;
 
-  
-    setViewState('default');
+    setLatLng({});
   }
 
   setInitialState() {
@@ -211,7 +197,6 @@ class MapView extends React.Component {
 
   handleClickOnInset(bounds) {
     // this is for clicking on a state inset
-    this.props.setViewState('list');
     this.map.resize();
 
     this.map.fitBounds(bounds);
@@ -219,7 +204,7 @@ class MapView extends React.Component {
 
     const mbBounds = new mapboxgl.LngLatBounds(bounds);
     const center = mbBounds.getCenter();
-    this.props.setLatLng(center)
+    this.props.setLatLng(center);
   }
 
   // Creates the button in our zoom controls to go to the national view
@@ -238,7 +223,6 @@ class MapView extends React.Component {
 
   initializeMap(featuresHome) {
     const {
-      setViewState,
       setLatLng
     } = this.props;
 
@@ -267,10 +251,9 @@ class MapView extends React.Component {
         zoom: 12,
       })
       .on('clear', function (result) {
-        setViewState('default');
+        setLatLng({});
       })
       .on('result', function (returned) {
-        setViewState('list');
         map.fitBounds(returned.result.bbox);
         setLatLng({
           lat: returned.result.center[1],
@@ -294,8 +277,8 @@ class MapView extends React.Component {
       center,
       resetSelections,
       setLatLng,
-      setUsState,
       viewState,
+      networks,
     } = this.props;
 
     return (
@@ -303,7 +286,7 @@ class MapView extends React.Component {
         <div id="map" className={this.state.popoverColor}>
           <div className="map-overlay" id="legend">
             <MapInset
-              networks={this.state.alaskanetworks}
+              networks={filter(networks, { state: 'AK' })}
               center={center}
               stateName="AK"
               viewState={viewState}
@@ -314,7 +297,7 @@ class MapView extends React.Component {
               bounds={[[-170.15625, 51.72702815704774], [-127.61718749999999, 71.85622888185527]]}
             />
             <MapInset
-              networks={this.state.hawaiinetworks}
+              networks={filter(networks, { state: 'HI' })}
               stateName="HI"
               center={center}
               viewState={viewState}
