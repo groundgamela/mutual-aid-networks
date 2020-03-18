@@ -10,9 +10,10 @@ import './style.scss';
 import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
+import { LAYER_NAME, accessToken } from './constants';
 
-export const LAYER_NAME = 'networks-dots'
 const mapboxgl = window.mapboxgl;
+
 class MapView extends React.Component {
   constructor(props) {
     super(props);
@@ -238,8 +239,7 @@ class MapView extends React.Component {
       setLatLng
     } = this.props;
 
-    mapboxgl.accessToken =
-      'pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNqMnRwOG4wOTAwMnMycG1yMGZudHFxbWsifQ.FXyPo3-AD46IuWjjsGPJ3Q';
+    mapboxgl.accessToken = accessToken;
     const styleUrl = 'mapbox://styles/townhallproject/cjgr7qoqr00012ro4hnwlvsyp';
 
     this.map = new mapboxgl.Map({
