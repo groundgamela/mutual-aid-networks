@@ -55,7 +55,7 @@ class MapView extends React.Component {
         this.setInitialState();
       }
     }
-    if (this.state.bbox) {
+    if (this.state.bbox && this.props.viewState === 'list') {
       this.map.fitBounds(this.state.bbox);
       this.setState({
         bbox: null
@@ -212,10 +212,7 @@ class MapView extends React.Component {
 
   handleClickOnInset(bounds) {
     // this is for clicking on a state inset
-    this.map.resize();
-
-    this.map.fitBounds(bounds);
-    this.map.resize();
+    this.setState({bbox: bounds})
 
     const mbBounds = new mapboxgl.LngLatBounds(bounds);
     const center = mbBounds.getCenter();
