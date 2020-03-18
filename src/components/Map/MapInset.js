@@ -2,7 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Point from './Point';
-import LAYER_NAME from '.';
+import {
+  LAYER_NAME, 
+  accessToken
+} from './constants';
 
 const mapboxgl = window.mapboxgl;
 
@@ -28,16 +31,16 @@ class MapInset extends React.Component {
     } = nextProps;
 
     if (networks.length !== this.props.networks.length) {
-      this.updateData(networks, LAYER_NAME);
+      this.updateData(networks);
     }
   }
 
-  updateData(networks, layer) {
+  updateData(networks) {
     const featuresHome = this.createFeatures(networks);
-    if (!this.map.getSource(layer)) {
+    if (!this.map.getSource(`${LAYER_NAME}-${this.props.stateName}`)) {
       return;
     }
-    this.map.getSource(layer).setData(featuresHome);
+    this.map.getSource(`${LAYER_NAME}-${this.props.stateName}`).setData(featuresHome);
   }
 
   createFeatures(networks) {
@@ -68,13 +71,24 @@ class MapInset extends React.Component {
   addLayer(featuresHome) {
     this.map.addLayer(
       {
-        id: LAYER_NAME,
+        id: `${LAYER_NAME}-${this.props.stateName}`,
         paint: {
-          'circle-color': '#11b4da',
           'circle-opacity': 0.5,
           'circle-radius': 7,
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
+          'circle-color': [
+            'match',
+            ['get', 'category'],
+            'Support Request',
+            '#ef4822',
+            'Support Offer',
+            '#6ac1e5',
+            'General',
+            '#8048f3',
+            /* other */
+            '#057A8F'
+          ]
         },
         source: {
           data: featuresHome,
@@ -93,7 +107,7 @@ class MapInset extends React.Component {
     } = this.props;
 
     mapboxgl.accessToken =
-        'pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNqMnRwOG4wOTAwMnMycG1yMGZudHFxbWsifQ.FXyPo3-AD46IuWjjsGPJ3Q';
+        accessToken;
     const styleUrl = 'mapbox://styles/townhallproject/cjgr7qoqr00012ro4hnwlvsyp';
 
     this.map = new mapboxgl.Map({
