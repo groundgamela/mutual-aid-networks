@@ -55,3 +55,9 @@
   display: inline-block;
 }
 
+
+@media all and (max-width: 750px) {
+  .map-overlay .inset {
+    height: 100px;
+  }
+}
