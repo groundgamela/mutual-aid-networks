@@ -12,9 +12,10 @@ import Filters from '../components/Filters';
 import ListView from '../components/ListView';
 
 import './style.scss';
+import NoWebGl from '../components/NoWebGl';
 
 const { Header, Content, Footer } = Layout;
-
+const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
   componentDidMount() {
     const {
@@ -53,23 +54,26 @@ class DefaultLayout extends React.Component {
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <div className="main-container">
-            <Filters 
-              setFilters={setFilters}
-              selectedCategories={selectedCategories}
-            />
-            <div className={`interactive-content-${viewState}`}>
+             {mapboxgl.supported() ? <>
+              <Filters 
+                setFilters={setFilters}
+                selectedCategories={selectedCategories}
+              />
+              <div className={`interactive-content-${viewState}`}>
               <MapView
-                networks={filteredNetworks}
-                viewState={viewState}
-                setLatLng={setLatLng}
-                hoveredPointId={hoveredPointId}
-                setHoveredPoint={setHoveredPoint}
-              />
-              <ListView 
-                visibleCards={visibleCards}
-                setHoveredPoint={setHoveredPoint}
-              />
-            </div>
+                  networks={filteredNetworks}
+                  viewState={viewState}
+                  setLatLng={setLatLng}
+                  hoveredPointId={hoveredPointId}
+                  setHoveredPoint={setHoveredPoint}
+                /> 
+                <ListView 
+                  visibleCards={visibleCards}
+                  setHoveredPoint={setHoveredPoint}
+                />
+                </div>
+              </>: <NoWebGl />}
+            
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
           </div>
