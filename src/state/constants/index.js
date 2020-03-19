@@ -2,4 +2,4 @@ export const firebaseUrl = process.env.NODE_ENV === "production" ? process.env.R
 export const GENERAL = 'General';
 export const OFFER_SUPPORT = 'Offer Support';
 export const REQUEST_SUPPORT = 'Request Support';
-export const INFORMATION = 'Information';
+export const INFORMATION = 'Community';
