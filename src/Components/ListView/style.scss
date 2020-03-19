@@ -1,0 +1,13 @@
+.no-network-section {
+    height: 100%;
+    width: 100%;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .ant-typography {
+        color: #83898a !important;
+        margin-top: 0px !important;
+    }
+}
