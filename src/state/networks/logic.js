@@ -24,7 +24,6 @@ const fetchNetworks = createLogic({
         const allNetworks = snapshot.docs.map((doc, index) => {
           const data = doc.data();
           let category;
-          console.log(data.generalForm, data.supportOfferForm, data.supportRequestForm)
           if (data.generalForm || (data.supportRequestForm && data.supportOfferForm)) {
             category = GENERAL;
           } else if (data.supportRequestForm) {

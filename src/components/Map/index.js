@@ -134,7 +134,6 @@ class MapView extends React.Component {
         } else if (properties.supportOfferForm && properties.supportRequestForm) {
           link = `<a class="side-by-side" target="_blank" href=${properties.supportOfferForm}>Offer support</a><a class="side-by-side" target="_blank" href=${properties.supportRequestForm}>Request support</a>`
         } else if (properties.supportOfferForm) {
-          console.log(properties.supportOfferForm);
           link = `<a href=${properties.supportOfferForm}>Offer support</a>`;
         } else if (properties.supportRequestForm) {
           link = `<a href=${properties.supportRequestForm}>Request support</a>`;
