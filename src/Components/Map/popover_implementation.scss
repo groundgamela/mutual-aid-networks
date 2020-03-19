@@ -15,7 +15,7 @@ $info: #057A8F;
     @include popover-tip($general);
   }
 
-.popover-information {
+.popover-community {
     .mapboxgl-popup-content {
         @include popover($info);
     }
