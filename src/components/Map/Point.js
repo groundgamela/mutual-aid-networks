@@ -10,6 +10,7 @@ class Point {
             region: network.region,
             contact: network.contact || null,
             socials: network.social || null,
+            facebookPage: network.facebookPage,
             state: network.state,
             title: network.title,
             generalForm: network.generalForm,
