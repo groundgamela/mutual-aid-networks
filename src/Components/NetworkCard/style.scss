@@ -1,5 +1,27 @@
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
 .network-card {
   margin: 30px;
+  .ant-card-extra {
+    .text-general {
+      color: $general;
+    }
+    .text-community {
+      color: $info;
+    }
+    .text-request-support {
+      color: $request;
+    }
+    .text-offer-support {
+      color: $offer;
+    }
+    .text-other {
+      color: $info;
+    }
+  }
 }
 
 ul {
