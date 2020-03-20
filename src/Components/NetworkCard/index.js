@@ -37,7 +37,7 @@ const NetworkCard = (props) => {
           }
           extra={
             <ul className='list-inline'>
-            {category && <li>{category}</li>}
+            {category && <li className={`text-${category.split(' ').join('-').toLowerCase()}`}>{category}</li>}
             {community && <li>{community}</li>}
           </ul>
           }
