@@ -47,6 +47,7 @@ class MapView extends React.Component {
     const {
       hoveredPointId,
       viewState,
+      bbox,
       networks
     } = this.props;
     this.map.resize();
@@ -63,12 +64,18 @@ class MapView extends React.Component {
     }
     // if a bounding box has been set before render, fix the bounds and clear
     // for changing map zoom and size
-    if (this.state.bbox && viewState === 'list') {
+
+    if ((this.state.bbox && viewState === 'list')) {
       this.map.fitBounds(this.state.bbox);
-      this.setState({
-        bbox: null
-      })
+        this.setState({
+          bbox: null
+        })
     }
+    console.log(this.props.bbox, viewState, bbox !== prevProps.bbox)
+    if (bbox && viewState === 'list' && bbox !== prevProps.bbox) {
+      this.map.fitBounds(bbox);
+    }
+
     if (hoveredPointId) {
       this.hoverPoint(hoveredPointId)
     } 
@@ -88,7 +95,6 @@ class MapView extends React.Component {
 
   updateData(networks) {
     const featuresHome = this.createFeatures(networks);
-    this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
     if (!this.map.getSource(LAYER_NAME)) {
       return;
     }
@@ -143,6 +149,7 @@ class MapView extends React.Component {
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
+            <div>${properties.city}, ${properties.state}</div>
             <div>${link}</div>`)
  
           .addTo(map);
@@ -168,9 +175,7 @@ class MapView extends React.Component {
       );
 
       if (features.length > 0) {
-        let bbox = JSON.parse(features[0].properties.bbox);
         setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng});
-        this.setState({bbox});
       }
     });
   }
@@ -328,9 +333,7 @@ class MapView extends React.Component {
           lat: returned.result.center[1],
           lng: returned.result.center[0]
         });
-        me.setState({
-          bbox: returned.result.bbox
-        })
+
       }),
       'top-left'
     );

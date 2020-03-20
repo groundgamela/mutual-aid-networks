@@ -1,6 +1,6 @@
 import React from "react";
 import { Checkbox } from 'antd';
-
+import classNames from 'classnames';
 import { options }  from '../../state/selections/reducers';
 
 import './style.scss';
@@ -33,8 +33,11 @@ class Filters extends React.Component {
     };
 
     render() {
+        if (!this.props.visible) {
+            return null;
+        }
         return (
-            <div className="filter-container">
+            <div className={classNames("filter-container", {['absolute-pos']: this.props.absolute})}>
                 <div className="site-checkbox-all-wrapper">
                     <Checkbox
                         indeterminate={this.state.indeterminate}

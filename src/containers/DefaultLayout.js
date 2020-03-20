@@ -33,7 +33,8 @@ class DefaultLayout extends React.Component {
       visibleCards,
       allNetworks,
       setHoveredPoint,
-      hoveredPointId
+      hoveredPointId,
+      masterBbox
     } = this.props;
     
     if (!allNetworks.length) {
@@ -58,6 +59,8 @@ class DefaultLayout extends React.Component {
               <Filters 
                 setFilters={setFilters}
                 selectedCategories={selectedCategories}
+                absolute={true}
+                visible={viewState ==='default'}
               />
               <div className={`interactive-content-${viewState}`}>
               <MapView
@@ -66,10 +69,13 @@ class DefaultLayout extends React.Component {
                   setLatLng={setLatLng}
                   hoveredPointId={hoveredPointId}
                   setHoveredPoint={setHoveredPoint}
+                  bbox={masterBbox}
                 /> 
                 <ListView 
                   visibleCards={visibleCards}
                   setHoveredPoint={setHoveredPoint}
+                  setFilters={setFilters}
+                  selectedCategories={selectedCategories}
                 />
                 </div>
               </>: <NoWebGl />}
@@ -96,6 +102,7 @@ const mapStateToProps = (state) => ({
   visibleCards: networkStateBranch.selectors.getVisibleCards(state),
   allNetworks: networkStateBranch.selectors.getAllNetworks(state),
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
+  masterBbox: networkStateBranch.selectors.getBoundingBox(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

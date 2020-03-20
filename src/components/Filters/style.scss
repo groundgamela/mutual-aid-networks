@@ -9,12 +9,8 @@
         // }
 }
 .filter-container {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    z-index: 2;
+
     background: #ffffffb5;
-    width: 165px;
     .ant-checkbox-wrapper {
         margin-left: 8px;
     }
@@ -27,4 +23,12 @@
     .request-support {
         @include checkbox(#ef4822)
     }
+}
+
+.filter-container.absolute-pos {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    z-index: 2;
+    width: 165px;
 }
