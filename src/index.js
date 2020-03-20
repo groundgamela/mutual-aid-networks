@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import 'iframe-resizer';
 
 import configureStore from './state/store';
 // Containers
