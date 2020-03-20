@@ -1,7 +1,7 @@
 class Point {
     constructor(network) {
-        const jitterSide = Number(network.id) % 2 ? - (Number(network.id) % 2) * 0.01 : (Number(network.id) % 2) * 0.01;
-        const jitterUp = !Number(network.id) % 2 ? - (Number(network.id) % 3) * 0.01 : (Number(network.id) % 3) * 0.01;
+        const jitterSide = Number(network.id) % 2 ? - (Number(network.id) % 2) * 0.008 : (Number(network.id) % 2) * 0.008;
+        const jitterUp = !Number(network.id) % 2 ? - (Number(network.id) % 3) * 0.008 : (Number(network.id) % 3) * 0.008;
         this.type = 'Feature';
         this.geometry = {
             coordinates: [Number(network.lng + jitterUp), Number(network.lat) + jitterSide],
