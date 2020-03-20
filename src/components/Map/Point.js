@@ -1,10 +1,10 @@
-import { random } from 'lodash';
-
 class Point {
     constructor(network) {
+        const jitterSide = Number(network.id) % 2 ? - (Number(network.id) % 2) * 0.01 : (Number(network.id) % 2) * 0.01;
+        const jitterUp = !Number(network.id) % 2 ? - (Number(network.id) % 3) * 0.01 : (Number(network.id) % 3) * 0.01;
         this.type = 'Feature';
         this.geometry = {
-            coordinates: [Number(network.lng + random(-.02, .02)), Number(network.lat + random(-.02, .02))],
+            coordinates: [Number(network.lng + jitterUp), Number(network.lat) + jitterSide],
             type: 'Point',
         };
         const scale = network.bbox[3] - network.bbox[1];
