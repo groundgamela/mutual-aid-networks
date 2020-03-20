@@ -9,7 +9,6 @@
         // }
 }
 .filter-container {
-
     background: #ffffffb5;
     .ant-checkbox-wrapper {
         margin-left: 8px;
@@ -28,7 +27,7 @@
 .filter-container.absolute-pos {
     position: absolute;
     top: 64px;
-    left: 0;
+    left: 10;
     z-index: 2;
     width: 165px;
 }

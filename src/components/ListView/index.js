@@ -1,13 +1,27 @@
 import React from 'react';
+import { Typography } from 'antd';
+import { InfoCircleOutlined } from '@ant-design/icons';
 import NetworkCard from '../NetworkCard'
 import Filters from '../Filters';
+import './style.scss';
+
+const { Title } = Typography;
+
+const NoNetworkSection = () => {
+  return (
+    <div className="no-network-section">
+      <Title level={3}><InfoCircleOutlined /></Title>
+      <Title level={3}>There are no support requests or networks nearby.</Title> 
+    </div>
+  )
+}
 
 const ListView = ({
     visibleCards,
     setHoveredPoint,
-    setFilters, selectedCategories
+    setFilters,
+    selectedCategories
   }) => {
-  const noNetworkMessage = 'There are no support requests or networks nearby.'
   return (
       <div className="list-container">
         {
@@ -21,8 +35,8 @@ const ListView = ({
             />
             <NetworkCard 
               setHoveredPoint={setHoveredPoint} 
-              networks={visibleCards} /></> : noNetworkMessage
-          
+              networks={visibleCards} /></> : <NoNetworkSection />
+              
         }
       </div>
   )
