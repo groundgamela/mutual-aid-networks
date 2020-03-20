@@ -66,14 +66,13 @@ class MapView extends React.Component {
     // for changing map zoom and size
 
     if ((this.state.bbox && viewState === 'list')) {
-      this.map.fitBounds(this.state.bbox);
-        this.setState({
-          bbox: null
-        })
+      this.fitBounds(this.state.bbox);
+      this.setState({
+        bbox: null
+      })
     }
-    console.log(this.props.bbox, viewState, bbox !== prevProps.bbox)
     if (bbox && viewState === 'list' && bbox !== prevProps.bbox) {
-      this.map.fitBounds(bbox);
+      this.fitBounds(bbox);
     }
 
     if (hoveredPointId) {
@@ -90,7 +89,19 @@ class MapView extends React.Component {
     const boundsOne = [Number(dataBounds[0]), Number(dataBounds[1])];
     const boundsTwo = [Number(dataBounds[2]), Number(dataBounds[3])];
     const bounds = boundsOne.concat(boundsTwo);
-    this.map.fitBounds(bounds);
+    this.fitBounds(bounds);
+  }
+
+  fitBounds(bounds) {
+    this.map.fitBounds(bounds, {
+      padding: {
+        top: 10,
+        bottom: 25,
+        left: 15,
+        right: 5
+      },
+      maxZoom: 8
+    })
   }
 
   updateData(networks) {
@@ -260,7 +271,7 @@ class MapView extends React.Component {
   }
 
   setInitialState() {
-    this.map.fitBounds([
+    this.fitBounds([
       [-128.8, 23.6],
       [-65.4, 50.2]
     ]);
@@ -339,7 +350,7 @@ class MapView extends React.Component {
     );
     // map on 'load'
     this.map.on('load', () => {
-      this.map.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+      this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
       this.addClickListener();
       this.addLayer(featuresHome);
       this.addPopups(LAYER_NAME);
