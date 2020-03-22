@@ -44,7 +44,7 @@ class DefaultLayout extends React.Component {
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo">Mutual Aid Hub</div>
+          <div className="logo"></div>
           <Menu
             theme="dark"
             mode="horizontal"

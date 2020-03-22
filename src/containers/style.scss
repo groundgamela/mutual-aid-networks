@@ -1,13 +1,14 @@
 .ant-layout-header {
     .logo {
-        width: 120px;
-        height: 31px;
         // background: rgba(255, 255, 255, 0.2);
         // margin: 16px 28px 16px 0;
+        width: 145px;
+        height: 100%;
         float: left;
         color: white;
         font-weight: 900;
-
+        background-image: url(/static/media/logo-horizontal.0c89ab42.png);
+        background-size: contain;
       }
     background: #057A8F;
     .ant-menu-dark.ant-menu-horizontal {
