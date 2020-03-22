@@ -80,7 +80,7 @@ class DefaultLayout extends React.Component {
                 </div>
               </>: <NoWebGl />}
             
-            <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Join these important efforts, offer resources, or submit needs requests.</div>
+            <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
           </div>
         </Content>
