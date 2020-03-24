@@ -8,7 +8,7 @@ const SubmitNetwork = () => {
         <Button 
           id="start-network-button" 
           target="_blank" 
-          href="https://docs.google.com/forms/d/1Orat2boOrd7dqmWD4LS1yJd5QwK_kSn05OS9BghJKTk/edit?usp=sharing">
+          href="https://docs.google.com/forms/d/e/1FAIpQLScuqQtCdKsDzvTzaA2PMyVHX7xcOqbOW7N7l_0YJASV4wMBVQ/viewform">
             Submit a Mutual Aid Network
         </Button>
       </div>
