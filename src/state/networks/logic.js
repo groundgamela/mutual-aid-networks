@@ -9,27 +9,25 @@ import {
 import {
   REQUEST_NETWORKS,
   SET_NETWORKS,
-  REQUEST_FAILED
+  REQUEST_FAILED,
+  SET_PAGE_OF_NETWORKS
 } from "./reducers";
 import { GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION } from "../constants";
 import { object } from "prop-types";
+import { setPageOfNetworks } from "./actions";
 
 const fetchNetworks = createLogic({
   type: REQUEST_NETWORKS,
-  processOptions: {
-    successType: SET_NETWORKS,
-    failType: REQUEST_FAILED,
-  },
-  process(deps) {
+
+  process(deps, dispatch, done) {
     const {
       httpClient,
     } = deps;
-    const allNetworks = [];
 
     const requestPage = (token) => {
       return httpClient.get(`https://firestore.googleapis.com/v1/projects/townhallproject-86312/databases/(default)/documents/mutual_aid_networks/?pageToken=${token}`)
          .then((snapshot) => {
-               snapshot.body.documents.forEach((doc, index) => {
+               const pageOfNetworks = snapshot.body.documents.map((doc, index) => {
                  const data = doc.fields;
                  const unpackedData = mapValues(data, (object) => {
                    let newValues = values(object)[0];
@@ -50,16 +48,18 @@ const fetchNetworks = createLogic({
                  } else {
                    category = INFORMATION;
                  }
-                 allNetworks.push({
+                 return {
                    ...unpackedData,
                    id: index,
                    category: category,
-                 })
+                 }
                });
+               console.log(pageOfNetworks)
+               dispatch(setPageOfNetworks(pageOfNetworks))
                if (snapshot.body.nextPageToken) {
                   return requestPage(snapshot.body.nextPageToken)
                }
-               return allNetworks;
+               done();
               })
             }
     
@@ -68,7 +68,7 @@ const fetchNetworks = createLogic({
         if (snapshot.body.nextPageToken) {
           return requestPage(snapshot.body.nextPageToken);
         }
-        return allNetworks;
+        return done();
       })
   }
 })
