@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { find, filter } from 'lodash';
+import { filter } from 'lodash';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import Point from './Point';
@@ -10,7 +10,7 @@ import './style.scss';
 import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
-import { LAYER_NAME, accessToken } from './constants';
+import { LAYER_NAME, accessToken, mapboxStyle } from './constants';
 import { REQUEST_SUPPORT, OFFER_SUPPORT, GENERAL } from '../../state/constants';
 
 const mapboxgl = window.mapboxgl;
@@ -311,11 +311,10 @@ class MapView extends React.Component {
     } = this.props;
 
     mapboxgl.accessToken = accessToken;
-    const styleUrl = 'mapbox://styles/townhallproject/cjgr7qoqr00012ro4hnwlvsyp';
 
     this.map = new mapboxgl.Map({
       container: 'map',
-      style: styleUrl,
+      style: mapboxStyle,
     });
 
     // Set Mapbox map controls
@@ -325,7 +324,6 @@ class MapView extends React.Component {
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
     const { map } = this;
-    const me = this;
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
