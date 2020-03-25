@@ -147,15 +147,15 @@ class MapView extends React.Component {
         this.props.setHoveredPoint(features[0].id);
         let link;
         if (properties.generalForm) {
-          link = `<a target="_blank" href=${properties.generalForm}>Link to form</a>`
+          link = `<a rel="noopener noreferrer" target="_blank" href=${properties.generalForm}>Link to form</a>`
         } else if (properties.supportOfferForm && properties.supportRequestForm) {
-          link = `<a class="side-by-side" target="_blank" href=${properties.supportOfferForm}>Offer support</a><a class="side-by-side" target="_blank" href=${properties.supportRequestForm}>Request support</a>`
+          link = `<a rel="noopener noreferrer" class="side-by-side" target="_blank" href=${properties.supportOfferForm}>Offer support</a><a class="side-by-side" target="_blank" href=${properties.supportRequestForm}>Request support</a>`
         } else if (properties.supportOfferForm) {
-          link = `<a href=${properties.supportOfferForm}>Offer support</a>`;
+          link = `<a rel="noopener noreferrer" href=${properties.supportOfferForm}>Offer support</a>`;
         } else if (properties.supportRequestForm) {
-          link = `<a href=${properties.supportRequestForm}>Request support</a>`;
+          link = `<a rel="noopener noreferrer" href=${properties.supportRequestForm}>Request support</a>`;
         } else {
-          link = `<a href=${properties.facebookPage}>Link to group</a>`;
+          link = `<a rel="noopener noreferrer" href=${properties.facebookPage}>Link to group</a>`;
         }
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
