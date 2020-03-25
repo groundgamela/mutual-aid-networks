@@ -8,12 +8,8 @@ import {
 } from 'lodash';
 import {
   REQUEST_NETWORKS,
-  SET_NETWORKS,
-  REQUEST_FAILED,
-  SET_PAGE_OF_NETWORKS
 } from "./reducers";
 import { GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION } from "../constants";
-import { object } from "prop-types";
 import { setPageOfNetworks } from "./actions";
 
 const fetchNetworks = createLogic({
@@ -54,7 +50,6 @@ const fetchNetworks = createLogic({
                    category: category,
                  }
                });
-               console.log(pageOfNetworks)
                dispatch(setPageOfNetworks(pageOfNetworks))
                if (snapshot.body.nextPageToken) {
                   return requestPage(snapshot.body.nextPageToken)

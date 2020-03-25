@@ -14,7 +14,6 @@ const NetworkCard = (props) => {
         address,
         title,
         neighborhood,
-        form,
         facebookPage,
         category,
         community,

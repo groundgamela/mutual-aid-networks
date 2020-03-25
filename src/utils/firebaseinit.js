@@ -1,6 +1,8 @@
 // FIREBASE METHODS
 // Initialize Firebase
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
+import 'firebase/firestore';
 
 const PREFIX = process.env.NODE_ENV === "production" ? "REACT_APP_PROD" : "REACT_APP_TESTING";
 

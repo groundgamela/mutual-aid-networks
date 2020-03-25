@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import Point from './Point';
 import {
   LAYER_NAME, 
-  accessToken
+  accessToken,
+  mapboxStyle
 } from './constants';
 
 const mapboxgl = window.mapboxgl;
@@ -25,10 +26,10 @@ class MapInset extends React.Component {
     this.initializeMap(featuresHome);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const {
       networks,
-    } = nextProps;
+    } = prevProps;
 
     if (networks.length !== this.props.networks.length) {
       this.updateData(networks);
@@ -108,14 +109,13 @@ class MapInset extends React.Component {
 
     mapboxgl.accessToken =
         accessToken;
-    const styleUrl = 'mapbox://styles/townhallproject/cjgr7qoqr00012ro4hnwlvsyp';
 
     this.map = new mapboxgl.Map({
       container: mapId,
       doubleClickZoom: false,
       dragPan: false,
       scrollZoom: false,
-      style: styleUrl,
+      style: mapboxStyle,
     });
 
     this.map.fitBounds(bounds, {

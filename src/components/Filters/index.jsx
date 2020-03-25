@@ -37,7 +37,7 @@ class Filters extends React.Component {
             return null;
         }
         return (
-            <div className={classNames("filter-container", {['absolute-pos']: this.props.absolute})}>
+            <div className={classNames("filter-container", {'absolute-pos': this.props.absolute})}>
                 <div className="site-checkbox-all-wrapper">
                     <Checkbox
                         indeterminate={this.state.indeterminate}
