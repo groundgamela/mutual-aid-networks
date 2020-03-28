@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 import { filter } from 'lodash';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-import Point from './Point';
-
 import MapInset from './MapInset';
 import './style.scss';
 import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
 import { LAYER_NAME, accessToken, mapboxStyle } from './constants';
-import { REQUEST_SUPPORT, OFFER_SUPPORT, GENERAL } from '../../state/constants';
 
 const mapboxgl = window.mapboxgl;
 
@@ -23,9 +20,7 @@ class MapView extends React.Component {
 
     this.addPopups = this.addPopups.bind(this);
     this.addClickListener = this.addClickListener.bind(this);
-    this.addLayer = this.addLayer.bind(this);
-    this.createFeatures = this.createFeatures.bind(this);
-    this.updateData = this.updateData.bind(this);
+    this.setFilters = this.setFilters.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.insetOnClickEvent = this.insetOnClickEvent.bind(this);
     this.handleClickOnInset = this.handleClickOnInset.bind(this);
@@ -37,9 +32,7 @@ class MapView extends React.Component {
   }
 
   componentDidMount() {
-    const { networks } = this.props;
-    const featuresHome = this.createFeatures(networks);
-    this.initializeMap(featuresHome);
+    this.initializeMap();
   }
 
   componentDidUpdate(prevProps) {
@@ -53,7 +46,7 @@ class MapView extends React.Component {
     this.map.resize();
     // changed filters
     if (networks.length !== prevProps.networks.length) {
-      this.updateData(this.props.networks);
+      this.setFilters();
     }
     // toggled view between full map and zoom
     if (prevProps.viewState !== viewState) {
@@ -104,26 +97,6 @@ class MapView extends React.Component {
     })
   }
 
-  updateData(networks) {
-    const featuresHome = this.createFeatures(networks);
-    if (!this.map.getSource(LAYER_NAME)) {
-      return;
-    }
-    this.map.getSource(LAYER_NAME).setData(featuresHome);
-  }
-
-  createFeatures(networks) {
-    const featuresHome = {
-      features: [],
-      type: 'FeatureCollection',
-    };
-    featuresHome.features = networks.map((network) => {
-      const newFeature = new Point(network);
-      return newFeature;
-    });
-    return featuresHome;
-  }
-
   addPopups(layer) {
     const { map } = this;
 
@@ -144,7 +117,7 @@ class MapView extends React.Component {
         this.setState({
           popoverColor: popoverClassName
         });
-        this.props.setHoveredPoint(features[0].id);
+        this.props.setHoveredPoint(feature.id);
         let link;
         if (properties.generalForm) {
           link = `<a rel="noopener noreferrer" target="_blank" href=${properties.generalForm}>Link to form</a>`
@@ -176,7 +149,10 @@ class MapView extends React.Component {
     const {
       setLatLng
     } = this.props;
-
+    const layer = map.getLayer(LAYER_NAME);
+    if (!layer) {
+      return;
+    }
     map.on('click', (e) => {
       const features = map.queryRenderedFeatures(
         e.point,
@@ -193,7 +169,8 @@ class MapView extends React.Component {
 
   hoverPoint(hoveredPinId) {
     this.map.setFeatureState({
-      source: LAYER_NAME,
+      source: "composite",
+      sourceLayer: "ma-networks-dataset",
       id: hoveredPinId
     }, {
       hover: true
@@ -202,65 +179,13 @@ class MapView extends React.Component {
 
   unHoverPoint(hoveredPinId) {
     this.map.setFeatureState({
-      source: LAYER_NAME,
+      source: "composite",
+      sourceLayer: "ma-networks-dataset",
       id: hoveredPinId
     }, {
       hover: false
     });
   };
-
-  addLayer(featuresHome) {
-    this.map.addLayer(
-      {
-        id: LAYER_NAME,
-        paint: {
-          // 'circle-opacity': 0.5,
-          'circle-opacity': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            1,
-            0.5
-          ],
-          'circle-radius': 8
-          // [
-          //   'interpolate', ['linear'],
-          //   ['number', ['get', 'scale'], 5],
-          //     1,
-          //     5,
-          //     70,
-          //     70
-          // ]
-          , 
-          'circle-stroke-color': '#fff',
-          'circle-stroke-width': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            2,
-            1
-          ],
-          'circle-color': [
-            'match',
-            ['get', 'category'],
-            REQUEST_SUPPORT,
-            '#ef4822',
-            OFFER_SUPPORT,
-            '#6ac1e5',
-            GENERAL,
-            '#8048f3',
-            /* other */
-            '#057A8F'
-          ]
-        },
-        source: {
-          data: featuresHome,
-          type: 'geojson',
-        },
-        type: 'circle',
-      },
-      'district_interactive',
-    );
-  }
-
 
   handleReset() {
     const {
@@ -305,7 +230,15 @@ class MapView extends React.Component {
     document.querySelector('.mapboxgl-ctrl-group').appendChild(usaButton);
   }
 
-  initializeMap(featuresHome) {
+  setFilters() {
+    const {
+      selectedCategories
+    } = this.props;
+    let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
+    this.map.setFilter(LAYER_NAME, filterArray);
+  }
+
+  initializeMap() {
     const {
       setLatLng
     } = this.props;
@@ -347,12 +280,17 @@ class MapView extends React.Component {
       'top-left'
     );
     // map on 'load'
+    this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
     this.map.on('load', () => {
-      this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
       this.addClickListener();
-      this.addLayer(featuresHome);
+      // this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
+      //               'case',
+      //               ['boolean', ['feature-state', 'hover'], false],
+      //               1,
+      //               0.5
+      //             ],);
+
       this.addPopups(LAYER_NAME);
-      // this.map.getSource(LAYER_NAME).setData(featuresHome);
     });
   }
 
@@ -363,6 +301,7 @@ class MapView extends React.Component {
       setLatLng,
       viewState,
       networks,
+      selectedCategories,
     } = this.props;
 
     return (
@@ -375,6 +314,7 @@ class MapView extends React.Component {
               stateName="AK"
               viewState={viewState}
               resetSelections={resetSelections}
+              selectedCategories={selectedCategories}
               setLatLng={setLatLng}
               setBounds={this.handleClickOnInset}
               mapId="map-overlay-alaska"
@@ -386,6 +326,7 @@ class MapView extends React.Component {
               center={center}
               viewState={viewState}
               resetSelections={resetSelections}
+              selectedCategories={selectedCategories}
               setLatLng={setLatLng}
               setBounds={this.handleClickOnInset}
               mapId="map-overlay-hawaii"

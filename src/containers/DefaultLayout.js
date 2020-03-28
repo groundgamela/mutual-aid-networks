@@ -67,6 +67,7 @@ class DefaultLayout extends React.Component {
                   networks={filteredNetworks}
                   viewState={viewState}
                   setLatLng={setLatLng}
+                  selectedCategories={selectedCategories}
                   hoveredPointId={hoveredPointId}
                   setHoveredPoint={setHoveredPoint}
                   bbox={masterBbox}

@@ -7,10 +7,6 @@ import selections from './selections';
 
 
 import { firebaseUrl } from '../state/constants';
-import {
-  firebasedb,
-  firestore,
-} from '../utils/firebaseinit';
 
 const reducers = {
   networks: networks.reducers,
@@ -24,8 +20,6 @@ const logics = [
 
 const reduxLogicDependencies = {
   firebaseUrl: firebaseUrl,
-  firebasedb,
-  firestore,
   httpClient: request,
 };
 
