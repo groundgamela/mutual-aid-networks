@@ -11,7 +11,6 @@ import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
 import { LAYER_NAME, accessToken, mapboxStyle } from './constants';
-import { REQUEST_SUPPORT, OFFER_SUPPORT, GENERAL } from '../../state/constants';
 
 const mapboxgl = window.mapboxgl;
 
@@ -23,7 +22,6 @@ class MapView extends React.Component {
 
     this.addPopups = this.addPopups.bind(this);
     this.addClickListener = this.addClickListener.bind(this);
-    this.addLayer = this.addLayer.bind(this);
     this.createFeatures = this.createFeatures.bind(this);
     this.updateData = this.updateData.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -53,7 +51,7 @@ class MapView extends React.Component {
     this.map.resize();
     // changed filters
     if (networks.length !== prevProps.networks.length) {
-      this.updateData(this.props.networks);
+      // this.updateData(this.props.networks);
     }
     // toggled view between full map and zoom
     if (prevProps.viewState !== viewState) {
@@ -144,7 +142,7 @@ class MapView extends React.Component {
         this.setState({
           popoverColor: popoverClassName
         });
-        this.props.setHoveredPoint(features[0].id);
+        this.props.setHoveredPoint(feature.id);
         let link;
         if (properties.generalForm) {
           link = `<a rel="noopener noreferrer" target="_blank" href=${properties.generalForm}>Link to form</a>`
@@ -176,7 +174,10 @@ class MapView extends React.Component {
     const {
       setLatLng
     } = this.props;
-
+    const layer = map.getLayer(LAYER_NAME);
+    if (!layer) {
+      return;
+    }
     map.on('click', (e) => {
       const features = map.queryRenderedFeatures(
         e.point,
@@ -193,7 +194,8 @@ class MapView extends React.Component {
 
   hoverPoint(hoveredPinId) {
     this.map.setFeatureState({
-      source: LAYER_NAME,
+      source: "composite",
+      sourceLayer: "ma-networks-dataset",
       id: hoveredPinId
     }, {
       hover: true
@@ -202,65 +204,13 @@ class MapView extends React.Component {
 
   unHoverPoint(hoveredPinId) {
     this.map.setFeatureState({
-      source: LAYER_NAME,
+      source: "composite",
+      sourceLayer: "ma-networks-dataset",
       id: hoveredPinId
     }, {
       hover: false
     });
   };
-
-  addLayer(featuresHome) {
-    this.map.addLayer(
-      {
-        id: LAYER_NAME,
-        paint: {
-          // 'circle-opacity': 0.5,
-          'circle-opacity': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            1,
-            0.5
-          ],
-          'circle-radius': 8
-          // [
-          //   'interpolate', ['linear'],
-          //   ['number', ['get', 'scale'], 5],
-          //     1,
-          //     5,
-          //     70,
-          //     70
-          // ]
-          , 
-          'circle-stroke-color': '#fff',
-          'circle-stroke-width': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            2,
-            1
-          ],
-          'circle-color': [
-            'match',
-            ['get', 'category'],
-            REQUEST_SUPPORT,
-            '#ef4822',
-            OFFER_SUPPORT,
-            '#6ac1e5',
-            GENERAL,
-            '#8048f3',
-            /* other */
-            '#057A8F'
-          ]
-        },
-        source: {
-          data: featuresHome,
-          type: 'geojson',
-        },
-        type: 'circle',
-      },
-      'district_interactive',
-    );
-  }
-
 
   handleReset() {
     const {
@@ -305,7 +255,7 @@ class MapView extends React.Component {
     document.querySelector('.mapboxgl-ctrl-group').appendChild(usaButton);
   }
 
-  initializeMap(featuresHome) {
+  initializeMap() {
     const {
       setLatLng
     } = this.props;
@@ -347,12 +297,17 @@ class MapView extends React.Component {
       'top-left'
     );
     // map on 'load'
+    this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
     this.map.on('load', () => {
-      this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
       this.addClickListener();
-      this.addLayer(featuresHome);
+      // this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
+      //               'case',
+      //               ['boolean', ['feature-state', 'hover'], false],
+      //               1,
+      //               0.5
+      //             ],);
+
       this.addPopups(LAYER_NAME);
-      // this.map.getSource(LAYER_NAME).setData(featuresHome);
     });
   }
 
