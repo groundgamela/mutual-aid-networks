@@ -251,11 +251,9 @@ class MapView extends React.Component {
       selectedCategories
     } = this.props;
     let layer = this.map.getLayer(LAYER_NAME);
-    console.log(layer)
     if (!layer) {
       return;
     }
-    console.log('setting filter')
     let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
     this.map.setFilter(LAYER_NAME, filterArray);
   }
