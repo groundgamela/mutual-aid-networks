@@ -137,10 +137,11 @@ class MapView extends React.Component {
         } else {
           link = `<a rel="noopener noreferrer" href=${properties.facebookPage}>Link to group</a>`;
         }
+        let location = properties.city ? `${properties.city}, ${properties.state}` : properties.state;
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
-            <div>${properties.city}, ${properties.state}</div>
+            <div>${location}</div>
             <div>${link}</div>`)
  
           .addTo(map);
