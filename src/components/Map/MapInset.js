@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Point from './Point';
+
 import {
   LAYER_NAME, 
   accessToken,
@@ -14,16 +14,18 @@ class MapInset extends React.Component {
   constructor(props) {
     super(props);
     this.addClickListener = this.addClickListener.bind(this);
-    this.addLayer = this.addLayer.bind(this);
-    this.createFeatures = this.createFeatures.bind(this);
-    this.updateData = this.updateData.bind(this);
-
   }
 
   componentDidMount() {
-    const { networks } = this.props;
-    const featuresHome = this.createFeatures(networks);
-    this.initializeMap(featuresHome);
+    this.initializeMap();
+  }
+
+  setFilters() {
+    const {
+      selectedCategories
+    } = this.props;
+    let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
+    this.map.setFilter(LAYER_NAME, filterArray);
   }
 
   componentDidUpdate(prevProps) {
@@ -32,29 +34,8 @@ class MapInset extends React.Component {
     } = prevProps;
 
     if (networks.length !== this.props.networks.length) {
-      this.updateData(networks);
+      this.setFilters();
     }
-  }
-
-  updateData(networks) {
-    const featuresHome = this.createFeatures(networks);
-    if (!this.map.getSource(`${LAYER_NAME}-${this.props.stateName}`)) {
-      return;
-    }
-    this.map.getSource(`${LAYER_NAME}-${this.props.stateName}`).setData(featuresHome);
-  }
-
-  createFeatures(networks) {
-    const featuresHome = {
-      features: [],
-      type: 'FeatureCollection',
-    };
-    featuresHome.features = networks.map((network) => {
-
-      const newFeature = new Point(network);
-      return newFeature;
-    });
-    return featuresHome;
   }
 
   addClickListener() {
@@ -69,39 +50,7 @@ class MapInset extends React.Component {
     });
   }
 
-  addLayer(featuresHome) {
-    this.map.addLayer(
-      {
-        id: `${LAYER_NAME}-${this.props.stateName}`,
-        paint: {
-          'circle-opacity': 0.5,
-          'circle-radius': 7,
-          'circle-stroke-color': '#fff',
-          'circle-stroke-width': 1,
-          'circle-color': [
-            'match',
-            ['get', 'category'],
-            'Support Request',
-            '#ef4822',
-            'Support Offer',
-            '#6ac1e5',
-            'General',
-            '#8048f3',
-            /* other */
-            '#057A8F'
-          ]
-        },
-        source: {
-          data: featuresHome,
-          type: 'geojson',
-        },
-        type: 'circle',
-      },
-      'district_interactive',
-    );
-  }
-
-  initializeMap(featuresHome) {
+  initializeMap() {
     const {
       bounds,
       mapId,
@@ -125,7 +74,6 @@ class MapInset extends React.Component {
     // map on 'load'
     this.map.on('load', () => {
       this.addClickListener();
-      this.addLayer(featuresHome);
 
     });
   }
