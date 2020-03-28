@@ -53,8 +53,7 @@ const fetchNetworks = createLogic({
           done();
         })
     }
-    console.log(firebaseUrl)
-    requestPage(firebaseUrl)
+    requestPage(firebaseUrl);
   }
 })
 
