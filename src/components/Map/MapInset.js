@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
+import { isEqual } from 'lodash';
 import {
   LAYER_NAME, 
   accessToken,
@@ -24,16 +24,20 @@ class MapInset extends React.Component {
     const {
       selectedCategories
     } = this.props;
+    let layer = this.map.getLayer(LAYER_NAME);
+    if (!layer) {
+      return;
+    }
     let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
     this.map.setFilter(LAYER_NAME, filterArray);
   }
 
   componentDidUpdate(prevProps) {
     const {
-      networks,
-    } = prevProps;
+      selectedCategories,
+    } = this.props;
 
-    if (networks.length !== this.props.networks.length) {
+    if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
       this.setFilters();
     }
   }

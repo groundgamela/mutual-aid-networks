@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { filter } from 'lodash';
+import {
+  filter,
+  isEqual
+} from 'lodash';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import MapInset from './MapInset';
@@ -41,11 +44,11 @@ class MapView extends React.Component {
       hoveredPointId,
       viewState,
       bbox,
-      networks
+      selectedCategories
     } = this.props;
     this.map.resize();
     // changed filters
-    if (networks.length !== prevProps.networks.length) {
+    if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
       this.setFilters();
     }
     // toggled view between full map and zoom
@@ -106,6 +109,10 @@ class MapView extends React.Component {
     });
 
     map.on('mousemove', (e) => {
+      let layerCheck = this.map.getLayer(LAYER_NAME);
+      if (!layerCheck) {
+        return;
+      }
       const features = map.queryRenderedFeatures(e.point, { layers: [layer] });
       // Change the cursor style as a UI indicator.
       map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
@@ -168,6 +175,10 @@ class MapView extends React.Component {
   }
 
   hoverPoint(hoveredPinId) {
+    let layer = this.map.getLayer(LAYER_NAME);
+    if (!layer) {
+      return;
+    }
     this.map.setFeatureState({
       source: "composite",
       sourceLayer: "ma-networks-dataset",
@@ -178,6 +189,10 @@ class MapView extends React.Component {
   };
 
   unHoverPoint(hoveredPinId) {
+    let layer = this.map.getLayer(LAYER_NAME);
+    if (!layer) {
+      return;
+    }
     this.map.setFeatureState({
       source: "composite",
       sourceLayer: "ma-networks-dataset",
@@ -234,6 +249,12 @@ class MapView extends React.Component {
     const {
       selectedCategories
     } = this.props;
+    let layer = this.map.getLayer(LAYER_NAME);
+    console.log(layer)
+    if (!layer) {
+      return;
+    }
+    console.log('setting filter')
     let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
     this.map.setFilter(LAYER_NAME, filterArray);
   }
