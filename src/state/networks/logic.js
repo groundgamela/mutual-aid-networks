@@ -37,7 +37,6 @@ const fetchNetworks = createLogic({
           }
           return newValues;
         })
-        console.log(unpackedData)
         return unpackedData;
       });
     }
