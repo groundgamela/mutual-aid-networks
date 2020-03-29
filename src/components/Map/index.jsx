@@ -11,7 +11,11 @@ import './style.scss';
 import './popover.scss';
 import './popovertip.scss';
 import './popover_implementation.scss';
-import { LAYER_NAME, accessToken, mapboxStyle } from './constants';
+import {
+  LAYER_NAME,
+  accessToken,
+  mapboxStyle
+} from './constants';
 
 const mapboxgl = window.mapboxgl;
 
@@ -39,7 +43,7 @@ class MapView extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
- 
+
     const {
       hoveredPointId,
       viewState,
@@ -73,14 +77,16 @@ class MapView extends React.Component {
 
     if (hoveredPointId) {
       this.hoverPoint(hoveredPointId)
-    } 
+    }
     if (prevProps.hoveredPointId && prevProps.hoveredPointId !== hoveredPointId) {
       this.unHoverPoint(prevProps.hoveredPointId);
     }
   }
 
   insetOnClickEvent(e) {
-    this.setState({ inset: false });
+    this.setState({
+      inset: false
+    });
     const dataBounds = e.target.parentNode.parentNode.getAttribute('data-bounds').split(',');
     const boundsOne = [Number(dataBounds[0]), Number(dataBounds[1])];
     const boundsTwo = [Number(dataBounds[2]), Number(dataBounds[3])];
@@ -101,7 +107,9 @@ class MapView extends React.Component {
   }
 
   addPopups(layer) {
-    const { map } = this;
+    const {
+      map
+    } = this;
 
     this.hoveredPopup = new mapboxgl.Popup({
       closeButton: true,
@@ -113,13 +121,17 @@ class MapView extends React.Component {
       if (!layerCheck) {
         return;
       }
-      const features = map.queryRenderedFeatures(e.point, { layers: [layer] });
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: [layer]
+      });
       // Change the cursor style as a UI indicator.
       map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 
       if (features.length) {
         const feature = features[0];
-        const { properties } = feature;
+        const {
+          properties
+        } = feature;
         const popoverClassName = `popover-${feature.properties.category.split(' ').join('-').toLowerCase()}`
         this.setState({
           popoverColor: popoverClassName
@@ -143,19 +155,21 @@ class MapView extends React.Component {
             <h4>${properties.title}</h4>
             <div>${location}</div>
             <div>${link}</div>`)
- 
+
           .addTo(map);
       }
       return undefined;
     });
-  
+
   }
 
   addClickListener() {
 
-    const { map } = this;
     const {
-      setLatLng
+      map
+    } = this;
+    const {
+      setLatLng,
     } = this.props;
     const layer = map.getLayer(LAYER_NAME);
     if (!layer) {
@@ -163,14 +177,19 @@ class MapView extends React.Component {
     }
     map.on('click', (e) => {
       const features = map.queryRenderedFeatures(
-        e.point,
-        {
-          layers: [LAYER_NAME],
-        },
+        e.point, {
+        layers: [LAYER_NAME],
+      },
       );
 
       if (features.length > 0) {
-        setLatLng({lat: features[0].properties.lat, lng: features[0].properties.lng});
+        setLatLng({
+          center: {
+            lat: features[0].properties.lat,
+            lng: features[0].properties.lng,
+          },
+          usState: features[0].properties.state
+        });
       }
     });
   }
@@ -205,10 +224,10 @@ class MapView extends React.Component {
 
   handleReset() {
     const {
-      setLatLng
+      resetToDefaultView,
     } = this.props;
 
-    setLatLng({});
+    resetToDefaultView();
   }
 
   setInitialState() {
@@ -223,13 +242,16 @@ class MapView extends React.Component {
     this.map.resize();
   }
 
-  handleClickOnInset(bounds) {
+  handleClickOnInset(bounds, state) {
     // this is for clicking on a state inset
-    this.setState({bbox: bounds})
+    this.setState({
+      bbox: bounds
+    })
 
-    const mbBounds = new mapboxgl.LngLatBounds(bounds);
-    const center = mbBounds.getCenter();
-    this.props.setLatLng(center);
+    this.props.setLatLng({
+      center: {},
+      usState: state
+    });
   }
 
   // Creates the button in our zoom controls to go to the national view
@@ -260,7 +282,8 @@ class MapView extends React.Component {
 
   initializeMap() {
     const {
-      setLatLng
+      setLatLng,
+      resetToDefaultView
     } = this.props;
 
     mapboxgl.accessToken = accessToken;
@@ -276,7 +299,9 @@ class MapView extends React.Component {
     this.map.dragRotate.disable();
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
-    const { map } = this;
+    const {
+      map
+    } = this;
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -286,29 +311,45 @@ class MapView extends React.Component {
         zoom: 12,
         flyTo: false,
       })
-      .on('clear', function (result) {
-        setLatLng({});
-      })
-      .on('result', function (returned) {
-        map.resize();
-        setLatLng({
-          lat: returned.result.center[1],
-          lng: returned.result.center[0]
-        });
+        .on('clear', function (result) {
+          resetToDefaultView();
+        })
+        .on('result', function (returned) {
+          map.resize();
+          let usState = ''
+          // searched a us state
+          if (returned.result.place_type[0] === 'region') {
+            console.log(returned.result)
+            let usState = returned.result.properties['short_code'].split('-')[1];
+            return setLatLng({
+              center: {},
+              usState,
+            });
+          }
+          setLatLng({
+            center: {
+              lat: returned.result.center[1],
+              lng: returned.result.center[0]
+            },
+            usState,
+          });
 
-      }),
+        }),
       'top-left'
     );
     // map on 'load'
-    this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
+    this.fitBounds([
+      [-128.8, 23.6],
+      [-65.4, 50.2]
+    ]);
     this.map.on('load', () => {
       this.addClickListener();
       this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
-                    'case',
-                    ['boolean', ['feature-state', 'hover'], false],
-                    1,
-                    0.5
-                  ],);
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        1,
+        0.5
+      ]);
 
       this.addPopups(LAYER_NAME);
     });
@@ -324,40 +365,78 @@ class MapView extends React.Component {
       selectedCategories,
     } = this.props;
 
-    return (
-      <React.Fragment>
-        <div id="map" className={this.state.popoverColor}>
-          <div className="map-overlay" id="legend">
-            <MapInset
-              networks={filter(networks, { state: 'AK' })}
-              center={center}
-              stateName="AK"
-              viewState={viewState}
-              resetSelections={resetSelections}
-              selectedCategories={selectedCategories}
-              setLatLng={setLatLng}
-              setBounds={this.handleClickOnInset}
-              mapId="map-overlay-alaska"
-              bounds={[[-170.15625, 51.72702815704774], [-127.61718749999999, 71.85622888185527]]}
-            />
-            <MapInset
-              networks={filter(networks, { state: 'HI' })}
-              stateName="HI"
-              center={center}
-              viewState={viewState}
-              resetSelections={resetSelections}
-              selectedCategories={selectedCategories}
-              setLatLng={setLatLng}
-              setBounds={this.handleClickOnInset}
-              mapId="map-overlay-hawaii"
-              bounds={[
+    return (<React.Fragment>
+      <div id="map"
+        className={
+          this.state.popoverColor
+        } >
+        <div className="map-overlay"
+          id="legend" >
+          <MapInset networks={
+            filter(networks, {
+              state: 'AK'
+            })
+          }
+            center={
+              center
+            }
+            stateName="AK"
+            viewState={
+              viewState
+            }
+            resetSelections={
+              resetSelections
+            }
+            selectedCategories={
+              selectedCategories
+            }
+            setLatLng={
+              setLatLng
+            }
+            setBounds={
+              this.handleClickOnInset
+            }
+            mapId="map-overlay-alaska"
+            bounds={
+              [
+                [-170.15625, 51.72702815704774],
+                [-127.61718749999999, 71.85622888185527]
+              ]
+            }
+          /> <MapInset networks={
+            filter(networks, {
+              state: 'HI'
+            })
+          }
+            stateName="HI"
+            center={
+              center
+            }
+            viewState={
+              viewState
+            }
+            resetSelections={
+              resetSelections
+            }
+            selectedCategories={
+              selectedCategories
+            }
+            setLatLng={
+              setLatLng
+            }
+            setBounds={
+              this.handleClickOnInset
+            }
+            mapId="map-overlay-hawaii"
+            bounds={
+              [
                 [-161.03759765625, 18.542116654448996],
-                [-154.22607421875, 22.573438264572406]]}
-            />
-          </div>
-        </div>
+                [-154.22607421875, 22.573438264572406]
+              ]
+            }
+          /> </div> </div>
 
-      </React.Fragment>
+    </React.Fragment>
     );
   }
 }

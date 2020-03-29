@@ -30,11 +30,13 @@ class DefaultLayout extends React.Component {
       filteredNetworks,
       viewState,
       setLatLng,
+      setUsState,
       visibleCards,
       allNetworks,
       setHoveredPoint,
       hoveredPointId,
-      masterBbox
+      masterBbox,
+      resetToDefaultView
     } = this.props;
     
     if (!allNetworks.length) {
@@ -68,9 +70,11 @@ class DefaultLayout extends React.Component {
                   viewState={viewState}
                   setLatLng={setLatLng}
                   selectedCategories={selectedCategories}
+                  resetToDefaultView={resetToDefaultView}
                   hoveredPointId={hoveredPointId}
                   setHoveredPoint={setHoveredPoint}
                   bbox={masterBbox}
+                  setUsState={setUsState}
                 /> 
                 <ListView 
                   visibleCards={visibleCards}
@@ -111,6 +115,8 @@ const mapDispatchToProps = (dispatch) => ({
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
   setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload)),
   setHoveredPoint: (payload) => dispatch(selectionStateBranch.actions.setHoveredPoint(payload)),
+  setUsState: (payload) => dispatch(selectionStateBranch.actions.setUsState(payload)),
+  resetToDefaultView: () => dispatch(selectionStateBranch.actions.resetToDefaultView())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);

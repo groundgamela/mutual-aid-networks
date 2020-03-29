@@ -7,6 +7,8 @@ const STATE_BRANCH = 'SELECTIONS';
 export const SET_CATEGORY_FILTERS = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY');
 export const SET_LAT_LNG = makeConstant(STATE_BRANCH, 'SET_LAT_LNG');
 export const SET_HOVERED_POINT = makeConstant(STATE_BRANCH, 'SET_HOVERED_POINT');
+export const SET_US_STATE = makeConstant(STATE_BRANCH, "SET_US_STATE");
+export const RESET_TO_DEFAULTS = makeConstant(STATE_BRANCH, "RESET_TO_DEFAULTS");
 
 export const options = [GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION];
 
@@ -17,6 +19,7 @@ const initialState = {
   community: '',
   searchLocation: {},
   hoveredPointId: null,
+  usState: '',
 };
 
 const selectionReducer = (state = initialState, action) => {
@@ -29,7 +32,14 @@ const selectionReducer = (state = initialState, action) => {
       case SET_LAT_LNG:
         return {
           ...state,
-          searchLocation: action.payload,
+          searchLocation: action.payload.center,
+          usState: action.payload.usState,
+        }
+      case RESET_TO_DEFAULTS:
+        return {
+          ...state,
+          searchLocation: {},
+          usState: ''
         }
       case SET_HOVERED_POINT: 
         return {

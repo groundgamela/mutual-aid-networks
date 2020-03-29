@@ -50,7 +50,7 @@ class MapInset extends React.Component {
     const { map } = this;
 
     map.on('click', () => {
-      setBounds(bounds);
+      setBounds(bounds, this.props.stateName);
     });
   }
 
