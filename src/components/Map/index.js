@@ -182,7 +182,7 @@ class MapView extends React.Component {
     }
     this.map.setFeatureState({
       source: "composite",
-      sourceLayer: "ma-networks-dataset",
+      sourceLayer: "manetworks",
       id: hoveredPinId
     }, {
       hover: true
@@ -196,7 +196,7 @@ class MapView extends React.Component {
     }
     this.map.setFeatureState({
       source: "composite",
-      sourceLayer: "ma-networks-dataset",
+      sourceLayer: "manetworks",
       id: hoveredPinId
     }, {
       hover: false
@@ -303,12 +303,12 @@ class MapView extends React.Component {
     this.fitBounds([[-128.8, 23.6], [-65.4, 50.2]]);
     this.map.on('load', () => {
       this.addClickListener();
-      // this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
-      //               'case',
-      //               ['boolean', ['feature-state', 'hover'], false],
-      //               1,
-      //               0.5
-      //             ],);
+      this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
+                    'case',
+                    ['boolean', ['feature-state', 'hover'], false],
+                    1,
+                    0.5
+                  ],);
 
       this.addPopups(LAYER_NAME);
     });
