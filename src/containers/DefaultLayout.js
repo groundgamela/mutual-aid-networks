@@ -55,7 +55,7 @@ class DefaultLayout extends React.Component {
             {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
           </Menu>
         </Header>
-        <Content style={{ padding: '0 50px' }}>
+        {/* <Content style={{ padding: '0 50px' }}>
           <div className="main-container">
              {mapboxgl.supported() ? <>
               <Filters 
@@ -88,10 +88,18 @@ class DefaultLayout extends React.Component {
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
           </div>
-        </Content>
+        </Content> */}
         <Footer style={{ textAlign: 'center' }}>
           <div className="footer-text">
-            We list these networks as a public resource. We cannot verify or vouch for any network or individual offerings. Please exercise all necessary judgement when interacting with community members not previously known to you.
+            <p>
+              We list these networks as a public resource. We cannot verify or vouch for any network
+              or individual offerings. Please exercise all necessary judgement when interacting with
+              community members not previously known to you.
+            </p>
+            <p>
+              This website is brought to you by <a href="https://townhallproject.com/" target="blank">Town Hall Project</a>.
+              To report an error or other issue, please contact: <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
+            </p>
           </div>
         </Footer>
       </Layout>
