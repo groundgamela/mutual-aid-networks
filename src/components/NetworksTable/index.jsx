@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Table } from 'antd'
+
 import './style.scss';
 
 const NetworksTable = (props) => {
+  const [searchText, setSearchText] = useState('')
+  const [searchCol, setSearchCol] = useState('')
 
   const tableColumns = [
     {
@@ -15,10 +18,10 @@ const NetworksTable = (props) => {
       dataIndex: 'location',
       key: 'location',
       render: (location, record) => (
-        <span>
+        <>
           {record.neighborhood && <>{record.neighborhood}, </>}
           {record.address && <>{record.address}</>}
-        </span>
+        </>
         )
     },
     {
@@ -36,14 +39,12 @@ const NetworksTable = (props) => {
       dataIndex: 'forms',
       key: 'forms',
       render: (form, record) => (
-        <span>
-          <ul className='resources'>
-            {record.generalForm && <li><a href={record.generalForm} target='blank'> Information </a></li>}
-            {record.supportOfferForm && <li><a href={record.supportOfferForm} target='blank'> Offer Support </a></li>}
-            {record.supportRequestForm && <li><a href={record.supportRequestForm} target='blank'> Request Support </a></li>}
-            {record.facebookPage && <li><a href={record.facebookPage} target='blank'> Social Media </a></li>}
-          </ul>
-        </span>
+        <ul className='resources'>
+          {record.generalForm && <li><a href={record.generalForm} target='blank' className='general'>Information</a></li>}
+          {record.supportOfferForm && <li><a href={record.supportOfferForm} target='blank' className='offer'>Offer Support</a></li>}
+          {record.supportRequestForm && <li><a href={record.supportRequestForm} target='blank' className='request'>Request Support</a></li>}
+          {record.facebookPage && <li><a href={record.facebookPage} target='blank' className='other'>Community</a></li>}
+        </ul>
       )
     },
     {
@@ -56,15 +57,16 @@ const NetworksTable = (props) => {
   const {
     allNetworks
   } = props
+
   return (
-    <div>
+    <>
       <Table
         rowKey={network => network.id}
         columns={tableColumns}
         dataSource={allNetworks}
         pagination={{pageSize: 40, hideOnSinglePage: true}}
       />
-    </div>
+    </>
   )
 }
 

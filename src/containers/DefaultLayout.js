@@ -33,7 +33,19 @@ class DefaultLayout extends React.Component {
   }
 
   handleNav = (e) => {
+    const {
+      resetToDefaultView
+    } = this.props
     this.setState({currentTab: e.key})
+    resetToDefaultView()
+  }
+
+  handleLogoClick = () => {
+    const {
+      resetToDefaultView
+    } = this.props
+    this.setState({currentTab: 'map'})
+    resetToDefaultView()
   }
 
   render() {
@@ -59,7 +71,7 @@ class DefaultLayout extends React.Component {
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo" onClick={() => this.setState({currentTab: 'map'})}></div>
+          <div className="logo" onClick={this.handleLogoClick}></div>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -106,7 +118,14 @@ class DefaultLayout extends React.Component {
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
           </>}
-          {this.state.currentTab === 'networks' && <NetworksTable allNetworks={allNetworks} />}
+          {this.state.currentTab === 'networks' && <>
+            <Filters
+              setFilters={setFilters}
+              selectedCategories={selectedCategories}
+              visible={viewState === 'default'}
+            />
+            <NetworksTable allNetworks={filteredNetworks} />
+          </>}
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
