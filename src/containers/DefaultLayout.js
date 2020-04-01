@@ -13,16 +13,29 @@ import ListView from '../components/ListView';
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
+import NetworksTable from '../components/NetworksTable';
 
 const { Header, Content, Footer } = Layout;
 const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentTab: 'map'
+    }
+  }
+
   componentDidMount() {
     const {
       requestNetworks
     } = this.props;
     requestNetworks();
   }
+
+  handleNav = (e) => {
+    this.setState({currentTab: e.key})
+  }
+
   render() {
     const {
       setFilters,
@@ -46,17 +59,22 @@ class DefaultLayout extends React.Component {
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo"></div>
+          <div className="logo" onClick={() => this.setState({currentTab: 'map'})}></div>
           <Menu
             theme="dark"
             mode="horizontal"
             style={{ lineHeight: '64px' }}
+            onClick={this.handleNav}
+            selectedKeys={[this.state.currentTab]}
           >
+            <Menu.Item key="map">Map</Menu.Item>
+            <Menu.Item key="networks">Networks</Menu.Item>
             {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
           </Menu>
         </Header>
-        {/* <Content style={{ padding: '0 50px' }}>
+        <Content style={{ padding: '0 50px' }}>
           <div className="main-container">
+          {this.state.currentTab === 'map' && <>
              {mapboxgl.supported() ? <>
               <Filters 
                 setFilters={setFilters}
@@ -87,8 +105,10 @@ class DefaultLayout extends React.Component {
             
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
+          </>}
+          {this.state.currentTab === 'networks' && <NetworksTable allNetworks={allNetworks} />}
           </div>
-        </Content> */}
+        </Content>
         <Footer style={{ textAlign: 'center' }}>
           <div className="footer-text">
             <p>
