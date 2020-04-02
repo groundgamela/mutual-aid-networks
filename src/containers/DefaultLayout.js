@@ -118,14 +118,7 @@ class DefaultLayout extends React.Component {
             <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
             <SubmitNetwork />
           </>}
-          {this.state.currentTab === 'networks' && <>
-            <Filters
-              setFilters={setFilters}
-              selectedCategories={selectedCategories}
-              visible={viewState === 'default'}
-            />
-            <NetworksTable allNetworks={filteredNetworks} />
-          </>}
+          {this.state.currentTab === 'networks' && <NetworksTable networks={allNetworks} />}
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>

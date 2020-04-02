@@ -4,6 +4,7 @@
   "homepage": "http://mutualaidhub.org/",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.0.5",
     "@mapbox/geo-viewport": "^0.4.0",
     "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@testing-library/jest-dom": "^4.2.4",
