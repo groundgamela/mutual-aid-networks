@@ -1,0 +1,134 @@
+import React, { useState } from 'react'
+import { Button, Input, Table } from 'antd'
+import { SearchOutlined } from '@ant-design/icons';
+
+import './style.scss';
+
+const NetworksTable = (props) => {
+  const [searchCol, setSearchCol] = useState('')
+
+  const {
+    networks
+  } = props
+
+  const getColumnSearchProps = (dataIndex, description, secondaryDataIndex='') => ({
+    filterDropdown: ({setSelectedKeys, selectedKeys, confirm, clearFilters}) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          placeholder={`Search ${description}`}
+          value={selectedKeys[0]}
+          onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => handleSearch(confirm, dataIndex)}
+          style={{ width: 188, marginBottom: 8, display: 'block' }}
+        />
+        <Button
+          type="primary"
+          onClick={() => handleSearch(confirm, dataIndex)}
+          icon={<SearchOutlined />}
+          size="small"
+          style={{ width: 90, marginRight: 8 }}
+        >
+          Search
+        </Button>
+        <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
+          Reset
+        </Button>
+      </div>
+    ),
+    filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
+    onFilter: (value, record) => {
+      if (secondaryDataIndex) {
+        return (
+          record[dataIndex].toLowerCase().includes(value.toLowerCase())
+          || record[secondaryDataIndex].toLowerCase().includes(value.toLowerCase())
+        )
+      } else {
+        return record[dataIndex].toLowerCase().includes(value.toLowerCase())
+      }
+    },
+    render: text => searchCol === dataIndex && text
+  })
+
+  const handleSearch = (confirm, dataIndex) => {
+    confirm();
+    setSearchCol(dataIndex)
+  }
+
+  const tableColumns = [
+    {
+      title: 'Organization',
+      width: '35vw',
+      dataIndex: 'title',
+      key: 'title',
+      sorter: (a,b) => a.title.localeCompare(b.title),
+      ...getColumnSearchProps('title', 'organizations'),
+      render: text => text,
+    },
+    {
+      title: 'Languages',
+      width: '15vw',
+      dataIndex: 'language',
+      key: 'language',
+      sorter: (a,b) => a.language.localeCompare(b.language),
+      ...getColumnSearchProps('language', 'languages'),
+      render: text => text,
+    },
+    {
+      title: 'State',
+      width: '5vw',
+      dataIndex: 'state',
+      key: 'state',
+      sorter: (a,b) => a.state.localeCompare(b.state),
+      ...getColumnSearchProps('state', 'states'),
+      render: text => text,
+    },
+    {
+      title: 'Location',
+      width: '25vw',
+      dataIndex: 'location',
+      key: 'location',
+      sorter: (a,b) => a.neighborhood.localeCompare(b.neighborhood) || a.address.localeCompare(b.address),
+      ...getColumnSearchProps('address', 'locations', 'neighborhood'),
+      render: (location, record) => (
+        <>
+          {record.neighborhood && <>{record.neighborhood}, </>}
+          {record.address && <>{record.address}</>}
+        </>
+        ),
+    },
+    {
+      title: 'Get involved',
+      width: '10vw',
+      filters: [
+        { text: 'General Information', value: 'generalForm'},
+        { text: 'Offer Support', value: 'supportOfferForm' },
+        { text: 'Request Support', value: 'supportRequestForm' },
+        { text: 'Community', value: 'facebookPage' },
+      ],
+      dataIndex: 'forms',
+      onFilter: (value, record) => record[value],
+      key: 'forms',
+      render: (form, record) => (
+        <ul className='resources'>
+          {record.generalForm && <li><a href={record.generalForm} target='blank' className='general'>Information</a></li>}
+          {record.supportOfferForm && <li><a href={record.supportOfferForm} target='blank' className='offer'>Offer Support</a></li>}
+          {record.supportRequestForm && <li><a href={record.supportRequestForm} target='blank' className='request'>Request Support</a></li>}
+          {record.facebookPage && <li><a href={record.facebookPage} target='blank' className='other'>Community</a></li>}
+        </ul>
+      )
+    },
+  ]
+
+  return (
+    <>
+      <Table
+        rowKey={network => network.id}
+        columns={tableColumns}
+        dataSource={networks}
+        pagination={{pageSize: 20, hideOnSinglePage: true}}
+      />
+    </>
+  )
+}
+
+export default NetworksTable

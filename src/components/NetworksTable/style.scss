@@ -1,0 +1,21 @@
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
+.resources {
+  list-style-type:none;
+  font-weight: bold;
+  .offer {
+    color: $offer;
+  }
+  .general {
+    color: $general;
+  }
+  .request {
+    color: $request;
+  }
+  .other {
+    color: $info;
+  }
+}
