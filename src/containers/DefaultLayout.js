@@ -91,7 +91,15 @@ class DefaultLayout extends React.Component {
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           <div className="footer-text">
-            We list these networks as a public resource. We cannot verify or vouch for any network or individual offerings. Please exercise all necessary judgement when interacting with community members not previously known to you.
+            <p>
+              We list these networks as a public resource. We cannot verify or vouch for any network
+              or individual offerings. Please exercise all necessary judgement when interacting with
+              community members not previously known to you.
+            </p>
+            <p>
+              This website is brought to you by <a href="https://townhallproject.com/" target="blank">Town Hall Project</a>.
+              To report an error or other issue, please contact: <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
+            </p>
           </div>
         </Footer>
       </Layout>
