@@ -201,7 +201,7 @@ class MapView extends React.Component {
     }
     this.map.setFeatureState({
       source: "composite",
-      sourceLayer: "manetworks",
+      sourceLayer: "mutual_aid_networks",
       id: hoveredPinId
     }, {
       hover: true
@@ -215,7 +215,7 @@ class MapView extends React.Component {
     }
     this.map.setFeatureState({
       source: "composite",
-      sourceLayer: "manetworks",
+      sourceLayer: "mutual_aid_networks",
       id: hoveredPinId
     }, {
       hover: false
@@ -350,7 +350,7 @@ class MapView extends React.Component {
         1,
         0.5
       ]);
-
+      this.map.setLayoutProperty(LAYER_NAME, 'visibility', 'visible')
       this.addPopups(LAYER_NAME);
     });
   }
@@ -364,7 +364,7 @@ class MapView extends React.Component {
       networks,
       selectedCategories,
     } = this.props;
-
+    // console.log(this.map)
     return (<React.Fragment>
       <div id="map"
         className={
