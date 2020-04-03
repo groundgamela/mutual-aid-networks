@@ -2,20 +2,47 @@ $general: #8048f3;
 $offer: #6ac1e5;
 $request: #ef4822;
 $info: #057A8F;
+.form-link {
+  margin-bottom: 0.5em;
+  a {
+    width: 160px;
+  }
+}
 
+@mixin link-button($color) {
+  color: $color;
+  border-color: $color;
+}
+
+@mixin link-button-hover($color) {
+  background-color: $color!important;
+  color: #ffffff;
+}
 .resources {
   list-style-type:none;
   font-weight: bold;
   .offer {
-    color: $offer;
+    @include link-button($offer)
+  }
+  .offer:hover{
+    @include link-button-hover($offer)
   }
   .general {
-    color: $general;
+    @include link-button($general)
+  }
+  .general:hover {
+    @include link-button-hover($general)
   }
   .request {
-    color: $request;
+    @include link-button($request)
+  }
+  .request:hover {
+    @include link-button-hover($request)
   }
   .other {
-    color: $info;
+    @include link-button($info)
+  }
+  .other:hover {
+    @include link-button-hover($info)
   }
 }

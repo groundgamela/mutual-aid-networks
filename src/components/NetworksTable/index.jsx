@@ -109,11 +109,11 @@ const NetworksTable = (props) => {
       onFilter: (value, record) => record[value],
       key: 'forms',
       render: (form, record) => (
-        <ul className='resources'>
-          {record.generalForm && <li><a href={record.generalForm} target='blank' className='general'>Information</a></li>}
-          {record.supportOfferForm && <li><a href={record.supportOfferForm} target='blank' className='offer'>Offer Support</a></li>}
-          {record.supportRequestForm && <li><a href={record.supportRequestForm} target='blank' className='request'>Request Support</a></li>}
-          {record.facebookPage && <li><a href={record.facebookPage} target='blank' className='other'>Community</a></li>}
+        <ul key="resources" className='resources'>
+          {record.generalForm && <li key={`${record.generalForm}-general`}  className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>Information</Button></li>}
+          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>Offer Support</Button></li>}
+          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>Request Support</Button></li>}
+          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>Community</Button></li>}
         </ul>
       )
     },
