@@ -364,7 +364,6 @@ class MapView extends React.Component {
       networks,
       selectedCategories,
     } = this.props;
-    // console.log(this.map)
     return (<React.Fragment>
       <div id="map"
         className={
