@@ -80,7 +80,7 @@ class DefaultLayout extends React.Component {
             selectedKeys={[this.state.currentTab]}
           >
             <Menu.Item key="map">Map</Menu.Item>
-            <Menu.Item key="networks">Networks</Menu.Item>
+            <Menu.Item key="networks">Table View</Menu.Item>
             {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
           </Menu>
         </Header>
