@@ -78,7 +78,7 @@ class MapInset extends React.Component {
     // map on 'load'
     this.map.on('load', () => {
       this.addClickListener();
-
+      this.map.setLayoutProperty(LAYER_NAME, 'visibility', 'visible')
     });
   }
 
