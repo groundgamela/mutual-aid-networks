@@ -23,7 +23,7 @@ const fetchNetworks = createLogic({
       firebaseUrl,
     } = deps;
     const processOnePage = (snapshot) => {
-      return snapshot.body.documents.map((doc) => {
+      return snapshot.body.documents.reduce((acc, doc) => {
         const data = doc.fields;
         const unpackedData = mapValues(data, (object) => {
           let newValues = values(object)[0];
@@ -37,8 +37,11 @@ const fetchNetworks = createLogic({
           }
           return newValues;
         })
-        return unpackedData;
-      });
+        if (Number(unpackedData.id)) {
+          acc.push(unpackedData);
+        }
+        return acc;
+      }, []);
     }
 
     const requestPage = (url) => {
