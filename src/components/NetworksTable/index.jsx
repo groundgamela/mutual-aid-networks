@@ -57,7 +57,7 @@ const NetworksTable = (props) => {
   const tableColumns = [
     {
       title: 'Organization',
-      width: '35vw',
+      width: '30vw',
       dataIndex: 'title',
       key: 'title',
       sorter: (a,b) => a.title.localeCompare(b.title),
@@ -65,8 +65,27 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
+      title: 'City',
+      width: '20vw',
+      dataIndex: 'city',
+      key: 'city',
+      sorter: (a,b) => a.city.localeCompare(b.city),
+      ...getColumnSearchProps('city', 'cities'),
+      render: text => text,
+    },
+    {
+      title: 'State',
+      width: '10vw',
+      dataIndex: 'state',
+      key: 'state',
+      sorter: (a,b) => a.state.localeCompare(b.state),
+      defaultSortOrder: 'ascend',
+      ...getColumnSearchProps('state', 'states'),
+      render: text => text,
+    },
+    {
       title: 'Languages',
-      width: '15vw',
+      width: '20vw',
       dataIndex: 'language',
       key: 'language',
       sorter: (a,b) => a.language.localeCompare(b.language),
@@ -74,33 +93,10 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'State',
-      width: '5vw',
-      dataIndex: 'state',
-      key: 'state',
-      sorter: (a,b) => a.state.localeCompare(b.state),
-      ...getColumnSearchProps('state', 'states'),
-      render: text => text,
-    },
-    {
-      title: 'Location',
-      width: '25vw',
-      dataIndex: 'location',
-      key: 'location',
-      sorter: (a,b) => a.neighborhood.localeCompare(b.neighborhood) || a.address.localeCompare(b.address),
-      ...getColumnSearchProps('address', 'locations', 'neighborhood'),
-      render: (location, record) => (
-        <>
-          {record.neighborhood && <>{record.neighborhood}, </>}
-          {record.address && <>{record.address}</>}
-        </>
-        ),
-    },
-    {
-      title: 'Get involved',
-      width: '10vw',
+      title: 'Get Involved',
+      width: '20vw',
       filters: [
-        { text: 'General Information', value: 'generalForm'},
+        { text: 'General', value: 'generalForm'},
         { text: 'Offer Support', value: 'supportOfferForm' },
         { text: 'Request Support', value: 'supportRequestForm' },
         { text: 'Community', value: 'facebookPage' },
@@ -110,7 +106,7 @@ const NetworksTable = (props) => {
       key: 'forms',
       render: (form, record) => (
         <ul key="resources" className='resources'>
-          {record.generalForm && <li key={`${record.generalForm}-general`}  className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>Information</Button></li>}
+          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>General</Button></li>}
           {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>Offer Support</Button></li>}
           {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>Request Support</Button></li>}
           {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>Community</Button></li>}
