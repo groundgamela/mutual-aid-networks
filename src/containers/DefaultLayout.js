@@ -10,6 +10,7 @@ import MapView from '../components/Map';
 import SubmitNetwork from '../components/SubmitNetwork';
 import Filters from '../components/Filters';
 import ListView from '../components/ListView';
+import About from '../components/About';
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
@@ -81,6 +82,7 @@ class DefaultLayout extends React.Component {
           >
             <Menu.Item key="map">Map</Menu.Item>
             <Menu.Item key="networks">Table View</Menu.Item>
+            <Menu.Item key="about">About</Menu.Item>
             {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
           </Menu>
         </Header>
@@ -119,6 +121,7 @@ class DefaultLayout extends React.Component {
             <SubmitNetwork />
           </>}
           {this.state.currentTab === 'networks' && <NetworksTable networks={allNetworks} />}
+          {this.state.currentTab === 'about' && <About />}
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>

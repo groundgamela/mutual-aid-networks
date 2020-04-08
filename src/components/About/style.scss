@@ -1,0 +1,43 @@
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
+.about {
+  padding: 50px;
+  width: 70vw;
+  min-width: 400px;
+  margin: auto;
+  .imageCollage {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 2px solid;
+      border-color: white;
+    }
+  }
+  p {
+    padding-top: 30px;
+    font-size: 1.5em;
+    text-align: justify;
+  }
+  .thpLogo {
+    width: 300px;
+    padding-bottom: 20px;
+  }
+  .title {
+    font-weight: 700;
+    color: $info;
+    font-size: 3em;
+    a {
+      color: $offer
+    }
+    a:hover {
+      color: darken($offer, 17.5%);
+    }
+  }
+}
