@@ -57,7 +57,8 @@ const NetworksTable = (props) => {
   const tableColumns = [
     {
       title: 'Organization',
-      width: '30vw',
+      width: '15vw',
+      fixed: 'left',
       dataIndex: 'title',
       key: 'title',
       sorter: (a,b) => a.title.localeCompare(b.title),
@@ -122,6 +123,8 @@ const NetworksTable = (props) => {
         columns={tableColumns}
         dataSource={networks}
         pagination={{pageSize: 20, hideOnSinglePage: true}}
+        scroll={{x: 768}}
+        size='small'
       />
     </>
   )
