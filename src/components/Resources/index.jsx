@@ -7,7 +7,7 @@ import SubmitButton from '../SubmitButton'
 
 const Resources = (props) => {
   return (
-    <>
+    <div className='page-container'>
       <div className='resources'>
         <h2 className='title' >Mutual Aid Resources</h2>
         <p>
@@ -33,7 +33,7 @@ const Resources = (props) => {
         link='https://docs.google.com/forms/d/e/1FAIpQLScQOY2wlXUx7tM4R-DBZthp-H4LSSBMFs7wTvAi8xmamaB1fg/viewform'
         description='Submit a Mutual Aid Resource'
       />
-    </>
+    </div>
   )
 }
 

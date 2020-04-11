@@ -1,18 +1,5 @@
-$info: #057A8F;
-$offer: #6ac1e5;
-
-
 .resources {
-  padding: 50px;
-  width: 70vw;
-  min-width: 400px;
-  margin: auto;
-  a {
-    color: $offer
-  }
-  a:hover {
-    color: darken($offer, 17.5%);
-  }
+  margin-bottom: 50px;
   .ant-list-item {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -20,15 +7,5 @@ $offer: #6ac1e5;
   .list-title {
     font-weight: 700;
     font-size: 1.4em;
-  }
-  p {
-    padding-top: 30px;
-    font-size: 1.5em;
-    font-weight: 400;
-  }
-  .title {
-    font-weight: 700;
-    color: $info;
-    font-size: 3em;
   }
 }

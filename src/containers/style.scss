@@ -1,3 +1,8 @@
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
 .ant-layout-header {
     .logo {
         // background: rgba(255, 255, 255, 0.2);
@@ -10,9 +15,9 @@
         background-image: url('../assets/logo-transparent.png');
         background-size: contain;
       }
-    background: #057A8F;
+    background: $info;
     .ant-menu-dark.ant-menu-horizontal {
-        background: #057A8F;
+        background: $info;
         .ant-menu.item .ant-menu-item-only-child .ant-menu-item-selected {
             background: #27a4b585;
         }
@@ -32,9 +37,9 @@
         background-image: url('../assets/logo-transparent.png');
         background-size: contain;
     }
-    background: #057A8F;
+    background: $info;
     .ant-menu-dark {
-        background: #057A8F;
+        background: $info;
         .ant-menu-item-selected {
             background-color: #27a4b585;
         }
@@ -75,9 +80,31 @@
                 // width:70%;
             }
         }
+        .page-container {
+            padding: 50px;
+            width: 70vw;
+            min-width: 400px;
+            margin: auto;
+            a {
+                color: $offer
+            }
+            a:hover {
+                color: darken($offer, 17.5%);
+            }
+            p {
+                padding-top: 30px;
+                font-size: 1.5em;
+                font-weight: 400;
+            }
+        }
         .tagline {
             text-align: center;
             padding: 10px;
+        }
+        .title {
+            font-weight: 700;
+            color: $info;
+            font-size: 3em;
         }
     }
 }
