@@ -16,11 +16,7 @@ jobs:
           node-version: '12.x'
 
       - name: Cache dependencies
-        env: 
-          REACT_APP_MAPBOX_STYLE_URL: "mapbox://styles/townhallproject/ck87rw1kt1g821is46uvwm08k"
-          REACT_APP_MAPBOX_API_KEY: "pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNrN3d1c3hhdDA1MmozbW80cW5oOWxzcHoifQ.rq66iVpULeHVB6PutWiunA"
-          REACT_APP_PROD_FIRESTORE_URL: "https://firestore.googleapis.com/v1/projects/townhallproject-86312/databases/(default)/documents/mutual_aid_networks"
-          NODE_ENV: 'production'  
+ 
         uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -30,6 +26,12 @@ jobs:
             
       - run: npm ci
       - run: npm run build
+        env:
+          REACT_APP_MAPBOX_STYLE_URL: "mapbox://styles/townhallproject/ck87rw1kt1g821is46uvwm08k"
+          REACT_APP_MAPBOX_API_KEY: "pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNrN3d1c3hhdDA1MmozbW80cW5oOWxzcHoifQ.rq66iVpULeHVB6PutWiunA"
+          REACT_APP_PROD_FIRESTORE_URL: "https://firestore.googleapis.com/v1/projects/townhallproject-86312/databases/(default)/documents/mutual_aid_networks"
+          NODE_ENV: 'production' 
+          
 
       - name: Prepare tag
         id: prepare_tag
