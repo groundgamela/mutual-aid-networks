@@ -10,10 +10,11 @@ import {
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
 import MapView from '../components/Map';
-import SubmitNetwork from '../components/SubmitNetwork';
+import SubmitButton from '../components/SubmitButton';
 import Filters from '../components/Filters';
 import ListView from '../components/ListView';
 import About from '../components/About';
+import Resources from '../components/Resources'
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
@@ -100,6 +101,7 @@ class DefaultLayout extends React.Component {
             >
               <Menu.Item key="map">Map</Menu.Item>
               <Menu.Item key="networks">Table View</Menu.Item>
+              <Menu.Item key="resources">Guides and Resources</Menu.Item>
               <Menu.Item key="about">About</Menu.Item>
             </Menu>
           </Sider>
@@ -118,8 +120,8 @@ class DefaultLayout extends React.Component {
             >
               <Menu.Item key="map">Map</Menu.Item>
               <Menu.Item key="networks">Table View</Menu.Item>
+              <Menu.Item key="resources">Guides and Resources</Menu.Item>
               <Menu.Item key="about">About</Menu.Item>
-              {/* <Menu.Item key="1">Guides and other resources</Menu.Item> */}
             </Menu>
           </Header>}
           <Content style={{ padding: '0 50px' }}>
@@ -154,10 +156,14 @@ class DefaultLayout extends React.Component {
                 </>: <NoWebGl />}
               
               <div className="tagline">Find Mutual Aid Networks and other community self-support projects near you. Reach out to these groups directly via the map above to get involved, offer resources, or submit needs requests.</div>
-              <SubmitNetwork />
+              <SubmitButton
+                link='https://docs.google.com/forms/d/e/1FAIpQLScuqQtCdKsDzvTzaA2PMyVHX7xcOqbOW7N7l_0YJASV4wMBVQ/viewform'
+                description='Submit a Mutual Aid Network'
+              />
             </>}
             {this.state.currentTab === 'networks' && <NetworksTable networks={allNetworks} />}
             {this.state.currentTab === 'about' && <About />}
+            {this.state.currentTab === 'resources' && <Resources />}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>

@@ -1,0 +1,25 @@
+.btn-container {
+  background-color: #3796bd;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  min-width: 400px;
+  max-width: 650px;
+  height: 175px;
+  margin: 20px auto 20px auto;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #submit-btn {
+    width: 70%;
+    height: 100px;
+    white-space: normal;
+    font-size: 2em;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+}
