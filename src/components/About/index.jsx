@@ -10,7 +10,7 @@ import th2 from '../../assets/thp/TH2.jpg'
 
 const About = (props) => {
   return (
-    <div className='about'>
+    <div className='page-container'>
       <a href='https://townhallproject.com/'>
         <img src={thpLogo} alt='Town Hall Project logo' className='thpLogo'/>
       </a>
