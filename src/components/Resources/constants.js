@@ -54,5 +54,9 @@ export const resourceList = [
   {
     "name": "Covid-19 Mutual Aid Slack",
     "link": "https://docs.google.com/forms/d/e/1FAIpQLSec5f4MHWMJ68wKfrRW7qhAvmo1F7vcbnSBIbZhAezaGAL8kQ/viewform?fbclid=IwAR3YeWILV84Z83HeI6cDjTvDSTnNgH7ZDIjEksPYFm1iSxCu-XpJd6gtNgs",
-  },
+   },
+  {
+    "name": "Funds for Coronavirus Relief Efforts",
+    "link": "https://candid.org/explore-issues/coronavirus/funds",
+    },
 ]
