@@ -24,19 +24,18 @@ const ListView = ({
   }) => {
   return (
       <div className="list-container">
-        {
-          visibleCards.length ? 
-          <>
-            <Filters 
-                setFilters={setFilters}
-                absolute={false}
-                selectedCategories={selectedCategories}
-                visible={true}
-            />
-            <NetworkCard 
-              setHoveredPoint={setHoveredPoint} 
-              networks={visibleCards} /></> : <NoNetworkSection />
-              
+        <Filters
+          setFilters={setFilters}
+          absolute={false}
+          selectedCategories={selectedCategories}
+          visible={true}
+        />
+        {visibleCards.length ?
+          <NetworkCard
+            setHoveredPoint={setHoveredPoint}
+            networks={visibleCards}
+          /> :
+          <NoNetworkSection />
         }
       </div>
   )
