@@ -21,6 +21,9 @@ const NetworkCard = (props) => {
         generalForm,
         supportRequestForm,
         supportOfferForm,
+        geocodeStatus,
+        state,
+        country,
         id
       } = network;
       return (
@@ -42,8 +45,11 @@ const NetworkCard = (props) => {
           }
         >
           <ul className='list-inline'>
-            {neighborhood && <li>{neighborhood}</li>}
-            {address && <li>{address}</li>}
+            {geocodeStatus === "hide city" ? <li>{neighborhood || ''}, {state}, {country}</li>
+            : <>
+              {neighborhood && <li>{neighborhood}</li>}
+              {address && <li>{address}</li>}
+            </>}
             {language && <li>{language}</li>}
           </ul>
           <Row justify="space-between">
