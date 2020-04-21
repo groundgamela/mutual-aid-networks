@@ -5,44 +5,40 @@ $info: #057A8F;
 
 .network-card {
   margin: 30px;
-  .ant-card-extra {
-    .text-general {
-      color: $general;
-    }
-    .text-community {
-      color: $info;
-    }
-    .text-request-support {
-      color: $request;
-    }
-    .text-offer-support {
-      color: $offer;
-    }
-    .text-other {
-      color: $info;
+  .ant-card-head-title {
+    white-space: normal;
+  }
+  .community-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    .button {
+      font-size: 1.2em;
+      font-weight: 600;
     }
   }
-}
-
-ul {
-  padding-left: 0;
-}
-
-.button {
-  font-size: 1.1em;
-  font-weight: 600;
-}
-
-.list-inline {
+  .list-inline {
+    li {
+      display:inline;
+    }
+    li:not(:first-child):before {
+      margin-right: 5px;
+      margin-left: 5px;
+      content: '\2022';
+    }
+  }
+  .text-general {
+    color: $general;
+  }
+  .text-community {
+    color: $info;
+  }
+  .text-request-support {
+    color: $request;
+  }
+  .text-offer-support {
+    color: $offer;
+  }
   ul {
     padding-left: 0;
-  }
-  li {
-    display:inline;
-  }
-  li:not(:first-child):before {
-    margin-right: 5px;
-    margin-left: 5px;
-    content: '\2022';
   }
 }
