@@ -150,10 +150,20 @@ class MapView extends React.Component {
           link = `<a rel="noopener noreferrer" href=${properties.facebookPage}>Link to group</a>`;
         }
         let location = properties.city ? `${properties.city}, ${properties.state}` : properties.state;
+        console.log(properties.hotlineNumber)
+
+        const standardizeNumber = (hotlineNumber) => {
+          let cleaned = ('' + hotlineNumber).replace(/\D/g, '')
+          let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+          return match ? `(${match[1]}) ${match[2]}-${match[3]}` : ''
+        }
+
+        const hotline = standardizeNumber(properties.hotlineNumber)
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
             <div>${location}</div>
+            <div>${hotline}</div>
             <div>${link}</div>`)
 
           .addTo(map);
