@@ -46,7 +46,7 @@ const NetworkCard = (props) => {
               {address && <li>{address}</li>}
             </>}
             {hotlineNumber && <li>{standardizePhoneNumber(hotlineNumber)}</li>}
-            {language && <li>{language}</li>}
+            {language && language.length ? <li>{language.join(', ')}</li> : null}
             {community && <li>{community}</li>}
           </ul>
           <Row justify="space-between" className='community-buttons'>
