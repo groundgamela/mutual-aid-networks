@@ -4,6 +4,7 @@ import {
   Row
 } from 'antd';
 import './style.scss';
+import { standardizePhoneNumber } from '../../utils/index'
 
 
 const NetworkCard = (props) => {
@@ -15,12 +16,15 @@ const NetworkCard = (props) => {
         title,
         neighborhood,
         facebookPage,
-        category,
+        hotlineNumber,
         community,
         language,
         generalForm,
         supportRequestForm,
         supportOfferForm,
+        geocodeStatus,
+        state,
+        country,
         id
       } = network;
       return (
@@ -34,23 +38,22 @@ const NetworkCard = (props) => {
           onMouseLeave={
             () => props.setHoveredPoint(null)
           }
-          extra={
-            <ul className='list-inline'>
-            {category && <li className={`text-${category.split(' ').join('-').toLowerCase()}`}>{category}</li>}
-            {community && <li>{community}</li>}
-          </ul>
-          }
         >
           <ul className='list-inline'>
-            {neighborhood && <li>{neighborhood}</li>}
-            {address && <li>{address}</li>}
+            {geocodeStatus === "hide city" ? <li>{neighborhood || ''}, {state}, {country}</li>
+            : <>
+              {neighborhood && <li>{neighborhood}</li>}
+              {address && <li>{address}</li>}
+            </>}
+            {hotlineNumber && <li>{standardizePhoneNumber(hotlineNumber)}</li>}
             {language && <li>{language}</li>}
+            {community && <li>{community}</li>}
           </ul>
-          <Row justify="space-between">
-            {generalForm && <a href={generalForm} target="_blank" rel="noopener noreferrer" className="button">Offer or request help</a>}
-            {supportRequestForm && <a href={supportRequestForm} rel="noopener noreferrer" target="_blank" className="button">Request help</a>}
-            {supportOfferForm && <a href={supportOfferForm} rel="noopener noreferrer" target="_blank" className="button">Offer help</a>}
-            {facebookPage && <a href={facebookPage} rel="noopener noreferrer" target="_blank" className="button">Join social media</a>}
+          <Row justify="space-between" className='community-buttons'>
+            {generalForm && <a href={generalForm} target="_blank" rel="noopener noreferrer" className="button text-general">General</a>}
+            {supportRequestForm && <a href={supportRequestForm} rel="noopener noreferrer" target="_blank" className="button text-request-support">Request help</a>}
+            {supportOfferForm && <a href={supportOfferForm} rel="noopener noreferrer" target="_blank" className="button text-offer-support">Offer help</a>}
+            {facebookPage && <a href={facebookPage} rel="noopener noreferrer" target="_blank" className="button text-community">Community</a>}
           </Row>
         </Card>
       )
