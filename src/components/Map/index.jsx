@@ -16,6 +16,7 @@ import {
   accessToken,
   mapboxStyle
 } from './constants';
+import { standardizePhoneNumber } from '../../utils/index'
 
 const mapboxgl = window.mapboxgl;
 
@@ -150,10 +151,12 @@ class MapView extends React.Component {
           link = `<a rel="noopener noreferrer" href=${properties.facebookPage}>Link to group</a>`;
         }
         let location = properties.city ? `${properties.city}, ${properties.state}` : properties.state;
+
         return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
           .setHTML(`
             <h4>${properties.title}</h4>
             <div>${location}</div>
+            <div>${standardizePhoneNumber(properties.hotlineNumber)}</div>
             <div>${link}</div>`)
 
           .addTo(map);

@@ -4,6 +4,7 @@ import {
   Row
 } from 'antd';
 import './style.scss';
+import { standardizePhoneNumber } from '../../utils/index'
 
 
 const NetworkCard = (props) => {
@@ -15,7 +16,7 @@ const NetworkCard = (props) => {
         title,
         neighborhood,
         facebookPage,
-        category,
+        hotlineNumber,
         community,
         language,
         generalForm,
@@ -44,6 +45,7 @@ const NetworkCard = (props) => {
               {neighborhood && <li>{neighborhood}</li>}
               {address && <li>{address}</li>}
             </>}
+            {hotlineNumber && <li>{standardizePhoneNumber(hotlineNumber)}</li>}
             {language && <li>{language}</li>}
             {community && <li>{community}</li>}
           </ul>
