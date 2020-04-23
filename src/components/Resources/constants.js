@@ -56,6 +56,10 @@ export const resourceList = [
     "link": "https://mutualaiddisasterrelief.org/wp-content/uploads/2020/03/COVID-SupplyDistro-MASafetyPracticesZine-WEB.pdf",
   },
   {
+    "name": "Free translation services for COVID-19 community projects",
+    "link": "https://www.creatingpuentes.com/",
+   },
+  {
     "name": "Covid-19 Mutual Aid Slack",
     "link": "https://docs.google.com/forms/d/e/1FAIpQLSec5f4MHWMJ68wKfrRW7qhAvmo1F7vcbnSBIbZhAezaGAL8kQ/viewform?fbclid=IwAR3YeWILV84Z83HeI6cDjTvDSTnNgH7ZDIjEksPYFm1iSxCu-XpJd6gtNgs",
    },
