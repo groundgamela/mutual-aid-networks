@@ -21,12 +21,13 @@ import ListView from '../components/ListView';
 import About from '../components/About';
 import Resources from '../components/Resources'
 import NavMenu from '../components/NavMenu'
+import PageFooter from '../components/PageFooter'
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
   constructor(props) {
@@ -66,6 +67,34 @@ class DefaultLayout extends React.Component {
     window.innerWidth <= 768 ? this.setState({isMobile: true}) : this.setState({isMobile: false})
   }
 
+  renderPageHeader = () => {
+    if (!this.state.isMobile) {
+      return (
+        <Header>
+          <NavMenu
+            mode='horizontal'
+            handleNav={this.handleNav}
+          />
+        </Header>
+      )
+    } else if (this.state.collapsed) {
+      return (
+        <Header onClick={this.toggleCollapsibleMenu}>
+          <MenuFoldOutlined className='menu-btn'/>
+        </Header>
+      )
+    } else {
+      return (
+        <Sider trigger={null}>
+          <NavMenu
+            mode='inline'
+            handleNav={this.handleNav}
+          />
+        </Sider>
+      )
+    }
+  }
+
   render() {
     const {
       setFilters,
@@ -89,29 +118,8 @@ class DefaultLayout extends React.Component {
     return (
       <Router>
         <Layout className="layout">
-          {this.state.isMobile &&
-          <>
-            {this.state.collapsed ?
-            <Header onClick={this.toggleCollapsibleMenu}>
-              <MenuFoldOutlined className='menu-btn'/>
-            </Header>
-            :
-            <Sider trigger={null}>
-              <NavMenu
-                mode='inline'
-                handleNav={this.handleNav}
-              />
-            </Sider>
-            }
-          </>}
+          {this.renderPageHeader()}
           <Layout>
-            {!this.state.isMobile &&
-            <Header>
-              <NavMenu
-                mode='horizontal'
-                handleNav={this.handleNav}
-              />
-            </Header>}
             <Content style={{ padding: '0 50px' }}>
               <div className="main-container">
                 <Switch>
@@ -164,22 +172,7 @@ class DefaultLayout extends React.Component {
                 </Switch>
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>
-              <div className="footer-text">
-                <p>
-                  We list these networks as a public resource. We cannot verify or vouch for any network
-                  or individual offerings. Please exercise all necessary judgement when interacting with
-                  community members not previously known to you.
-                </p>
-                <p>
-                  This data set is made available under the <a rel="noopener noreferrer" target="_blank" href="http://www.opendatacommons.org/licenses/pddl/1.0/">Public Domain Dedication and License v1.0</a>.
-                </p>
-                <p>
-                  This website is brought to you by <a href="https://townhallproject.com/" rel="noopener noreferrer" target="_blank" >Town Hall Project</a>.
-                  To report an error or other issue, please contact: <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
-                </p>
-              </div>
-            </Footer>
+            <PageFooter />
           </Layout>
         </Layout>
       </Router>
