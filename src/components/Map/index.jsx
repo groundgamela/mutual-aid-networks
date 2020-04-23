@@ -231,6 +231,10 @@ class MapView extends React.Component {
     } = this.props;
 
     resetToDefaultView();
+    this.fitBounds([
+      [-128.8, 23.6],
+      [-65.4, 50.2]
+    ]);
   }
 
   setInitialState() {
