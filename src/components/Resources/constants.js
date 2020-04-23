@@ -1,10 +1,14 @@
 export const resourceList = [
-  {
+{
+    "name": "AARP: How to Start a Mutual Aid Group",
+    "link": "https://aarpcommunityconnections.org/start-group/"
+  },  
+{
     "name": "Database of Localized Resources During Corona Outbreak",
     "link": "https://docs.google.com/spreadsheets/d/1HEdNpLB5p-sieHVK-CtS8_N7SIUhlMpY6q1e8Je0ToY/edit#gid=1604093003"
   },
   {
-    "name": "How to set up a Mutual Aid neighborhood group",
+    "name": "MUTUAL AID NYC: How to set up a Mutual Aid neighborhood group",
     "link": "http://mutualaid.nyc/2020/03/29/how-to-set-up-a-mutual-aid-neighborhood-group-a-resource-list/"
   },
   {
@@ -24,7 +28,7 @@ export const resourceList = [
     "link": "https://docs.google.com/document/d/1Rcan4C_e6OBFBI5bUn7MtYK74Ab-WarxyJmDvZUI_YA/preview"
   },
   {
-    "name": "Keeping Each Other Safe When Virtually Organizing Mutual Aid",
+    "name": "EFF: Keeping Each Other Safe When Virtually Organizing Mutual Aid",
     "link": "https://www.eff.org/deeplinks/2020/03/keeping-each-other-safe-when-virtually-organizing-mutual-aid"
   },
   {
@@ -40,7 +44,7 @@ export const resourceList = [
     "link": "https://docs.google.com/document/d/1-Qh0YEj6_7pG6BTTGWN7EwYkfw2CfpRYheL8mzvk_ZU/edit"
   },
   {
-    "name": "How to Set Up a Mutual Aid Website",
+    "name": "MUTUAL AID ARLINGTON: How to Set Up a Mutual Aid Website",
     "link": "https://mutualaidarlington.org/setup/#domain-name-forwarding---improve-your-web-address",
   },
   {
