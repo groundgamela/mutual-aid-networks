@@ -1,0 +1,16 @@
+.language-select-inline {
+  color: #fff;
+  font-size: .8em;
+  margin-left: 25px;
+}
+
+.language-select-horizontal {
+  color: #fff;
+  font-size: .8em;
+  float: right;
+  margin-top: 16px;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: #057A8F;
+}
