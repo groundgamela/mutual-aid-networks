@@ -1,8 +1,21 @@
 import React from 'react'
-import { Menu } from 'antd';
+import { Menu, Select } from 'antd';
 import { NavLink } from "react-router-dom";
 
+import './style.scss';
+
+const { Option } = Select
+
 const NavMenu = (props) => {
+
+  const handleLanguageSelection = (value) => {
+    console.log(value)
+  }
+
+  const currentLanguageSelection = () => {
+    return 'english'
+  }
+
   const {
     handleNav,
     mode,
@@ -29,6 +42,14 @@ const NavMenu = (props) => {
         <Menu.Item key="/about">
           <NavLink to='/about' exact>About</NavLink>
         </Menu.Item>
+        <Select
+          onChange={handleLanguageSelection}
+          className={`language-select-${mode}`}
+          defaultValue={currentLanguageSelection}
+        >
+          <Option value='english'>English</Option>
+          <Option value='spanish'>Spanish</Option>
+        </Select>
       </Menu>
     </>
   )
