@@ -2,6 +2,7 @@ import {
     SET_CATEGORY_FILTERS,
     SET_LAT_LNG,
     SET_HOVERED_POINT,
+    SET_SITE_LANGUAGE,
     SET_US_STATE,
     RESET_TO_DEFAULTS
 } from "./reducers";
@@ -18,6 +19,11 @@ export const setLatLng = (payload) => ({
 
 export const setHoveredPoint = (payload) => ({
     type: SET_HOVERED_POINT,
+    payload,
+});
+
+export const setSiteLanguage = (payload) => ({
+    type: SET_SITE_LANGUAGE,
     payload,
 });
 

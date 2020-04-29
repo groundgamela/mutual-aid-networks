@@ -3,12 +3,14 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
+import { language } from './language'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
 
   const {
-    networks
+    networks,
+    siteLanguage
   } = props
 
   const getColumnSearchProps = (dataIndex, description, secondaryDataIndex='') => ({
@@ -28,10 +30,10 @@ const NetworksTable = (props) => {
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
-          Search
+          {language.search[siteLanguage]}
         </Button>
         <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
-          Reset
+        {language.reset[siteLanguage]}
         </Button>
       </div>
     ),
@@ -56,7 +58,7 @@ const NetworksTable = (props) => {
 
   const tableColumns = [
     {
-      title: 'Organization',
+      title: language.organization[siteLanguage],
       width: '15vw',
       fixed: 'left',
       dataIndex: 'title',
@@ -66,7 +68,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'City',
+      title: language.city[siteLanguage],
       width: '20vw',
       dataIndex: 'city',
       key: 'city',
@@ -75,7 +77,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'State',
+      title: language.state[siteLanguage],
       width: '10vw',
       dataIndex: 'state',
       key: 'state',
@@ -85,7 +87,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'Languages',
+      title: language.languages[siteLanguage],
       width: '20vw',
       dataIndex: 'language',
       key: 'language',
@@ -94,7 +96,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'Get Involved',
+      title: language.getInvolved[siteLanguage],
       width: '20vw',
       filters: [
         { text: 'General', value: 'generalForm'},
@@ -107,10 +109,10 @@ const NetworksTable = (props) => {
       key: 'forms',
       render: (form, record) => (
         <ul key="resources" className='resources'>
-          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>General</Button></li>}
-          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>Offer Support</Button></li>}
-          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>Request Support</Button></li>}
-          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>Community</Button></li>}
+          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>{language.general[siteLanguage]}</Button></li>}
+          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>{language.supportOffer[siteLanguage]}</Button></li>}
+          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>{language.supportRequest[siteLanguage]}</Button></li>}
+          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>{language.facebookPage[siteLanguage]}</Button></li>}
         </ul>
       )
     },

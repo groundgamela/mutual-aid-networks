@@ -4,14 +4,15 @@ import { InfoCircleOutlined } from '@ant-design/icons';
 import NetworkCard from '../NetworkCard'
 import Filters from '../Filters';
 import './style.scss';
+import { language } from './language'
 
 const { Title } = Typography;
 
-const NoNetworkSection = () => {
+const NoNetworkSection = ({siteLanguage}) => {
   return (
     <div className="no-network-section">
       <Title level={3}><InfoCircleOutlined /></Title>
-      <Title level={3}>There are no support requests or networks nearby.</Title> 
+      <Title level={3}>{language.noNetworks[siteLanguage]}</Title>
     </div>
   )
 }
@@ -20,7 +21,8 @@ const ListView = ({
     visibleCards,
     setHoveredPoint,
     setFilters,
-    selectedCategories
+    selectedCategories,
+    siteLanguage
   }) => {
   return (
       <div className="list-container">
@@ -34,8 +36,9 @@ const ListView = ({
           <NetworkCard
             setHoveredPoint={setHoveredPoint}
             networks={visibleCards}
+            siteLanguage={siteLanguage}
           /> :
-          <NoNetworkSection />
+          <NoNetworkSection siteLanguage={siteLanguage}/>
         }
       </div>
   )

@@ -2,16 +2,17 @@ import React from 'react'
 import { List } from 'antd'
 
 import './style.scss';
-import { resourceList } from './constants'
+import { resourceList, language } from './language'
 import SubmitButton from '../SubmitButton'
 
 const Resources = (props) => {
+  const { siteLanguage } = props
   return (
     <>
       <div className='resources page-container'>
-        <h2 className='title'>Mutual Aid Resources</h2>
+        <h2 className='title'>{language.title[siteLanguage]}</h2>
         <p>
-          Starting your own Mutual Aid effort? Take a look at some of the invaluable resources community organizers have created:
+        {language.listDescription[siteLanguage]}
         </p>
         <List
           itemLayout='horizontal'
@@ -19,19 +20,19 @@ const Resources = (props) => {
           renderItem={resource => (
             <List.Item className='list'>
               <List.Item.Meta
-                title={<a className='list-title' target='blank' href={resource.link}>{resource.name}</a>}
+                title={<a className='list-title' target='blank' href={resource.link}>{resource.name[siteLanguage]}</a>}
               />
             </List.Item>
           )}
         >
         </List>
         <p>
-          Thank you to all the mutual aid organizers, trainers, and other leaders out there doing this work and sharing best practices.
+          {language.appreciationNote[siteLanguage]}
         </p>
       </div>
       <SubmitButton
         link='https://docs.google.com/forms/d/e/1FAIpQLScQOY2wlXUx7tM4R-DBZthp-H4LSSBMFs7wTvAi8xmamaB1fg/viewform'
-        description='Submit a Mutual Aid Resource'
+        description={language.submitButton[siteLanguage]}
       />
     </>
   )
