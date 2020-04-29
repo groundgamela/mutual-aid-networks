@@ -2,6 +2,8 @@ import React from 'react'
 import { Menu, Select } from 'antd';
 import { NavLink } from "react-router-dom";
 
+import { language } from './language'
+
 import './style.scss';
 
 const { Option } = Select
@@ -9,16 +11,31 @@ const { Option } = Select
 const NavMenu = (props) => {
 
   const handleLanguageSelection = (value) => {
-    console.log(value)
+    const {
+      setSiteLanguage
+    } = props
+    localStorage.setItem('language', value)
+    setSiteLanguage(value)
   }
 
   const currentLanguageSelection = () => {
-    return 'english'
+    const {
+      setSiteLanguage
+    } = props
+    const prevSelectedLanguage = localStorage.getItem('language')
+    if (prevSelectedLanguage) {
+      setSiteLanguage(prevSelectedLanguage)
+      return prevSelectedLanguage
+    } else {
+      handleLanguageSelection('english')
+      return 'english'
+    }
   }
 
   const {
     handleNav,
     mode,
+    siteLanguage
   } = props
   return (
     <>
@@ -31,16 +48,16 @@ const NavMenu = (props) => {
         selectedKeys={[window.location.pathname]}
       >
         <Menu.Item key="/">
-          <NavLink to='/' exact>Map</NavLink>
+          <NavLink to='/' exact>{language.map[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/table-view">
-          <NavLink to='/table-view' exact>Table View</NavLink>
+          <NavLink to='/table-view' exact>{language.tableView[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/resources">
-          <NavLink to='/resources' exact>Guides and Resources</NavLink>
+          <NavLink to='/resources' exact>{language.resources[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/about">
-          <NavLink to='/about' exact>About</NavLink>
+          <NavLink to='/about' exact>{language.about[siteLanguage]}</NavLink>
         </Menu.Item>
         <Select
           onChange={handleLanguageSelection}
@@ -48,7 +65,7 @@ const NavMenu = (props) => {
           defaultValue={currentLanguageSelection}
         >
           <Option value='english'>English</Option>
-          <Option value='spanish'>Spanish</Option>
+          <Option value='spanish'>Español</Option>
         </Select>
       </Menu>
     </>
