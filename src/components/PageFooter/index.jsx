@@ -19,6 +19,9 @@ const PageFooter = (props) => {
           This website is brought to you by <a href="https://townhallproject.com/" rel="noopener noreferrer" target="_blank" >Town Hall Project</a>.
           To report an error or other issue, please contact: <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
         </p>
+        <p>
+          <a href="/site-information">Privacy Policy</a>
+        </p>
       </div>
     </Footer>
   )
