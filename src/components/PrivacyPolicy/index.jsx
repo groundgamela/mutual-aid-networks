@@ -4,7 +4,7 @@ const PrivacyPolicy = (props) => {
   return (
     <div className='page-container'>
       <div className='privacy-policy'>
-        <h2 className='title'>PrivacyPolicy</h2>
+        <h2 className='title'>Privacy Policy</h2>
         <p>Information about your use of this website is collected using Google Analytics. The collected information consists of the following:</p>
         <ul>
           <li>
