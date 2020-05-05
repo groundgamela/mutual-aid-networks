@@ -5,11 +5,7 @@ export const language = {
   },
   disclaimer: {
     english: 'We do not directly organize or coordinate any individual mutual aid effort. We do our best to curate and filter groups doing relevant, valuable work in their communities, but we cannot verify or vouch for any network or individual offerings. Please exercise all necessary judgement when interacting with community members not previously known to you.',
-<<<<<<< HEAD
     spanish: 'No organizamos ni coordinamos directamente ningún esfuerzo individual de ayuda mutua. Hacemos nuestro mejor esfuerzo para seleccionar y filtrar grupos que realizan un trabajo relevante y valioso en sus comunidades, pero no podemos ni verificar ni confirmar cualquiera rede ni oferta particular. Favor de ejercer todo el juicio necesario cuándo interactuando con personas desconocidas en su vecindad.'
-=======
-    spanish: 'No organizamos ni coordinamos directamente ningún esfuerzo individual de ayuda mutua. Hacemos nuestro mejor esfuerzo para seleccionar y filtrar grupos que realizan un trabajo relevante y valioso en sus comunidades, pero no podemos verificar ni garantizar ninguna red ni oferta individual. Por favor ejerce todo el juicio necesario cuando interactúa con miembros de la comunidad que no conocía anteriormente.'
->>>>>>> fcd2aa801c806e7223d2a56d19fd92021944d56e
   },
   title: {
     english: 'This site is built and maintained by',
