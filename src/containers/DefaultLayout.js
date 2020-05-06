@@ -27,7 +27,7 @@ import './style.scss';
 import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
 
-import { language } from './language'
+import { translations } from './language'
 
 const { Header, Content, Sider } = Layout;
 const mapboxgl = window.mapboxgl;
@@ -173,11 +173,11 @@ class DefaultLayout extends React.Component {
                       </div>
                     </>: <NoWebGl />}
                     <div className="tagline">
-                      {language.tagline[siteLanguage]}
+                      {translations.tagline[siteLanguage]}
                     </div>
                     <SubmitButton
                       link='https://docs.google.com/forms/d/e/1FAIpQLScuqQtCdKsDzvTzaA2PMyVHX7xcOqbOW7N7l_0YJASV4wMBVQ/viewform'
-                      description={language.submitButton[siteLanguage]}
+                      description={translations.submitButton[siteLanguage]}
                     />
                   </Route>
                 </Switch>

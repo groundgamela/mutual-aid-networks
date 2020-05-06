@@ -1,4 +1,4 @@
-export const language = {
+export const translations = {
   map: {
     english: 'Map',
     spanish: 'Mapa'

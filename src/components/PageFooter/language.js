@@ -1,11 +1,11 @@
-export const language = {
+export const translations = {
   disclaimer: {
     english: "We list these networks as a public resource. We cannot verify or vouch for any network or individual offerings. Please exercise all necessary judgement when interacting with community members not previously known to you.",
-    spanish: "Presentamos estas grupos cómo recurso de uso público. No podemos ni verificar ni confirmar cualquiera rede ni oferta particular. Favor de ejercer todo el juicio necesario cuándo interactuando con personas desconocidas en su vecindad."
+    spanish: "Presentamos estos grupos cómo recurso de uso público. No podemos ni verificar ni confirmar ninguna red ni oferta particular. Por favor, ejerzan todo el juicio necesario cuando interactúan con personas desconcidas."
   },
   licenses: {
     english: "This data set is made available under the ",
-    spanish: "Este conjunto de datos está disponible a través de la "
+    spanish: "Este conjunto de datos está disponible a través del "
   },
   source: {
     english: "This website is brought to you by ",

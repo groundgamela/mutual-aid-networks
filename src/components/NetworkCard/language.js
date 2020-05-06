@@ -1,11 +1,11 @@
-export const language = {
+export const translations = {
   general: {
     english: "General",
     spanish: "General"
   },
   supportOffer: {
     english: "Offer Support",
-    spanish: "Ofreta Apoyo"
+    spanish: "Ofrece Apoyo"
   },
   supportRequest: {
     english: "Request Support",

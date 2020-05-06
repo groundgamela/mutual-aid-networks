@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu, Select } from 'antd';
 import { NavLink } from "react-router-dom";
 
-import { language } from './language'
+import { translations } from './language'
 
 import './style.scss';
 
@@ -14,7 +14,7 @@ const NavMenu = (props) => {
     const {
       setSiteLanguage
     } = props
-    localStorage.setItem('language', value)
+    localStorage.setItem('siteLanguage', value)
     setSiteLanguage(value)
   }
 
@@ -22,7 +22,7 @@ const NavMenu = (props) => {
     const {
       setSiteLanguage
     } = props
-    const prevSelectedLanguage = localStorage.getItem('language')
+    const prevSelectedLanguage = localStorage.getItem('siteLanguage')
     if (prevSelectedLanguage) {
       setSiteLanguage(prevSelectedLanguage)
       return prevSelectedLanguage
@@ -48,26 +48,38 @@ const NavMenu = (props) => {
         selectedKeys={[window.location.pathname]}
       >
         <Menu.Item key="/">
-          <NavLink to='/' exact>{language.map[siteLanguage]}</NavLink>
+          <NavLink to='/' exact>{translations.map[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/table-view">
-          <NavLink to='/table-view' exact>{language.tableView[siteLanguage]}</NavLink>
+          <NavLink to='/table-view' exact>{translations.tableView[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/resources">
-          <NavLink to='/resources' exact>{language.resources[siteLanguage]}</NavLink>
+          <NavLink to='/resources' exact>{translations.resources[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/about">
-          <NavLink to='/about' exact>{language.about[siteLanguage]}</NavLink>
+          <NavLink to='/about' exact>{translations.about[siteLanguage]}</NavLink>
         </Menu.Item>
+        {mode === 'horizontal' &&
+          <Select
+            onChange={handleLanguageSelection}
+            className='language-select language-select-horizontal'
+            defaultValue={currentLanguageSelection}
+          >
+            <Option value='english'>English</Option>
+            <Option value='spanish'>Español</Option>
+          </Select>
+        }
+      </Menu>
+      {mode === 'inline' &&
         <Select
           onChange={handleLanguageSelection}
-          className={`language-select-${mode}`}
+          className='language-select'
           defaultValue={currentLanguageSelection}
         >
           <Option value='english'>English</Option>
           <Option value='spanish'>Español</Option>
         </Select>
-      </Menu>
+      }
     </>
   )
 }

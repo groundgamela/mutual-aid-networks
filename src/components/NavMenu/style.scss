@@ -1,16 +1,28 @@
-.language-select-inline {
+.language-select {
   color: #fff;
-  font-size: .8em;
-  margin-left: 25px;
+  font-size: 0.7em;
+  margin: 16px 0 0 25px;
 }
 
 .language-select-horizontal {
-  color: #fff;
-  font-size: .8em;
   float: right;
-  margin-top: 16px;
 }
 
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
   background-color: #057A8F;
+}
+
+.ant-select-item-option {
+  font-size: 0.7em;
+  color: #057A8F;
+  font-weight: normal;
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: #27a4b585;
+  color: #fff;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  font-weight: 600;
 }

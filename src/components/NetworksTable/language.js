@@ -1,4 +1,4 @@
-export const language = {
+export const translations = {
   search: {
     english: 'Search',
     spansih: 'Buscar'
@@ -33,7 +33,7 @@ export const language = {
   },
   supportOffer: {
     english: "Offer Support",
-    spanish: "Ofreta Apoyo"
+    spanish: "Ofrece Apoyo"
   },
   supportRequest: {
     english: "Request Support",

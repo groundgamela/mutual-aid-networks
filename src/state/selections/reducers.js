@@ -16,7 +16,7 @@ export const options = [GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION];
 const initialState = {
   view: 'default',
   categories: options,
-  language: 'english',
+  siteLanguage: 'english',
   community: '',
   searchLocation: {},
   hoveredPointId: null,
@@ -50,7 +50,7 @@ const selectionReducer = (state = initialState, action) => {
     case SET_SITE_LANGUAGE:
       return {
         ...state,
-        language: action.payload,
+        siteLanguage: action.payload,
       }
     default:
       return state;

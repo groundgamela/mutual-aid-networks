@@ -8,7 +8,7 @@ import thpLogo from '../../assets/thp/THP_logo_horizontal.png'
 import th1 from '../../assets/thp/TH1.jpg'
 import th2 from '../../assets/thp/TH2.jpg'
 
-import { language } from './language'
+import { translations } from './language'
 
 const About = (props) => {
   const { siteLanguage } = props
@@ -19,13 +19,13 @@ const About = (props) => {
       </a>
       <h2 className='title'>
         <span>
-          {language.title[siteLanguage]}
+          {translations.title[siteLanguage]}
           <a href='https://townhallproject.com/'> Town Hall Project.</a>
         </span>
       </h2>
       <div className='container'>
         <p>
-          {language.description[siteLanguage]}
+          {translations.description[siteLanguage]}
         </p>
 
         <div className='imageCollage'>
@@ -48,7 +48,7 @@ const About = (props) => {
         </div>
         
         <p>
-          {language.disclaimer[siteLanguage]}
+          {translations.disclaimer[siteLanguage]}
         </p>
       </div>
     </div>

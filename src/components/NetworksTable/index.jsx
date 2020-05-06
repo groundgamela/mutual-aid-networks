@@ -3,7 +3,7 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
-import { language } from './language'
+import { translations } from './language'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
@@ -30,10 +30,10 @@ const NetworksTable = (props) => {
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
-          {language.search[siteLanguage]}
+          {translations.search[siteLanguage]}
         </Button>
         <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
-        {language.reset[siteLanguage]}
+        {translations.reset[siteLanguage]}
         </Button>
       </div>
     ),
@@ -58,7 +58,7 @@ const NetworksTable = (props) => {
 
   const tableColumns = [
     {
-      title: language.organization[siteLanguage],
+      title: translations.organization[siteLanguage],
       width: '15vw',
       fixed: 'left',
       dataIndex: 'title',
@@ -68,7 +68,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: language.city[siteLanguage],
+      title: translations.city[siteLanguage],
       width: '20vw',
       dataIndex: 'city',
       key: 'city',
@@ -77,7 +77,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: language.state[siteLanguage],
+      title: translations.state[siteLanguage],
       width: '10vw',
       dataIndex: 'state',
       key: 'state',
@@ -87,7 +87,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: language.languages[siteLanguage],
+      title: translations.languages[siteLanguage],
       width: '20vw',
       dataIndex: 'language',
       key: 'language',
@@ -96,7 +96,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: language.getInvolved[siteLanguage],
+      title: translations.getInvolved[siteLanguage],
       width: '20vw',
       filters: [
         { text: 'General', value: 'generalForm'},
@@ -109,10 +109,10 @@ const NetworksTable = (props) => {
       key: 'forms',
       render: (form, record) => (
         <ul key="resources" className='resources'>
-          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>{language.general[siteLanguage]}</Button></li>}
-          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>{language.supportOffer[siteLanguage]}</Button></li>}
-          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>{language.supportRequest[siteLanguage]}</Button></li>}
-          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>{language.facebookPage[siteLanguage]}</Button></li>}
+          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>{translations.general[siteLanguage]}</Button></li>}
+          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>{translations.supportOffer[siteLanguage]}</Button></li>}
+          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>{translations.supportRequest[siteLanguage]}</Button></li>}
+          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>{translations.facebookPage[siteLanguage]}</Button></li>}
         </ul>
       )
     },

@@ -2,17 +2,19 @@ import React from 'react'
 import { List } from 'antd'
 
 import './style.scss';
-import { resourceList, language } from './language'
+import { translations } from './language'
 import SubmitButton from '../SubmitButton'
+
+const { resourceList } = translations
 
 const Resources = (props) => {
   const { siteLanguage } = props
   return (
     <>
       <div className='resources page-container'>
-        <h2 className='title'>{language.title[siteLanguage]}</h2>
+        <h2 className='title'>{translations.title[siteLanguage]}</h2>
         <p>
-        {language.listDescription[siteLanguage]}
+        {translations.listDescription[siteLanguage]}
         </p>
         <List
           itemLayout='horizontal'
@@ -27,12 +29,12 @@ const Resources = (props) => {
         >
         </List>
         <p>
-          {language.appreciationNote[siteLanguage]}
+          {translations.appreciationNote[siteLanguage]}
         </p>
       </div>
       <SubmitButton
         link='https://docs.google.com/forms/d/e/1FAIpQLScQOY2wlXUx7tM4R-DBZthp-H4LSSBMFs7wTvAi8xmamaB1fg/viewform'
-        description={language.submitButton[siteLanguage]}
+        description={translations.submitButton[siteLanguage]}
       />
     </>
   )
