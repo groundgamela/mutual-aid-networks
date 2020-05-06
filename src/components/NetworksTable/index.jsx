@@ -3,6 +3,7 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
+import { languageFilterOptions } from './constants'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
@@ -89,20 +90,20 @@ const NetworksTable = (props) => {
       width: '20vw',
       dataIndex: 'language',
       key: 'language',
-      sorter: (a,b) => a.language.localeCompare(b.language),
-      ...getColumnSearchProps('language', 'languages'),
-      render: text => text,
+      filters: languageFilterOptions,
+      onFilter: (value, record) => record.language.length && (record.language.join().includes(value)),
+      render: languages => languages.join(', '),
     },
     {
       title: 'Get Involved',
       width: '20vw',
+      dataIndex: 'forms',
       filters: [
         { text: 'General', value: 'generalForm'},
         { text: 'Offer Support', value: 'supportOfferForm' },
         { text: 'Request Support', value: 'supportRequestForm' },
         { text: 'Community', value: 'facebookPage' },
       ],
-      dataIndex: 'forms',
       onFilter: (value, record) => record[value],
       key: 'forms',
       render: (form, record) => (
