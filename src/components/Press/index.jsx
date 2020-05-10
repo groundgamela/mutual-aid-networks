@@ -50,6 +50,7 @@ function onChange(filters, sorter, extra) {
 const Press = (props) => {
     return (
         <div className='page-container'>
+            <h2 class='title'>Mutual Aid Press</h2>
             <Table columns={columns} dataSource={pressData} onChange={onChange} pagination={false} />
         </div>
     )
