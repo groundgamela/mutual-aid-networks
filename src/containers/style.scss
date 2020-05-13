@@ -82,9 +82,10 @@ $info: #057A8F;
             }
         }
         .page-container {
-            padding: 50px;
-            width: 70vw;
+            padding: 50px 30px 50px 30px;
+            width: 90vw;
             min-width: 300px;
+            max-width: 1200px;
             margin: auto;
             a {
                 color: $offer
@@ -94,8 +95,8 @@ $info: #057A8F;
             }
             p {
                 padding-top: 30px;
-                font-size: 1.3em;
-                font-weight: 400;
+                font-size: 1.2em;
+                font-weight: normal;
             }
         }
         .tagline {
