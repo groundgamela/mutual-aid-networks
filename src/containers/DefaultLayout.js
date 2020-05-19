@@ -22,6 +22,7 @@ import About from '../components/About';
 import Resources from '../components/Resources'
 import NavMenu from '../components/NavMenu'
 import PageFooter from '../components/PageFooter'
+import Press from '../components/Press';
 import PrivacyPolicy from '../components/PrivacyPolicy'
 
 import './style.scss';
@@ -132,6 +133,9 @@ class DefaultLayout extends React.Component {
                   </Route>
                   <Route path='/resources'>
                     <Resources />
+                  </Route>
+                  <Route path='/press'>
+                    <Press />
                   </Route>
                   <Route path='/site-information'>
                     <PrivacyPolicy />

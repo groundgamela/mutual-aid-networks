@@ -26,6 +26,9 @@ const NavMenu = (props) => {
         <Menu.Item key="/resources">
           <NavLink to='/resources' exact>Guides and Resources</NavLink>
         </Menu.Item>
+        <Menu.Item key="/press">
+          <NavLink to='/press' exact>Press</NavLink>
+        </Menu.Item>
         <Menu.Item key="/about">
           <NavLink to='/about' exact>About</NavLink>
         </Menu.Item>
