@@ -23,6 +23,7 @@ import Resources from '../components/Resources'
 import NavMenu from '../components/NavMenu'
 import PageFooter from '../components/PageFooter'
 import Press from '../components/Press';
+import PrivacyPolicy from '../components/PrivacyPolicy'
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
@@ -135,6 +136,9 @@ class DefaultLayout extends React.Component {
                   </Route>
                   <Route path='/press'>
                     <Press />
+                  </Route>
+                  <Route path='/site-information'>
+                    <PrivacyPolicy />
                   </Route>
                   <Route path='/'>
                     {mapboxgl.supported() ? <>
