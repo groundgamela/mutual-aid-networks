@@ -16,7 +16,8 @@ import {
   accessToken,
   mapboxStyle
 } from './constants';
-import { standardizePhoneNumber } from '../../utils/index'
+import { standardizePhoneNumber } from '../../utils/index';
+import BannerBox from '../Banner/index';
 
 const mapboxgl = window.mapboxgl;
 
@@ -372,12 +373,14 @@ class MapView extends React.Component {
       selectedCategories,
     } = this.props;
     return (<React.Fragment>
+        
       <div id="map"
         className={
           this.state.popoverColor
-        } >
+        }>
         <div className="map-overlay"
           id="legend" >
+            
           <MapInset networks={
             filter(networks, {
               state: 'AK'
@@ -440,7 +443,10 @@ class MapView extends React.Component {
                 [-154.22607421875, 22.573438264572406]
               ]
             }
-          /> </div> </div>
+          /> 
+          {BannerBox}
+        "Organizing a mutual aid effort in your community? Join fellow organizers around the country for our weekly Best Practice sharing calls"
+          </div> </div>
 
     </React.Fragment>
     );
