@@ -17,7 +17,7 @@ import {
   mapboxStyle
 } from './constants';
 import { standardizePhoneNumber } from '../../utils/index';
-import BannerBox from '../Banner/index';
+
 
 const mapboxgl = window.mapboxgl;
 
@@ -373,7 +373,6 @@ class MapView extends React.Component {
       selectedCategories,
     } = this.props;
     return (<React.Fragment>
-        
       <div id="map"
         className={
           this.state.popoverColor
@@ -444,8 +443,6 @@ class MapView extends React.Component {
               ]
             }
           /> 
-          {BannerBox}
-        "Organizing a mutual aid effort in your community? Join fellow organizers around the country for our weekly Best Practice sharing calls"
           </div> </div>
 
     </React.Fragment>

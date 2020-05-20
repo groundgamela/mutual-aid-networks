@@ -1,0 +1,15 @@
+$general: #8048f3;
+$offer: #6ac1e5;
+$request: #ef4822;
+$info: #057A8F;
+
+.banner {
+  background-color:$general;
+  border: thick;
+  padding: 1px;
+  text-align: center;
+  a {
+    color: $offer;  
+  }
+  
+}
