@@ -5,11 +5,12 @@ $info: #057A8F;
 
 .banner {
   background-color:$general;
-  border: thick;
-  padding: 1px;
+  padding: 10px;
   text-align: center;
   a {
     color: $offer;  
   }
-  
+  h3 {
+    margin:0;
+  }
 }
