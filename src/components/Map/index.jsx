@@ -376,7 +376,7 @@ class MapView extends React.Component {
       <div id="map"
         className={
           this.state.popoverColor
-        }>
+        } >
         <div className="map-overlay"
           id="legend" >
             
@@ -442,8 +442,7 @@ class MapView extends React.Component {
                 [-154.22607421875, 22.573438264572406]
               ]
             }
-          /> 
-          </div> </div>
+          /></div> </div>
 
     </React.Fragment>
     );
