@@ -34,7 +34,7 @@ const Resources = (props) => {
           }
           >
             <List.Item.Meta
-              title={<a className='list-title' target='_blank' href={resource.link}>{resource.name}</a>}
+              title={<a className='list-title' target='_blank' rel='noopener noreferrer' href={resource.link}>{resource.name}</a>}
               description={resource.description}
             />
           </List.Item>
