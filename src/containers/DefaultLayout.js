@@ -22,12 +22,9 @@ import About from '../components/About';
 import Resources from '../components/Resources'
 import NavMenu from '../components/NavMenu'
 import PageFooter from '../components/PageFooter'
-<<<<<<< HEAD
 import Press from '../components/Press';
 import PrivacyPolicy from '../components/PrivacyPolicy'
-=======
 import Banner from '../components/Banner';
->>>>>>> [wip] banner with link
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
