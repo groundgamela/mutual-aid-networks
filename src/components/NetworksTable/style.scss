@@ -21,6 +21,7 @@ $info: #057A8F;
 .resources {
   list-style-type:none;
   font-weight: bold;
+  padding-left: 0;
   .offer {
     @include link-button($offer)
   }
