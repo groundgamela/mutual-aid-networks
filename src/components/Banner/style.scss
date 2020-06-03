@@ -1,4 +1,4 @@
-@import './banner_colors.scss';
+@import '../../styles/variableColorStyles.scss';
 
 .banner {
   background-color:$banner;
@@ -10,4 +10,4 @@
   h3 {
     margin:0;
   }
-}
+};
