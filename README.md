@@ -1,22 +1,50 @@
-Welcome to Mutual-Aid-Project! Our site is for organizing mutual aid effort in your community. 
+Welcome to Mutual-Aid-Project! This site is for organizing mutual aid efforts within your community. 
 
 ## Setup
 
-To Install: 
-
 Before starting, please reach out to Megan at info@townhallproject.com for environmental variables. 
-Once you receive this information(and you have completed steps 1-5), 
-please create an .env file at the .gitignore 
-level and copy and paste information into that file. 
-IMPORTANT NOTE: Please add  .env   to the .gitignore. 
-This is sensitive information and we do not want our .env file being saved on github.  
-```
-1. Fork the repository
-2. From your fork, clone down a local copy
-3. Open respository and run npm install/ npm i 
-4. Run npm start 
-5. If done successfully, you should see localhost:3000 with a map of the United States
-```
+Once you receive this information please create an .env file at the root level (same level as .gitignore) 
+and copy and paste information into that file. 
+
+#### The general development workflow is as follows:
+- Fork the Mutual-Aid-project admin repo
+- Make changes to your forked repo
+- Send PRs from the forked repo to the main Mutual-Aid-project repo
+
+#### Merging your changes to the main Mutual-Aid-project repo
+1. update your forked master branch to match the main Mutual-Aid-project master branch:
+- Set up the original Mutual-Aid-project admin repo as a remote (this only has to be done once):
+  `git remote add upstream https://github.com/townhallproject/admin.git`
+  - To verify that the remote was added: `git remote -v`
+- `git checkout master`
+- `git pull upstream master`
+  - this brings all new content from the main Mutual-Aid-project repo into the current branch of your cloned repo
+- `git push origin master`
+  - this sends those changes to your fork
+
+2. Rebase your topic branch onto your fork's master, which is now up to date with everyone elses changes:
+- `git checkout <your branch>`
+- `git rebase master`
+  - if there are any problems they will become apparent here
+- `git push origin master`
+
+3. Create a pull request to the main Mutual-Aid-project repo master
+- use the github UI
+
+1. Download the files
+Clone this repository to a folder of your choice on your local machine: git clone <repo URL>
+Navigate to the newly cloned repository folder
+Install the project dependencies: npm i
+Run npm start to open in localhost
+  
+5. Devtools setup
+React and Redux devtools can be helpful tools to install for debugging in Chrome:
+
+React devtools chrome extension
+Redux devtools chrome extension
+
+6. 🎂 Congratulations you're done 🎂
+When you encounter new problems, make SURE to edit this README with updated information so that future coders can spend more time being productive!
 
 
 
