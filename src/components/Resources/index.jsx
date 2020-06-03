@@ -2,7 +2,7 @@ import React from 'react'
 import { List } from 'antd'
 
 import './style.scss';
-import { resourceList } from './constants'
+import resourceList from '../../data/resources'
 import SubmitButton from '../SubmitButton'
 
 const Resources = (props) => {

@@ -1,4 +1,34 @@
-export const resourceList = [
+/*
+To add a new resource, first find the section you want to put it in. Then, add a new object to that section's
+content array. The object will need to have a name, link and description. Optionally, you can also include an
+image, which should be a url link. You can copy the template below:
+
+{
+  name: "name/resource title",
+  link: "link to the resource",
+  description: "description of the resource",
+  image: "OPTIONAL: url link to a visual"
+},
+
+If you want to make a new section, you need to add a new object into the outermost array. This object will need
+a section, which is the name of the section, and content, which is an array of objects like the example one listed
+above, which include all of the resources you want in that section. You can copy the template below:
+
+{
+  section: 'TITLE OF THE SECTION - USE ALL CAPS TO BE CONSISTENT WITH THE OTHER SECTION TITLES',
+  content: [
+    {
+      name: "name/resource title",
+      link: "link to the resource",
+      description: "description of the resource",
+      image: "OPTIONAL: url link to a visual"
+    },
+  ]
+},
+
+*/
+
+export default [
   {
     section: 'WHAT IS MUTUAL AID?',
     content: [
