@@ -5,7 +5,10 @@ Welcome to Mutual-Aid-Project! Our site is for organizing mutual aid effort in y
 ```
 To Install: 
 
-Before starting, please reach out to Megan at info@townhallproject.com for environmental variables. Once you receive this information(and you have completed steps 1-5), please create an .env file at the .gitignore level and copy and paste information into that file. IMPORTANT NOTE: Please add    .env   to the .gitignore. This is sensitive information and we do not want our .env file being saved on github.  
+Before starting, please reach out to Megan at info@townhallproject.com for environmental variables. 
+Once you receive this information(and you have completed steps 1-5), please create an .env file at the .gitignore level and copy and paste information into that file. 
+IMPORTANT NOTE: Please add    .env   to the .gitignore. 
+This is sensitive information and we do not want our .env file being saved on github.  
 
 1. Fork the repository
 2. From your fork, clone down a local copy
