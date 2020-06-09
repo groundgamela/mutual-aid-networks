@@ -12,7 +12,6 @@ const columns = [
         defaultSortOrder: 'descend',
         key: 'date-col',
         render: (value, row, index) => {
-            console.log(value);
             const date = value !== '0' ? moment.unix(value).format("M/D/YY") : "";
             return <span key={`${index} ${date}`}>{date}</span>
         },
