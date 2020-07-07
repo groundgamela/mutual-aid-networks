@@ -347,5 +347,77 @@ export default [
         "": "",
         "__1": ""
       },
-  ]
+    {
+      "date": "	1593475200",
+      "outlet": "Hola!",
+      "state": "national",
+      "title": "Ashlee Marie Preston's Latest Mission",
+      "mah_mentioned": "yes",
+      "link": "https://us.hola.com/lifestyle/20200630fou2jbb5pg/ashlee-marie-preston-you-are-essential-interview",
+      "reporter": "0",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+     {
+      "date": "1591660800",
+      "outlet": "Architectural Digest",
+      "state": "national",
+      "title": "How to Help Your Local Community in Times of Crisis—and Beyond",
+      "mah_mentioned": "yes",
+      "link": "https://www.architecturaldigest.com/story/how-to-help-your-local-community-in-times-of-crisis-and-beyond",
+      "reporter": "0",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+     {
+      "date": "1590969600",
+      "outlet": "Pitchfork",
+      "state": "national",
+      "title": "Resources in the Fight Against Police Brutality and Systemic Racism",
+      "mah_mentioned": "yes",
+      "link": "https://pitchfork.com/thepitch/resources-in-the-fight-against-police-brutality-and-systemic-racism/",
+      "reporter": "0",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+    {
+      "date": "1589414400",
+      "outlet": "Vice",
+      "state": "national",
+      "title": "How to Be a Good Neighbor Right Now",
+      "mah_mentioned": "no",
+      "link": "https://www.vice.com/en_us/article/pkevwm/how-to-help-neighbors-during-coronavirus-social-distancing",
+      "reporter": "Rachel Miller",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+     {
+      "date": "1594080000",
+      "outlet": "Shareable",
+      "state": "national",
+      "title": "How to start a mutual aid network in a pandemic",
+      "mah_mentioned": "yes",
+      "link": "https://www.shareable.net/how-to-start-a-mutual-aid-network-in-a-pandemic/",
+      "reporter": "Rachel Miller",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+    {
+      "date": "1594080000",
+      "outlet": "Shareable",
+      "state": "national",
+      "title": "How to start a mutual aid network in a pandemic",
+      "mah_mentioned": "yes",
+      "link": "https://www.shareable.net/how-to-start-a-mutual-aid-network-in-a-pandemic/",
+      "reporter": "Rachel Miller",
+      "contact_info": "0",
+      "": "",
+      "__1": ""
+    },
+       ]
   
