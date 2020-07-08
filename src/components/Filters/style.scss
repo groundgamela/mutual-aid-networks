@@ -26,8 +26,32 @@
 
 .filter-container.absolute-pos {
     position: absolute;
-    top: 64px;
+    top: 125px;
     left: 10px;
     z-index: 2;
     width: 165px;
+}
+
+@media screen and (max-width: 639px) and (min-width: 589px) {
+    .filter-container.absolute-pos {
+        top: 145px;
+    }
+}
+
+@media screen and (max-width: 588px) and (min-width: 398px) {
+    .filter-container.absolute-pos {
+        top: 175px;
+    }
+}
+
+@media screen and (max-width: 397px) and (min-width: 315px) {
+    .filter-container.absolute-pos {
+        top: 200px;
+    }
+}
+
+@media screen and (max-width: 314px) {
+    .filter-container.absolute-pos {
+        top: 220px;
+    }
 }

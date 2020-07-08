@@ -1,0 +1,13 @@
+@import '../../styles/variableColorStyles.scss';
+
+.banner {
+  background-color:$banner;
+  padding: 10px;
+  text-align: center;
+  a {
+    color: $offer;  
+  }
+  h3 {
+    margin:0;
+  }
+};

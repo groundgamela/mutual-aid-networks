@@ -419,5 +419,29 @@ export default [
       "": "",
       "__1": ""
     },
-       ]
+    {
+        "date": "0",
+        "outlet": "The Atlantic",
+        "state": "national",
+        "title": "Pandemic Organizers Are Co-opting Productivity Software",
+        "mah_mentioned": "no",
+        "link": "https://www.theatlantic.com/technology/archive/2020/05/coronavirus-mutual-aid-groups-slack-airtable-google/612190/",
+        "reporter": "Kaitlyn Tiffany",
+        "contact_info": "ktiffany@theatlantic.com",
+        "": "",
+        "__1": ""
+      },
+      {
+        "date": "0",
+        "outlet": "NBC News",
+        "state": "national",
+        "title": "Communities rally around one another — and Google Docs — to bring coronavirus aid",
+        "mah_mentioned": "no",
+        "link": "https://www.nbcnews.com/tech/tech-news/communities-rally-around-each-other-google-docs-bring-coronavirus-aid-n1164126",
+        "reporter": "April Glaser",
+        "contact_info": "0",
+        "": "",
+        "__1": ""
+      },
+  ]
   
