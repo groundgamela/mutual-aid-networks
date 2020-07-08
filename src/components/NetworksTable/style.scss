@@ -20,6 +20,7 @@
   list-style-type:none;
   padding-left: 0;
   font-weight: bold;
+  padding-left: 0;
   .offer {
     @include link-button($offer)
   }
