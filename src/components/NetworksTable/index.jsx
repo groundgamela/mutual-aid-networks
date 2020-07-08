@@ -3,7 +3,6 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
-import { languageFilterOptions } from './constants'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
