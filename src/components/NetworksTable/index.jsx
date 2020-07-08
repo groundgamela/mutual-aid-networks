@@ -3,6 +3,7 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
+import { languageFilterOptions } from './constants'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
@@ -26,6 +27,7 @@ const NetworksTable = (props) => {
     confirm();
     setSearchCol(dataIndex)
   }
+
 
   const getColumnSearchProps = (dataIndex, description) => ({
     filterDropdown: ({setSelectedKeys, selectedKeys, confirm, clearFilters}) => (
@@ -72,7 +74,7 @@ const NetworksTable = (props) => {
     },
     {
       title: 'City',
-      width: '20vw',
+      width: '15vw',
       dataIndex: 'city',
       key: 'city',
       sorter: (a,b) => a.city.localeCompare(b.city),
@@ -87,6 +89,15 @@ const NetworksTable = (props) => {
       sorter: (a,b) => a.state.localeCompare(b.state),
       defaultSortOrder: 'ascend',
       ...getColumnSearchProps('state', 'states'),
+      render: text => text,
+    },
+    {
+      title: 'Communities',
+      width: '20vw',
+      dataIndex: 'community',
+      key: 'community',
+      sorter: (a,b) => a.community.localeCompare(b.community),
+      ...getColumnSearchProps('community', 'communities'),
       render: text => text,
     },
     {
@@ -110,16 +121,16 @@ const NetworksTable = (props) => {
     {
       title: 'Get Involved',
       width: '20vw',
+      dataIndex: 'forms',
       filters: [
         { text: 'General', value: 'generalForm'},
         { text: 'Offer Support', value: 'supportOfferForm' },
         { text: 'Request Support', value: 'supportRequestForm' },
         { text: 'Community', value: 'facebookPage' },
       ],
-      dataIndex: 'forms',
       onFilter: (value, record) => record[value],
       key: 'forms',
-      render: (form, record) => (
+      render: (text, record) => (
         <ul key="resources" className='resources'>
           {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>General</Button></li>}
           {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>Offer Support</Button></li>}
@@ -137,8 +148,9 @@ const NetworksTable = (props) => {
         columns={tableColumns}
         dataSource={networks}
         pagination={{pageSize: 20, hideOnSinglePage: true}}
-        scroll={{x: 768}}
+        scroll={{x: 1080}}
         size='small'
+        locale={{filterConfirm: 'Filter'}}
       />
     </>
   )

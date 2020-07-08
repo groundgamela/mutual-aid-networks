@@ -137,6 +137,11 @@ export const resourceList = [
         description: "Database of funding opportunities for Coronavirus projects",
         image: "https://candid.org/var/ezflow_site/storage/images/site_candid/explore-issues/coronavirus/funds/22821987-8-eng-US/funds-for-coronavirus-relief_fb_og_image.png"
       },
+       {
+        name: "Legal Issues in Mutual Aid Operations: A Preliminary Guide",
+        link: "https://poseidon01.ssrn.com/delivery.php?ID=526026122121112001074075017073006004021019084010061003029097009119084098094125097098117019034042056022028000095065074006026117105078049036082097018104005080015021065014110064111083085090027093119124096015117023067095094106108101117125083022025125&EXT=pdf",
+        description: "A thorough guide to the legal considerations of organizing mutual aid"
+      },
       {
         name: "COVID Resource Librarian",
         link: "https://www.covidresourcelibrarian.com/about",
