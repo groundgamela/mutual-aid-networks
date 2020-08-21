@@ -11,6 +11,18 @@ export default [
       "": "",
       "__1": ""
     },
+     {
+      "date": "1596746894",
+      "outlet": "Teen Vogue",
+      "state": "national",
+      "title": "Mutual Aid Organizers Want Congress to Extend Pandemic Unemployment Assistance",
+      "mah_mentioned": "yes",
+      "link": "https://www.teenvogue.com/story/mutual-aid-organizers-congress-pandemic-unemployment-assistance",
+      "reporter": "Lucy Diavolo",
+      "contact_info": "",
+      "": "",
+      "__1": ""
+    },
     {
       "date": "1585785600",
       "outlet": "America Magazine",
