@@ -4,10 +4,14 @@
   background-color:$banner;
   padding: 10px;
   text-align: center;
+  padding: 10px;
+  text-align: center;
+  box-shadow: inset 0px 2px 3px 0px #262626;
   a {
     color: $offer;  
   }
   h3 {
     margin:0;
+    color: white;
   }
 };
