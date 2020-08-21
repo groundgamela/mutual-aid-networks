@@ -147,6 +147,11 @@ export const resourceList = [
         link: "https://www.covidresourcelibrarian.com/about",
         description: "Live “Librarian” to answer Covid resource questions"
       },
+        {
+        name: "Mutual Aid to Support Seniors",
+        link: "https://docs.google.com/document/d/1En-1OYD00080mDF4pbPCTwdAH3lFM7GHQzZZvWZVFME/edit",
+        description: "Compiled by Berkeley Mutual Aid"
+      },
     ]
   },
 ]
