@@ -3,9 +3,8 @@ import { List } from 'antd'
 
 import './style.scss';
 import { translations } from './language'
+import { resourceList } from '../../data/resources'
 import SubmitButton from '../SubmitButton'
-
-const { resourceList } = translations
 
 const Resources = ({ siteLanguage }) => {
 
