@@ -1,11 +1,28 @@
 .resources {
   margin-bottom: 50px;
+  .list-section-header {
+    padding-top: 40px;
+    font-weight: 800;
+    color: #057A8F;
+    font-size: 1.4em;
+  }
   .ant-list-item {
     padding-top: 20px;
     padding-bottom: 20px;
   }
   .list-title {
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.3em;
+  }
+  .ant-list-item-meta-title {
+    margin-right: 25px;
+  }
+  .ant-list-item-meta-description {
+    margin-right: 25px
+  }
+  .resource-image{
+    width: 20%;
+    min-width: 230px;
+    margin: 10px 0 10px 0;
   }
 }

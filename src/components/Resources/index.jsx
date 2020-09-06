@@ -51,9 +51,9 @@ const Resources = ({ siteLanguage }) => {
       <div className='resources page-container'>
         <h2 className='title'>{translations.title[siteLanguage]}</h2>
         <p>
-        {translations.listDescription[siteLanguage]}
+          {translations.listDescription[siteLanguage]}
         </p>
-          {parseResourceSections()}
+        {parseResourceSections()}
         <p>
           {translations.appreciationNote[siteLanguage]}
         </p>

@@ -30,6 +30,9 @@ const PageFooter = (props) => {
             <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
           </span>
         </p>
+        <p>
+          <a href="/site-information">Privacy Policy</a>
+        </p>
       </div>
     </Footer>
   )
