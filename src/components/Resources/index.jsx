@@ -7,8 +7,45 @@ import SubmitButton from '../SubmitButton'
 
 const { resourceList } = translations
 
-const Resources = (props) => {
-  const { siteLanguage } = props
+const Resources = ({ siteLanguage }) => {
+
+  const parseResourceSections = () => {
+    return resourceList.map(resourceSection => {
+      return (
+        <div key={resourceSection.section[siteLanguage]}>
+          <h3 className='list-section-header'>{resourceSection.section[siteLanguage]}</h3>
+          {displayResourceSectionContent(resourceSection.content)}
+        </div>
+      )
+    })
+  }
+
+  const displayResourceSectionContent = (resources) => {
+    return (
+      <List
+        itemLayout='horizontal'
+        dataSource={resources}
+        renderItem={resource => (
+          <List.Item
+            extra={resource.image &&
+            <img
+              className='resource-image'
+              alt={resource.name[siteLanguage]}
+              src={resource.image}
+            />
+          }
+          >
+            <List.Item.Meta
+              title={<a className='list-title' target='_blank' rel='noopener noreferrer' href={resource.link}>{resource.name[siteLanguage]}</a>}
+              description={resource.description[siteLanguage]}
+            />
+          </List.Item>
+        )}
+      >
+      </List>
+    )
+  }
+
   return (
     <>
       <div className='resources page-container'>
@@ -16,18 +53,7 @@ const Resources = (props) => {
         <p>
         {translations.listDescription[siteLanguage]}
         </p>
-        <List
-          itemLayout='horizontal'
-          dataSource={resourceList}
-          renderItem={resource => (
-            <List.Item className='list'>
-              <List.Item.Meta
-                title={<a className='list-title' target='blank' href={resource.link}>{resource.name[siteLanguage]}</a>}
-              />
-            </List.Item>
-          )}
-        >
-        </List>
+          {parseResourceSections()}
         <p>
           {translations.appreciationNote[siteLanguage]}
         </p>
