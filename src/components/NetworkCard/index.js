@@ -5,9 +5,11 @@ import {
 } from 'antd';
 import './style.scss';
 import { standardizePhoneNumber } from '../../utils/index'
+import { translations } from './language'
 
 
 const NetworkCard = (props) => {
+  const { siteLanguage } = props
 
   const parseNetworks = (networks) => {
     return networks.map(network => {
@@ -50,10 +52,10 @@ const NetworkCard = (props) => {
             {community && <li>{community}</li>}
           </ul>
           <Row justify="space-between" className='community-buttons'>
-            {generalForm && <a href={generalForm} target="_blank" rel="noopener noreferrer" className="button text-general">General</a>}
-            {supportRequestForm && <a href={supportRequestForm} rel="noopener noreferrer" target="_blank" className="button text-request-support">Request help</a>}
-            {supportOfferForm && <a href={supportOfferForm} rel="noopener noreferrer" target="_blank" className="button text-offer-support">Offer help</a>}
-            {facebookPage && <a href={facebookPage} rel="noopener noreferrer" target="_blank" className="button text-community">Community</a>}
+            {generalForm && <a href={generalForm} target="_blank" rel="noopener noreferrer" className="button text-general">{translations.general[siteLanguage]}</a>}
+            {supportRequestForm && <a href={supportRequestForm} rel="noopener noreferrer" target="_blank" className="button text-request-support">{translations.supportRequest[siteLanguage]}</a>}
+            {supportOfferForm && <a href={supportOfferForm} rel="noopener noreferrer" target="_blank" className="button text-offer-support">{translations.supportOffer[siteLanguage]}</a>}
+            {facebookPage && <a href={facebookPage} rel="noopener noreferrer" target="_blank" className="button text-community">{translations.facebookPage[siteLanguage]}</a>}
           </Row>
         </Card>
       )

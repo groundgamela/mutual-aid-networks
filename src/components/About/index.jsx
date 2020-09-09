@@ -8,20 +8,24 @@ import thpLogo from '../../assets/thp/THP_logo_horizontal.png'
 import th1 from '../../assets/thp/TH1.jpg'
 import th2 from '../../assets/thp/TH2.jpg'
 
+import { translations } from './language'
+
 const About = (props) => {
+  const { siteLanguage } = props
   return (
     <div className='page-container'>
       <a href='https://townhallproject.com/'>
         <img src={thpLogo} alt='Town Hall Project logo' className='thpLogo'/>
       </a>
-      <h2 className='title'>This site is built and maintained by <a href='https://townhallproject.com/'>Town Hall Project.</a></h2>
+      <h2 className='title'>
+        <span>
+          {translations.title[siteLanguage]}
+          <a href='https://townhallproject.com/'> Town Hall Project.</a>
+        </span>
+      </h2>
       <div className='container'>
         <p>
-          Town Hall Project is a 501(c)(3) non-profit organization dedicated to
-          lifting up the voices of Americans to lawmakers and other people in power.
-          We created Mutual Aid Hub to highlight the incredible work of mutual aid
-          organizers around the country, and to facilitate connections and shared
-          strategies in this growing movement of community support.
+          {translations.description[siteLanguage]}
         </p>
 
         <div className='imageCollage'>
@@ -44,11 +48,7 @@ const About = (props) => {
         </div>
         
         <p>
-          We do not directly organize or coordinate any individual mutual aid effort.
-          We do our best to curate and filter groups doing relevant, valuable work in
-          their communities, but we cannot verify or vouch for any network or individual
-          offerings. Please exercise all necessary judgement when interacting with
-          community members not previously known to you.
+          {translations.disclaimer[siteLanguage]}
         </p>
       </div>
     </div>

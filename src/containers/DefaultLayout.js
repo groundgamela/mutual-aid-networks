@@ -30,6 +30,8 @@ import './style.scss';
 import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
 
+import { translations } from './language'
+
 const { Header, Content, Sider } = Layout;
 const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
@@ -71,12 +73,18 @@ class DefaultLayout extends React.Component {
   }
 
   renderPageHeader = () => {
+    const {
+      setSiteLanguage,
+      siteLanguage,
+    } = this.props
     if (!this.state.isMobile) {
       return (
         <Header>
           <NavMenu
             mode='horizontal'
             handleNav={this.handleNav}
+            setSiteLanguage={setSiteLanguage}
+            siteLanguage={siteLanguage}
           />
         </Header>
       )
@@ -92,6 +100,8 @@ class DefaultLayout extends React.Component {
           <NavMenu
             mode='inline'
             handleNav={this.handleNav}
+            setSiteLanguage={setSiteLanguage}
+            siteLanguage={siteLanguage}
           />
         </Sider>
       )
@@ -111,7 +121,8 @@ class DefaultLayout extends React.Component {
       setHoveredPoint,
       hoveredPointId,
       masterBbox,
-      resetToDefaultView
+      resetToDefaultView,
+      siteLanguage
     } = this.props;
     
     if (!allNetworks.length) {
@@ -127,13 +138,13 @@ class DefaultLayout extends React.Component {
               <div className="main-container">
                 <Switch>
                   <Route path='/table-view'>
-                    <NetworksTable networks={allNetworks} />
+                    <NetworksTable networks={allNetworks} siteLanguage={siteLanguage} />
                   </Route>
                   <Route path='/about'>
-                    <About />
+                    <About siteLanguage={siteLanguage} />
                   </Route>
                   <Route path='/resources'>
-                    <Resources />
+                    <Resources siteLanguage={siteLanguage} />
                   </Route>
                   <Route path='/press'>
                     <Press />
@@ -167,22 +178,22 @@ class DefaultLayout extends React.Component {
                           setHoveredPoint={setHoveredPoint}
                           setFilters={setFilters}
                           selectedCategories={selectedCategories}
+                          siteLanguage={siteLanguage}
                         />
                       </div>
                     </>: <NoWebGl />}
                     <div className="tagline">
-                      Find Mutual Aid Networks and other community self-support projects near you. Reach out to these
-                      groups directly via the map above to get involved, offer resources, or submit needs requests.
+                      {translations.tagline[siteLanguage]}
                     </div>
                     <SubmitButton
                       link='https://docs.google.com/forms/d/e/1FAIpQLScuqQtCdKsDzvTzaA2PMyVHX7xcOqbOW7N7l_0YJASV4wMBVQ/viewform'
-                      description='Submit a Mutual Aid Network'
+                      description={translations.submitButton[siteLanguage]}
                     />
                   </Route>
                 </Switch>
               </div>
             </Content>
-            <PageFooter />
+            <PageFooter siteLanguage={siteLanguage} />
           </Layout>
         </Layout>
       </Router>
@@ -199,6 +210,7 @@ const mapStateToProps = (state) => ({
   allNetworks: networkStateBranch.selectors.getAllNetworks(state),
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
   masterBbox: networkStateBranch.selectors.getBoundingBox(state),
+  siteLanguage: selectionStateBranch.selectors.getSiteLanguage(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -206,6 +218,7 @@ const mapDispatchToProps = (dispatch) => ({
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
   setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload)),
   setHoveredPoint: (payload) => dispatch(selectionStateBranch.actions.setHoveredPoint(payload)),
+  setSiteLanguage: (payload) => dispatch(selectionStateBranch.actions.setSiteLanguage(payload)),
   setUsState: (payload) => dispatch(selectionStateBranch.actions.setUsState(payload)),
   resetToDefaultView: () => dispatch(selectionStateBranch.actions.resetToDefaultView())
 });
