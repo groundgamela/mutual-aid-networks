@@ -50,7 +50,6 @@ class MapView extends React.Component {
       this.setFilters();
     }
     if (!isEqual(foodResourceGeoJson.features, prevProps.foodResourceGeoJson.features)) {
-      console.log('updating data')
       this.updateData(FOOD_RESOURCE_LAYER_NAME);
     }
     // toggled view between full map and zoom
@@ -119,7 +118,6 @@ class MapView extends React.Component {
 
     map.on("mousemove", (e) => {
       let layerCheck = this.map.getLayer(layer);
-      console.log(layerCheck)
       if (!layerCheck) {
         return;
       }
@@ -128,7 +126,6 @@ class MapView extends React.Component {
       });
       // Change the cursor style as a UI indicator.
       map.getCanvas().style.cursor = features.length ? "pointer" : "";
-      console.log(features)
       if (features.length) {
         const feature = features[0];
         const className = feature.properties.category === "Food Resource" ? "food-resource" : "network";
@@ -354,7 +351,6 @@ class MapView extends React.Component {
           let usState = "";
           // searched a us state
           if (returned.result.place_type[0] === "region") {
-            console.log(returned.result);
             let usState = returned.result.properties["short_code"].split(
               "-"
             )[1];

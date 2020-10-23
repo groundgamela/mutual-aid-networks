@@ -12,7 +12,6 @@ const mapboxgl = window.mapboxgl;
 export const getAllFoodResources = state => state.foodResources.allFoodResources;
 
 export const getFilteredFoodResources = createSelector([getAllFoodResources, getSelectedCategories], (foodResources, categories) => {
-    console.log(categories, foodResources)
     if (!categories.length) {
         return getAllFoodResources;
     }
