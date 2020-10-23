@@ -385,7 +385,7 @@ class MapView extends React.Component {
       // ]);
       this.map.setLayoutProperty(NETWORK_LAYER_NAME, "visibility", "visible");
       this.addPopups(NETWORK_LAYER_NAME);
-      this.addPopups(FOOD_RESOURCE_LAYER_NAME)
+      this.addPopups(FOOD_RESOURCE_LAYER_NAME);
     });
   }
 
