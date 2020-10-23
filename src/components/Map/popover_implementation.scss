@@ -12,6 +12,20 @@
     @include popover-tip($general);
   }
 
+.popover-network {
+    .mapboxgl-popup-content {
+      @include popover($general);
+    }
+    @include popover-tip($general);
+  }
+
+.popover-food-resource {
+    .mapboxgl-popup-content {
+        @include popover($info);
+    }
+    @include popover-tip($info);
+}
+
 .popover-community {
     .mapboxgl-popup-content {
         @include popover($info);

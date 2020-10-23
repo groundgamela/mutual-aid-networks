@@ -1,7 +1,7 @@
 import {
   makeConstant
 } from "../../utils";
-const STATE_BRANCH = 'EVENTS';
+const STATE_BRANCH = 'NETWORKS';
 
 export const REQUEST_NETWORKS = makeConstant(STATE_BRANCH, "REQUEST_NETWORKS");
 export const SET_NETWORKS = makeConstant(STATE_BRANCH, "SET_NETWORKS");

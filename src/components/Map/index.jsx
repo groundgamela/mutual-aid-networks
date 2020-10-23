@@ -1,31 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  filter,
-  isEqual
-} from 'lodash';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import React from "react";
+import PropTypes from "prop-types";
+import { filter, isEqual } from "lodash";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 
-import MapInset from './MapInset';
-import './style.scss';
-import './popover.scss';
-import './popovertip.scss';
-import './popover_implementation.scss';
-import {
-  LAYER_NAME,
-  accessToken,
-  mapboxStyle
-} from './constants';
-import { standardizePhoneNumber } from '../../utils/index';
-
+import MapInset from "./MapInset";
+import "./style.scss";
+import "./popover.scss";
+import "./popovertip.scss";
+import "./popover_implementation.scss";
+import { NETWORK_LAYER_NAME, FOOD_RESOURCE_LAYER_NAME, accessToken, mapboxStyle } from "./constants";
+import { renderPopover } from "./popover";
 
 const mapboxgl = window.mapboxgl;
 
 class MapView extends React.Component {
   constructor(props) {
     super(props);
-    this.filterDistrict = ['any'];
-    this.includedStates = ['in', 'NAME'];
+    this.filterDistrict = ["any"];
+    this.includedStates = ["in", "NAME"];
 
     this.addPopups = this.addPopups.bind(this);
     this.addClickListener = this.addClickListener.bind(this);
@@ -35,7 +27,7 @@ class MapView extends React.Component {
     this.handleClickOnInset = this.handleClickOnInset.bind(this);
     this.initializeMap = this.initializeMap.bind(this);
     this.state = {
-      popoverColor: 'popover-general-icon',
+      popoverColor: "popover-general-icon",
       bbox: null,
     };
   }
@@ -45,51 +37,59 @@ class MapView extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-
     const {
       hoveredPointId,
       viewState,
       bbox,
-      selectedCategories
+      selectedCategories,
+      foodResourceGeoJson,
     } = this.props;
     this.map.resize();
     // changed filters
     if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
       this.setFilters();
     }
+    if (!isEqual(foodResourceGeoJson.features, prevProps.foodResourceGeoJson.features)) {
+      this.updateData(FOOD_RESOURCE_LAYER_NAME);
+    }
     // toggled view between full map and zoom
     if (prevProps.viewState !== viewState) {
       this.hoveredPopup.remove(); //close any open popup
-      if (viewState === 'default') {
+      if (viewState === "default") {
         this.setInitialState();
       }
     }
     // if a bounding box has been set before render, fix the bounds and clear
     // for changing map zoom and size
 
-    if ((this.state.bbox && viewState === 'list')) {
+    if (this.state.bbox && viewState === "list") {
       this.fitBounds(this.state.bbox);
       this.setState({
-        bbox: null
-      })
+        bbox: null,
+      });
     }
-    if (bbox && viewState === 'list' && bbox !== prevProps.bbox) {
+    if (bbox && viewState === "list" && bbox !== prevProps.bbox) {
       this.fitBounds(bbox);
     }
 
     if (hoveredPointId) {
-      this.hoverPoint(hoveredPointId)
+      this.hoverPoint(hoveredPointId);
     }
-    if (prevProps.hoveredPointId && prevProps.hoveredPointId !== hoveredPointId) {
+    if (
+      prevProps.hoveredPointId &&
+      prevProps.hoveredPointId !== hoveredPointId
+    ) {
       this.unHoverPoint(prevProps.hoveredPointId);
     }
   }
 
   insetOnClickEvent(e) {
     this.setState({
-      inset: false
+      inset: false,
     });
-    const dataBounds = e.target.parentNode.parentNode.getAttribute('data-bounds').split(',');
+    const dataBounds = e.target.parentNode.parentNode
+      .getAttribute("data-bounds")
+      .split(",");
     const boundsOne = [Number(dataBounds[0]), Number(dataBounds[1])];
     const boundsTwo = [Number(dataBounds[2]), Number(dataBounds[3])];
     const bounds = boundsOne.concat(boundsTwo);
@@ -102,89 +102,107 @@ class MapView extends React.Component {
         top: 10,
         bottom: 25,
         left: 15,
-        right: 5
+        right: 5,
       },
-      maxZoom: 8
-    })
+      maxZoom: 8,
+    });
   }
 
   addPopups(layer) {
-    const {
-      map
-    } = this;
+    const { map } = this;
 
     this.hoveredPopup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
     });
 
-    map.on('mousemove', (e) => {
-      let layerCheck = this.map.getLayer(LAYER_NAME);
+    map.on("mousemove", (e) => {
+      let layerCheck = this.map.getLayer(layer);
       if (!layerCheck) {
         return;
       }
       const features = map.queryRenderedFeatures(e.point, {
-        layers: [layer]
+        layers: [layer],
       });
       // Change the cursor style as a UI indicator.
-      map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-
+      map.getCanvas().style.cursor = features.length ? "pointer" : "";
       if (features.length) {
         const feature = features[0];
-        const {
-          properties
-        } = feature;
-        const popoverClassName = `popover-${feature.properties.category.split(' ').join('-').toLowerCase()}`
-        this.setState({
-          popoverColor: popoverClassName
-        });
+        const className = feature.properties.category === "Food Resource" ? "food-resource" : "network";
+         const popoverClassName = `popover-${className}`;
+         this.setState({
+           popoverColor: popoverClassName,
+         });
         this.props.setHoveredPoint(feature.id);
-        let link;
-        if (properties.generalForm) {
-          link = `<a rel="noopener noreferrer" target="_blank" href=${properties.generalForm}>Link to form</a>`
-        } else if (properties.supportOfferForm && properties.supportRequestForm) {
-          link = `<a rel="noopener noreferrer" class="side-by-side" target="_blank" href=${properties.supportOfferForm}>Offer support</a><a class="side-by-side" target="_blank" href=${properties.supportRequestForm}>Request support</a>`
-        } else if (properties.supportOfferForm) {
-          link = `<a rel="noopener noreferrer" href=${properties.supportOfferForm}>Offer support</a>`;
-        } else if (properties.supportRequestForm) {
-          link = `<a rel="noopener noreferrer" href=${properties.supportRequestForm}>Request support</a>`;
-        } else {
-          link = `<a rel="noopener noreferrer" href=${properties.facebookPage}>Link to group</a>`;
-        }
-        let location = properties.city ? `${properties.city}, ${properties.state}` : properties.state;
 
-        return this.hoveredPopup.setLngLat(feature.geometry.coordinates)
-          .setHTML(`
-            <h4>${properties.title}</h4>
-            <div>${location}</div>
-            <div>${standardizePhoneNumber(properties.hotlineNumber)}</div>
-            <div>${link}</div>`)
+        const html = renderPopover(feature)
+        return this.hoveredPopup
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(html)
 
           .addTo(map);
       }
       return undefined;
     });
+  }
 
+  updateData(layer) {
+    const {
+      foodResourceGeoJson
+    } = this.props;
+    this.map.fitBounds([
+      [-128.8, 23.6],
+      [-65.4, 50.2],
+    ]);
+    if (!this.map.getSource(layer)) {
+      console.log("no layer");
+      return;
+    }
+    this.map.getSource(layer).setData(foodResourceGeoJson);
+  }
+
+  addLayer = () => {
+      this.map.addLayer({
+        id: FOOD_RESOURCE_LAYER_NAME,
+        minzoom: 2,
+        maxzoom: 16,
+        layout: {
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+          "icon-image": "food-resource-purple",
+          "icon-offset": {
+            base: 1,
+            stops: [
+              [0, [0, -15]],
+              [10, [0, -10]],
+              [12, [0, 0]],
+            ],
+          },
+          "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        },
+        paint: {
+          "icon-opacity": 1,
+        },
+        source: {
+          data: this.props.foodResourceGeoJson,
+          type: "geojson",
+        },
+        type: "symbol",
+      });
+  
   }
 
   addClickListener() {
-
-    const {
-      map
-    } = this;
-    const {
-      setLatLng,
-    } = this.props;
-    const layer = map.getLayer(LAYER_NAME);
+    const { map } = this;
+    const { setLatLng } = this.props;
+    const layer = map.getLayer(NETWORK_LAYER_NAME);
     if (!layer) {
       return;
     }
-    map.on('click', (e) => {
-      const features = map.queryRenderedFeatures(
-        e.point, {
-        layers: [LAYER_NAME],
-      },
-      );
+    map.on("click", (e) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: [NETWORK_LAYER_NAME],
+      });
 
       if (features.length > 0) {
         setLatLng({
@@ -192,112 +210,120 @@ class MapView extends React.Component {
             lat: features[0].properties.lat,
             lng: features[0].properties.lng,
           },
-          usState: features[0].properties.state
+          usState: features[0].properties.state,
         });
       }
     });
   }
 
   hoverPoint(hoveredPinId) {
-    let layer = this.map.getLayer(LAYER_NAME);
+    let layer = this.map.getLayer(NETWORK_LAYER_NAME);
     if (!layer) {
       return;
     }
-    this.map.setFeatureState({
-      source: "composite",
-      sourceLayer: "mutual_aid_networks",
-      id: hoveredPinId
-    }, {
-      hover: true
-    });
-  };
+    this.map.setFeatureState(
+      {
+        source: "composite",
+        sourceLayer: "mutual_aid_networks",
+        id: hoveredPinId,
+      },
+      {
+        hover: true,
+      }
+    );
+  }
 
   unHoverPoint(hoveredPinId) {
-    let layer = this.map.getLayer(LAYER_NAME);
+    let layer = this.map.getLayer(NETWORK_LAYER_NAME);
     if (!layer) {
       return;
     }
-    this.map.setFeatureState({
-      source: "composite",
-      sourceLayer: "mutual_aid_networks",
-      id: hoveredPinId
-    }, {
-      hover: false
-    });
-  };
+    this.map.setFeatureState(
+      {
+        source: "composite",
+        sourceLayer: "mutual_aid_networks",
+        id: hoveredPinId,
+      },
+      {
+        hover: false,
+      }
+    );
+  }
 
   handleReset() {
-    const {
-      resetToDefaultView,
-    } = this.props;
+    const { resetToDefaultView } = this.props;
 
     resetToDefaultView();
     this.fitBounds([
       [-128.8, 23.6],
-      [-65.4, 50.2]
+      [-65.4, 50.2],
     ]);
   }
 
   setInitialState() {
     this.fitBounds([
       [-128.8, 23.6],
-      [-65.4, 50.2]
+      [-65.4, 50.2],
     ]);
-    document.getElementsByClassName('mapboxgl-ctrl-geocoder--input');
-    Array.from(document.getElementsByClassName('mapboxgl-ctrl-geocoder--input')).forEach(ele => {
-      ele.value = '';
-    })
+    document.getElementsByClassName("mapboxgl-ctrl-geocoder--input");
+    Array.from(
+      document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")
+    ).forEach((ele) => {
+      ele.value = "";
+    });
     this.map.resize();
   }
 
   handleClickOnInset(bounds, state) {
     // this is for clicking on a state inset
     this.setState({
-      bbox: bounds
-    })
+      bbox: bounds,
+    });
 
     this.props.setLatLng({
       center: {},
-      usState: state
+      usState: state,
     });
   }
 
   // Creates the button in our zoom controls to go to the national view
   makeZoomToNationalButton() {
-    document.querySelector('.mapboxgl-ctrl-compass').remove();
-    if (document.querySelector('.mapboxgl-ctrl-usa')) {
-      document.querySelector('.mapboxgl-ctrl-usa').remove();
+    document.querySelector(".mapboxgl-ctrl-compass").remove();
+    if (document.querySelector(".mapboxgl-ctrl-usa")) {
+      document.querySelector(".mapboxgl-ctrl-usa").remove();
     }
-    const usaButton = document.createElement('button');
-    usaButton.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-usa';
+    const usaButton = document.createElement("button");
+    usaButton.className = "mapboxgl-ctrl-icon mapboxgl-ctrl-usa";
     usaButton.innerHTML = '<span class="usa-icon"></span>';
 
-    usaButton.addEventListener('click', this.handleReset);
-    document.querySelector('.mapboxgl-ctrl-group').appendChild(usaButton);
+    usaButton.addEventListener("click", this.handleReset);
+    document.querySelector(".mapboxgl-ctrl-group").appendChild(usaButton);
   }
 
   setFilters() {
-    const {
-      selectedCategories
-    } = this.props;
-    let layer = this.map.getLayer(LAYER_NAME);
+    const { selectedCategories } = this.props;
+    let layer = this.map.getLayer(NETWORK_LAYER_NAME);
     if (!layer) {
       return;
     }
-    let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
-    this.map.setFilter(LAYER_NAME, filterArray);
+    let filterArray = [
+      "any",
+      ...selectedCategories.map((category) => [
+        "==",
+        ["get", "category"],
+        category,
+      ]),
+    ];
+    this.map.setFilter(NETWORK_LAYER_NAME, filterArray);
   }
 
   initializeMap() {
-    const {
-      setLatLng,
-      resetToDefaultView
-    } = this.props;
+    const { setLatLng, resetToDefaultView } = this.props;
 
     mapboxgl.accessToken = accessToken;
 
     this.map = new mapboxgl.Map({
-      container: 'map',
+      container: "map",
       style: mapboxStyle,
     });
 
@@ -307,28 +333,27 @@ class MapView extends React.Component {
     this.map.dragRotate.disable();
     this.map.touchZoomRotate.disableRotation();
     this.makeZoomToNationalButton();
-    const {
-      map
-    } = this;
+    const { map } = this;
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
-        countries: 'us',
+        countries: "us",
         marker: false,
         zoom: 12,
         flyTo: false,
       })
-        .on('clear', function (result) {
+        .on("clear", function (result) {
           resetToDefaultView();
         })
-        .on('result', function (returned) {
+        .on("result", function (returned) {
           map.resize();
-          let usState = ''
+          let usState = "";
           // searched a us state
-          if (returned.result.place_type[0] === 'region') {
-            console.log(returned.result)
-            let usState = returned.result.properties['short_code'].split('-')[1];
+          if (returned.result.place_type[0] === "region") {
+            let usState = returned.result.properties["short_code"].split(
+              "-"
+            )[1];
             return setLatLng({
               center: {},
               usState,
@@ -337,29 +362,30 @@ class MapView extends React.Component {
           setLatLng({
             center: {
               lat: returned.result.center[1],
-              lng: returned.result.center[0]
+              lng: returned.result.center[0],
             },
             usState,
           });
-
         }),
-      'top-left'
+      "top-left"
     );
     // map on 'load'
     this.fitBounds([
       [-128.8, 23.6],
-      [-65.4, 50.2]
+      [-65.4, 50.2],
     ]);
-    this.map.on('load', () => {
+    this.map.on("load", () => {
       this.addClickListener();
-      this.map.setPaintProperty(LAYER_NAME, 'circle-opacity', [
-        'case',
-        ['boolean', ['feature-state', 'hover'], false],
-        1,
-        0.5
-      ]);
-      this.map.setLayoutProperty(LAYER_NAME, 'visibility', 'visible')
-      this.addPopups(LAYER_NAME);
+      this.addLayer();
+      // this.map.setPaintProperty(NETWORK_LAYER_NAME, "circle-opacity", [
+      //   "case",
+      //   ["boolean", ["feature-state", "hover"], false],
+      //   1,
+      //   0.5,
+      // ]);
+      this.map.setLayoutProperty(NETWORK_LAYER_NAME, "visibility", "visible");
+      this.addPopups(NETWORK_LAYER_NAME);
+      this.addPopups(FOOD_RESOURCE_LAYER_NAME);
     });
   }
 
@@ -372,79 +398,47 @@ class MapView extends React.Component {
       networks,
       selectedCategories,
     } = this.props;
-    return (<React.Fragment>
-      <div id="map"
-        className={
-          this.state.popoverColor
-        } >
-        <div className="map-overlay"
-          id="legend" >
-            
-          <MapInset networks={
-            filter(networks, {
-              state: 'AK'
-            })
-          }
-            center={
-              center
-            }
-            stateName="AK"
-            viewState={
-              viewState
-            }
-            resetSelections={
-              resetSelections
-            }
-            selectedCategories={
-              selectedCategories
-            }
-            setLatLng={
-              setLatLng
-            }
-            setBounds={
-              this.handleClickOnInset
-            }
-            mapId="map-overlay-alaska"
-            bounds={
-              [
+    return (
+      <React.Fragment>
+        <div id="map" className={this.state.popoverColor}>
+          <div className="map-overlay" id="legend">
+            <MapInset
+              networks={filter(networks, {
+                state: "AK",
+              })}
+              center={center}
+              stateName="AK"
+              viewState={viewState}
+              resetSelections={resetSelections}
+              selectedCategories={selectedCategories}
+              setLatLng={setLatLng}
+              setBounds={this.handleClickOnInset}
+              mapId="map-overlay-alaska"
+              bounds={[
                 [-170.15625, 51.72702815704774],
-                [-127.61718749999999, 71.85622888185527]
-              ]
-            }
-          /> <MapInset networks={
-            filter(networks, {
-              state: 'HI'
-            })
-          }
-            stateName="HI"
-            center={
-              center
-            }
-            viewState={
-              viewState
-            }
-            resetSelections={
-              resetSelections
-            }
-            selectedCategories={
-              selectedCategories
-            }
-            setLatLng={
-              setLatLng
-            }
-            setBounds={
-              this.handleClickOnInset
-            }
-            mapId="map-overlay-hawaii"
-            bounds={
-              [
+                [-127.61718749999999, 71.85622888185527],
+              ]}
+            />{" "}
+            <MapInset
+              networks={filter(networks, {
+                state: "HI",
+              })}
+              stateName="HI"
+              center={center}
+              viewState={viewState}
+              resetSelections={resetSelections}
+              selectedCategories={selectedCategories}
+              setLatLng={setLatLng}
+              setBounds={this.handleClickOnInset}
+              mapId="map-overlay-hawaii"
+              bounds={[
                 [-161.03759765625, 18.542116654448996],
-                [-154.22607421875, 22.573438264572406]
-              ]
-            }
-          /></div> </div>
-
-    </React.Fragment>
+                [-154.22607421875, 22.573438264572406],
+              ]}
+            />
+          </div>{" "}
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -454,8 +448,6 @@ MapView.propTypes = {
   setLatLng: PropTypes.func.isRequired,
 };
 
-MapView.defaultProps = {
-
-};
+MapView.defaultProps = {};
 
 export default MapView;

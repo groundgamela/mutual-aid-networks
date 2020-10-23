@@ -6,32 +6,33 @@ import {
 } from 'spherical-geometry-js';
 
 import { getSelectedCategories, getSearchLocation, getUsState } from '../selections/selectors';
+import Point from './point';
 const mapboxgl = window.mapboxgl;
 
-export const getAllNetworks = state => state.networks.allNetworks;
+export const getAllFoodResources = state => state.foodResources.allFoodResources;
 
-export const getFilteredNetworks = createSelector([getAllNetworks, getSelectedCategories], (networks, categories) => {
+export const getFilteredFoodResources = createSelector([getAllFoodResources, getSelectedCategories], (foodResources, categories) => {
     if (!categories.length) {
-        return [];
+        return getAllFoodResources;
     }
-    return filter(networks, (network) => {
+    return filter(foodResources, (network) => {
         return categories.includes(network.category)
     })
 })
 
 
-export const getNetworksInArea = createSelector([getAllNetworks, getSearchLocation, getUsState], (allNetworks, location, usState) => {
+export const getFoodResourcesInArea = createSelector([getAllFoodResources, getSearchLocation, getUsState], (allFoodResources, location, usState) => {
             if (!location.lat && !usState) {
                 return [];
             }
             // statewide search
             if (!location.lat) {
-                return allNetworks.filter((network) => network.state && network.state === usState);
+                return allFoodResources.filter((network) => network.state && network.state === usState);
                 
             }
             const lookup = new LatLng(Number(location.lat), Number(location.lng));
             const maxMeters = 50 * 1609.34; // Convert miles to meters before filtering
-            return allNetworks.filter((network) => {
+            return allFoodResources.filter((network) => {
                 // include statewide networks
                 if (network.state && !network.city && network.state === usState) {
                     return true;
@@ -57,7 +58,7 @@ export const getNetworksInArea = createSelector([getAllNetworks, getSearchLocati
     
 })
 
-export const getVisibleCards = createSelector([getNetworksInArea, getSelectedCategories], (networks, categories) => {
+export const getVisibleCards = createSelector([getFoodResourcesInArea, getSelectedCategories], (networks, categories) => {
     if (!categories.length) {
         return [];
     }
@@ -66,7 +67,7 @@ export const getVisibleCards = createSelector([getNetworksInArea, getSelectedCat
     })
 })
 
-export const getBoundingBox = createSelector([getNetworksInArea], (cards) => {
+export const getBoundingBox = createSelector([getFoodResourcesInArea], (cards) => {
     if (!cards.length) {
         return null;
     }
@@ -76,4 +77,12 @@ export const getBoundingBox = createSelector([getNetworksInArea], (cards) => {
         }
         return acc;
     }, new mapboxgl.LngLatBounds(cards[0].bbox));
+})
+
+export const getFoodResourcesGeoJson = createSelector([getAllFoodResources], (foodResources) => {
+    return {
+        type: 'FeatureCollection',
+        features: foodResources.map((foodResource) => new Point(foodResource))
+    };
+
 })

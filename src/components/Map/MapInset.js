@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
 import {
-  LAYER_NAME, 
+  NETWORK_LAYER_NAME, 
   accessToken,
   mapboxStyle
 } from './constants';
@@ -24,12 +24,12 @@ class MapInset extends React.Component {
     const {
       selectedCategories
     } = this.props;
-    let layer = this.map.getLayer(LAYER_NAME);
+    let layer = this.map.getLayer(NETWORK_LAYER_NAME);
     if (!layer) {
       return;
     }
     let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
-    this.map.setFilter(LAYER_NAME, filterArray);
+    this.map.setFilter(NETWORK_LAYER_NAME, filterArray);
   }
 
   componentDidUpdate(prevProps) {
@@ -78,7 +78,7 @@ class MapInset extends React.Component {
     // map on 'load'
     this.map.on('load', () => {
       this.addClickListener();
-      this.map.setLayoutProperty(LAYER_NAME, 'visibility', 'visible')
+      this.map.setLayoutProperty(NETWORK_LAYER_NAME, 'visibility', 'visible')
     });
   }
 

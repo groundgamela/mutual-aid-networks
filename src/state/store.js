@@ -4,23 +4,29 @@ import request from 'superagent';
 
 import networks from './networks';
 import selections from './selections';
-
+import foodResources from './food-resources';
+import {
+  firestore
+} from "../utils/firebaseinit"
 
 import { firebaseUrl } from '../state/constants';
 
 const reducers = {
   networks: networks.reducers,
+  foodResources: foodResources.reducers,
   selections: selections.reducers,
 };
 
 const logics = [
   ...networks.logics,
   ...selections.logics,
+  ...foodResources.logics
 ];
 
 const reduxLogicDependencies = {
   firebaseUrl: firebaseUrl,
   httpClient: request,
+  firestore,
 };
 
 const logicMiddleware = createLogicMiddleware(logics, reduxLogicDependencies);
