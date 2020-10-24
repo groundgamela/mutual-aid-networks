@@ -29,6 +29,7 @@ const NetworkCard = (props) => {
   if (generalForm) {
     actions.push(
       <a
+        key={`${id}-generalForm`}
         href={generalForm}
         target="_blank"
         rel="noopener noreferrer"
@@ -41,6 +42,7 @@ const NetworkCard = (props) => {
   if (supportRequestForm) {
     actions.push(
       <a
+        key={`${id}-supportRequestForm`}
         href={supportRequestForm}
         rel="noopener noreferrer"
         target="_blank"
@@ -53,6 +55,7 @@ const NetworkCard = (props) => {
   if (supportOfferForm) {
     actions.push(
       <a
+        key={`${id}-supportOfferForm`}
         href={supportOfferForm}
         rel="noopener noreferrer"
         target="_blank"
@@ -65,6 +68,7 @@ const NetworkCard = (props) => {
   if (facebookPage) {
     actions.push(
       <a
+        key={`${id}-facebookPage`}
         href={facebookPage}
         rel="noopener noreferrer"
         target="_blank"

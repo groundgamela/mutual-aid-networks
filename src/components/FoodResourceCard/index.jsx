@@ -7,6 +7,8 @@ import './style.scss';
 import { standardizePhoneNumber } from '../../utils/index'
 import FoodResourceIcon from "../../assets/food-resource-purple.svg"
 
+const { Meta } = Card;
+
 const FoodResourceCard = (props) => {
     const { resource } = props;
       const {
@@ -24,8 +26,7 @@ const FoodResourceCard = (props) => {
           className="resource-card"
           title={
             <>
-              <img src={FoodResourceIcon} alt="network" />{" "}
-              {title}
+              <img src={FoodResourceIcon} alt="network" /> {title}
             </>
           }
           key={id}
@@ -36,8 +37,9 @@ const FoodResourceCard = (props) => {
             <li>{address}</li>
 
             {number && <li>{standardizePhoneNumber(number)}</li>}
-            {hours && <li>{hours}</li>}
+            {hours && <li>Open: {hours}</li>}
           </ul>
+          <Meta description={notes || ""} />
           <Row justify="space-between" className="community-buttons">
             {website && (
               <a

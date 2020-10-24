@@ -115,7 +115,8 @@ class DefaultLayout extends React.Component {
       hoveredPointId,
       masterBbox,
       resetToDefaultView,
-      foodResourceGeoJson
+      foodResourceGeoJson,
+      filterCounts
     } = this.props;
     
     if (!allNetworks.length) {
@@ -168,6 +169,7 @@ class DefaultLayout extends React.Component {
                           foodResourceGeoJson={foodResourceGeoJson}
                         />
                         <ListView
+                          filterCounts={filterCounts}
                           visibleCards={visibleCards}
                           setHoveredPoint={setHoveredPoint}
                           setFilters={setFilters}
@@ -206,6 +208,7 @@ const mapStateToProps = (state) => ({
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
   masterBbox: networkStateBranch.selectors.getBoundingBox(state),
   allFoodResources: foodResourcesStateBranch.selectors.getAllFoodResources(state),
+  filterCounts: networkStateBranch.selectors.getFilterCounts(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

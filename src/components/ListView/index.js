@@ -23,7 +23,8 @@ const ListView = ({
     visibleCards,
     setHoveredPoint,
     setFilters,
-    selectedCategories
+    selectedCategories,
+    filterCounts
   }) => {
     const renderCards = () => {
       const cardProps = {
@@ -31,10 +32,11 @@ const ListView = ({
       } 
      return visibleCards.map((data) => {
         if (data.category === FOOD_RESOURCE) {
-          return (<FoodResourceCard resource={data} {...cardProps} />)
+          return (<FoodResourceCard key={data.id} resource={data} {...cardProps} />)
         } else if (data.category === NETWORK) {
-          return (<NetworkCard network={data} {...cardProps} />)
+          return (<NetworkCard key={data.id} network={data} {...cardProps} />)
         }
+        return null;
       })
     }
 
@@ -42,6 +44,7 @@ const ListView = ({
       <div className="list-container">
         <Filters
           setFilters={setFilters}
+          filterCounts={filterCounts}
           absolute={false}
           selectedCategories={selectedCategories}
           visible={true}

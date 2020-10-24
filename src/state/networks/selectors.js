@@ -1,5 +1,8 @@
 import { createSelector } from 'reselect';
-import { filter } from 'lodash';
+import {
+    filter,
+    reduce
+} from 'lodash';
 import {
     computeDistanceBetween,
     LatLng
@@ -7,7 +10,8 @@ import {
 
 import { getSelectedCategories, getSearchLocation, getUsState } from '../selections/selectors';
 import { getAllFoodResources } from '../food-resources/selectors';
-import { FOOD_RESOURCE, NETWORK } from '../constants';
+import { NETWORK } from '../constants';
+import { CATEGORY_OPTIONS } from "../selections/reducers";
 const mapboxgl = window.mapboxgl;
 
 export const getAllNetworks = state => state.networks.allNetworks;
@@ -50,7 +54,6 @@ export const getBoundingBox = createSelector([getAllResourcesAndNetworks, getSea
             return acc;
         }
         if (index > 0) {
-            console.log(cur.bbox, new mapboxgl.LngLatBounds(cur.bbox))
             acc = acc.extend(new mapboxgl.LngLatBounds(cur.bbox));
         }
         return acc;
@@ -78,10 +81,6 @@ export const getNetworksInArea = createSelector(
             });
             const visible =  allNetworks.filter((item) => {
                 const position = new mapboxgl.LngLat(Number(item.lng), Number(item.lat));
-                if (item.category === FOOD_RESOURCE) {
-                    console.log(item.title)
-                    console.log(position, boundingBox.toArray(), boundingBox.contains(position))
-                }
                 return boundingBox.contains(position);
            
             });
@@ -96,5 +95,21 @@ export const getVisibleCards = createSelector([getNetworksInArea, getSelectedCat
     return filter(networks, (network) => {
         return categories.includes(network.category)
     })
+})
+
+export const getFilterCounts = createSelector([getNetworksInArea], (networksAndResources) => {
+    const init = CATEGORY_OPTIONS.map(() => 0);
+    
+    if (!networksAndResources.length) {
+        return init;
+    }
+    console.log('calcu')
+    return reduce(networksAndResources, (acc, item) => {
+        const index = CATEGORY_OPTIONS.indexOf(item.category);
+        if (index > -1) {
+            acc[index] = acc[index] + 1;
+        }
+        return acc;
+    }, init)
 })
 
