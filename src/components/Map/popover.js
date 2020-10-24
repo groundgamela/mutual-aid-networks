@@ -28,14 +28,22 @@ const renderNetworkPopover = (feature) => {
             <div>${link}</div>`
 }
 
+
 const renderResourcePopover = (feature) => {
-        const {
-            properties
-        } = feature;
-      return `
-            <h4>${properties.title}</h4>
-            <div>${properties.address}</div>
-            <div>${eval(properties.resources).map((item) => `<span>${item}</span>`)}</div>`
+    const {
+        properties
+    } = feature;
+    const foodMapping = {
+        fridge: "Fridge",
+        pantry: "Pantry",
+        foodBank: "Food Bank",
+        freezer: "Freezer"
+    }
+    return `
+        <h4>${properties.title}</h4>
+        <div>${properties.address}</div>
+        <div>${properties.hours || ""}</div>
+        <div class="tag-container">${eval(properties.resources).map((item) => `<span class="tag">${foodMapping[item]}</span>`).join("")}</div>`
 }
 
 export const renderPopover = (feature) => feature.properties.category === "Food Resource" ? renderResourcePopover(feature) : renderNetworkPopover(feature);
