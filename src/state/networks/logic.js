@@ -13,6 +13,7 @@ import {
 import {
   setPageOfNetworks
 } from "./actions";
+import { NETWORK } from "../constants";
 
 const fetchNetworks = createLogic({
   type: REQUEST_NETWORKS,
@@ -38,6 +39,7 @@ const fetchNetworks = createLogic({
           return newValues;
         })
         if (Number(unpackedData.id)) {
+          unpackedData.category = NETWORK;
           acc.push(unpackedData);
         }
         return acc;
