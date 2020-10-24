@@ -10,6 +10,7 @@ import "./popovertip.scss";
 import "./popover_implementation.scss";
 import { NETWORK_LAYER_NAME, FOOD_RESOURCE_LAYER_NAME, accessToken, mapboxStyle } from "./constants";
 import { renderPopover } from "./popover";
+import { FOOD_RESOURCE, NETWORK } from "../../state/constants";
 
 const mapboxgl = window.mapboxgl;
 
@@ -311,15 +312,21 @@ class MapView extends React.Component {
     if (!layer) {
       return;
     }
-    let filterArray = [
-      "any",
-      ...selectedCategories.map((category) => [
-        "==",
-        ["get", "category"],
-        category,
-      ]),
-    ];
-    this.map.setFilter(NETWORK_LAYER_NAME, filterArray);
+    const networkVisible = selectedCategories.includes(NETWORK) ? "visible": "none";
+    const foodResourceVisible = selectedCategories.includes(FOOD_RESOURCE)
+      ? "visible"
+      : "none";
+    this.map.setLayoutProperty(
+      NETWORK_LAYER_NAME,
+      "visibility",
+      networkVisible
+    );
+    this.map.setLayoutProperty(
+      FOOD_RESOURCE_LAYER_NAME,
+      "visibility",
+      foodResourceVisible
+    );
+    
   }
 
   initializeMap() {
