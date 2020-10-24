@@ -110,7 +110,6 @@ class MapView extends React.Component {
         left: 15,
         right: 5,
       },
-      maxZoom: 8,
     });
   }
 

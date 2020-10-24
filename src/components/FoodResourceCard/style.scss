@@ -1,20 +1,10 @@
 @import '../../styles/variableColorStyles.scss';
 
 
-.network-card {
+.resource-card {
   margin: 30px;
   .ant-card-head-title {
     white-space: normal;
-  }
-  .ant-card-actions {
-    border-top: 1px solid $network;
-    li {
-      border-color: #d9d9d9;
-    }
-
-    .text {
-      color: $network;
-    }
   }
   .community-buttons{
     display: flex;
