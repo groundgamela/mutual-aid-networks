@@ -1,31 +1,31 @@
 class Point {
-    constructor(network) {
-        const jitterSide = Number(network.id) % 2 ? - (Number(network.id) % 2) * 0.008 : (Number(network.id) % 2) * 0.008;
-        const jitterUp = !Number(network.id) % 2 ? - (Number(network.id) % 3) * 0.008 : (Number(network.id) % 3) * 0.008;
+    constructor(resource) {
         this.type = 'Feature';
         this.geometry = {
-            coordinates: [Number(network.lng + jitterUp), Number(network.lat) + jitterSide],
+            coordinates: [Number(resource.lng), Number(resource.lat)],
             type: 'Point',
         };
-        const scale = network.bbox[3] - network.bbox[1];
+        const scale = resource.bbox[3] - resource.bbox[1];
         this.properties = {
-            region: network.region,
-            contact: network.contact || null,
-            socials: network.social || null,
-            facebookPage: network.facebookPage,
-            state: network.state,
-            city: network.city,
-            title: network.title,
-            generalForm: network.generalForm,
-            supportRequestForm: network.supportRequestForm,
-            supportOfferForm: network.supportOfferForm,
-            category: network.category,
-            bbox: network.bbox,
-            lat: network.lat,
-            lng: network.lng,
+            region: resource.region,
+            contact: resource.contact || null,
+            socials: resource.social || null,
+            website: resource.website || null,
+            state: resource.state,
+            city: resource.city,
+            title: resource.title,
+            generalForm: resource.generalForm,
+            supportRequestForm: resource.supportRequestForm,
+            supportOfferForm: resource.supportOfferForm,
+            category: resource.category,
+            bbox: resource.bbox,
+            lat: resource.lat,
+            lng: resource.lng,
             scale: scale * 10,
+            hours: resource.hours || null,
+            notes: resource.notes || "",
         };
-        this.id = network.id;
+        this.id = resource.id;
     }
 }
 

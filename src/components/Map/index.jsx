@@ -49,7 +49,12 @@ class MapView extends React.Component {
     if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
       this.setFilters();
     }
-    if (!isEqual(foodResourceGeoJson.features, prevProps.foodResourceGeoJson.features)) {
+    if (
+      !isEqual(
+        foodResourceGeoJson.features,
+        prevProps.foodResourceGeoJson.features
+      )
+    ) {
       this.updateData(FOOD_RESOURCE_LAYER_NAME);
     }
     // toggled view between full map and zoom
@@ -128,14 +133,17 @@ class MapView extends React.Component {
       map.getCanvas().style.cursor = features.length ? "pointer" : "";
       if (features.length) {
         const feature = features[0];
-        const className = feature.properties.category === "Food Resource" ? "food-resource" : "network";
-         const popoverClassName = `popover-${className}`;
-         this.setState({
-           popoverColor: popoverClassName,
-         });
+        const className =
+          feature.properties.category === "Food Resource"
+            ? "food-resource"
+            : "network";
+        const popoverClassName = `popover-${className}`;
+        this.setState({
+          popoverColor: popoverClassName,
+        });
         this.props.setHoveredPoint(feature.id);
 
-        const html = renderPopover(feature)
+        const html = renderPopover(feature);
         return this.hoveredPopup
           .setLngLat(feature.geometry.coordinates)
           .setHTML(html)
@@ -147,9 +155,7 @@ class MapView extends React.Component {
   }
 
   updateData(layer) {
-    const {
-      foodResourceGeoJson
-    } = this.props;
+    const { foodResourceGeoJson } = this.props;
     this.map.fitBounds([
       [-128.8, 23.6],
       [-65.4, 50.2],
@@ -162,35 +168,34 @@ class MapView extends React.Component {
   }
 
   addLayer = () => {
-      this.map.addLayer({
-        id: FOOD_RESOURCE_LAYER_NAME,
-        minzoom: 2,
-        maxzoom: 16,
-        layout: {
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-          "icon-image": "food-resource-purple",
-          "icon-offset": {
-            base: 1,
-            stops: [
-              [0, [0, -15]],
-              [10, [0, -10]],
-              [12, [0, 0]],
-            ],
-          },
-          "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+    this.map.addLayer({
+      id: FOOD_RESOURCE_LAYER_NAME,
+      minzoom: 2,
+      maxzoom: 16,
+      layout: {
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-image": "food-resource-purple",
+        "icon-offset": {
+          base: 1,
+          stops: [
+            [0, [0, -15]],
+            [10, [0, -10]],
+            [12, [0, 0]],
+          ],
         },
-        paint: {
-          "icon-opacity": 1,
-        },
-        source: {
-          data: this.props.foodResourceGeoJson,
-          type: "geojson",
-        },
-        type: "symbol",
-      });
-  
-  }
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+      },
+      paint: {
+        "icon-opacity": 1,
+      },
+      source: {
+        data: this.props.foodResourceGeoJson,
+        type: "geojson",
+      },
+      type: "symbol",
+    });
+  };
 
   addClickListener() {
     const { map } = this;
@@ -377,12 +382,6 @@ class MapView extends React.Component {
     this.map.on("load", () => {
       this.addClickListener();
       this.addLayer();
-      // this.map.setPaintProperty(NETWORK_LAYER_NAME, "circle-opacity", [
-      //   "case",
-      //   ["boolean", ["feature-state", "hover"], false],
-      //   1,
-      //   0.5,
-      // ]);
       this.map.setLayoutProperty(NETWORK_LAYER_NAME, "visibility", "visible");
       this.addPopups(NETWORK_LAYER_NAME);
       this.addPopups(FOOD_RESOURCE_LAYER_NAME);

@@ -14,43 +14,14 @@
 
 .popover-network {
     .mapboxgl-popup-content {
-      @include popover($general);
+      @include popover($offer);
     }
-    @include popover-tip($general);
+    @include popover-tip($offer);
   }
 
 .popover-food-resource {
     .mapboxgl-popup-content {
-        @include popover($info);
+        @include popover($general);
     }
-    @include popover-tip($info);
-}
-
-.popover-community {
-    .mapboxgl-popup-content {
-        @include popover($info);
-    }
-    @include popover-tip($info);
-}
-
-.popover-request-support {
-    .mapboxgl-popup-content {
-        @include popover($request);
-    }
-    @include popover-tip($request);
-}
-
-.popover-offer-support {
-    .mapboxgl-popup-content {
-        @include popover($offer);
-    }
-    @include popover-tip($offer);
-}
-
-.popover-other {
-    .mapboxgl-popup-content {
-        @include popover($info);
-    }
-
-    @include popover-tip($info);
+    @include popover-tip($general);
 }
