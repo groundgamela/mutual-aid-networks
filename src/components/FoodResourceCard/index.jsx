@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Tag } from "antd";
+import { Card, Tag } from "antd";
 import { map } from "lodash";
 import {
   LinkOutlined,
