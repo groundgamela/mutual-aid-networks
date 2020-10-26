@@ -6,6 +6,19 @@
   .ant-card-head-title {
     white-space: normal;
   }
+  .ant-card-meta-description {
+    margin-bottom: 1em;
+  }
+  .ant-card-actions {
+    border-top: 1px solid $food-resource;
+    li {
+      border-color: #d9d9d9;
+    }
+
+    .text {
+      color: $food-resource;
+    }
+  }
   .community-buttons{
     display: flex;
     flex-wrap: wrap;

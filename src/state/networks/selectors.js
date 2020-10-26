@@ -10,7 +10,7 @@ import {
 
 import { getSelectedCategories, getSearchLocation, getUsState } from '../selections/selectors';
 import { getAllFoodResources } from '../food-resources/selectors';
-import { NETWORK } from '../constants';
+import { NETWORK, FOOD_RESOURCE} from '../constants';
 import { CATEGORY_OPTIONS } from "../selections/reducers";
 const mapboxgl = window.mapboxgl;
 
@@ -81,8 +81,21 @@ export const getNetworksInArea = createSelector(
             });
             const visible =  allNetworks.filter((item) => {
                 const position = new mapboxgl.LngLat(Number(item.lng), Number(item.lat));
+           
                 return boundingBox.contains(position);
            
+            }).map((item) => {
+                if (item.category === FOOD_RESOURCE) {
+
+                    const distLookup = new LatLng(Number(location.lat), Number(location.lng));
+    
+                    const distance = computeDistanceBetween(
+                        distLookup,
+                        new LatLng(Number(item.lat), Number(item.lng)),
+                    );
+                    item.distance = (distance / 1609.344).toFixed(1);
+                }
+                return item;
             });
             return [...visible, ...stateWide]
     
@@ -103,7 +116,6 @@ export const getFilterCounts = createSelector([getNetworksInArea], (networksAndR
     if (!networksAndResources.length) {
         return init;
     }
-    console.log('calcu')
     return reduce(networksAndResources, (acc, item) => {
         const index = CATEGORY_OPTIONS.indexOf(item.category);
         if (index > -1) {

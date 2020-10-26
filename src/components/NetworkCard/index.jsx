@@ -5,8 +5,6 @@ import "./style.scss";
 import { standardizePhoneNumber } from "../../utils/index";
 import NetworkIcon from "../../assets/network-green.svg";
 
-const { Meta } = Card;
-
 const NetworkCard = (props) => {
   const { network } = props;
   const {
