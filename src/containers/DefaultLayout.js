@@ -5,6 +5,7 @@ import {
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
 } from "react-router-dom";
 import { Layout } from 'antd';
@@ -130,8 +131,11 @@ class DefaultLayout extends React.Component {
             <Content style={{ padding: '0 50px' }}>
               <div className="main-container">
                 <Switch>
-                  <Route path='/table-view'>
+                  <Route path='/table-of-networks'>
                     <NetworksTable networks={allNetworks} />
+                  </Route>
+                  <Route path='/table-view'>
+                    <Redirect to='/table-of-networks' />
                   </Route>
                   <Route path='/about'>
                     <About />
