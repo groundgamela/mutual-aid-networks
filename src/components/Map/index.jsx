@@ -206,7 +206,7 @@ class MapView extends React.Component {
     }
     map.on("click", (e) => {
       const features = map.queryRenderedFeatures(e.point, {
-        layers: [NETWORK_LAYER_NAME],
+        layers: [NETWORK_LAYER_NAME, FOOD_RESOURCE_LAYER_NAME],
       });
 
       if (features.length > 0) {
