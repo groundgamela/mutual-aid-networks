@@ -110,13 +110,12 @@ const FoodResourceCard = (props) => {
             </>
           }
           key={id}
+          id={`card-${id}`}
           actions={actions}
           onMouseEnter={() => props.setHoveredPoint(id)}
           onMouseLeave={() => props.setHoveredPoint(null)}
         >
-          <Meta 
-            description={notes || ""} 
-          />
+          <Meta description={notes || ""} />
           {hours && (
             <div>
               <strong>Open: </strong>
@@ -133,7 +132,9 @@ const FoodResourceCard = (props) => {
             {map(resources, (value, key) => {
               if (value) {
                 return (
-                  <Tag key={key} color="#8048f3">{FOOD_RESOURCE_TYPES_DISPLAY_MAP[key]}</Tag>
+                  <Tag key={key} color="#8048f3">
+                    {FOOD_RESOURCE_TYPES_DISPLAY_MAP[key]}
+                  </Tag>
                 );
               }
             })}

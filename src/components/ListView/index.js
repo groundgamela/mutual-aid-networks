@@ -24,7 +24,8 @@ const ListView = ({
     setHoveredPoint,
     setFilters,
     selectedCategories,
-    filterCounts
+    filterCounts,
+    listRef
   }) => {
     const renderCards = () => {
       const cardProps = {
@@ -41,7 +42,8 @@ const ListView = ({
     }
 
   return (
-      <div className="list-container">
+      <div className="list-container" >
+        <div ref={listRef} />
         <Filters
           setFilters={setFilters}
           filterCounts={filterCounts}

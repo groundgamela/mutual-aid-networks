@@ -86,6 +86,7 @@ const NetworkCard = (props) => {
         </>
       }
       key={id}
+      id={`card-${id}`}
       actions={actions}
       onMouseEnter={() => props.setHoveredPoint(id)}
       onMouseLeave={() => props.setHoveredPoint(null)}
