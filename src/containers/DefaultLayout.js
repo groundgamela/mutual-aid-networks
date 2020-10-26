@@ -11,6 +11,9 @@ import { Layout } from 'antd';
 import {
   MenuFoldOutlined,
 } from '@ant-design/icons';
+import {
+  isEqual
+} from "lodash";
 
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
@@ -36,6 +39,7 @@ const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
   constructor(props) {
     super(props)
+    this.listRef = React.createRef();
     this.state = {
       isMobile: false,
       collapsed: true,
@@ -55,6 +59,13 @@ class DefaultLayout extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.checkIfMobile);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { visibleCards } = this.props;
+    if (!isEqual(visibleCards, prevProps.visibleCards) && this.listRef.current) {
+      this.listRef.current.scrollIntoView();
+    }
   }
 
   handleNav = (e) => {
@@ -115,7 +126,8 @@ class DefaultLayout extends React.Component {
       hoveredPointId,
       masterBbox,
       resetToDefaultView,
-      foodResourceGeoJson
+      foodResourceGeoJson,
+      filterCounts
     } = this.props;
     
     if (!allNetworks.length) {
@@ -168,6 +180,8 @@ class DefaultLayout extends React.Component {
                           foodResourceGeoJson={foodResourceGeoJson}
                         />
                         <ListView
+                          listRef={this.listRef}
+                          filterCounts={filterCounts}
                           visibleCards={visibleCards}
                           setHoveredPoint={setHoveredPoint}
                           setFilters={setFilters}
@@ -206,6 +220,7 @@ const mapStateToProps = (state) => ({
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
   masterBbox: networkStateBranch.selectors.getBoundingBox(state),
   allFoodResources: foodResourcesStateBranch.selectors.getAllFoodResources(state),
+  filterCounts: networkStateBranch.selectors.getFilterCounts(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

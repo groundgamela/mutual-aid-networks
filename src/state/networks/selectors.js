@@ -1,14 +1,22 @@
 import { createSelector } from 'reselect';
-import { filter } from 'lodash';
+import {
+    filter,
+    reduce
+} from 'lodash';
 import {
     computeDistanceBetween,
     LatLng
 } from 'spherical-geometry-js';
 
 import { getSelectedCategories, getSearchLocation, getUsState } from '../selections/selectors';
+import { getAllFoodResources } from '../food-resources/selectors';
+import { NETWORK, FOOD_RESOURCE} from '../constants';
+import { CATEGORY_OPTIONS } from "../selections/reducers";
 const mapboxgl = window.mapboxgl;
 
 export const getAllNetworks = state => state.networks.allNetworks;
+
+export const getAllResourcesAndNetworks = createSelector([getAllNetworks, getAllFoodResources], (networks, resources) => [...networks, ...resources])
 
 export const getFilteredNetworks = createSelector([getAllNetworks, getSelectedCategories], (networks, categories) => {
     if (!categories.length) {
@@ -19,41 +27,77 @@ export const getFilteredNetworks = createSelector([getAllNetworks, getSelectedCa
     })
 })
 
+export const getBoundingBox = createSelector([getAllResourcesAndNetworks, getSearchLocation, getUsState], (allResourcesAndNetworks, location, usState) => {
+    if (!location.lat && !usState) {
+        return null;
+    }
+    const lookup = new LatLng(Number(location.lat), Number(location.lng));
 
-export const getNetworksInArea = createSelector([getAllNetworks, getSearchLocation, getUsState], (allNetworks, location, usState) => {
+    if (!allResourcesAndNetworks.length) {
+        return null;
+    }
+    allResourcesAndNetworks.sort((a, b) => {
+        const aDistance = computeDistanceBetween(
+            lookup,
+            new LatLng(Number(a.lat), Number(a.lng)),
+        );
+        const bDistance = computeDistanceBetween(
+            lookup,
+            new LatLng(Number(b.lat), Number(b.lng)),
+        );
+        return aDistance - bDistance;
+    });
+    const twelveClosest = allResourcesAndNetworks.slice(0, 12);
+    return twelveClosest.reduce((acc, cur, index) => {
+        if (cur.category === NETWORK && !cur.city) {
+            // don't zoom to statewide
+            return acc;
+        }
+        if (index > 0) {
+            acc = acc.extend(new mapboxgl.LngLatBounds(cur.bbox));
+        }
+        return acc;
+    }, new mapboxgl.LngLatBounds(twelveClosest[0].bbox));
+})
+
+export const getNetworksInArea = createSelector(
+    [getAllResourcesAndNetworks, getSearchLocation, getBoundingBox, getUsState], 
+    (allNetworks, location, boundingBox, usState) => {
             if (!location.lat && !usState) {
                 return [];
             }
+            const networksInState = allNetworks.filter((network) => network.state && network.state === usState);
             // statewide search
             if (!location.lat) {
-                return allNetworks.filter((network) => network.state && network.state === usState);
+                return networksInState
                 
             }
-            const lookup = new LatLng(Number(location.lat), Number(location.lng));
-            const maxMeters = 50 * 1609.34; // Convert miles to meters before filtering
-            return allNetworks.filter((network) => {
+            const stateWide = networksInState.filter((network) => {
                 // include statewide networks
                 if (network.state && !network.city && network.state === usState) {
                     return true;
-                } 
-
-                const curDistance = computeDistanceBetween(
-                    lookup,
-                    new LatLng(Number(network.lat), Number(network.lng)),
-                );
-                return curDistance < maxMeters;
-                
-            }).sort((a, b) => {
-                const aDistance = computeDistanceBetween(
-                    lookup,
-                    new LatLng(Number(a.lat), Number(a.lng)),
-                );
-                const bDistance = computeDistanceBetween(
-                    lookup,
-                    new LatLng(Number(b.lat), Number(b.lng)),
-                );
-                return aDistance - bDistance;
+                }
+                return false;
             });
+            const visible =  allNetworks.filter((item) => {
+                const position = new mapboxgl.LngLat(Number(item.lng), Number(item.lat));
+           
+                return boundingBox.contains(position);
+           
+            }).map((item) => {
+                if (item.category === FOOD_RESOURCE) {
+
+                    const distLookup = new LatLng(Number(location.lat), Number(location.lng));
+    
+                    const distance = computeDistanceBetween(
+                        distLookup,
+                        new LatLng(Number(item.lat), Number(item.lng)),
+                    );
+                    item.distance = (distance / 1609.344).toFixed(1);
+                }
+                return item;
+            });
+            return [...visible, ...stateWide]
     
 })
 
@@ -66,14 +110,18 @@ export const getVisibleCards = createSelector([getNetworksInArea, getSelectedCat
     })
 })
 
-export const getBoundingBox = createSelector([getNetworksInArea], (cards) => {
-    if (!cards.length) {
-        return null;
+export const getFilterCounts = createSelector([getNetworksInArea], (networksAndResources) => {
+    const init = CATEGORY_OPTIONS.map(() => 0);
+    
+    if (!networksAndResources.length) {
+        return init;
     }
-    return cards.reduce((acc, cur, index) => {
-        if (index > 0) {
-            acc = acc.extend(new mapboxgl.LngLatBounds(cur.bbox));
+    return reduce(networksAndResources, (acc, item) => {
+        const index = CATEGORY_OPTIONS.indexOf(item.category);
+        if (index > -1) {
+            acc[index] = acc[index] + 1;
         }
         return acc;
-    }, new mapboxgl.LngLatBounds(cards[0].bbox));
+    }, init)
 })
+

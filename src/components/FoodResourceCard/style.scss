@@ -1,19 +1,22 @@
 @import '../../styles/variableColorStyles.scss';
 
 
-.network-card {
+.resource-card {
   margin: 30px;
   .ant-card-head-title {
     white-space: normal;
   }
+  .ant-card-meta-description {
+    margin-bottom: 1em;
+  }
   .ant-card-actions {
-    border-top: 1px solid $network;
+    border-top: 1px solid $food-resource;
     li {
       border-color: #d9d9d9;
     }
 
     .text {
-      color: $network;
+      color: $food-resource;
     }
   }
   .community-buttons{
