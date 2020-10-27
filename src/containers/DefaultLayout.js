@@ -31,6 +31,7 @@ import Banner from '../components/Banner';
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
+import FoodResourcesTable from '../components/FoodResourcesTable';
 
 const { Header, Content, Sider } = Layout;
 const mapboxgl = window.mapboxgl;
@@ -104,20 +105,23 @@ class DefaultLayout extends React.Component {
 
   render() {
     const {
-      setFilters,
-      selectedCategories,
-      filteredNetworks,
-      viewState,
-      setLatLng,
-      setUsState,
-      visibleCards,
+      allFoodResources,
       allNetworks,
-      setHoveredPoint,
+      filteredNetworks,
       hoveredPointId,
+      foodResourceGeoJson,
       masterBbox,
       resetToDefaultView,
-      foodResourceGeoJson
+      selectedCategories,
+      setHoveredPoint,
+      setFilters,
+      setLatLng,
+      setUsState,
+      viewState,
+      visibleCards,
     } = this.props;
+
+    const { isMobile } = this.state
     
     if (!allNetworks.length) {
       return null;
@@ -132,7 +136,14 @@ class DefaultLayout extends React.Component {
               <div className="main-container">
                 <Switch>
                   <Route path='/table-of-networks'>
-                    <NetworksTable networks={allNetworks} />
+                    <h2 className='title page-container'>Mutual Aid Networks</h2>
+                    <div className={isMobile ? '' : 'table-container'}>
+                      <NetworksTable networks={allNetworks} />
+                    </div>
+                    <h2 className='title page-container'>Food Resources</h2>
+                    <div className={isMobile ? '' : 'table-container'}>
+                      <FoodResourcesTable resources={allFoodResources} />
+                    </div>
                   </Route>
                   <Route path='/table-view'>
                     <Redirect to='/table-of-networks' />
