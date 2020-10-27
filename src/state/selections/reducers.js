@@ -10,11 +10,11 @@ export const SET_HOVERED_POINT = makeConstant(STATE_BRANCH, 'SET_HOVERED_POINT')
 export const SET_US_STATE = makeConstant(STATE_BRANCH, "SET_US_STATE");
 export const RESET_TO_DEFAULTS = makeConstant(STATE_BRANCH, "RESET_TO_DEFAULTS");
 
-export const options = [FOOD_RESOURCE, NETWORK];
+export const CATEGORY_OPTIONS = [FOOD_RESOURCE, NETWORK];
 
 const initialState = {
   view: 'default',
-  categories: options,
+  categories: CATEGORY_OPTIONS,
   language: '',
   community: '',
   searchLocation: {},

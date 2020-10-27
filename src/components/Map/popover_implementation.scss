@@ -14,9 +14,9 @@
 
 .popover-network {
     .mapboxgl-popup-content {
-      @include popover($offer);
+      @include popover($network);
     }
-    @include popover-tip($offer);
+    @include popover-tip($network);
   }
 
 .popover-food-resource {

@@ -1,3 +1,6 @@
+import { map } from "lodash";
+import { FOOD_RESOURCE, FOOD_RESOURCE_TYPES_DISPLAY_MAP } from "../../state/constants";
+
 const { standardizePhoneNumber } = require("../../utils");
 
 const renderNetworkPopover = (feature) => {
@@ -33,17 +36,17 @@ const renderResourcePopover = (feature) => {
     const {
         properties
     } = feature;
-    const foodMapping = {
-        fridge: "Fridge",
-        pantry: "Pantry",
-        foodBank: "Food Bank",
-        freezer: "Freezer"
-    }
-    return `
-        <h4>${properties.title}</h4>
+    const resources = JSON.parse(properties.resources);
+    const tags = map(resources, (item) => `<span class="tag">${FOOD_RESOURCE_TYPES_DISPLAY_MAP[item]}</span>`).join("");
+    return `<h4>${properties.title}</h4>
         <div>${properties.address}</div>
-        <div>${properties.hours || ""}</div>
-        <div class="tag-container">${eval(properties.resources).map((item) => `<span class="tag">${foodMapping[item]}</span>`).join("")}</div>`
+        ${properties.hours ? ` <div>Open: ${properties.hours}</div>` : ""}
+        <div class="tag-container">${tags}</div>`
 }
 
-export const renderPopover = (feature) => feature.properties.category === "Food Resource" ? renderResourcePopover(feature) : renderNetworkPopover(feature);
+export const renderPopover = (feature) => {
+    if (feature.properties.category === FOOD_RESOURCE) {
+        return renderResourcePopover(feature)
+    } 
+    return renderNetworkPopover(feature)
+}
