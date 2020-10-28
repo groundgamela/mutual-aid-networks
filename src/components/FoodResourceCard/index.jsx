@@ -65,7 +65,7 @@ const FoodResourceCard = (props) => {
         actions.push(
           <a
             key={`${id}-facebook`}
-            href={facebook}
+            href={`https://www.facebook.com/${facebook}`}
             rel="noopener noreferrer"
             target="_blank"
             className="button text"
@@ -78,7 +78,7 @@ const FoodResourceCard = (props) => {
         actions.push(
           <a
             key={`${id}-instagram`}
-            href={instagram}
+            href={`https://www.instagram.com/${instagram.replace("@", "")}`}
             rel="noopener noreferrer"
             target="_blank"
             className="button text"
@@ -91,7 +91,7 @@ const FoodResourceCard = (props) => {
         actions.push(
           <a
             key={`${id}-twitter`}
-            href={twitter}
+            href={`https://twitter.com/${twitter}`}
             rel="noopener noreferrer"
             target="_blank"
             className="button text"
