@@ -31,7 +31,12 @@ jobs:
           REACT_APP_MAPBOX_API_KEY: "pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNrN3d1c3hhdDA1MmozbW80cW5oOWxzcHoifQ.rq66iVpULeHVB6PutWiunA"
           REACT_APP_PROD_FIRESTORE_URL: "https://firestore.googleapis.com/v1/projects/townhallproject-86312/databases/(default)/documents/mutual_aid_networks"
           NODE_ENV: 'production' 
-          
+          REACT_APP_PROD_FIREBASE_API_KEY: 'AIzaSyCXyjAOvBKDEX5pckTwuI7LODWKNlL21gc'
+          REACT_APP_PROD_FIREBASE_AUTH_DOMAIN: townhallproject-86312.firebaseapp.com'
+          REACT_APP_PROD_DATABASE_URL: 'https://townhallproject-86312.firebaseio.com'
+          REACT_APP_PROD_STORAGE_BUCKET: 'townhallproject-86312.appspot.com'
+          REACT_APP_PROD_MESSAGING_SENDER_ID: 208752196071
+          REACT_APP_PROD_PROJECT_ID: 'townhallproject-86312'
 
       - name: Prepare tag
         id: prepare_tag
