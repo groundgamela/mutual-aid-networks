@@ -11,9 +11,13 @@ import { Layout } from 'antd';
 import {
   MenuFoldOutlined,
 } from '@ant-design/icons';
+import {
+  isEqual
+} from "lodash";
 
 import networkStateBranch from '../state/networks';
 import selectionStateBranch from '../state/selections';
+import foodResourcesStateBranch from '../state/food-resources';
 import MapView from '../components/Map';
 import SubmitButton from '../components/SubmitButton';
 import Filters from '../components/Filters';
@@ -37,6 +41,7 @@ const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
   constructor(props) {
     super(props)
+    this.listRef = React.createRef();
     this.state = {
       isMobile: false,
       collapsed: true,
@@ -45,15 +50,24 @@ class DefaultLayout extends React.Component {
 
   componentDidMount() {
     const {
-      requestNetworks
+      requestNetworks,
+      requestFoodResources
     } = this.props;
     requestNetworks();
+    requestFoodResources();
     this.checkIfMobile();
     window.addEventListener('resize', this.checkIfMobile);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.checkIfMobile);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { visibleCards } = this.props;
+    if (!isEqual(visibleCards, prevProps.visibleCards) && this.listRef.current) {
+      this.listRef.current.scrollIntoView();
+    }
   }
 
   handleNav = (e) => {
@@ -122,7 +136,9 @@ class DefaultLayout extends React.Component {
       hoveredPointId,
       masterBbox,
       resetToDefaultView,
-      siteLanguage
+      foodResourceGeoJson,
+      filterCounts,
+      siteLanguage,
     } = this.props;
     
     if (!allNetworks.length) {
@@ -172,8 +188,11 @@ class DefaultLayout extends React.Component {
                           setHoveredPoint={setHoveredPoint}
                           bbox={masterBbox}
                           setUsState={setUsState}
+                          foodResourceGeoJson={foodResourceGeoJson}
                         />
                         <ListView
+                          listRef={this.listRef}
+                          filterCounts={filterCounts}
                           visibleCards={visibleCards}
                           setHoveredPoint={setHoveredPoint}
                           setFilters={setFilters}
@@ -204,17 +223,21 @@ class DefaultLayout extends React.Component {
 const mapStateToProps = (state) => ({
   filteredNetworks: networkStateBranch.selectors.getFilteredNetworks(state),
   selectedCategories: selectionStateBranch.selectors.getSelectedCategories(state),
+  foodResourceGeoJson: foodResourcesStateBranch.selectors.getFoodResourcesGeoJson(state),
   viewState: selectionStateBranch.selectors.getViewState(state),
   searchLocation: selectionStateBranch.selectors.getSearchLocation(state),
   visibleCards: networkStateBranch.selectors.getVisibleCards(state),
   allNetworks: networkStateBranch.selectors.getAllNetworks(state),
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
   masterBbox: networkStateBranch.selectors.getBoundingBox(state),
-  siteLanguage: selectionStateBranch.selectors.getSiteLanguage(state)
+  allFoodResources: foodResourcesStateBranch.selectors.getAllFoodResources(state),
+  filterCounts: networkStateBranch.selectors.getFilterCounts(state),
+  siteLanguage: selectionStateBranch.selectors.getSiteLanguage(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   requestNetworks: () => dispatch(networkStateBranch.actions.requestNetworks()),
+  requestFoodResources: () => dispatch(foodResourcesStateBranch.actions.requestFoodResources()),
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
   setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload)),
   setHoveredPoint: (payload) => dispatch(selectionStateBranch.actions.setHoveredPoint(payload)),

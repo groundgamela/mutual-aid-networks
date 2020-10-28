@@ -1,7 +1,7 @@
 import {
   makeConstant
 } from "../../utils";
-import { GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION } from "../constants";
+import { FOOD_RESOURCE, NETWORK } from "../constants";
 
 const STATE_BRANCH = 'SELECTIONS';
 export const SET_CATEGORY_FILTERS = makeConstant(STATE_BRANCH, 'FILTER_BY_CATEGORY');
@@ -11,11 +11,12 @@ export const SET_SITE_LANGUAGE = makeConstant(STATE_BRANCH, "SET_SITE_LANGUAGE")
 export const SET_US_STATE = makeConstant(STATE_BRANCH, "SET_US_STATE");
 export const RESET_TO_DEFAULTS = makeConstant(STATE_BRANCH, "RESET_TO_DEFAULTS");
 
-export const options = [GENERAL, REQUEST_SUPPORT, OFFER_SUPPORT, INFORMATION];
+export const CATEGORY_OPTIONS = [FOOD_RESOURCE, NETWORK];
 
 const initialState = {
   view: 'default',
-  categories: options,
+  categories: CATEGORY_OPTIONS,
+  language: '',
   siteLanguage: 'english',
   community: '',
   searchLocation: {},

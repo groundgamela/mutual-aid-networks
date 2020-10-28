@@ -21,6 +21,17 @@
       text-align: center;
       margin-top: 10px;
     }
+    .tag-container {
+      margin: 2px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .tag {
+      border-radius: 3px;
+      padding: 2px 10px;
+      border: 1px solid white;
+      margin: 1px;
+    }
   }
   @mixin group-popover-icon($url) {
     height: 20px;

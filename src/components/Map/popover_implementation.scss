@@ -12,31 +12,16 @@
     @include popover-tip($general);
   }
 
-.popover-community {
+.popover-network {
     .mapboxgl-popup-content {
-        @include popover($info);
+      @include popover($network);
     }
-    @include popover-tip($info);
-}
+    @include popover-tip($network);
+  }
 
-.popover-request-support {
+.popover-food-resource {
     .mapboxgl-popup-content {
-        @include popover($request);
+        @include popover($general);
     }
-    @include popover-tip($request);
-}
-
-.popover-offer-support {
-    .mapboxgl-popup-content {
-        @include popover($offer);
-    }
-    @include popover-tip($offer);
-}
-
-.popover-other {
-    .mapboxgl-popup-content {
-        @include popover($info);
-    }
-
-    @include popover-tip($info);
+    @include popover-tip($general);
 }
