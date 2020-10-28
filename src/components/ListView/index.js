@@ -35,9 +35,9 @@ const ListView = ({
       } 
      return visibleCards.map((data) => {
         if (data.category === FOOD_RESOURCE) {
-          return (<FoodResourceCard key={data.id} resource={data} {...cardProps} />)
+          return (<FoodResourceCard key={`resource-${data.id}`} resource={data} {...cardProps} />)
         } else if (data.category === NETWORK) {
-          return (<NetworkCard key={data.id} network={data} {...cardProps} />)
+          return (<NetworkCard key={`network-${data.id}`} network={data} {...cardProps} />)
         }
         return null;
       })
