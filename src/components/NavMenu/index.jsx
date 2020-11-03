@@ -20,8 +20,8 @@ const NavMenu = (props) => {
         <Menu.Item key="/">
           <NavLink to='/' exact>Map</NavLink>
         </Menu.Item>
-        <Menu.Item key="/table-view">
-          <NavLink to='/table-view' exact>Table View</NavLink>
+        <Menu.Item key="/table-of-networks">
+          <NavLink to='/table-of-networks' exact>Table of Networks</NavLink>
         </Menu.Item>
         <Menu.Item key="/resources">
           <NavLink to='/resources' exact>Guides and Resources</NavLink>
