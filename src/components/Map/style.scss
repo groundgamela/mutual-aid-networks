@@ -5,7 +5,6 @@
 
 #map {
   min-height: 70vh;
-  // width: 100%;
   position: relative;
 }
 
@@ -26,9 +25,9 @@
   
   .inset {
     z-index: 1;
-    width: 230px;
-    height:150px;
-    border:1px solid #fff;
+    width: 200px;
+    height: 120px;
+    border: 1px solid #fff;
     margin-left: 10px;
     margin-right: 10px;
     box-sizing: content-box;
