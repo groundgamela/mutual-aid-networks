@@ -13,6 +13,10 @@ import { renderPopover } from "./popover";
 import { FOOD_RESOURCE, NETWORK } from "../../state/constants";
 
 const mapboxgl = window.mapboxgl;
+const USA_MAP_BOUNDS = [
+  [-128.8, 15],
+  [-65.4, 51.2],
+]
 
 class MapView extends React.Component {
   constructor(props) {
@@ -156,10 +160,7 @@ class MapView extends React.Component {
 
   updateData(layer) {
     const { foodResourceGeoJson } = this.props;
-    this.map.fitBounds([
-      [-128.8, 23.6],
-      [-65.4, 50.2],
-    ]);
+    this.map.fitBounds(USA_MAP_BOUNDS);
     if (!this.map.getSource(layer)) {
       console.log("no layer");
       return;
@@ -259,17 +260,11 @@ class MapView extends React.Component {
     const { resetToDefaultView } = this.props;
 
     resetToDefaultView();
-    this.fitBounds([
-      [-128.8, 23.6],
-      [-65.4, 50.2],
-    ]);
+    this.fitBounds(USA_MAP_BOUNDS);
   }
 
   setInitialState() {
-    this.fitBounds([
-      [-128.8, 23.6],
-      [-65.4, 50.2],
-    ]);
+    this.fitBounds(USA_MAP_BOUNDS);
     document.getElementsByClassName("mapboxgl-ctrl-geocoder--input");
     Array.from(
       document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")
@@ -381,10 +376,7 @@ class MapView extends React.Component {
       "top-left"
     );
     // map on 'load'
-    this.fitBounds([
-      [-128.8, 23.6],
-      [-65.4, 50.2],
-    ]);
+    this.fitBounds(USA_MAP_BOUNDS);
     this.map.on("load", () => {
       this.addClickListener();
       this.addLayer();
@@ -423,7 +415,7 @@ class MapView extends React.Component {
                 [-170.15625, 51.72702815704774],
                 [-127.61718749999999, 71.85622888185527],
               ]}
-            />{" "}
+            />
             <MapInset
               networks={filter(networks, {
                 state: "HI",
@@ -441,7 +433,24 @@ class MapView extends React.Component {
                 [-154.22607421875, 22.573438264572406],
               ]}
             />
-          </div>{" "}
+            <MapInset
+              networks={filter(networks, {
+                state: "PR",
+              })}
+              center={center}
+              stateName="PR"
+              viewState={viewState}
+              resetSelections={resetSelections}
+              selectedCategories={selectedCategories}
+              setLatLng={setLatLng}
+              setBounds={this.handleClickOnInset}
+              mapId="map-overlay-puerto-rico"
+              bounds={[
+                [-67.720835, 17.408414],
+                [-65.170132, 18.964802],
+              ]}
+            />
+          </div>
         </div>
       </React.Fragment>
     );
