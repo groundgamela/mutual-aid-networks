@@ -36,6 +36,8 @@ import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
 import FoodResourcesTable from '../components/FoodResourcesTable';
 
+import { translations } from './language'
+
 const { Header, Content, Sider } = Layout;
 const mapboxgl = window.mapboxgl;
 class DefaultLayout extends React.Component {
@@ -87,12 +89,18 @@ class DefaultLayout extends React.Component {
   }
 
   renderPageHeader = () => {
+    const {
+      setSiteLanguage,
+      siteLanguage,
+    } = this.props
     if (!this.state.isMobile) {
       return (
         <Header>
           <NavMenu
             mode='horizontal'
             handleNav={this.handleNav}
+            setSiteLanguage={setSiteLanguage}
+            siteLanguage={siteLanguage}
           />
         </Header>
       )
@@ -108,6 +116,8 @@ class DefaultLayout extends React.Component {
           <NavMenu
             mode='inline'
             handleNav={this.handleNav}
+            setSiteLanguage={setSiteLanguage}
+            siteLanguage={siteLanguage}
           />
         </Sider>
       )
@@ -131,6 +141,9 @@ class DefaultLayout extends React.Component {
       setUsState,
       viewState,
       visibleCards,
+      foodResourceGeoJson,
+      filterCounts,
+      siteLanguage,
     } = this.props;
 
     const { isMobile } = this.state
@@ -150,21 +163,21 @@ class DefaultLayout extends React.Component {
                   <Route path='/table-of-networks'>
                     <h2 className='title page-container'>Mutual Aid Networks</h2>
                     <div className={isMobile ? '' : 'table-container'}>
-                      <NetworksTable networks={allNetworks} />
+                      <NetworksTable networks={allNetworks} siteLanguage={siteLanguage} />
                     </div>
                     <h2 className='title page-container'>Food Resources</h2>
                     <div className={isMobile ? '' : 'table-container'}>
-                      <FoodResourcesTable resources={allFoodResources} />
+                      <FoodResourcesTable resources={allFoodResources} siteLanguage={siteLanguage} />
                     </div>
                   </Route>
                   <Route path='/table-view'>
                     <Redirect to='/table-of-networks' />
                   </Route>
                   <Route path='/about'>
-                    <About />
+                    <About siteLanguage={siteLanguage} />
                   </Route>
                   <Route path='/resources'>
-                    <Resources />
+                    <Resources siteLanguage={siteLanguage} />
                   </Route>
                   <Route path='/press'>
                     <Press />
@@ -201,22 +214,22 @@ class DefaultLayout extends React.Component {
                           setHoveredPoint={setHoveredPoint}
                           setFilters={setFilters}
                           selectedCategories={selectedCategories}
+                          siteLanguage={siteLanguage}
                         />
                       </div>
                     </>: <NoWebGl />}
                     <div className="tagline">
-                      Find Mutual Aid Networks and other community self-support projects near you. Reach out to these
-                      groups directly via the map above to get involved, offer resources, or submit needs requests.
+                      {translations.tagline[siteLanguage]}
                     </div>
                     <SubmitButton
                       link='https://docs.google.com/forms/d/e/1FAIpQLScuqQtCdKsDzvTzaA2PMyVHX7xcOqbOW7N7l_0YJASV4wMBVQ/viewform'
-                      description='Submit a Mutual Aid Network'
+                      description={translations.submitButton[siteLanguage]}
                     />
                   </Route>
                 </Switch>
               </div>
             </Content>
-            <PageFooter />
+            <PageFooter siteLanguage={siteLanguage} />
           </Layout>
         </Layout>
       </Router>
@@ -235,7 +248,8 @@ const mapStateToProps = (state) => ({
   hoveredPointId: selectionStateBranch.selectors.getHoveredPointId(state),
   masterBbox: networkStateBranch.selectors.getBoundingBox(state),
   allFoodResources: foodResourcesStateBranch.selectors.getAllFoodResources(state),
-  filterCounts: networkStateBranch.selectors.getFilterCounts(state)
+  filterCounts: networkStateBranch.selectors.getFilterCounts(state),
+  siteLanguage: selectionStateBranch.selectors.getSiteLanguage(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -244,6 +258,7 @@ const mapDispatchToProps = (dispatch) => ({
   setFilters: (payload) => dispatch(selectionStateBranch.actions.setCategoryFilters(payload)),
   setLatLng: (payload) => dispatch(selectionStateBranch.actions.setLatLng(payload)),
   setHoveredPoint: (payload) => dispatch(selectionStateBranch.actions.setHoveredPoint(payload)),
+  setSiteLanguage: (payload) => dispatch(selectionStateBranch.actions.setSiteLanguage(payload)),
   setUsState: (payload) => dispatch(selectionStateBranch.actions.setUsState(payload)),
   resetToDefaultView: () => dispatch(selectionStateBranch.actions.resetToDefaultView())
 });

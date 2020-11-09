@@ -19,8 +19,12 @@ const fetchNetworks = createLogic({
     return firestore.collection("food_resources").get()
       .then((snapshot) => {
         const allFoodResources = [];
-          snapshot.forEach((doc) => {
-            allFoodResources.push(doc.data())
+         let id = 0;
+          snapshot.forEach((doc, index) => {
+            const data = doc.data();
+            data.id = id;
+            id++;
+            allFoodResources.push(data)
           })
           return allFoodResources;
       })

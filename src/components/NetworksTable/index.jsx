@@ -3,12 +3,14 @@ import { Button, Input, Table } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 
 import './style.scss';
+import { translations } from './language'
 
 const NetworksTable = (props) => {
   const [searchCol, setSearchCol] = useState('')
 
   const {
-    networks
+    networks,
+    siteLanguage
   } = props
 
   const getSearchColValues = (searchColValues) => {
@@ -45,10 +47,10 @@ const NetworksTable = (props) => {
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
-          Search
+          {translations.search[siteLanguage]}
         </Button>
         <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
-          Reset
+        {translations.reset[siteLanguage]}
         </Button>
       </div>
     ),
@@ -62,7 +64,7 @@ const NetworksTable = (props) => {
 
   const tableColumns = [
     {
-      title: 'Organization',
+      title: translations.organization[siteLanguage],
       width: '10vw',
       fixed: 'left',
       dataIndex: 'title',
@@ -81,7 +83,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'State',
+      title: translations.state[siteLanguage],
       width: '5vw',
       dataIndex: 'state',
       key: 'state',
@@ -118,7 +120,7 @@ const NetworksTable = (props) => {
       render: languages => languages.length && languages.sort().join(', ')
     },
     {
-      title: 'Get Involved',
+      title: translations.getInvolved[siteLanguage],
       width: '10vw',
       dataIndex: 'forms',
       filters: [
@@ -131,10 +133,10 @@ const NetworksTable = (props) => {
       key: 'forms',
       render: (text, record) => (
         <ul key="resources" className='resources'>
-          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>General</Button></li>}
-          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>Offer Support</Button></li>}
-          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>Request Support</Button></li>}
-          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>Community</Button></li>}
+          {record.generalForm && <li key={`${record.generalForm}-general`} className="form-link"><Button ghost href={record.generalForm} target='blank' className='general'>{translations.general[siteLanguage]}</Button></li>}
+          {record.supportOfferForm && <li key={`${record.supportOfferForm}-offer`} className="form-link"><Button ghost href={record.supportOfferForm} target='blank' className='offer'>{translations.supportOffer[siteLanguage]}</Button></li>}
+          {record.supportRequestForm && <li key={`${record.supportRequestForm}-request`} className="form-link"><Button ghost href={record.supportRequestForm} target='blank' className='request'>{translations.supportRequest[siteLanguage]}</Button></li>}
+          {record.facebookPage && <li key={`${record.facebookPage}-facebook`} className="form-link"><Button ghost href={record.facebookPage} target='blank' className='other'>{translations.facebookPage[siteLanguage]}</Button></li>}
         </ul>
       )
     },

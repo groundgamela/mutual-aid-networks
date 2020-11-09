@@ -7,14 +7,15 @@ import Filters from '../Filters';
 import './style.scss';
 import { FOOD_RESOURCE, NETWORK } from '../../state/constants';
 import FoodResourceCard from '../FoodResourceCard';
+import { translations } from './language'
 
 const { Title } = Typography;
 
-const NoNetworkSection = () => {
+const NoNetworkSection = ({siteLanguage}) => {
   return (
     <div className="no-network-section">
       <Title level={3}><InfoCircleOutlined /></Title>
-      <Title level={3}>There are no support requests or networks nearby.</Title> 
+      <Title level={3}>{translations.noNetworks[siteLanguage]}</Title>
     </div>
   )
 }
@@ -25,7 +26,8 @@ const ListView = ({
     setFilters,
     selectedCategories,
     filterCounts,
-    listRef
+    listRef,
+    siteLanguage
   }) => {
     const renderCards = () => {
       const cardProps = {
@@ -33,9 +35,9 @@ const ListView = ({
       } 
      return visibleCards.map((data) => {
         if (data.category === FOOD_RESOURCE) {
-          return (<FoodResourceCard key={data.id} resource={data} {...cardProps} />)
+          return (<FoodResourceCard key={`resource-${data.id}`} resource={data} {...cardProps} />)
         } else if (data.category === NETWORK) {
-          return (<NetworkCard key={data.id} network={data} {...cardProps} />)
+          return (<NetworkCard key={`network-${data.id}`} network={data} {...cardProps} />)
         }
         return null;
       })
