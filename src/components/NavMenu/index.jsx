@@ -50,14 +50,17 @@ const NavMenu = (props) => {
         <Menu.Item key="/">
           <NavLink to='/' exact>{translations.map[siteLanguage]}</NavLink>
         </Menu.Item>
-        <Menu.Item key="/table-view">
-          <NavLink to='/table-view' exact>{translations.tableView[siteLanguage]}</NavLink>
+        <Menu.Item key="/table-of-networks">
+          <NavLink to='/table-of-networks' exact>{translations.networkTable[siteLanguage]}</NavLink>
+        </Menu.Item>
+        <Menu.Item key="/table-of-food-resources">
+          <NavLink to='/table-of-food-resources' exact>{translations.foodTable[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/resources">
           <NavLink to='/resources' exact>{translations.resources[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/press">
-          <NavLink to='/press' exact>Press</NavLink>
+          <NavLink to='/press' exact>{translations.press[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/about">
           <NavLink to='/about' exact>{translations.about[siteLanguage]}</NavLink>

@@ -65,7 +65,7 @@ const NetworksTable = (props) => {
   const tableColumns = [
     {
       title: translations.organization[siteLanguage],
-      width: '15vw',
+      width: '10vw',
       fixed: 'left',
       dataIndex: 'title',
       key: 'title',
@@ -74,8 +74,8 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'City',
-      width: '15vw',
+      title: translations.city[siteLanguage],
+      width: '7vw',
       dataIndex: 'city',
       key: 'city',
       sorter: (a,b) => a.city.localeCompare(b.city),
@@ -84,7 +84,7 @@ const NetworksTable = (props) => {
     },
     {
       title: translations.state[siteLanguage],
-      width: '10vw',
+      width: '5vw',
       dataIndex: 'state',
       key: 'state',
       sorter: (a,b) => a.state.localeCompare(b.state),
@@ -94,7 +94,7 @@ const NetworksTable = (props) => {
     },
     {
       title: 'Communities',
-      width: '20vw',
+      width: '10vw',
       dataIndex: 'community',
       key: 'community',
       sorter: (a,b) => a.community.localeCompare(b.community),
@@ -102,8 +102,8 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'Languages',
-      width: '20vw',
+      title: translations.languages[siteLanguage],
+      width: '10vw',
       dataIndex: 'language',
       key: 'language',
       sorter: (a,b) => {
@@ -121,7 +121,7 @@ const NetworksTable = (props) => {
     },
     {
       title: translations.getInvolved[siteLanguage],
-      width: '20vw',
+      width: '10vw',
       dataIndex: 'forms',
       filters: [
         { text: 'General', value: 'generalForm'},
@@ -148,7 +148,7 @@ const NetworksTable = (props) => {
         rowKey={network => network.id}
         columns={tableColumns}
         dataSource={networks}
-        pagination={{pageSize: 20, hideOnSinglePage: true}}
+        pagination={{pageSize: 10, hideOnSinglePage: true}}
         scroll={{x: 1080}}
         size='small'
         locale={{filterConfirm: 'Filter'}}

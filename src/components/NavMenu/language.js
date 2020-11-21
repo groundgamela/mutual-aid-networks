@@ -3,9 +3,13 @@ export const translations = {
     english: 'Map',
     spanish: 'Mapa'
   },
-  tableView: {
-    english: 'Table View',
-    spanish: 'Tabla'
+  networkTable: {
+    english: 'Table of Networks',
+    spanish: 'Tabla de Redes'
+  },
+  foodTable: {
+    english: 'Table of Food Resources',
+    spanish: 'Tabla de Recursos Alimenticios'
   },
   resources: {
     english: 'Guides and Resources',
@@ -15,4 +19,8 @@ export const translations = {
     english: 'About',
     spanish: 'Sobre'
   },
+  press: {
+    english: 'Press',
+    spanish: 'Prensa'
+  }
 }

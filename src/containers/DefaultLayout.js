@@ -5,6 +5,7 @@ import {
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
 } from "react-router-dom";
 import { Layout } from 'antd';
@@ -33,6 +34,7 @@ import Banner from '../components/Banner';
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
 import NetworksTable from '../components/NetworksTable';
+import FoodResourcesTable from '../components/FoodResourcesTable';
 
 import { translations } from './language'
 
@@ -124,22 +126,25 @@ class DefaultLayout extends React.Component {
 
   render() {
     const {
-      setFilters,
-      selectedCategories,
-      filteredNetworks,
-      viewState,
-      setLatLng,
-      setUsState,
-      visibleCards,
+      allFoodResources,
       allNetworks,
-      setHoveredPoint,
+      filteredNetworks,
       hoveredPointId,
+      filterCounts,
+      foodResourceGeoJson,
       masterBbox,
       resetToDefaultView,
-      foodResourceGeoJson,
-      filterCounts,
+      selectedCategories,
+      setHoveredPoint,
+      setFilters,
+      setLatLng,
+      setUsState,
+      viewState,
+      visibleCards,
       siteLanguage,
     } = this.props;
+
+    const { isMobile } = this.state
     
     if (!allNetworks.length) {
       return null;
@@ -153,8 +158,20 @@ class DefaultLayout extends React.Component {
             <Content style={{ padding: '0 50px' }}>
               <div className="main-container">
                 <Switch>
+                  <Route path='/table-of-networks'>
+                    <h2 className='title page-container'>{translations.mutualAidNetworks[siteLanguage]}</h2>
+                    <div className={isMobile ? '' : 'table-container'}>
+                      <NetworksTable networks={allNetworks} siteLanguage={siteLanguage} />
+                    </div>
+                  </Route>
+                  <Route path='/table-of-food-resources'>
+                    <h2 className='title page-container'>{translations.foodResources[siteLanguage]}</h2>
+                    <div className={isMobile ? '' : 'table-container'}>
+                      <FoodResourcesTable resources={allFoodResources} siteLanguage={siteLanguage} />
+                    </div>
+                  </Route>
                   <Route path='/table-view'>
-                    <NetworksTable networks={allNetworks} siteLanguage={siteLanguage} />
+                    <Redirect to='/table-of-networks' />
                   </Route>
                   <Route path='/about'>
                     <About siteLanguage={siteLanguage} />
