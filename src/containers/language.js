@@ -6,5 +6,13 @@ export const translations = {
   submitButton: {
     english: "Submit a Mutual Aid Network",
     spanish: "Enviar una red de ayuda mutua"
+  },
+  mutualAidNetworks: {
+    english: "Mutual Aid Networks",
+    spanish: "Redes"
+  },
+  foodResources: {
+    english: "Food Resources",
+    spanish: "Recursos Alimenticios "
   }
 }

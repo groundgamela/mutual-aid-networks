@@ -141,8 +141,6 @@ class DefaultLayout extends React.Component {
       setUsState,
       viewState,
       visibleCards,
-      foodResourceGeoJson,
-      filterCounts,
       siteLanguage,
     } = this.props;
 
@@ -161,11 +159,13 @@ class DefaultLayout extends React.Component {
               <div className="main-container">
                 <Switch>
                   <Route path='/table-of-networks'>
-                    <h2 className='title page-container'>Mutual Aid Networks</h2>
+                    <h2 className='title page-container'>{translations.mutualAidNetworks[siteLanguage]}</h2>
                     <div className={isMobile ? '' : 'table-container'}>
                       <NetworksTable networks={allNetworks} siteLanguage={siteLanguage} />
                     </div>
-                    <h2 className='title page-container'>Food Resources</h2>
+                  </Route>
+                  <Route path='/table-of-food-resources'>
+                    <h2 className='title page-container'>{translations.foodResources[siteLanguage]}</h2>
                     <div className={isMobile ? '' : 'table-container'}>
                       <FoodResourcesTable resources={allFoodResources} siteLanguage={siteLanguage} />
                     </div>

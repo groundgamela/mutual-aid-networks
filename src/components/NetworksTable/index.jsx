@@ -74,7 +74,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'City',
+      title: translations.city[siteLanguage],
       width: '7vw',
       dataIndex: 'city',
       key: 'city',
@@ -102,7 +102,7 @@ const NetworksTable = (props) => {
       render: text => text,
     },
     {
-      title: 'Languages',
+      title: translations.languages[siteLanguage],
       width: '10vw',
       dataIndex: 'language',
       key: 'language',
