@@ -8,7 +8,7 @@ export default function Banner(){
     <div className="banner">
       <h3>
         Mutual aid is keeping communities afloat. Find a network near you and
-        give what you can this holiday season:{" "}
+        give what you can:{" "}
         <a target="blank" href="https://www.supportmutualaid.org/">
           {" "}
           Support Mutual Aid
