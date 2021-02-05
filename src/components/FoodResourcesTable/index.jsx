@@ -48,10 +48,10 @@ const FoodResourcesTable = ({ resources, siteLanguage }) => {
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
-          Search
+          {translations.search[siteLanguage]}
         </Button>
         <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
-          Reset
+          {translations.search[siteLanguage]}
         </Button>
       </div>
     ),
@@ -67,7 +67,7 @@ const FoodResourcesTable = ({ resources, siteLanguage }) => {
 
   const tableColumns = [
     {
-      title: "Title",
+      title: translations.title[siteLanguage],
       width: "10vw",
       fixed: "left",
       dataIndex: "title",
@@ -87,7 +87,7 @@ const FoodResourcesTable = ({ resources, siteLanguage }) => {
       render: (text) => text,
     },
     {
-      title: "Address",
+      title: translations.address[siteLanguage],
       width: "15vw",
       dataIndex: "address",
       key: "address",
@@ -95,7 +95,7 @@ const FoodResourcesTable = ({ resources, siteLanguage }) => {
       render: (text) => text,
     },
     {
-      title: "Hours",
+      title: translations.hours[siteLanguage],
       width: "10vw",
       dataIndex: "hours",
       key: "hours",
@@ -124,7 +124,7 @@ const FoodResourcesTable = ({ resources, siteLanguage }) => {
       ),
     },
     {
-      title: "Contact",
+      title: translations.contact[siteLanguage],
       width: "7vw",
       dataIndex: "contact",
       key: "contact",
