@@ -2,11 +2,11 @@ import React from 'react'
 import { Col, Row } from 'antd'
 
 import './style.scss';
-import eventMap from '../../assets/thp/eventMap.png'
-import pledgeMap from '../../assets/thp/PledgeMap.png'
-import thpLogo from '../../assets/thp/THP_logo_horizontal.png'
-import th1 from '../../assets/thp/TH1.jpg'
-import th2 from '../../assets/thp/TH2.jpg'
+import bernieGG from '../../assets/gg/bernie-gg-pic.jpg'
+import youthCS from '../../assets/gg/youth-climate-strike.jpg'
+import ggLogo from '../../assets/gg/ggla-black.png'
+import tenantPower from '../../assets/gg/chinatown-tenants-timo-saarelma-latu.jpg'
+import homesGuarantee from '../../assets/gg/homes-guarantee-press-conference.jpg'
 
 import { translations } from './language'
 
@@ -14,13 +14,13 @@ const About = (props) => {
   const { siteLanguage } = props
   return (
     <div className='page-container'>
-      <a href='https://townhallproject.com/'>
-        <img src={thpLogo} alt='Town Hall Project logo' className='thpLogo'/>
+      <a href='https://www.groundgamela.org/'>
+        <img src={ggLogo} alt='Ground Game Los Angeles logo' className='ggLogo'/>
       </a>
       <h2 className='title'>
         <span>
           {translations.title[siteLanguage]}
-          <a href='https://townhallproject.com/'> Town Hall Project.</a>
+          <a href='https://www.groundgamela.org/'> Ground Game Los Angeles.</a>
         </span>
       </h2>
       <div className='container'>
@@ -31,22 +31,22 @@ const About = (props) => {
         <div className='imageCollage'>
           <Row>
             <Col span={14}>
-              <img src={eventMap} alt='event map' className='map'/>
+              <img src={bernieGG} alt='Bernie with Ground Game group' className='map'/>
             </Col>
             <Col span={10}>
-              <img src={th1} alt='Town Hall meeting' className='hall'/>
+              <img src={tenantPower} alt='Chinatown Tenants protesting with LA Tenants Union' className='hall'/>
             </Col>
           </Row>
           <Row>
             <Col span={10}>
-            <img src={th2} alt='Town Hall meeting' className='hall'/>
+            <img src={homesGuarantee} alt='Homes Guarantee press conference' className='hall'/>
             </Col>
             <Col span={14}>
-              <img src={pledgeMap} alt='pledge map' className='map'/>
+              <img src={youthCS} alt='women speaking at Youth Climate Strike' className='map'/>
             </Col>
           </Row>
         </div>
-        
+
         <p>
           {translations.disclaimer[siteLanguage]}
         </p>

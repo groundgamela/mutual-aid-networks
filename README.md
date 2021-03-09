@@ -1,7 +1,7 @@
-## Welcome to Mutual-Aid-Networks! This site is for organizing mutual aid efforts within your community. 
+## Welcome to Mutual-Aid-Networks! This site is for organizing mutual aid efforts within your community.
 
-## Setup      
- 
+## Setup
+
 
 #### 1. The general development workflow is as follows:
 
@@ -30,22 +30,22 @@ B. Rebase your topic branch onto your fork's master, which is now up to date wit
 C. Create a pull request to the main Mutual-Aid-Networks repo master
 - use the github UI
 
-#### 3. Setting Up in Local Environment 
+#### 3. Setting Up in Local Environment
 
  A. Download the files
- 
- Clone this repository to a folder of your choice on your local machine: 
+
+ Clone this repository to a folder of your choice on your local machine:
 
   - `git clone https://github.com/townhallproject/mutual-aid-networks.git`
-  
+
 - Navigate to the newly cloned repository folder
 - Install the project dependencies:`npm i`
 - Run `npm start` to open in localhost
-  
-- Please reach out to Megan at info@townhallproject.com for environmental variables. 
--Once you receive this information please create an .env file at the root level (same level as .gitignore) 
- and copy and paste information into that file. Env file referenced at bottom of read me.        
-  
+
+- Please reach out to Ricky at hub@groundgamela.org for environmental variables.
+-Once you receive this information please create an .env file at the root level (same level as .gitignore)
+ and copy and paste information into that file. Env file referenced at bottom of read me.
+
 #### 4. Devtools setup
 
 React and Redux devtools can be helpful tools to install for debugging in Chrome:

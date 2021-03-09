@@ -23,11 +23,11 @@ const PageFooter = (props) => {
         <p>
           <span>
             {translations.source[siteLanguage]}
-            <a href="https://townhallproject.com/" rel="noopener noreferrer" target="_blank" >Town Hall Project</a>.
+            <a href="https://www.groundgamela.org/">Ground Game Los Angeles</a>.
           </span>
           <span>
             {translations.contact[siteLanguage]}
-            <a href="mailto:info@townhallproject.com">info@townhallproject.com</a>
+            <a href="mailto:hub@groundgamela.org">hub@groundgamela.org</a>
           </span>
         </p>
         <p>

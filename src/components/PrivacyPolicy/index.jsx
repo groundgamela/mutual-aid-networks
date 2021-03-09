@@ -40,7 +40,7 @@ const PrivacyPolicy = (props) => {
         <p>
           This website may use Google or other forms to collect data from the user. All data collected will be
           used in accordance with instructions on the intake form. If you do not wish your data displayed, contact
-          <a href="mailto:info@townhallproject.com"> info@townhallproject.com</a> to have it removed.
+          <a href="mailto:hub@groundgamela.org"> hub@groundgamela.org</a> to have it removed.
         </p>
       </div>
     </div>
