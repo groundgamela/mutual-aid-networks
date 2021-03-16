@@ -11,7 +11,7 @@ export default [
       "": "",
       "__1": ""
     },
-     {
+    {
       "date": "1596746894",
       "outlet": "Teen Vogue",
       "state": "national",
@@ -19,6 +19,18 @@ export default [
       "mah_mentioned": "yes",
       "link": "https://www.teenvogue.com/story/mutual-aid-organizers-congress-pandemic-unemployment-assistance",
       "reporter": "Lucy Diavolo",
+      "contact_info": "",
+      "": "",
+      "__1": ""
+    },
+     {
+      "date": "1614807849",
+      "outlet": "New York Times",
+      "state": "national",
+      "title": "How Neighborhood Groups Are Stepping In Where the Government Didn’t",
+      "mah_mentioned": "yes",
+      "link": "https://www.nytimes.com/2021/03/03/nyregion/covid-19-mutual-aid-nyc.html",
+      "reporter": "Kimiko de Freytas-Tamura",
       "contact_info": "",
       "": "",
       "__1": ""
