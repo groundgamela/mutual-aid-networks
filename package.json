@@ -15,7 +15,7 @@
     "firebase": "^7.11.0",
     "iframe-resizer": "^4.2.10",
     "moment": "^2.25.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
