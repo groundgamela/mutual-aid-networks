@@ -29,7 +29,7 @@ import NavMenu from '../components/NavMenu'
 import PageFooter from '../components/PageFooter'
 import Press from '../components/Press';
 import PrivacyPolicy from '../components/PrivacyPolicy'
-import Banner from '../components/Banner';
+// import Banner from '../components/Banner';
 
 import './style.scss';
 import NoWebGl from '../components/NoWebGl';
@@ -187,7 +187,7 @@ class DefaultLayout extends React.Component {
                   </Route>
                   <Route path='/'>
                     {mapboxgl.supported() ? <>
-                      <Banner/>
+                      {/* <Banner/> */}
                       <Filters 
                         setFilters={setFilters}
                         selectedCategories={selectedCategories}
