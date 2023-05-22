@@ -6,7 +6,7 @@ import networks from './networks';
 import selections from './selections';
 import foodResources from './food-resources';
 import {
-  firestore
+  getCollection
 } from "../utils/firebaseinit"
 
 import { firebaseUrl } from '../state/constants';
@@ -26,7 +26,7 @@ const logics = [
 const reduxLogicDependencies = {
   firebaseUrl: firebaseUrl,
   httpClient: request,
-  firestore,
+  getCollection,
 };
 
 const logicMiddleware = createLogicMiddleware(logics, reduxLogicDependencies);

@@ -14,9 +14,9 @@ const fetchNetworks = createLogic({
   },
   process(deps) {
     const {
-      firestore,
+      getCollection,
     } = deps;
-    return firestore.collection("food_resources").get()
+    return getCollection("food_resources")
       .then((snapshot) => {
         const allFoodResources = [];
          let id = 0;
