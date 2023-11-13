@@ -11,92 +11,95 @@ import {
 const mapboxgl = window.mapboxgl;
 
 class MapInset extends React.Component {
-  constructor(props) {
-    super(props);
-    this.addClickListener = this.addClickListener.bind(this);
-  }
-
-  componentDidMount() {
-    this.initializeMap();
-  }
-
-  setFilters() {
-    const {
-      selectedCategories
-    } = this.props;
-    let layer = this.map.getLayer(NETWORK_LAYER_NAME);
-    if (!layer) {
-      return;
+    constructor(props) {
+        super(props);
+        this.addClickListener = this.addClickListener.bind(this);
     }
-    let filterArray = ['any', ...selectedCategories.map((category) => ['==', ['get', 'category'], category])];
-    this.map.setFilter(NETWORK_LAYER_NAME, filterArray);
-  }
 
-  componentDidUpdate(prevProps) {
-    const {
-      selectedCategories,
-    } = this.props;
-
-    if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
-      this.setFilters();
+    componentDidMount() {
+        this.initializeMap();
     }
-  }
 
-  addClickListener() {
-    const {
-      bounds,
-      setBounds,
-    } = this.props;
-    const { map } = this;
+    setFilters() {
+        const { selectedCategories } = this.props;
+        let layer = this.map.getLayer(NETWORK_LAYER_NAME);
+        if (!layer) {
+            return;
+        }
+        let filterArray = [
+            "any",
+            ...selectedCategories.map((category) => [
+                "==",
+                ["get", "category"],
+                category,
+            ]),
+        ];
+        this.map.setFilter(NETWORK_LAYER_NAME, filterArray);
+    }
 
-    map.on('click', () => {
-      setBounds(bounds, this.props.stateName);
-    });
-  }
+    componentDidUpdate(prevProps) {
+        const { selectedCategories, viewState } = this.props;
 
-  initializeMap() {
-    const {
-      bounds,
-      mapId,
-    } = this.props;
+        if (!isEqual(selectedCategories, prevProps.selectedCategories)) {
+            this.setFilters();
+        }
+        if (prevProps.viewState != viewState && viewState === "default") {
+            this.initializeMap();
+        }
+    }
 
-    mapboxgl.accessToken =
-        accessToken;
+    addClickListener() {
+        const { bounds, setBounds } = this.props;
+        const { map } = this;
 
-    this.map = new mapboxgl.Map({
-      container: mapId,
-      doubleClickZoom: false,
-      dragPan: false,
-      scrollZoom: false,
-      style: mapboxStyle,
-    });
+        map.on("click", () => {
+            setBounds(bounds, this.props.stateName);
+        });
+    }
 
-    this.map.fitBounds(bounds, {
-      easeTo: { duration: 0 },
-      linear: true,
-    });
-    // map on 'load'
-    this.map.on('load', () => {
-      this.addClickListener();
-      this.map.setLayoutProperty(NETWORK_LAYER_NAME, 'visibility', 'visible')
-    });
-  }
+    initializeMap() {
+        const { bounds, mapId } = this.props;
+        mapboxgl.accessToken = accessToken;
 
-  render() {
-    const {
-      viewState,
-      mapId,
-    } = this.props;
-    const mapClassNames = classNames({
-      hidden: viewState === 'list',
-      inset: true,
-    });
-    return (
-      <React.Fragment>
-        <div id={mapId} className={mapClassNames} data-bounds={this.props.bounds} />
-      </React.Fragment>
-    );
-  }
+        this.map = new mapboxgl.Map({
+            container: mapId,
+            doubleClickZoom: false,
+            dragPan: false,
+            scrollZoom: false,
+            style: mapboxStyle,
+        });
+
+        this.map.fitBounds(bounds, {
+            easeTo: { duration: 0 },
+            linear: true,
+        });
+        // map on 'load'
+        this.map.on("load", () => {
+            this.addClickListener();
+            this.map.setLayoutProperty(
+                NETWORK_LAYER_NAME,
+                "visibility",
+                "visible"
+            );
+        });
+    }
+
+    render() {
+        const { viewState, mapId } = this.props;
+        const mapClassNames = classNames({
+            hidden: viewState === "list",
+            inset: true,
+        });
+        return (
+            <React.Fragment>
+                <div
+                    id={mapId}
+                    className={mapClassNames}
+                    data-bounds={this.props.bounds}
+                />
+            </React.Fragment>
+        );
+    }
 }
 
 MapInset.propTypes = {
