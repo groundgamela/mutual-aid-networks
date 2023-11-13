@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.52095c8c.css",
-    "main.js": "/static/js/main.879c0f1b.js",
+    "main.js": "/static/js/main.f277c768.js",
     "static/media/youth-climate-strike.jpg": "/static/media/youth-climate-strike.b5673589f84eec1af308.jpg",
     "static/media/bernie-gg-pic.jpg": "/static/media/bernie-gg-pic.baafedc55d7987189aef.jpg",
     "static/media/homes-guarantee-press-conference.jpg": "/static/media/homes-guarantee-press-conference.dac0f20aed7f7a002197.jpg",
@@ -13,10 +13,10 @@
     "static/media/food-resource-purple.svg": "/static/media/food-resource-purple.91dc43aab3923fcd2e2bf37b5ab0ca6d.svg",
     "static/media/network-green.svg": "/static/media/network-green.a1a1206f77ee07bbb7114dc8b00b69fe.svg",
     "main.52095c8c.css.map": "/static/css/main.52095c8c.css.map",
-    "main.879c0f1b.js.map": "/static/js/main.879c0f1b.js.map"
+    "main.f277c768.js.map": "/static/js/main.f277c768.js.map"
   },
   "entrypoints": [
     "static/css/main.52095c8c.css",
-    "static/js/main.879c0f1b.js"
+    "static/js/main.f277c768.js"
   ]
 }
