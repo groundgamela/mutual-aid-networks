@@ -1,8 +1,8 @@
 // FIREBASE METHODS
 // Initialize Firebase
-import firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getDatabase} from 'firebase/database';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const PREFIX = process.env.NODE_ENV === "production" ? "REACT_APP_PROD" : "REACT_APP_TESTING";
 
@@ -19,8 +19,12 @@ const config = {
   projectId: process.env[`${PREFIX}_PROJECT_ID`],
 };
 
-firebase.initializeApp(config);
-export const firebasedb = firebase.database();
-export const firestore = firebase.firestore();
-
-export default firebase;
+const app = initializeApp(config);
+export const firebasedb = getDatabase(app);
+export const firestore = getFirestore(app);
+export const getCollection = async (collectionName) => {
+  const col = collection(firestore, collectionName);
+  const snapshot = await getDocs(col);
+  return snapshot;
+}
+export default app;
