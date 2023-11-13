@@ -27,8 +27,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          REACT_APP_MAPBOX_STYLE_URL: "mapbox://styles/townhallproject/ck87rw1kt1g821is46uvwm08k"
-          REACT_APP_MAPBOX_API_KEY: "pk.eyJ1IjoidG93bmhhbGxwcm9qZWN0IiwiYSI6ImNrN3d1c3hhdDA1MmozbW80cW5oOWxzcHoifQ.rq66iVpULeHVB6PutWiunA"
+          REACT_APP_MAPBOX_STYLE_URL: "mapbox://styles/mutualaid/clmmsz0v601vw01rd74oa86r3"
+          REACT_APP_MAPBOX_API_KEY: "pk.eyJ1IjoibXV0dWFsYWlkIiwiYSI6ImNsbGNvZm44cTAyc2EzcW8wcDg2a2pqN3IifQ.r8mXm_fCmzFm3_Ph2nd4Sw"
           REACT_APP_PROD_FIRESTORE_URL: "https://firestore.googleapis.com/v1/projects/townhallproject-86312/databases/(default)/documents/mutual_aid_networks"
           NODE_ENV: 'production' 
           REACT_APP_PROD_FIREBASE_API_KEY: 'AIzaSyCXyjAOvBKDEX5pckTwuI7LODWKNlL21gc'
