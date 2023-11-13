@@ -48,22 +48,22 @@ const NavMenu = (props) => {
         selectedKeys={[window.location.pathname]}
       >
         <Menu.Item key="/">
-          <NavLink to='/' exact>{translations.map[siteLanguage]}</NavLink>
+          <NavLink to='/' >{translations.map[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/table-of-networks">
-          <NavLink to='/table-of-networks' exact>{translations.networkTable[siteLanguage]}</NavLink>
+          <NavLink to='/table-of-networks'>{translations.networkTable[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/table-of-food-resources">
-          <NavLink to='/table-of-food-resources' exact>{translations.foodTable[siteLanguage]}</NavLink>
+          <NavLink to='/table-of-food-resources' >{translations.foodTable[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/resources">
-          <NavLink to='/resources' exact>{translations.resources[siteLanguage]}</NavLink>
+          <NavLink to='/resources' >{translations.resources[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/press">
-          <NavLink to='/press' exact>{translations.press[siteLanguage]}</NavLink>
+          <NavLink to='/press' >{translations.press[siteLanguage]}</NavLink>
         </Menu.Item>
         <Menu.Item key="/about">
-          <NavLink to='/about' exact>{translations.about[siteLanguage]}</NavLink>
+          <NavLink to='/about' >{translations.about[siteLanguage]}</NavLink>
         </Menu.Item>
         {mode === 'horizontal' &&
           <Select
