@@ -1,33 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.078474ce.chunk.css",
-    "main.js": "/static/js/main.f2d3dcb5.chunk.js",
-    "main.js.map": "/static/js/main.f2d3dcb5.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.612ffcb9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.612ffcb9.js.map",
-    "static/css/2.d540fc1d.chunk.css": "/static/css/2.d540fc1d.chunk.css",
-    "static/js/2.ab300d39.chunk.js": "/static/js/2.ab300d39.chunk.js",
-    "static/js/2.ab300d39.chunk.js.map": "/static/js/2.ab300d39.chunk.js.map",
+    "main.css": "/static/css/main.52095c8c.css",
+    "main.js": "/static/js/main.fd254c45.js",
+    "static/media/youth-climate-strike.jpg": "/static/media/youth-climate-strike.b5673589f84eec1af308.jpg",
+    "static/media/bernie-gg-pic.jpg": "/static/media/bernie-gg-pic.baafedc55d7987189aef.jpg",
+    "static/media/homes-guarantee-press-conference.jpg": "/static/media/homes-guarantee-press-conference.dac0f20aed7f7a002197.jpg",
+    "static/media/chinatown-tenants-timo-saarelma-latu.jpg": "/static/media/chinatown-tenants-timo-saarelma-latu.153272bc8d85ff705e26.jpg",
+    "static/media/ggla-black.png": "/static/media/ggla-black.5c971daa439eb64474b0.png",
+    "static/media/logo-transparent.png": "/static/media/logo-transparent.08eafa2a57b6878650b4.png",
+    "static/media/usa.svg": "/static/media/usa.e27e9e30f22a9be1acdb.svg",
     "index.html": "/index.html",
-    "precache-manifest.c78b52e83a1c9379e792965b5a03e4cf.js": "/precache-manifest.c78b52e83a1c9379e792965b5a03e4cf.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.d540fc1d.chunk.css.map": "/static/css/2.d540fc1d.chunk.css.map",
-    "static/css/main.078474ce.chunk.css.map": "/static/css/main.078474ce.chunk.css.map",
-    "static/js/2.ab300d39.chunk.js.LICENSE.txt": "/static/js/2.ab300d39.chunk.js.LICENSE.txt",
-    "static/media/bernie-gg-pic.jpg": "/static/media/bernie-gg-pic.1402e5ce.jpg",
-    "static/media/chinatown-tenants-timo-saarelma-latu.jpg": "/static/media/chinatown-tenants-timo-saarelma-latu.e6bc30de.jpg",
-    "static/media/food-resource-purple.svg": "/static/media/food-resource-purple.a3932a0c.svg",
-    "static/media/ggla-black.png": "/static/media/ggla-black.34288745.png",
-    "static/media/homes-guarantee-press-conference.jpg": "/static/media/homes-guarantee-press-conference.c924b5ec.jpg",
-    "static/media/style.scss": "/static/media/usa.8b47d931.svg",
-    "static/media/network-green.svg": "/static/media/network-green.c5cddaf2.svg",
-    "static/media/youth-climate-strike.jpg": "/static/media/youth-climate-strike.9622d4dd.jpg"
+    "static/media/food-resource-purple.svg": "/static/media/food-resource-purple.91dc43aab3923fcd2e2bf37b5ab0ca6d.svg",
+    "static/media/network-green.svg": "/static/media/network-green.a1a1206f77ee07bbb7114dc8b00b69fe.svg",
+    "main.52095c8c.css.map": "/static/css/main.52095c8c.css.map",
+    "main.fd254c45.js.map": "/static/js/main.fd254c45.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.612ffcb9.js",
-    "static/css/2.d540fc1d.chunk.css",
-    "static/js/2.ab300d39.chunk.js",
-    "static/css/main.078474ce.chunk.css",
-    "static/js/main.f2d3dcb5.chunk.js"
+    "static/css/main.52095c8c.css",
+    "static/js/main.fd254c45.js"
   ]
 }
