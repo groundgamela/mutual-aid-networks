@@ -77,7 +77,8 @@ class DefaultLayout extends React.Component {
     };
 
     checkIfMobile = () => {
-        window.innerWidth <= 768
+
+        return window.innerWidth <= 768
             ? this.setState({ isMobile: true })
             : this.setState({ isMobile: false });
     };
