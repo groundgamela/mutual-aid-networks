@@ -1,0 +1,833 @@
+﻿"North American Mutual Aid Network Open Data Set
+
+This data set was compiled by Mutual Aid Hub volunteers and provided for general informational purposes only.  Mutual Aid Hub is a free, public resource made available by Town Hall Project Education Fund, a 501(c)(3) non-profit organization.
+
+We list these mutual aid networks as a public resource.  We cannot verify or vouch for any network or individual offerings.  Please exercise all necessary judgement when interacting with community members not previously known to you.  Neither Mutual Aid Hub nor Town Hall Project shall be liable for any special or consequential damages that result from the direct or indirect use of, or the inability to use, the information in this data set.
+
+Mutual Aid Hub - https://www.mutualaidhub.org/
+
+Town Hall Project - https://townhallproject.com/
+
+---
+
+ODC Public Domain Dedication and Licence (PDDL)
+https://opendatacommons.org/licenses/pddl/1.0/
+
+
+THE LICENSE
+
+Preamble
+
+The Open Data Commons – Public Domain Dedication & Licence is a document intended to allow you to freely share, modify, and use this work for any purpose and without any restrictions. This licence is intended for use on databases or their contents (“data”), either together or individually.
+
+Many databases are covered by copyright. Some jurisdictions, mainly in Europe, have specific special rights that cover databases called the “sui generis” database right. Both of these sets of rights, as well as other legal rights used to protect databases and data, can create uncertainty or practical difficulty for those wishing to share databases and their underlying data but retain a limited amount of rights under a “some rights reserved” approach to licensing as outlined in the Science Commons Protocol for Implementing Open Access Data. As a result, this waiver and licence tries to the fullest extent possible to eliminate or fully license any rights that cover this database and data. Any Community Norms or similar statements of use of the database or data do not form a part of this document, and do not act as a contract for access or other terms of use for the database or data.
+
+---
+
+The position of the recipient of the work
+
+Because this document places the database and its contents in or as close as possible within the public domain, there are no restrictions or requirements placed on the recipient by this document. Recipients may use this work commercially, use technical protection measures, combine this data or database with other databases or data, and share their changes and additions or keep them secret. It is not a requirement that recipients provide further users with a copy of this licence or attribute the original creator of the data or database as a source. The goal is to eliminate restrictions held by the original creator of the data and database on the use of it by others.
+
+---
+
+The position of the dedicator of the work
+
+Copyright law, as with most other law under the banner of “intellectual property”, is inherently national law. This means that there exists several differences in how copyright and other IP rights can be relinquished, waived or licensed in the many legal jurisdictions of the world. This is despite much harmonisation of minimum levels of protection. The internet and other communication technologies span these many disparate legal jurisdictions and thus pose special difficulties for a document relinquishing and waiving intellectual property rights, including copyright and database rights, for use by the global community. Because of this feature of intellectual property law, this document first relinquishes the rights and waives the relevant rights and claims. It then goes on to license these same rights for jurisdictions or areas of law that may make it difficult to relinquish or waive rights or claims.
+
+The purpose of this document is to enable rightsholders to place their work into the public domain. Unlike licences for free and open source software, free cultural works, or open content licences, rightsholders will not be able to “dual license” their work by releasing the same work under different licences. This is because they have allowed anyone to use the work in whatever way they choose. Rightsholders therefore can’t re-license it under copyright or database rights on different terms because they have nothing left to license. Doing so creates truly accessible data to build rich applications and advance the progress of science and the arts.
+
+This document can cover either or both of the database and its contents (the data). Because databases can have a wide variety of content – not just factual data – rightsholders should use the Open Data Commons – Public Domain Dedication & Licence for an entire database and its contents only if everything can be placed under the terms of this document. Because even factual data can sometimes have intellectual property rights, rightsholders should use this licence to cover both the database and its factual data when making material available under this document; even if it is likely that the data would not be covered by copyright or database rights.
+
+Rightsholders can also use this document to cover any copyright or database rights claims over only a database, and leave the contents to be covered by other licences or documents. They can do this because this document refers to the “Work”, which can be either – or both – the database and its contents. As a result, rightsholders need to clearly state what they are dedicating under this document when they dedicate it.
+
+Just like any licence or other document dealing with intellectual property, rightsholders should be aware that one can only license what one owns. Please ensure that the rights have been cleared to make this material available under this document.
+
+This document permanently and irrevocably makes the Work available to the public for any use of any kind, and it should not be used unless the rightsholder is prepared for this to happen.
+
+---
+
+Part I: Introduction
+
+The Rightsholder (the Person holding rights or claims over the Work) agrees as follows:
+
+1.0 Definitions of Capitalised Words
+
+“Copyright” – Includes rights under copyright and under neighbouring rights and similarly related sets of rights under the law of the relevant jurisdiction under Section 6.4.
+
+“Data” – The contents of the Database, which includes the information, independent works, or other material collected into the Database offered under the terms of this Document.
+
+“Database” – A collection of Data arranged in a systematic or methodical way and individually accessible by electronic or other means offered under the terms of this Document.
+
+“Database Right” – Means rights over Data resulting from the Chapter III (“sui generis”) rights in the Database Directive (Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases) and any future updates as well as any similar rights available in the relevant jurisdiction under Section 6.4.
+
+“Document” – means this relinquishment and waiver of rights and claims and back up licence agreement.
+
+“Person” – Means a natural or legal person or a body of persons corporate or incorporate.
+
+“Use” – As a verb, means doing any act that is restricted by Copyright or Database Rights whether in the original medium or any other; and includes modifying the Work as may be technically necessary to use it in a different mode or format. This includes the right to sublicense the Work.
+
+“Work” – Means either or both of the Database and Data offered under the terms of this Document.
+
+“You” – the Person acquiring rights under the licence elements of this Document.
+
+Words in the singular include the plural and vice versa.
+
+---
+
+2.0 What this document covers
+
+2.1. Legal effect of this Document. This Document is:
+
+a. A dedication to the public domain and waiver of Copyright and Database Rights over the Work; and
+
+b. A licence of Copyright and Database Rights over the Work in jurisdictions that do not allow for relinquishment or waiver.
+
+2.2. Legal rights covered.
+
+a. Copyright. Any copyright or neighbouring rights in the Work. Copyright law varies between jurisdictions, but is likely to cover: the Database model or schema, which is the structure, arrangement, and organisation of the Database, and can also include the Database tables and table indexes; the data entry and output sheets; and the Field names of Data stored in the Database. Copyright may also cover the Data depending on the jurisdiction and type of Data; and
+
+b. Database Rights. Database Rights only extend to the extraction and re-utilisation of the whole or a substantial part of the Data. Database Rights can apply even when there is no copyright over the Database. Database Rights can also apply when the Data is removed from the Database and is selected and arranged in a way that would not infringe any applicable copyright.
+
+2.2 Rights not covered.
+
+a. This Document does not apply to computer programs used in the making or operation of the Database;
+
+b. This Document does not cover any patents over the Data or the Database. Please see Section 4.2 later in this Document for further details; and
+
+c. This Document does not cover any trade marks associated with the Database. Please see Section 4.3 later in this Document for further details.
+
+Users of this Database are cautioned that they may have to clear other rights or consult other licences.
+
+2.3 Facts are free. The Rightsholder takes the position that factual information is not covered by Copyright. This Document however covers the Work in jurisdictions that may protect the factual information in the Work by Copyright, and to cover any information protected by Copyright that is contained in the Work.
+
+---
+
+Part II: Dedication to the public domain
+
+3.0 Dedication, waiver, and licence of Copyright and Database Rights
+
+3.1 Dedication of Copyright and Database Rights to the public domain. The Rightsholder by using this Document, dedicates the Work to the public domain for the benefit of the public and relinquishes all rights in Copyright and Database Rights over the Work.
+
+a. The Rightsholder realises that once these rights are relinquished, that the Rightsholder has no further rights in Copyright and Database Rights over the Work, and that the Work is free and open for others to Use.
+
+b. The Rightsholder intends for their relinquishment to cover all present and future rights in the Work under Copyright and Database Rights, whether they are vested or contingent rights, and that this relinquishment of rights covers all their heirs and successors.
+
+The above relinquishment of rights applies worldwide and includes media and formats now known or created in the future.
+
+3.2 Waiver of rights and claims in Copyright and Database Rights when Section 3.1 dedication inapplicable. If the dedication in Section 3.1 does not apply in the relevant jurisdiction under Section 6.4, the Rightsholder waives any rights and claims that the Rightsholder may have or acquire in the future over the Work in:
+
+a. Copyright; and
+
+b. Database Rights.
+
+To the extent possible in the relevant jurisdiction, the above waiver of rights and claims applies worldwide and includes media and formats now known or created in the future. The Rightsholder agrees not to assert the above rights and waives the right to enforce them over the Work.
+
+3.3 Licence of Copyright and Database Rights when Sections 3.1 and 3.2 inapplicable. If the dedication and waiver in Sections 3.1 and 3.2 does not apply in the relevant jurisdiction under Section 6.4, the Rightsholder and You agree as follows:
+
+a. The Licensor grants to You a worldwide, royalty-free, non-exclusive, licence to Use the Work for the duration of any applicable Copyright and Database Rights. These rights explicitly include commercial use, and do not exclude any field of endeavour. To the extent possible in the relevant jurisdiction, these rights may be exercised in all media and formats whether now known or created in the future.
+
+3.4 Moral rights. This section covers moral rights, including the right to be identified as the author of the Work or to object to treatment that would otherwise prejudice the author’s honour and reputation, or any other derogatory treatment:
+
+a. For jurisdictions allowing waiver of moral rights, Licensor waives all moral rights that Licensor may have in the Work to the fullest extent possible by the law of the relevant jurisdiction under Section 6.4;
+
+b. If waiver of moral rights under Section 3.4 a in the relevant jurisdiction is not possible, Licensor agrees not to assert any moral rights over the Work and waives all claims in moral rights to the fullest extent possible by the law of the relevant jurisdiction under Section 6.4; and
+
+c. For jurisdictions not allowing waiver or an agreement not to assert moral rights under Section 3.4 a and b, the author may retain their moral rights over the copyrighted aspects of the Work.
+
+Please note that some jurisdictions do not allow for the waiver of moral rights, and so moral rights may still subsist over the work in some jurisdictions.
+
+4.0 Relationship to other rights
+
+4.1 No other contractual conditions. The Rightsholder makes this Work available to You without any other contractual obligations, either express or implied. Any Community Norms statement associated with the Work is not a contract and does not form part of this Document.
+
+4.2 Relationship to patents. This Document does not grant You a licence for any patents that the Rightsholder may own. Users of this Database are cautioned that they may have to clear other rights or consult other licences.
+
+4.3 Relationship to trade marks. This Document does not grant You a licence for any trade marks that the Rightsholder may own or that the Rightsholder may use to cover the Work. Users of this Database are cautioned that they may have to clear other rights or consult other licences.
+
+---
+
+Part III: General provisions
+
+5.0 Warranties, disclaimer, and limitation of liability
+
+5.1 The Work is provided by the Rightsholder “as is” and without any warranty of any kind, either express or implied, whether of title, of accuracy or completeness, of the presence of absence of errors, of fitness for purpose, or otherwise. Some jurisdictions do not allow the exclusion of implied warranties, so this exclusion may not apply to You.
+
+5.2 Subject to any liability that may not be excluded or limited by law, the Rightsholder is not liable for, and expressly excludes, all liability for loss or damage however and whenever caused to anyone by any use under this Document, whether by You or by anyone else, and whether caused by any fault on the part of the Rightsholder or not. This exclusion of liability includes, but is not limited to, any special, incidental, consequential, punitive, or exemplary damages. This exclusion applies even if the Rightsholder has been advised of the possibility of such damages.
+
+5.3 If liability may not be excluded by law, it is limited to actual and direct financial loss to the extent it is caused by proved negligence on the part of the Rightsholder.
+
+6.0 General
+
+6.1 If any provision of this Document is held to be invalid or unenforceable, that must not affect the validity or enforceability of the remainder of the terms of this Document.
+
+6.2 This Document is the entire agreement between the parties with respect to the Work covered here. It replaces any earlier understandings, agreements or representations with respect to the Work not specified here.
+
+6.3 This Document does not affect any rights that You or anyone else may independently have under any applicable law to make any use of this Work, including (for jurisdictions where this Document is a licence) fair dealing, fair use, database exceptions, or any other legally recognised limitation or exception to infringement of copyright or other applicable laws.
+
+6.4 This Document takes effect in the relevant jurisdiction in which the Document terms are sought to be enforced. If the rights waived or granted under applicable law in the relevant jurisdiction includes additional rights not waived or granted under this Document, these additional rights are included in this Document in order to meet the intent of this Document."
+File generated on 2020-04-08 08:44:32PM UTC from https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRks16AM9mtiFCCdEJmckD9IszC7rHkvfRj6xxspMB4BBB8n_SiUsHCfbHbDCixmvNGTSPm7PEii2nP/pubhtml?fbclid=IwAR0PpL_w_WOjsh0UaYiMA7aO3JqXxhl3B89dL35NU8Jk6E_n2HoRJkW-Zbg#
+
+Resource,Neighborhood/region,City,State/Territory,Zip Code,Country,Language(s),General,Support Request,Support Offer,Social Media,Hotline #
+Canada / Vancouver: Mutual Aid for Metro Vancouver — COVID-19 — Social Distancing Solidarity (Coast Salish Land),,Vancouver,BC,,Canada,English,https://coda.io/@awsamuel/vancouver-mutual-aid/,,,,
+YVR Mutual Aid Society,,Vancouver,BC,,Canada,English,https://docs.google.com/forms/d/1qKqD1J-M_VVFhR8ZQ8IfBCnD42XkcG71-4e8DOc22bI/viewform?ts=5e712036&fbclid=IwAR2jkwnIvMN2WS8AQG-ioIx9WofmQy6qwRYt38BKUYWTGBax929tfFm4tE8&edit_requested=true#responses,,,https://www.facebook.com/groups/201774001271150/,
+Mutual Aid Society Winnipeg,,Winnipeg,MB,,Canada,English,,,,https://www.facebook.com/groups/220944599058149/?ref=share,
+Mutual aid society halifax,,Halifax,NS,,Canada,English,https://discord.gg/RVK5rm9,,,,
+Hamilton Community Response,,Hamilton,ON,,Canada,English,,,,https://www.facebook.com/groups/Hamont.Response.COVID19/,
+Toronto Community Response,,Toronto,ON,,Canada,English,,,,https://www.facebook.com/groups/TO.Community.Response.COVID19/,
+Parkdale Mutual Aid Network,Parkdale,Toronto,ON,,Canada,"English, Tibetan, Tagalog, Nepali",http://parkdalepeopleseconomy.ca/parkdale-pods-mutual-aid-network/,https://docs.google.com/forms/d/e/1FAIpQLSfrRUBQcAUD8L6iF8SFfx21RMD58CbZcGqeerdcJANFE1zlRQ/viewform,https://docs.google.com/forms/u/2/d/e/1FAIpQLSeTxyVNuH802TxvSZM4Q-FFxJco70xNCaMBArvmSmjt5F97-w/viewform?usp=send_form,https://www.facebook.com/ParkdalePPE/,
+Canada / Montreal: Montreal COVID-19: Mutual Aid Mobilisation d’entraide,,Montreal,QB,,Canada,"English, Spanish",,,,https://www.facebook.com/groups/1005041203222884/?ref=share,
+Bonjour Parc-Ex,Parc-Extension,Montréal,QB,,Canada,"English, French, Urdu, Hindi, Bengali, Tamil, Greek, Spanish",https://tinyurl.com/mtlcovidsupportrequest,,,https://www.facebook.com/groups/215992479479864/,514-560-3340
+Mutual Aid Network of Anchorage (MANA),,Anchorage,AK,99502,USA,English,https://docs.google.com/document/d/1TiIejUtkzhGf19CzVoSnWi9Ag3yQK1V_dlyOBy5-I9E/edit,,https://forms.gle/UErVTrWf4uCvqtao6,https://www.facebook.com/AnchorageMutualAid/,
+Anchorage Grocery Network,,Anchorage,AK,,USA,English,,,,https://www.facebook.com/groups/1478276402342024/,
+Fairbanks Mutual Aid,,Fairbanks,AK,,USA,English,https://www.fairbanksmutualaid.org/,,,https://www.facebook.com/FairbanksMutualAid/,
+Juneau Mutual Aid,,Juneau,AK,,USA,English,https://juneaumutualaid.weebly.com/,,,,
+Sitka COVID-19 Community Group,,Sitka,AK,,USA,English,,,,https://www.facebook.com/groups/2751993664836011/about/,
+"Lee County, Alabama Mutual Aid",,Auburn,AL,,USA,English,,,,https://www.facebook.com/groups/272091500463089/,
+Alabama / Birmingham: Birmingham Mutual Aid,,Birmingham,AL,,USA,English,https://docs.google.com/document/d/12wY7BG4wzI0TJ6IHIg231iJX6bZ7T0NqPKRiexCColo/edit,,,,
+Birmingham Mutual Aid Offers,,Birmingham,AL,,USA,English,,,https://docs.google.com/spreadsheets/d/1S_lTSSZQR_FkSFekSeIZ4bHVfCcMHiPFUMr5PRzzXHc/edit#gid=1163479279,,
+Birmingham Mutual Aid,,Birmingham,AL,,USA,Spanish/English,http://bit.ly/BirminghamMutualAid,http://bit.ly/BHAMMA_Needs,http://bit.ly/BHAMMA_Offers,http://bit.ly/BHAMMA_Facebook,
+Tuscaloosa Mutual Aid,,Tuscaloosa,AL,,USA,"English, Spanish",https://docs.google.com/document/d/1cKDWyokUuw_b1RFMrmu1NJ8UiVLSE7gaCRrkMq88MC0/,https://drive.google.com/open?id=178q47V1Z1FZUCLp-gp14LYXVlcIY-7QulPNK-5Ezvm4,https://drive.google.com/open?id=1HAt9FOxQTgYgcWE3RW0pLnUDEL5zhYMkh9xqGjYEhYM,https://www.facebook.com/groups/TuscaloosaMutualAid/,
+Eureka Springs Community Support,,Eureka Springs,AR,,USA,English,,,,https://www.facebook.com/groups/1519039534918942?id=1519039534918942&ref=content_filter,479.259.2559
+Y'ALLIDARITY! - NWA Mutual Aid,,Fayetteville,AR,,USA,,,,,https://www.facebook.com/groups/774646933026674/,
+Kinlani (Flagstaff) Mutual Aid,,Flagstaff,AZ,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe4pQRyPNF9nqly1KNQobRtMUCf_kVSUp2RyBFknfUmejvfLA/viewform,,,https://www.facebook.com/groups/809321062887347/,
+"Havasu/Parker, AZ Mutual Aid Volunteer Sign-up",,Havasu/Parker,AZ,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSdqfMkpbPXQzIfV4m-7vn7QN0QUpkLvKZ-KLxTgqkP2BWnPnA/viewform,,
+Arizona / Phoenix: Phoenix Mutual Aid,,Phoenix,AZ,,USA,English,https://docs.google.com/spreadsheets/d/1OVJ1AMWXH3tjutOq8cKYJIK8RByqmaVLV8TYRS-48OU/edit#gid=0,,,,
+COVID-19 Mutual Aid Group Phoenix Metro Area,,Phoenix,AZ,,USA,English,https://www.mutualaidphx.com/,,,https://www.facebook.com/groups/144504496872461/145065600149684/,
+Arizona / Tucson: Tucson COVID-19 Mutual Aid Volunteer Sign-up,,Tucson,AZ,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdXG35r7SWGr3tSlTJb5UDa_lpUqd79l5zZ38jo6StYd4gt0Q/viewform?fbclid=IwAR11Pb7xk6shNjAsu8ue3OWBpL5oH9u7zUNE86NQeVbdtads9S0AnNh4Cv4,,,,
+Laveen Village COVID-19 Mutual Aid Group,Laveen Village,Phoenix,AZ,85339,USA,English,,,,https://www.facebook.com/groups/laveenCOVID19/,
+"Neighbor to Neighbor Coronavirus Support (El Cerrito, Richmond, Albany)",,Albany,CA,,USA,English,https://docs.google.com/spreadsheets/d/1TDoV37zYyGx-csgkxUM6rIKbVECTg0hO83GSZylJHnc/edit?fbclid=IwAR2gBRnm3K8BFAPSj1A5nEv4SJxb3F5QN2BkoA_VUa3gUQQCrbarWKTmtag#gid=0,,,,
+"Berkeley, CA Mutual Aid Network",,Berkeley,CA,,USA,English,https://www.berkeleymutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLSe5MXDzg9TDF91Ck00DvVHjgmQgulNdHBM1EjEWTANlAqaf_Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeW40KnpjDAW6Lkgi-ej17fEAh903PUPsxRZtib-Sv2ylWFyQ/viewform,https://twitter.com/NeverAgainActn?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor,
+Support for Isolated South Berkeley Neighbors,,Berkeley,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSd0uVrIEA8muy73cmcY9ZlK34AC8L7lFDYVKEpFFW761uZkKg/viewform?vc=0&c=0&w=1,,,,
+El Cerrito/Richmond Coronovirus Mutual Aid,,El Cerrito,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeu6esf4-IJac-kX4Kev7qE2giV6HO-ntT0tBVZjrPkEQXRZQ/viewform?fbzx=-3920297804946702319&fbclid=IwAR36KUurIt6KgIYlTwzikGoJGSbs-TnBWCBjcuSZTc1hRxBKNKeBooKYGPU,,,,
+El Cerrito Mutual Aid Network,,El Cerrito,CA,,USA,"English, Spanish, Bangla",https://docs.google.com/forms/d/e/1FAIpQLSf7xkSIiHpuq6lKG2r6C0-FnhpZH4JNe1xxsckDXLxu3eHJSQ/viewform,,,,
+Humboldt Mutual Aid,,Eureka,CA,,USA,English,,https://docs.google.com/forms/d/1VuWWRhgrW7K6ktPORRFLaLyEE_LFbSFP28hXvwxrWjs/,https://docs.google.com/forms/d/1Dix10g9YmHjdpaCOvuLNh5QonlLm_JQRgtC7R1Hq-GU/,https://www.facebook.com/humboldtmutualaid/,
+Southern Alameda County Mutual Aid Network,,Fremont,CA,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1ohLvcia1Ge-cehBMce2vqXRrJU_Wj3lW82Z-YWHZhIc/edit#gid=1892489193,,,https://www.facebook.com/groups/581603675902738/,
+Emergency Mutual Aid Network,,Fresno,CA,,USA,Spanish,https://u1584542.ct.sendgrid.net/mps2/c/BAE/ni0YAA/t.304/2CRZML4SRzuTJEHiI5ABQg/h2/dt3IX5DZw0E70755UZXk30NB67pR9d0ENIUPGJ2gQCwr0pACrIRRU3VTrPnIuYlhYS90KwUSqV0nkVcU7MxS8oDKNEe0duJzmO8a16SJrrsBjXjI5DVFbnxkNayjA2zCKRdR37bG7LufV9dQ0N1fOmW-2Ba42Lq-2BGYOSe8FkciwKZoqbKmG6jHqP1ZbEOezM9p7aM20AmOhO2vDaDP-2Fki6DYz5FQMDjLT8t-2BaUOPUwyckf4Cb0muYhHeIuZ7hmnWmaDg3ZJzNAg2Un-2BxrWVRXohg-3D-3D/RCPU,,,,
+Hayward Helping Hands,,Hayward,CA,,USA,English,https://www.haywardhelpinghands.org/,https://docs.google.com/forms/d/e/1FAIpQLScGJsGgYKaN0KuiGkxPan5a3K5VsKiHaSmfARv6_1xuASknlA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfkVEZlyLbB8fwI5YeX9pjC-_V0g7fTBcljoRCJ9-oniG-isA/viewform,https://www.facebook.com/haywardhelpinghands/,
+Long Beach Mutual Aid Spreadsheet,,Long Beach,CA,,USA,English,https://docs.google.com/spreadsheets/d/1P97OgODtjy9MIhLJFJUoZ8VgzaF1Zap8QFgF-ozp4fM/edit?fbclid=IwAR3yD_TrCvq5sDCl3at8wJtyJv8l5JgTPDd8chuDGZZ5KVKKbYAwLKZaXQs#gid=0,,,https://www.facebook.com/groups/2919149481478838/,
+Greetings from South LA/ Karina Esperanza,,Los Angeles,CA,,USA,English,https://docs.google.com/document/d/1tCQ6NB-70Dwdvx-0bbpYJ7ykU78v15S9pcve8Gb673A/edit,,,,
+COVID-19 Mutual Aid Resource Links (Los Angeles),,Los Angeles,CA,,USA,English,https://docs.google.com/document/d/1d4fgYbzC4B1o1CQOIWbTxTUnE5VUIxv04EqeBjR2Fhc/edit,,,https://www.facebook.com/groups/204970667387136/,
+Los Angeles Mutual Aid Coordinator,,Los Angeles,CA,,USA,English,https://docs.google.com/spreadsheets/u/0/d/1e7NNgEYRFlm4JggsqH9EneTH1TErJ2W3r3vRbdTCsIw/htmlview,,,,
+COVID-19 Mutual Aid (Greater Los Angeles & beyond),,Los Angeles,CA,,USA,English,https://docs.google.com/spreadsheets/d/1viUrMY0Jd18HcDwrNcsDg6Db0LVIUT0TDAsmRyXj32k/edit?fbclid=IwAR13EXvL79eyZ88mN-BDk6HG-Kn2UKUe5q1nagQcGtxKAlKrGt8HRRsVY6c#gid=1186782888,,,,
+"coronavirus community care: amwa
+local north east la (nela) / midcity / koreatown",MidCity/Koreatown,Los Angeles,CA,,USA,English,https://docs.google.com/document/d/1qP-9JQ8n2O0yKtOicmq1fefGapdAXn0TmANA1lwF15g/edit#heading=h.80woo1dqgv5s,,,,
+Coronavirus Los Angeles Mutual Aid,,Los Angeles,CA,,USA,English,,,,https://www.facebook.com/groups/2572703392942644/?ref=br_rs,
+Westside Friends,,Los Angeles,CA,,USA,"English, Spanish",http://www.westsidefriends.com,,,,
+Ground Game COVID-19 Mutual Aid Network,,Los Angeles,CA,,USA,"English, Spanish, Armenian",https://docs.google.com/forms/d/e/1FAIpQLSdGfypKKirsvUQCX5eVix86nIrTaf5atsnhn8bWxpCRn_lM9Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdGfypKKirsvUQCX5eVix86nIrTaf5atsnhn8bWxpCRn_lM9Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdGfypKKirsvUQCX5eVix86nIrTaf5atsnhn8bWxpCRn_lM9Q/viewform,Facebook.com/groundgamela,
+Project Angel Food,,Los Angeles,CA,,USA,English,https://secure3.convio.net/paf/site/Donation2?df_id=3302&3302.donation=form1&mfc_pref=T,,,https://www.facebook.com/projectangelfood/,
+COVID-19 Emergency Food Distribution (LA),,Los Angeles,CA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSe5T_atETFetd5FNVemgHOMYQ21fegVcHJlIu3t7gFGg78g1w/viewform?fbclid=IwAR2AcOwrq9kOy54L-Cmwj-Me-1_GDLqolnVWI3_ebPnBEwrshfkvW71sCzw,,
+East Bay Mutual Aid,,Oakland,CA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSeL8HnzhwF83qq3qyDJPsE0fTSRweSp4RBZrNq-pTa3un60qg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdOZvKC2UuF_XvoMDr6NsYABalu4X0W6r0gj0YenfiTcJ7Xdw/viewform,,
+California / East Bay: East Bay Disabled Folks COVID-19 Support Request Form,East Bay,Oakland,CA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSc7LLhYN243k6xFlmQH26lAN9EoRXgEQGrghbqL8Ttc1K8YNA/viewform,,
+California / East Bay: East Bay Disability Ally Form,East Bay,Oakland,CA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSclWGR5A-rSBTPBTv9UGbCOVjpMKgts0DPP12BZjlUDADhPkw/viewform,,
+Alice Street Mutual Aid,,Oakland,CA,,USA,English,,,,https://www.facebook.com/groups/495154731159158/,
+East Bay DIsabled Folks COVID19 Support,,Oakland,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSc7LLhYN243k6xFlmQH26lAN9EoRXgEQGrghbqL8Ttc1K8YNA/viewform,,https://tinyurl.com/DJCCally,,
+Oakland At Risk Match,,Oakland,CA,,USA,English,https://www.oaklandatrisk.com/,https://docs.google.com/forms/d/e/1FAIpQLSf72Nd_SzKqoZkr0nRICpVfZjI2ipVy5meOpARUTanGkkNb5w/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeocUMsWW9al0K8AQ2aFtHHdkWJ_QDClT_MjXUDpita7IlTQA/viewform,,
+El Cerrito / Richmond Mutual AId,,Richmond,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeu6esf4-IJac-kX4Kev7qE2giV6HO-ntT0tBVZjrPkEQXRZQ/viewform?fbzx=-3920297804946702319,,https://docs.google.com/spreadsheets/d/1TDoV37zYyGx-csgkxUM6rIKbVECTg0hO83GSZylJHnc/edit?fbclid=IwAR20uLTo7PtY7sgc5EMwvIiB1obsVOd72_9sniM4a7yYdcAHaWwQ_w-BeWw#gid=0,,
+California / Sacramento: Sacramento COVID-19 Mutual Aid 2020,,Sacramento,CA,,USA,English,https://docs.google.com/spreadsheets/d/1iRTr4P5fJsGlJ5ogNqogZMOFtuOsdMSiDylkjZo-AKE/edit#gid=634347005,,,,
+San Diego (county-wide) COVID-19 Mutual Aid Volunteer Sign-Up,,San Diego,CA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSfebNW1h60jIfyD8pTZ9G_kXBMqrZycIbv3zGGFqQIwOTYvyQ/viewform?fbclid=IwAR2n--LeStLja83hblNrC14vYlnGsV6HqRQziNQh1Xf_ihY4ZLNZwNiO6e8,https://www.facebook.com/groups/938774179853952/,
+Bay Area Senior/Disability/Worker Mutual Aid Form,,San Francisco,CA,,USA,English,https://docs.google.com/forms/d/1hqLnUN22aMoRnKnJJF2CzNP7u-RG5-rhZAz509z9wxE/viewform?fbclid=IwAR1vv4o72t7yYK3FlcB9bcY6l8uhsFpz6mwurmN6i7D_p9arIvKKZD8Dfjc&edit_requested=true,,,,
+California / Bay Area: Covid-19 Financial Solidarity,,San Francisco,CA,,USA,English,,https://docs.google.com/spreadsheets/d/1FBEU0cdAGpScU0JrOlYFm8FrY1Bjr0_HsyW4hWOj74I/edit?usp=drivesdk,,,
+California / San Francisco: SF Bay Mutual Aid Form,San Francisco Bay Area,San Francisco,CA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSeRdZabsQN36mtCTfYHZ1unT1U0pLpNqSC7MXaMjNqQAeVLQw/viewform,,,
+Help a Neighbor 2020,,San Francisco,CA,,USA,English,,,,https://www.facebook.com/groups/1306542072854295,
+SF Community Support,,San Francisco,CA,,USA,English,https://www.sfcommunitysupport.org/,https://docs.google.com/forms/d/e/1FAIpQLSeHPN6fTKeFq8kYCigBJ7Dicyiq5vyTKJJN7FJ7lF2QRBJKFA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSffERBfg3Vs-f2U-W-f2WJyEjYPLuK8ZR5LgaR0ZvM8FuV-DQ/viewform,https://www.facebook.com/groups/communitysupportsf/,
+COVID19 Love Peninsula,,San Mateo,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdWEQ6A4O2I4L8Vz8-_Bc5Q1zqhqGAayobkUnMrWGoeGjWAFQ/viewform?fbclid=IwAR0x5iwEgqWZOL-pd8HOgpKEKHSQNKwx8taDtYukMptlDzCEnqbILlu5iR4,,,,
+California / South Bay: South Bay Mutual Aid Intake,South Bay,Santa Clara,CA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSelE_VdJNsuMdO1Z8OE-y5ltQZCZSeFG1pkknvKNmv11HAssw/viewform,,
+California / South Bay: South Bay Mutual Aid Volunteer Intake (Español),South Bay,Santa Clara,CA,,USA,Spanish,,,https://docs.google.com/forms/d/1qbZtxiIcLFHRb2Y26w708-Ex4lnN4g9JEiEaxRlsDU8/viewform?edit_requested=true,,
+Compassionate Santa Monica/COVID19 Compassion Task Force  ,,Santa Monica ,CA,,USA,English,,https://forms.gle/8tGc5iM64p3LRNcu8,https://forms.gle/8tGc5iM64p3LRNcu8,https://www.facebook.com/groups/compassionatesantamonica/,
+COVID Santa Cruz County Aid and Volunteer Form,,Santa Cruz,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe0o0wsubIj5NVXINzx7Ay8vEyKpLbIk_sQ0r6JLxbZWHYrjQ/viewform,,,,
+Klamath Siskiyou Mutual Aid Network,,Siskiyou County,CA,,USA,English,,,,https://www.facebook.com/groups/218700056182795/?ref=br_rs,
+United Disaster Relief of Northern California,,Ukiah,CA,,USA,"English, Spanish",,https://www.ncoinc.org/fs/mendocino-fire-recovery-center/?fbclid=IwAR3eKmYGEbnpVDoEvchqrrCfD5EA0KLIL10WM_qKFHDqGeS8EBqxP2Urb80,,https://www.facebook.com/mendolakecomplexfirerelief/,
+Sign up: CA Medical Supplies Donation,,,CA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfDDdf7DQrA8PljFEQxoaBn5DRx9fGV0ffsupoE_Ut-tkkEfw/viewform,,,,
+DSA Ventura County COVID-19 Mutual Aid,,Oxnard,CA,,USA,"English, Spanish",https://www.dsaventuracounty.org/covid_19_mutual_aid,https://docs.google.com/forms/d/e/1FAIpQLSdwbRdSE4TSQqNXw0kvzqOYRTf6ANfR7v-GwKZBwyU3dkCGRA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdo47CkpxhXmy4wD5tJJqVGS2inJstQb25kZBPCCzZhgrosug/viewform,https://www.facebook.com/DSAVenturaCounty/,
+Silicon Valley Strong,,San Jose,CA,,USA,"English, Spanish, Vietnamese",http://www.siliconvalleystrong.org,,,,
+Cooperation Humboldt,,Eureka,CA,,USA,English,https://cooperationhumboldt.com/covid-response/,https://docs.google.com/forms/d/e/1FAIpQLSc2LM3ydC4IkEgnpLv7qN7jls7oURI5h5rIYLIUyql12Guf4w/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeXeuwogndzP-LsEfKVt56Cnt3hqWrfI1jHsfmFga0wUmmm9Q/viewform,https://www.facebook.com/cooperationhumboldt/,
+Orange County COVID-19 Mutual Aid 2020,,Anaheim,CA,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1UqvDWmL4Wt_fOphAL_EZddI2WWZPeBNt3yt9RKosBJI/edit#gid=634347005,https://docs.google.com/forms/d/e/1FAIpQLSdo_rsFIb717mt5FT4rdvk1EdERqI7NPkehGthSp1H2NbTEog/viewform,,https://www.facebook.com/groups/197294515038170/,
+We All We Got SD,,San Diego,CA,,USA,English,https://www.weallwegotsd.com/,https://docs.google.com/forms/d/e/1FAIpQLScQqNz8d1bVllnHbRwG9zxCaDaUGUAN9BQuLOFBfOWQD8UzdQ/viewform?fbclid=IwAR2_X6pD9o0K5kPuwkXd4NIM28A24sS_1zLrXZAuk6PtJJBXvXzUQPuEoxs,https://docs.google.com/forms/d/e/1FAIpQLSfebNW1h60jIfyD8pTZ9G_kXBMqrZycIbv3zGGFqQIwOTYvyQ/viewform?fbclid=IwAR0lOjML2V1KbdxFJ1DzfZGVYTVSXuk87sFsUCj3GlNPg4wAm6xBSzyhD8U,https://www.facebook.com/groups/938774179853952/,
+How Can I Help? Bay Area ,,San Francisco,CA,,USA,English,https://docs.google.com/spreadsheets/d/1gQlAmgIsXdEUdISa3gKYd5PX6eq6nc5WALdmNxQpNGw/edit#gid=0,,,,
+SGV Pandemic Mutual Aid Group,,Tomales,CA,,USA,English,https://docs.google.com/spreadsheets/d/12Rj_d1WjYbWlHvrxfuHivjN-lLnUT0481Lvr1zLxXMU/edit#gid=0,,,,
+Moutain Communities COVID-19 Mutual Aid,,Idyllwild-Pine Cove,CA,,USA,"English, Spanish",,https://airtable.com/shrAp2BJznGM3ASLZ,https://airtable.com/shrR3vHabEP0OT9d2,https://www.facebook.com/groups/MCCMA,
+Riverside Mutual Aid Network,,Riverside,CA,,USA,"English, Spanish",http://docs.google.com/document/d/19OjdlJdny63GuKlvSYPUF8Cx62s-1gGXeJlB2Wmo7aw/edit?usp=sharing,https://forms.gle/XC4wzCjWQhgMZD2n6,https://forms.gle/NmqD16sV5dzMRcUn7,https://www.facebook.com/rivmutualaid/,
+Joshua Tree Mutual Aid,,Joshua Tree,CA,,USA,English,,,,https://www.facebook.com/groups/JTMutualAid/,760-885-2324
+High Desert Mutual Aid Society,,Victorville,CA,,USA,"English, Spanish",,,,https://www.facebook.com/Highdesertmutualaid,
+Project Pasadena,,Pasadena,CA,,USA,English,http://contact88536.wixsite.com/projectpasadena,,,,
+South Pasadena Volunteer Grocery Shoppers,,South Pasadena,CA,,USA,English,http://sp-volunteers.com/,,,,
+Grass Roots Neighbors,,Los Angeles,CA,,USA,,https://www.grassrootsneighbors.org/,,,,
+Six Feet Supplies SCV,,Valencia,CA,,USA,English,https://www.sixfeetsupplies.com/,,,,
+Neighbors Helping Neighbors - Homestead Valley,,Landers,CA,,USA,English,,,,https://www.facebook.com/groups/NHNHV/,
+Cole Valley Cares,,San Francisco,CA,94117,USA,English,,,,https://www.facebook.com/groups/colevalleycares/,
+Echo Park Mutual Aid ,Echo Park ,Los Angeles,CA,90026,USA,English,,,,https://www.facebook.com/groups/265487081127673/,
+Care collective LA,,Los Angeles,CA,,USA,"English, Spanish",https://linktr.ee/CareCollectiveLA,https://forms.gle/Za3etD13hQcUspTx9,https://forms.gle/eNJXsokWcZScrYjD7,,213.570.5586
+NEXT Village San Francisco,,San Francisco,CA,94133,USA,English,https://nextvillagesf.org/,,,,
+City of San Carlos & Community Foundation of San Carlos,,San Carlos,CA,,USA,English,https://cfsancarlos.org/covid-19,,,,
+San Diego Community Volunteers for Coronavirus Response,,San Diego,CA,92117,USA,English,,,,https://www.facebook.com/groups/204071867533109?multi_permalinks=215981306342165&notif_t=group_activity&notif_id=1585766323933998&ref=m_notif,
+Senior Support Coalition - Westside Pacific Villages,"Westchester, Playa del Rey, Playa Vista and Marina del Rey",Los Angeles,CA,,USA,"English, Spanish",https://thewpv.org/,,,,310-695-7030
+Haight Neighborhood Help Group,Haight-Ashbury,San Francisco,CA,,USA,English,,,,https://www.facebook.com/groups/214731853107680/,
+Merced County HelpHub,,Merced,CA,,USA,English,https://tesseraktinstitute.org/mercedhelphub,,,,
+Topanga Community Center with the Canyon Sages,,Topanga,CA,,USA,English,https://topangacommunitycenter.org/,,,,
+University Park Mutual Aid,,West Menlo Park,CA,,USA,English,https://UnivPark.org,,,,
+Hayward Helping Hands,,Hayward,CA,,USA,"English, Spanish ",https://www.haywardhelpinghands.org/,https://docs.google.com/forms/d/e/1FAIpQLScGJsGgYKaN0KuiGkxPan5a3K5VsKiHaSmfARv6_1xuASknlA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfkVEZlyLbB8fwI5YeX9pjC-_V0g7fTBcljoRCJ9-oniG-isA/viewform,,
+UCSD Mutual Aid,,La Jolla,California,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSdIJtyq96nfFDm4diz6MyHnYYGghQocwnjAUnntTXPScBnz7Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdIJtyq96nfFDm4diz6MyHnYYGghQocwnjAUnntTXPScBnz7Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdIJtyq96nfFDm4diz6MyHnYYGghQocwnjAUnntTXPScBnz7Q/viewform,,
+Aurora Mutual Aid,,Aurora,CO,,USA,English,,Hotlline: 720-477-0406,,,
+Mutual Aid Infrastructure - Aurora ,,Aurora,CO,,USA,English,https://www.facebook.com/groups/2704399092941296/,,,https://www.facebook.com/groups/2704399092941296/,
+Boulder Coronavirus Community Coping Crew,,Boulder,CO,,USA,English,,,,https://www.facebook.com/groups/199467514668513/?ref=share,
+Front Range Mutual Aid,Front Range,Boulder,CO,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSc1-tbmQmbv2oWnr8Cv0_N73skDcnuwaucSoWIV2QEJcufAnw/viewform?fbclid=IwAR2Z7c1Q1iqZJ5r-C5QycyfaQNVyLNb0qwAmQorjo-thzlUCUssLruqTmCQ,https://docs.google.com/forms/d/e/1FAIpQLSdbwDrX-tSW9Mktdnjirl4bXTiu8mKbAB1bjML9dnzYuTX3vw/viewform?fbclid=IwAR3QNT1W0Mx0vir7NQIjdAXOf87NXR4dP0J28G3lXli4HDTYkEZ9h3wkCjI,https://www.facebook.com/COmutualists/,
+City of Boulder volunteer cooperative,,Boulder,CO,,USA,English,https://countmein.bouldercolorado.gov/,,https://countmein.bouldercolorado.gov/Calendar?start=2020-03-01&departments=17b7c26c-18b9-4e9c-a8c7-a881f5dbb43b,,
+Boulder COVID-19 Mutual Aid ,,Boulder,CO,,USA,"English, Spanish",,https://docs.google.com/forms/d/1PF0DSmwAEjomHTY-ZZ7OhnY2jxTJHfgiKZzb-bAroVc/edit,https://docs.google.com/forms/d/1PF0DSmwAEjomHTY-ZZ7OhnY2jxTJHfgiKZzb-bAroVc/edit,https://www.facebook.com/groups/1241349502724671/?source=unknown,
+"Mutual Aid Collective, Boulder",,Boulder,CO,,USA,English,,,,https://www.facebook.com/groups/201650704398894/,
+Colorado / Colorado Springs: COS Mutual Aid Network,,Colorado Springs,CO,,USA,"English, Spanish",https://opencollective.com/cos-mutual-aid-network,,https://docs.google.com/forms/d/e/1FAIpQLScjX-h6JXME_QkcbkaeXb6Rm9dSkMSu9ebvQvVu-bovF2_o1w/viewform?usp=send_form,https://www.facebook.com/groups/580039515935157/?ref=share,
+Mutual Aid Colorado Springs,,Colorado Springs,CO,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLScjX-h6JXME_QkcbkaeXb6Rm9dSkMSu9ebvQvVu-bovF2_o1w/viewform,,,https://www.facebook.com/groups/197210804946129/about/,
+Help Needed in Denver Metro COVID-19,,Denver,CO,,USA,English,,,,https://www.facebook.com/groups/516631032588738/permalink/516705622581279/,
+State of Colorado COVID-19 Volunteer Response,,Denver,CO,,USA,English,https://covrn.com/,,,,
+Denver Public Schools foundation ,,Denver,CO,,USA,English,https://www.dpsk12.org/coronavirus/,,,,
+Front Range Mutual Aid,,Denver,CO,,USA,"English, Spanish",https://frman.org/,http://bit.ly/getcovidaidcolorado,http://bit.ly/covidaidcolorado,https://www.facebook.com/groups/265712697332241,
+Denver Community Mutual Aid,,Denver,CO,,USA,English,https://docs.google.com/spreadsheets/d/1kYhC0D1DcFgH7gB5D_akLoG10Wm1aGhXrdS0wMPhBaA/edit?fbclid=IwAR2uGHLJUUt_jSP5zc2rD0i5jzJsey37UY1GHLlEygj8Hh4mk8lVbP-rQ3Q#gid=1727309836,,,,
+Fort Collins Mutual Aid Network,,Fort Collins,CO,,USA,Eglish,https://fortcollinsmutualaid.neocities.org/?fbclid=IwAR0l8fq-WnqMbrzKtFz47QBih1XvxQ9izQHDLImyc2QaHwJQK4lwnqjZe5k,,,https://www.facebook.com/Fort-Collins-Mutual-Aid-Network-1515855165176704/,
+Northern Colorado Mutual Aid and Defense,,Longmont,CO,,USA,English,https://twitter.com/NoCoCMAD,Support request is temporarily closed ,https://docs.google.com/forms/d/e/1FAIpQLScB_-Rw3TlpAb9wdUNYUChyqkggEKSmfL7q1Mrt6Q3VWURe2w/viewform?usp=send_form,,
+Mutual Aid in Colorado Springs during COVID-19 pandemic,,Colorado Springs,CO,,USA,English,,,,https://www.facebook.com/groups/197210804946129/,
+"Mutual Aid Infrastructure--Aurora, Colorado",,Aurora,CO,,USA,English,,,,https://www.facebook.com/groups/2704399092941296/?ref=share,
+Durango Helps,,Durango,CO,,USA,"English, Spanish",https://docs.google.com/document/d/1odc1Vtb8StICRLBHEC9bvOJyFUQYkHjaBwqaLa1iap8/edit,https://docs.google.com/forms/d/e/1FAIpQLSe9L_mPUq_22xrAO_CpugS6DrQR-P53b2iBZgRMbspxR6lghQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSe9L_mPUq_22xrAO_CpugS6DrQR-P53b2iBZgRMbspxR6lghQ/viewform,https://www.facebook.com/CelebratingHealthyCommunities/,
+Benefits in Action,,Lakewood,CO,,USA,English,,https://www.benefitsinaction.org/sheltered-at-home-need-food,,,720-221-8354
+Carbondale Mutual Aid,,Carbondale,CO,,USA,"Spanish, English",https://carbondalemutualaid.wordpress.com/,https://docs.google.com/forms/d/e/1FAIpQLScrI_OEAztyTUZgR51ToAO5hxNAiiWtjwhCPj1tEwYZUBp0cw/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfHhTAUy50yMTRUapaOLENzLfYzprYMWg3AeTQ8_TtTW9rlAA/viewform,https://www.facebook.com/groups/CarbondaleCOMutualAid/,
+CTCORE Mutual Aid,,Hartford,CT,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSee9baIhH7IglyvLdkBtlrMSK9AiJbJQvIksUArLV0ZksvO7g/viewform,http://www.ctcore-organizenow.org/coronactsupport,http://www.ctcore-organizenow.org/coronactsupport,https://www.facebook.com/ctcoreorganizenow.org/,
+"Connecticut / Hartford, Bridgeport, Waterbury, New Haven: Mutual Aid Network (English version)",,Hartford/Bridgeport/Waterbury/New Haven,CT,,USA,English,https://docs.google.com/document/d/1F6b03pTNxGC9Fc3_AZy3Po6jWEzSdJl3FCDOlZX6FLY/edit?fbclid=IwAR0AA8_JU26LynPwwbX1jj9jh2Xlw52gXqxCVnwkNFimfMbBJ522vVmoYOs,,,,
+"Connecticut / Hartford, Bridgeport, Waterbury, New Haven: Mutual Aid Network (Spanish version)",,Hartford/Bridgeport/Waterbury/New Haven,CT,,USA,Spanish,https://docs.google.com/document/d/19cK5eq_unhr0z4T_AGkKO93r7-qJqQ3LxuXjlWvY62A/edit,,,,
+New London Mutual Aid Collective - Community Network,,New London,CT,,USA,English,,,,https://www.facebook.com/groups/646521702359874/?ref=br_rs,
+Mutual Aid/Ayuda Mutua Norwalk CT,,Norwalk,CT,,USA,"English, French, Spanish, Portuguese, Mandarin",https://docs.google.com/document/d/1mtVXb3YV0Ph_ZOFGUwM26EdrS28R04_BYrwrla3QSPY/edit?usp=sharing,https://forms.gle/T5gudDgWvAfqRdKU9,https://docs.google.com/forms/d/e/1FAIpQLSeld67D3EQOWDaE1OfkG0zux2mYcBbd8Xv4T7BWaqXHEXc4Pw/viewform?usp=sf_link,https://www.facebook.com/groups/norwalkmutualaid/,
+Stratford Mutual Aid,,Stratford,CT,,USA,English,,,,https://www.facebook.com/groups/557607951811043/,
+CT Mutual Aid,,Hartford,CT,,USA,"English, Spanish, Arabic",https://ctmutualaid.com/,https://docs.google.com/forms/d/e/1FAIpQLSftDN2mV9dCv_5uF2n341h21hNfT80bzNYmVJQaBFHUvi909A/viewform,https://docs.google.com/forms/d/e/1FAIpQLSftDN2mV9dCv_5uF2n341h21hNfT80bzNYmVJQaBFHUvi909A/viewform,,
+Mutual Aid WNHBH,,New Haven,CT,,USA,"English, Spanish",,https://docs.google.com/spreadsheets/d/1oY_Xpu07LYU8AWdxatmHfFQwcT6cbff1jDWAF0wS9ik/edit?fbclid=IwAR20eRilQLE63BrAE95tY-x6oU3ACN5siYOvNBIPeyPCNeIXaXbdR8NbxJU#gid=0,https://docs.google.com/forms/d/e/1FAIpQLSeWN1V25kvvY-zO5yNpeLf1_VpFVfz1RXntPw98TBin3g0GXw/viewform,,
+Milford Mutual Aide Network,,Milford,CT,,USA,English,,https://docs.google.com/spreadsheets/d/1U_WJVPiTyX4N7DH6vwTs2I6CCypTNE3mlbZjmXHfDVI/edit?usp=sharing,https://docs.google.com/spreadsheets/d/13Qd7oP5bw_Hqj3VvQQ_SEN5D5qix8H_lsOtelly93GY/edit?usp=sharing,https://www.facebook.com/groups/2621163948207116/,
+Bridgeport Mutual Aid,,Bridgeport,CT,,USA,"English, Spanish",,,,https://www.facebook.com/groups/151365126136697/?epa=SEARCH_BOX,
+Share The Care - Connecticut,,Ansonia,CT,,USA,English,,,,http://www.facebook.com/sharethecareandlove,
+Bridgeport Mutual Aid,,Bridgeport,CT,,USA,English,,,,https://www.facebook.com/groups/151365126136697/?fref=gs&dti=557607951811043&hc_location=group,
+Takoma DC Community Care and Mutual Aid Signup,Takoma,Washington,DC,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSfwZ4xkZzW2-TdWlIUPlSpvaG1QRIRHy4ulYKqsyV9NqgKYMw/viewform,,
+Petworth Helping Hands,Petworth,Washington,DC,,USA,English,https://docs.google.com/spreadsheets/d/1F-hOHjM4rgGbLwiPx4rWkkpbPxqI6ceEY8yWllKhKDA/edit#gid=0,,,,
+DC Mutual Aid,,Washington,DC,,USA,English,,,,https://www.facebook.com/DCMutualAid/,
+DC Mutual Aid (Multiple Neighborhood Groups),,Washington,DC,,USA,English,https://docs.google.com/spreadsheets/d/1wLncKL-9ixUFV_UIW08SO-MNVVMhupcK1sFtlTt5L3M/edit#gid=1634357411,,,,
+Help your neighbors - DMV (COVID-19 Relief),,Washington,DC,,USA,English,,,,https://www.facebook.com/groups/691495051389925/?ref=br_rs,
+DC Mutual Aid Network (Ward 7 and 8),,Washington,DC,,USA,"English, Spanish",https://www.congressheightsontherise.com/blog/dc-mutual-aid-network-for-ward-7-and-8-residents,,,,
+SW Neighbor Aid,,Washington,DC,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe94u6848X7Mrn0Z2XyUi4IxuoThn-Zvhf47OqT-oR1S4bjxQ/viewform,,,,
+DC Mutual Aid Network,,Washington,DC,,USA,English,,,,https://www.facebook.com/groups/492881801379594/about/,
+The Helpers: Delaware Pandemic Response,,,DE,,USA,English,,,,https://www.facebook.com/groups/thehelpersDE/,
+Los Ayudantes: Respuesta de Delaware a la Pandemia,,,DE,,USA,Spanish ,,,,https://www.facebook.com/groups/890745734716986/learning_content/,
+BocaHelps,,Boca Raton,FL,,USA,English,https://bocahelps.com/,,,,
+Gainesville COVID-19 Mutual Aid,,Gainesville,FL,,USA,English,,,,facebook.com/groups/243135496869312/?ref=br_rs,
+"Hernando County, FL Mutual Aid Effort",,Hernando County,FL,,USA,English,,,,https://www.facebook.com/groups/150711639466015/about/,
+"Coronavirus Mutual Aid Network of Brevard County, FL",,Melbourne,FL,,USA,English,,,,https://www.facebook.com/groups/mutualaidbrevard/?ref=br_rs,
+Buddy System MIA,,Miami,FL,,USA,"Spanish, English, Portuguese ",http://www.buddysystemMIA.com,,,,
+Tampa Mutual Aid,,Tampa,FL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfDAa3Q7LK1YiJJDOFenqD46ncgl3XZZPVkOQAPL4KBO2dj6w/viewform,,,,
+Southshore FL Mutual Aid Network,Southshore,Tampa,FL,,USA,English,,,,https://www.facebook.com/groups/223436298800907/,
+Mutual Aid Greater Tampa,,Tampa,FL,,USA,English,https://docs.google.com/document/d/1qSt4xTJpEZ0pa5-ZxbUi5WZX5w6JI4Do8u4zU6nENLg/edit,,,,
+CHNA Neighbors Helping Neighbors,Crescent Heights,St. Petersburg,FL,,USA,English,http://www.mychna.org/,,,,
+West Florida Mutual Aid,,Pensacola,FL,,USA,English,,,,https://www.facebook.com/West-Florida-Mutual-Aid-Committee-105554577751398/,
+Tallahassee Community Assistance Service,,Tallahassee,FL,,USA,English,https://docs.google.com/document/d/1nxhYhIFt3P5i8reek6yWNHY0hpTIb0JdmrmcvurrDHA/edit,,,https://www.facebook.com/groups/530850841189648,
+"COVID-19 MUTUAL AID WILTON MANORS, FL  ",,Wilton Manors,FL,,USA,"English, Spanish",,,,https://www.facebook.com/groups/532962177633823/,
+"COVID-19 MUTUAL AID CORAL SPRINGS, FL",,Coral Springs,FL,,USA,"English, Spanish",,,,https://www.facebook.com/groups/203365737747894/?ref=bookmarks,
+Florence CAN - Community Action Network,,Florence,FL,,USA,English,,,,https://www.facebook.com/FlorenceSCCAN,
+Covid-19-South Florida-Radical Mutual Aid,,Fort Lauderdale,FL,,USA,English,,,,https://www.facebook.com/groups/211545970124496/,
+Atlanta Survival Program,,Atlanta,GA,,USA,English,https://atlsurvival.org,,,,
+Georgia Tech Mutual Aid Group,,Atlanta,GA,,USA,English,https://docs.google.com/document/d/1_bJq94j3p2n-lDoETOH7wzhACjjmgw9l23QpbCa0Cag/edit,,,,
+Atlanta COVID-19 Solidarity & Mutual Aid,,Atlanta,GA,,USA,English,https://docs.google.com/document/d/1_bJq94j3p2n-lDoETOH7wzhACjjmgw9l23QpbCa0Cag/mobilebasic,,,,
+Athens Mutual Aid Network,,Athens,GA,,USA,English,https://www.skinsandclaystudio.com/contact-us,,,,
+Atlanta District 3 Community Engagement Task Force,Westside,Atlanta,GA,,USA,,https://www.atld3.org/,,,,
+Big Island Seniors Together,,Keaau,HI,,USA,English,https://www.facebook.com/groups/164825397921000/,,,https://www.facebook.com/groups/164825397921000/,
+Neighbors Helping Neighbors Des Moines Mutual Aid,,Des Moines,IA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSf9c67i9Hk3tNMtVFfkXAZOM2PAqUIZ9yCpNrT4-F074WWibQ/viewform?fbclid=IwAR2CnL-ilgcHknj96XORuGqVu6dYv3OOiiKXd1dkUsB27OlMDXo9S1nD2pI,https://docs.google.com/forms/d/e/1FAIpQLSf4Nc5DHWkgewR6RVezyQ6bUw6jPSbdmBxWsKwEn4JzdT1iaw/viewform?fbclid=IwAR1GmvhIUu2rDzY3RQmJcxxhfCL7yKbmpy3s-prmkhWSOB7RLJRxo-u-BG4,,
+Community Support Project DSM,,Des Moines,IA,,USA,"English, Spanish",,https://docs.google.com/forms/d/e/1FAIpQLSe0ptHHSGTJxMd8xeRJ3w-6KPAIKdnBvWsazYyHX9Sfx5Ct1A/viewform,https://forms.gle/7p49q1XkrqdnERuy7,,
+"Grinnell, IA Mutual Aid Network",,Grinnell,IA,,USA,English,,,,https://www.facebook.com/groups/200666177697167/?ref=br_rs,
+I Can Help — Decorah & Winneshiek County Mutual Aid Network,,Decorah,IA,,USA,English,https://decorahnow.com/mutual-aid-network/,https://docs.google.com/forms/d/e/1FAIpQLSdypbBTRkaqifgYz9k0jhUjyKu2bjEBbWOGiReKQTVa6XK_2g/viewform,https://docs.google.com/forms/u/5/d/e/1FAIpQLSeia06bSZaRTmoRtOisOYArNZViZhxMYyygNykv_tdd4Y2bYA/viewform?usp=send_form,https://www.facebook.com/groups/decorah.winneshiek.mutual.aid.network/,
+"Linn County, IA Coronavirus support, swap, resources group",,Cedar Rapids,IA,,USA,,,,,https://www.facebook.com/groups/881359378990113/,
+Bannock County Corona Mutual Aid Group,,Pocatello,ID,,USA,English,https://www.facebook.com/groups/542908039684932/about/,,,,
+East Idaho Quarantine Mutual Aid,,Idaho Falls,ID,,USA,English,https://www.facebook.com/groups/223936838797653,,,,
+Idaho Covid 19 Mutual Aid Group,,Boise,ID,,USA,English,https://www.facebook.com/groups/599362557311758/,,,,
+Ada County COVID-19 M.A.G. (Mutual Aid Group),,Boise,ID,,USA,English,https://www.facebook.com/groups/561233134486634/about/,,,,
+Southeast Boise COVID-19 M.A.G. (Mutual Aid Group),,Boise,ID,,USA,English,https://www.facebook.com/groups/228421531843249/?hc_location=group,,,,
+Boise Bench COVID-19 M.A.G. (Mutual Aid Group),,Boise,ID,,USA,English,https://www.facebook.com/groups/504207773573756/about/,,,,
+Northend/Downtown/NW Boise/Garden City COVID-19 M.A.G. (Mutual Aid Group),,Northend,ID,,USA,English,https://www.facebook.com/groups/884203602015234/?ref=br_rs,,,,
+"Meridian, ID COVID-19 M.A.G. (Mutual Aid Group)",,Meridian,ID,,USA,English,https://www.facebook.com/groups/634092660497074/about/,,,,
+"Eagle, ID COVID-19 M.A.G. (Mutual Aid Group)",,Eagle,ID,,USA,English,https://www.facebook.com/groups/260166328311384/?ref=br_rs,,,,
+Kuna ID COVID-19 M.A.G. (Mutual Aid Group),,Kuna,ID,,USA,English,https://www.facebook.com/groups/620194181867801/?ref=br_rs,,,,
+"Star, ID COVID-19 M.A.G. (Mutual Aid Group)",,Star,ID,,USA,English,https://www.facebook.com/groups/644986436334424/?ref=br_rs,,,,
+Canyon County - COVID 19 MAG (Mutual Aid Group),,Canyon County,ID,,USA,English,https://www.facebook.com/groups/141263063913527/about/,,,,
+Champaign County COVID-19 Food Distribution Volunteer Sign-up,,Champaign,IL,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLScMZ3xVsTHWLEqoQc7bssA3wk7p5SffUpohZk8-nEA26k2vwg/viewform?fbclid=IwAR0GNn_Bg3i-a_7vZZaqgqbxAvFeF8OIhPnICxVjfDvON7rgIiUehEIj0-k,,
+Central IL Mutual Aid MetaGuide,,Champaign-Urbana,IL,,USA,English,https://docs.google.com/document/d/1WdGcHpIJLrdnMqlvO2CNGegV8k1apmKS2iqP9jIUMaU/edit,,,,
+Illinois / Chicago: COVID-19 Mutual Aid Volunteer Sign-up,,Chicago,IL,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSd0MK1dnny1BTlzvohuRlnlC6fHqXKqez0hrZJLuZ6F4-qu9w/viewform?fbclid=IwAR2Hv2nPiztvHDf3Np_ncwJh3os4V0-k0xmS6cSLk5uR7w3pysPDar_5OfE,,
+Illinois / Chicago: 73.5 Neighborhood Resource Pool,,Chicago,IL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfF1NPewbkuQSQynD1cFad0zgTPhhervhMH-VBRNRqhW-T33w/viewform,,,,
+UChicago Mutual Aid,,Chicago,IL,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSf-uEFHV3NjqGIRFGH2_F7vVbTtg6RdaEajz8wEzisfqEa9Yg/viewform?fbclid=IwAR0dlisotyWZuU0If50_rEzJVk_R2es0ydoQUCQtWT-pr_Lvyl6sDwKdgCQ,https://www.facebook.com/groups/1290114234516495/,
+Chicago Caremongering - Community Response to COVID-19,,Chicago,IL,,USA,English,,,,https://www.facebook.com/groups/579978419269789/,
+Chicago COVID-19 Hardship and Help Page,,Chicago,IL,,USA,English,https://transformativespaces.org/2020/03/15/chicago-covid-19-hardship-and-help-page/amp/?__twitter_impression=true,https://docs.google.com/forms/d/e/1FAIpQLSeJoBykIAsjxiIwoUgYPwo2rVM59tMH_PvMryxTtfPcJ1K2Zw/viewform,https://docs.google.com/spreadsheets/d/1RY5B47m4qo6lr4NNehC4Z4mXIrAogKpC7F5LjG4LubY/edit#gid=1378790480,,
+Rogers Park Community Response Team,,Chicago,IL,,USA,English,https://rpcrt.org/,,,,773-831-7668.
+Pilsen Vecinos Unidos: COVID-19 Neighborhood Volunteers ,,Chicago,IL,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1946zPaYuCT23eaCfs6GSm8_5rhFbWPtvMgAA4hhomLA/edit?fbclid=IwAR1B0a5djW9Y4sriXUSCmrUhvzcMu-0FlktgbZL0DVnmnU6YTW9UpSFcSrU#gid=0,,,https://www.facebook.com/groups/1508709089408538/permalink/2622532194692883/,
+COVID19 Language Interpretation & Translation Volunteer Sign Up,,Chicago,IL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSd3CgfnBa0R-9ZPqJEOewkQBAV_DBCyq9UFYnjdEXhYEGItYQ/viewform,,,,
+Northwestern Health Professions Graduate Students - Chicago COVID-19 Assistance Request Form,,Chicago,IL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSewtTYn9cicsJ-UmZVi7mOPlXwb5XaKpq5qCqzUUnWOw_mgtQ/viewform,,,,
+Brave Space Alliance COVID-19 Mutual Aid Volunteer Sign-up,,Chicago,IL,,USA,English,https://www.bravespacealliance.org/covid-19,https://docs.google.com/forms/d/e/1FAIpQLSelaHe7IlGXJcn7IcrBKn9pTYx_lW4kPktkR9MCLzjOijBrUQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeFuaFQMR4SE3M7wbiB8FR0JOxOMzYXcBxhF6Yi_7MEcMMsFQ/viewform?fbclid=IwAR3b7YlOiWkhkmbDrDceIGfC14kNwhJSF0UQV1k3QvcNe95eQfWWb1k-oBQ,,
+Sittercity First Responder- Chicago Responds,,Chicago,IL,,USA,English,https://family.sittercity.com/chicagoresponds/,,,,
+Morton College COVID-19 Mutual Aid ,,Lyons,IL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdpZC0Upru_KPtVtKTK1ff10MBQsFHdnoGhejcW6ixrKW0LPA/viewform,,https://docs.google.com/forms/d/e/1FAIpQLSdpZC0Upru_KPtVtKTK1ff10MBQsFHdnoGhejcW6ixrKW0LPA/viewform,,
+COVID-19 Mutual Aid Volunteers Rockford,,Rockford,IL,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSftFSaJCKiGiF8rjuZg3eXa4KMW_Uo-pVZP21GPnz-DiNk_1Q/viewform?fbclid=IwAR1hej0Nb8Cg5h6s3IejTJytucjOZiFajoN6ptVVgYl4G6qHwchKgETMbXY,,,,
+Mutual Aid Chicago NW Suburbs,,Schaumburg,IL,,USA,English,https://tinyurl.com/mutualaidcnws,,,,
+Springfield Families Helping Families,,Springfield,IL,,USA,English,,,,https://www.facebook.com/groups/SpringfieldHelp/ ,
+CU COVID,,Urbana,IL,,USA,English,https://cucovid.org/,https://cucovid.org/index.php?title=Getting_Help,https://cucovid.org/index.php?title=Helping,,
+Raising Kane County,,St. Charles,IL,,USA,English,https://www.raisingkane.io/,,,,
+COVID-19 Lockport Area Mutual Aid,,Lockport,IL,,USA,English,,,,https://www.facebook.com/Covid-19-Lockport-Area-Mutual-Aid-100285148300404/,
+Roscoe/Rockton Neighbors Helping Neighbors,,Roscoe,IL,,USA,English,https://www.roroneighbors.org/,,,,
+Evanston Aid,,Evanston,IL,,USA,"English, Spanish, Arabic",http://www.evanstonaid.com/,,,,
+Freeport COVID-19 Hardship and help,,Freeport,IL,,USA,English,,,,https://www.facebook.com/Freeport-Covid-19-Hardship-and-Help-101261488182404/,
+UChicago Mutual Aid,,Chicago,IL,,USA,English,,,,https://www.facebook.com/groups/1290114234516495/,
+Evanston Neighbors Mutual Aid COVID-19,,Evanston,IL,,USA,"English, Spanish, Farsi, Urdu, French",https://docs.google.com/forms/d/15SabG9ViDpiSctuxchEGs4816s0qzMuvmqmELLkSpys/viewform?edit_requested=true,https://docs.google.com/forms/d/15SabG9ViDpiSctuxchEGs4816s0qzMuvmqmELLkSpys/viewform?edit_requested=true,,,
+Elmhurst Tackles COVID-19 (ETC 19),,Elmhurst,IL,,USA,English,,,,https://www.facebook.com/groups/2749440901818281/?ref=bookmarks,
+Indiana / Bloomington: No Space for Hate COVID 19 Mutual Aid,,Bloomington,IN,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSd-No5BLo6y-9ubpTnQAzFyOk7Q7gwel7iLpD-7Q9gpPF36sg/viewform,,,,
+Bloomington Mutual Aid for Covid-19,,Bloomington,IN,,USA,English,https://nospace4hate.btown-in.org/nsfh-mutual-aid/,,,,
+Mutual Aid Brown County (IN) COVID-19,,Brown County,IN,,USA,English,,,,https://www.facebook.com/groups/BroCoMutualAid,
+COVID19 Mutual Aid — Indianapolis,,Indianapolis,IN,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScLCB8IJaNEaxsfbeJci5De9HjzEuNElTbl3nfW1iwUc5b5uw/viewform?fbclid=IwAR34Pwp8nsg4aAupayXgzbdcR8lBdPO4T040dbD572mqy7ZA73cMghVIpAc,,,https://www.facebook.com/groups/indymutualaid/?ref=br_rs,
+Greater Lafayette COVID-19 Mutual Aid Response,,Lafayette,IN,,USA,"English, Spanish",,https://docs.google.com/forms/d/1ejyRlCt_vQO00wtiaZQMzssHE6hkLwWFuaZjqzfTs_g/edit,https://docs.google.com/forms/d/1ykt-UibvesWK9yu91vOXxMfXlkzmlWXNGQ0OwSV7IC8/edit,https://www.facebook.com/groups/187656082663278/,
+South Bend Mutual Aid ,,South Bend ,IN,,USA,"Spanish, Chinese, Taiwanese, German, ASL",https://linktr.ee/southbend_mutualaid,,,,
+Helping Network of Elkhart County,,Goshen,IN,,USA,"English, Spanish",http://helpingnetwork.org,https://helpingnetwork.churchcenter.com/people/forms/116371,https://helpingnetwork.churchcenter.com/people/forms/116371,https://facebook.com/helpingnetwork.org,
+South Central Indiana Coronavirus Help,,Columbus,IN,,USA,English,,,,https://www.facebook.com/groups/SouthCentralIndianaCoronavirusHelp/,
+Richmond Response and Resource for Covid-19,,Richmond,IN,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1Mj1aVxCW8c3WQTSwA8wlmi_npscjLHZ2SjZy6m7irsk/edit#gid=1020167366,,,https://www.facebook.com/groups/523050625297169/?ref=bookmarks,
+Vigo County Mutual Aid: COVID-19 Response,,Terre Haute,IN,,USA,English,https://uwwv.galaxydigital.com/agency/detail/?agency_id=111705,,,https://www.facebook.com/groups/963269020793838/,310.739.5141
+The Crossing Church,,Hobart,IN,,USA,English,,,,https://www.facebook.com/frontlineministrynwi/,
+Kansas City Mutual Aid,,Kansas City,KS,,USA,English,,,https://docs.google.com/forms/d/1dAR0eboOb9_tIwZi8IuvIDhaO2DGapeQ4hFdYsnPosE/viewform?edit_requested=true&fbclid=IwAR1heTlkSy6iZ6zEa0OraWa_Evh2MqzFMdqV6ei-lveseNz6-90tb55fo5Q,https://www.facebook.com/groups/1596299170524391/?ref=br_rs,
+Strawberry Hill Coronavirus Mutual Aid,,Kansas City,KS,,USA,English,,,,https://www.facebook.com/groups/136824581089511/?ref=share,
+Lawrence Mutual Aid Network,,Lawrence,KS,,USA,English,,,,https://www.facebook.com/lfkmutual/,
+Lawrence Mutual Aid Network,,Lawrence,KS,,USA,English,,bit.ly/LFKMutualAidRequest,bit.ly/LFKMutualAidVolunteer,https://www.facebook.com/lfkmutual/,
+Madison Kansas Mutual Aid,,Madison,KS,,USA,English,,,,https://www.facebook.com/groups/603411050515548/,
+Topeka Corona Care,,Topeka,KS,,USA,English,,,,https://www.facebook.com/groups/topekacoronacare/?ref=search,
+Grocery Getters Wichita,,Wichita,KS,,USA,English,https://www.facebook.com/groups/199370288005766/,,,,
+Wichita Metro Area Collaboration for COVID 19 Crisis,,Wichita,KS,,USA,English,https://www.facebook.com/groups/645030479396753/,,,,
+WMLA Mutual Aid Initiative,,Wichita,KS,,USA,English,,https://docs.google.com/forms/d/1tK8Bl5zLnKIMlYdZSyv5840Y--IaQf7udOVtGS0E73Y/viewform?,https://docs.google.com/forms/d/1d_CX3jwlA_zijE4MFM1BCO1ylwmB7m4A1nFwoEjBdE0/viewform?,,
+Kentucky / Lexington: Mutual Aid Lexington Kentucky,,Lexington,KY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeP4koOM1yO-tb6VicTWjZhCHTSrarceghikJROf6QL2Nc8eQ/viewform?fbclid=IwAR36e-f2AdpyseehKsQ-0NqfPLyOV-2PP0d6d3rEDgZO2O_u1ykne77n2po,,,https://www.facebook.com/groups/199450304659978/,
+Kentucky / Louisville: Mutual Aid Louisville,,Louisville,KY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdoUHjttKCV5tiTNbBh5Ym5C9MwFWt9S5wFeo_Yz42jKwWALw/viewform,,,,
+Youth Mutual aid fund,all of Kentucky,London,KY,,USA,English,https://www.kystudentenvironmentalcoalition.org/covid-19-mutual-aid.html,,,,
+AS:UU/CCC COVID-19 Kentucky Mutual Aid,all of Kentucky,Louisville,KY,,USA,English,https://linktr.ee/Tettra?fbclid=IwAR1-kJGosgsxZy4pj8KeDytN7lBXwIqxpCH2ZHav_rt4CdcLgoTgRmMFGvI,https://docs.google.com/forms/d/e/1FAIpQLSfpOVcRWyf872R8sHfLif01vV5doAG_2SGADsEgMZp6xVZJEw/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfpOVcRWyf872R8sHfLif01vV5doAG_2SGADsEgMZp6xVZJEw/viewform,https://www.facebook.com/ASUUKY/,
+Bowling Green Mutual Aid Society,,Bowlinrg Green,KY,,USA,English,https://www.facebook.com/pages/category/Charity-Organization/Bowling-Green-Mutual-Aid-Society-100570608177733/,,,,
+EKY Mutual Aid Volunteer Form,,Prestonsburg,KY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSf5rAKlAnrj23pyjvHQrEezAen9wRRscZ9ImGNFT7JS9xS97Q/viewform?fbclid=IwAR021eCPntap2nhFDUVdYDkzrl7DAIJ16yCR4F7SIRazbCdhbuWfBEtnykE,,,,
+COVID-19 Mutual Aid (New Orleans),,New Orleans,LA,,USA,English,https://www.facebook.com/groups/MutualAidNewOrleans/?ref=br_rs,,,https://www.facebook.com/groups/MutualAidNewOrleans/?ref=br_rs,
+Mutual Aid - New Orleans,,New Orleans,LA,,USA,English,,,,https://www.facebook.com/groups/MutualAidNOLA/?ref=br_rs,
+GNO Caring Collective,,New Orleans,LA,,USA,English,http://www.gnocaringcollective.org,,,https://www.facebook.com/GNOCaringCollective/?__tn__=%2Cd%2CP-R&eid=ARD7sgZvrOACkqK5osaiz5_dEOZdUFqkMTkGHrhiuMH855P_CsvgvUGsD_29jKFkskdH6G58Qb0kabpc,(504) 233-8707
+NOLA Community Mutual Aid,,New Orleans,LA,,USA,English,https://docs.google.com/spreadsheets/d/1dC2CZVbEK0qIOEiL4J_PtPUJkDHP2WCm2uLX3gVVYeE/edit?fbclid=IwAR2D-LgqWsRvL7vNxSpEmimg5G60xRM3AhmMsE2SJmdl7Pzl8nw9-JChTdE#gid=1247591924,,,,
+New Orleans Mutual Aid Society,,New Orleans,LA,,USA,"English, Spanish",,https://docs.google.com/forms/d/1fI1DYToSoci00EaJ94NyFuRDlcT0dSD4sCFdjWK7rkw/viewform?edit_requested=true,https://docs.google.com/forms/d/1fI1DYToSoci00EaJ94NyFuRDlcT0dSD4sCFdjWK7rkw/viewform?edit_requested=true,http://www.facebook.com/neworleansmutualaid,
+Massachusetts / Allston and Brighton: Allston/Brighton Mutual Aid,,Allston/Brighton,MA,,USA,English,https://docs.google.com/document/d/1elvhLVePZdLRpTWgNKNYKYacu9wI__7ILMerXPUZjSg/edit?fbclid=IwAR3-SuJl0vthhJfsHhhwhqwE0GPVYak6gl1o6TwfZuZF6QhfkWk5DhxSAi4,,,,
+Mutual Aid Arlington,,Arlington,MA,,USA,English,https://mutualaidarlington.org/,,,,
+Arlington Helps,,Arlington,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfmpJqTK6_63qXzLjmEdd-5zfD1ebMXUSxt4kWJsCyQPKNriw/viewform,,,,
+"Arlington, MA COVID-19 Community Support",,Arlington,MA,,USA,English,,,,https://www.facebook.com/groups/201015774573867/,
+Beverly Neighbors Helping Neighbors,,Beverly,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSews1VUUpOzf9s7hTdRL_ieuSgEgPwTfGamo6NfHbpCO9Jp9w/viewform?fbclid=IwAR3rvSH9_voZGiX5aA7WojVd6T-nl8YoOeaG2Ep8EUEDTVdPvWkFfkj-e6c,,,,
+COVID-19 Greater Boston (mutual aid and resources),,Boston,MA,,USA,English,,,,https://www.facebook.com/groups/591650621562523/?ref=br_rs,
+FOOD FOR FREE COVID-19 Volunteer Response,,Boston,MA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSed0cSIoOc7-Fvoms3VHR1Lc44fjql-vTNknz_a-7T_sKDnrw/viewform,,
+Boston COVID-19 Community Care,,Boston,MA,,USA,English,https://docs.google.com/spreadsheets/d/15GYuPYEzBk9KIyH3C3419aYxIMVAsa7BL7nBl9434Mg/edit#gid=0,,,,
+Boston Queers for Mutual Aid,,Boston,MA,,USA,English,,,,https://www.facebook.com/groups/1910113582610797/?ref=br_rs,
+MAS Mutual Aid - Massachusetts,,Boston,MA,,USA,"English, Spanish, Arabic, Persian",https://docs.google.com/forms/d/e/1FAIpQLSdGyAy3hDF6m7smRkZdj66nSXJ_GhvWN5oBEvDehsLK7fInQQ/viewform,,,,
+Solidarity Supply Distro,,Boston,MA,,USA,English,,,,https://www.facebook.com/SolidaritySupplyDistro/photos/a.103617487940477/103617374607155/?type=3&theater,
+Mutual Aid Brookline,,Brookline,MA,,USA,English,https://docs.google.com/document/d/18wyL-f2x2j-tFMCsbaxWW98PjY5bVUKfPluFibmX9u8/preview#heading=h.tcdds17vctfu,,https://docs.google.com/spreadsheets/d/1urR54R_NcuBi-9cBbmhZlThgGSjvF0t9ygHvCg5pFhY/preview,https://www.facebook.com/groups/243515463708839/,
+Mutual Aid Cambridge,,Cambridge,MA,,USA,English,,https://docs.google.com/spreadsheets/d/1ag6FOz4-hiLrCd-Jc5ezI9AMZRdSgRCRNl0mpOrFc5U/edit#gid=1504463383,https://docs.google.com/forms/d/e/1FAIpQLScescGf_Knel1KGJ8fq0MUMzWa-6-CdKHzr5QT8RId8OMU8HA/viewform?fbclid=IwAR2yNMsS2ovYC1j63COmp8c6CK8NOrdy2PJhFsMSHoBBXqjqknBXFidQsO0,,
+"Ability to Host or Store Belongings for Harvard College, Low-Income Students",,Cambridge,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeV_k4aCXBb8GsDe9_zfrZhlmY4J2kAbmLcElRTAj6GslgfLQ/viewform,,,,
+Western Massachusetts Community Mutual Aid network,,Chicopee,MA,,USA,English,https://docs.google.com/document/d/1s7nxiKPSrAtfSyHDZwPz2M6O5SdiiF4a3z1k-capCXQ/edit,,,,
+Dorchester Community Care,,Dorchester,MA,,USA,English,https://docs.google.com/document/d/1-16k_AKPNkVQXjMGogl913LSAPL7RBF9WL11-ANkXBU/edit,,,,
+Mutual Aid East Boston / Grupo de Apoyo Mutuo East Boston y Chelsea,,East Boston,MA,,USA,"English, Spanish",http://whatsupeastie.com/mutualaideastie,,,,
+Mutual Aid - Southcoast,,Fall River,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScQ6EiuWw92GC1oKde9IH1n5FWFrNlKMWbewH_ZnbyoWBgt2Q/viewform,,,,
+Framingham Coronavirus Community Outreach,,Framingham,MA,,USA,English,https://framinghamoutreach.org/,,,,
+"Jamaica Plain & Roxbury, MA Mutual Aid",,Jamaica Plain/Roxbury,MA,,USA,English,https://docs.google.com/document/d/1sprOsMLFieTEU6fakfG5mqirp3AUUGKGz6JnDg29n78/edit?fbclid=IwAR0dRAdoZOx3cHeLtwOiQVDhraCGl3UuRQLL-Ed7HvtgCRjwYm9PdkdyQWA,,,,
+Greater Lawrence Mutual Aid Network,,Lawrence,MA,,USA,English,https://docs.google.com/document/d/16NpmoQjnAjyl_U2WAfVpq1ERkN5aCUVwV3Yx7FPRjCo/edit,,,,
+Mutual Aid Lexington,,Lexington,MA,,USA,English,https://docs.google.com/document/d/1n7Qre55HQ8fFYC9D3BLQ1x5NWXrilNapylo2FAbaXm4/edit,,,,
+Lincoln-Sudbury Mutual Aid Network,,Lincoln,MA,,USA,"English, French",https://docs.google.com/document/d/1cn5btAM7rxJoVR1pu8een13cno45FrFtjZvkIEWIKfQ/edit,https://docs.google.com/forms/d/1a6M79DvFsV9ZnlsPbkJJo7GBwJX68_bpCxotyRET5V0/viewform?edit_requested=true,https://forms.gle/Q9iqskZTYmeaTr8Z7,https://www.facebook.com/groups/lincolnsudburymutualaid,
+Lifting Lowellians: Assistance and Mutual Aid,,Lowell,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSePh0qGXR-yj_Cq5ZEPi19y2ibothgr5EsPKMUR0EU9U8ODyQ/viewform,,,,
+Lynn MA Mutual Aid Disaster Relief,,Lynn,MA,,USA,English,,,,https://www.facebook.com/groups/242220393479479/,
+Tufts Mutual Aid for Students Affected by COVID-19,,Medford,MA,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSfZnww2E9qB8LfAr6SX__i1qUICM153H2rTxy2QpqS-k6LolQ/viewform?fbclid=IwAR3hUeXk0LMk6gKirc8dghC4tAf5ZrMEfXh3rtMPrEkc-1gn1rYA-mwvlDY,facebook.com/tuftsmutualaid,
+"Massachusetts / Medford, Somerville: Mutual Aid Medford and Somerville (MAMAS)",,Medford/Somerville,MA,,USA,"English, Spanish",https://mutualaidmamas.com,https://docs.google.com/spreadsheets/d/1-HnSMH2pIV6E1c7FX7XRCMGO7Y0eh5w2jZLb_RPivtc,https://docs.google.com/spreadsheets/d/1-HnSMH2pIV6E1c7FX7XRCMGO7Y0eh5w2jZLb_RPivtc,https://www.facebook.com/MutualAidMAMAS/,339-545-1315
+Berkshires Volunteer Network,,Otis,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScGcjpSJ99GmDLpbPfU4GGnbhrP7aMNchf519qsciP2KK_YOg/viewform,,,,
+Revere Mutual Aid,,Revere,MA,,USA,English,https://docs.google.com/document/d/1SkHedKaWDfjbNRjKViCuOBzUXLPTbiGFsKqNck-hDG4/edit,,,,
+South Shore Mutual Aid,,Rockland,MA,,USA,English,https://www.southshoremutualaid.com,https://docs.google.com/forms/d/e/1FAIpQLSc-TITkGM1ovq0cWRw_m3Pga4o9MvDecLgXWdDjz2DTxwVXKQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSe7My4I2fvKg95LXURp3i_XwS3PluoS4pi3sKfX021_mLtKEQ/viewform,https://www.facebook.com/southshoremutualaid,
+Salem Together,,Salem,MA,,USA,"English, Spanish",https://www.salem.com/home/pages/salem-together,https://docs.google.com/forms/d/e/1FAIpQLScX-VuYGomAH8cGpHVG9GTrfxnw6MRzY9jP0eWMCizV_TQBdg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfiCP5d8G64JB1mHY3i5-WoELlH2i_wCWBF1eQH1-M515L8qA/viewform,,
+South End Coronavirus Support (Need help) // Ayuda para Coronavirus en el South End (Necesita ayuda/Quiere ayudar),,South Boston,MA,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLScPcSJVwtvjT_rHVC0h-_0scMC1DOuolWUX1LmnPiksAz3UEw/viewform,,,,
+Mutual Aid Waltham,,Waltham,MA,,USA,"English, Spanish",https://docs.google.com/document/d/1JO5HsAb2GYWxEJKkF9yj4aMTmosfBghPEMi_fgdnAUI/edit,https://docs.google.com/spreadsheets/d/1MecqUPas8qdDj36X0Ko1GqkNw_JMBSEzYM0JFqR_Fhw/edit?usp=drivesdk,https://docs.google.com/forms/d/e/1FAIpQLSeEJyc26_tVVzVSZzER6TXd8jNrQvclVlcxNSYWIf12Y7Z6qg/viewform,,
+Massachusetts / Worcester: Mutual Aid Worcester,,Worcester,MA,,USA,English,,,,https://www.facebook.com/groups/2845124148890444/?ref=share,
+Tenants and Housing Association of Worcester,,Worcester,MA,,USA,"English, Spanish",,,,https://twitter.com/worcesterthaw,
+Mutual Aid Worcester,,Worchester,MA,,USA,English / Spanish / Vietnamese,https://mutualaidworcester.org/,https://docs.google.com/forms/d/e/1FAIpQLScJgB-SX-mgj2mC8d1Gl0VkPBLeDp0Y6VBpLY5EqZRHsjP5pA/viewform?fbclid=IwAR0Gc2QkwajTPZ8pcFqoKvMuHRLeZL3LxfY47q3IfAgfP4lHK57U9nYMP44,https://docs.google.com/forms/d/e/1FAIpQLScNHqSGJP_JINPubCMwzp_DTDCHlMYusYJ0GZpJCPc8vU8wgg/viewform?fbclid=IwAR0HYxLu0_t3Th0Jpe9L-aDLG_ILr_mbu-X9wIIS6TQOXYw7p36_t145k4c,https://www.facebook.com/groups/MutualAidWorcester/,
+350 MA & Friends COVID-19 Mutual Aid Needs/Offerings Form,,,MA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSch5YoXLpT-mfRmYyocdCYJ98flZOK2WFOhhe_khamR-Uv-Eg/viewform,,,,
+Cambridge Mutual Aid Network,,Cambridge,MA,,USA,English,http://www.cambridgemutualaid.info,https://www.cambridgemutualaid.info/need-support,https://www.cambridgemutualaid.info/volunteer,https://www.facebook.com/groups/CambridgeMutualAid/,
+Central Massachusetts Volunteer Aid,,North Brookfield,MA,,USA,English,https://docs.google.com/spreadsheets/d/1zxROWAwwaT3LzHqXbhVjMdya_vZq78T9MdCvn1sySr4/edit?fbclid=IwAR3g_ei3dHe-HXLFNMTj-iNGgiWsEI8RXJMIgJYylHKZ0t24tsZondUUFfY#gid=0,,https://docs.google.com/spreadsheets/d/1zxROWAwwaT3LzHqXbhVjMdya_vZq78T9MdCvn1sySr4/edit?fbclid=IwAR3g_ei3dHe-HXLFNMTj-iNGgiWsEI8RXJMIgJYylHKZ0t24tsZondUUFfY#gid=0,https://www.facebook.com/Samuel-Biagetti-for-State-Rep-106054911034700,
+Concord-Carlisle Mutual Aid,,Carlisle,MA,,USA,English,https://docs.google.com/document/d/1sSUbzdDiSF5_SErmdAQ56S2HoTXlD4WH179lWDm6hXw/edit?usp=sharing,,,,
+Mutual Aid Natick,,Natick,MA,,USA,English,https://docs.google.com/spreadsheets/d/16OTVLbBRoE25uemoJuSAa8HvHtQjGkDs8mYBqKYHqLo/edit#gid=1727309836,,,https://nextdoor.com/g/up7wzouys/,
+Headwaters Neighborhood Mutual Aid,,Harwich,MA,,USA,English,,,,https://bit.ly/headwatersma,
+Charles River Mutual Aid Program,,Boston,MA,,USA,"English, Spanish",https://crmutualaid.com/,https://forms.gle/BsuShvyQSX24ksDdA,https://forms.gle/ZD93XMMiNZmo6Rg17,,
+Mutual Aid Natick,,Natick,MA,,USA,"English, Spanish, French, German",https://mutualaidnatick.org/,,,https://www.facebook.com/mutualaidnatick/?eid=ARD3GHyXHeOZa7P8Z7a_-CmV8zeWI5DHhhnnUgpw2FYYgfo2snrpps3CIfKFVHaPqcgi27rjuWfecXS0,
+Scituate Community Response and Mutual Aid,,Scituate,MA,,USA,English,https://www.sandshelps.org/covid19,,,,
+Malden neighbors helping neighbors,,Malden,MA,,USA,"English, Spanish, Portuguese, Vietnamese Arabic, Kreyol, Nepali",https://maldenneighbors.org/,,,,
+Western Mass Community Mutual Aid,Western Massachusettsq,Springfield,MA,,USA,"English, Spanish",https://www.wmacma.com/,https://www.wmacma.com/request-help/,https://www.wmacma.com/volunteer/,,(413) 351-2300
+Amherst MA Mutual Aid,,Amherst,MA,,USA,English,https://docs.google.com/spreadsheets/d/1np6UxUo0U2dy5_0hEDoK8RaBwfKrsHx6-YzTz7stQ24/edit?usp=sharing,,,,
+South Boston Neighborhood Aid,South Boston,Boston,MA,02127,USA,"English, Spanish",http://www.SBNeighborhoodAid.com,,,http://www.facebook.com/SouthBostonNeighborhoodAid,
+Maryland / Baltimore: Mutual Aid and Emergency Relief Fund,,Baltimore,MD,,USA,English,,,,https://www.facebook.com/donate/201582851152373/?fundraiser_source=external_url,
+Maryland / Baltimore: Neighbors Helping Neighbors (Southeast Baltimore) / Vecinos Ayudando a Vecinos (Sureste de Baltimore),Southeast Baltimore,Baltimore,MD,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfilQYzpjxkZNBvWbEicDhFjLzt-YuXxWhSTy3KVDL5TQe7Dg/viewform,,,,
+Baltimore Neighborhood Quarantine Response Teams,,Baltimore,MD,,USA,English,https://docs.google.com/document/d/1G5JcyxmywcTdNeaSGxUNycl9mtCdGkF4MYPVxEBH4SY/edit,,,,
+Maryland / Baltimore: Alanah’s COVID-19 Emergency Fund for Artists and Freelancers,,Baltimore,MD,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfXQfPti1mE5TT8qDjd_DzxkIiG1jPT5BhYcgdFehVTvibZCQ/viewform,,,,
+Maryland / Baltimore: COVID-19 Community Resources,,Baltimore,MD,,USA,English,https://docs.google.com/document/d/1nNPyX4fKk6S6vEU2-VdFrZQvtoqr8ZVUD7eyTT1cetU/edit,,,,
+Baltimore Mutual Aid Network,,Baltimore,MD,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSc1BiJPX7b_KamyFgqIhpT5I2SUqWi2sGwK0NJaLhxs-JHWIw/viewform,https://docs.google.com/forms/d/e/1FAIpQLSc1BiJPX7b_KamyFgqIhpT5I2SUqWi2sGwK0NJaLhxs-JHWIw/viewform,https://www.facebook.com/bmoremutualaid/,
+Food Rescue Baltimore,,Baltimore,MD,,USA,English,,,,https://www.facebook.com/foodrescueday/,
+Baltimore Health Professionals Mutual Aid Cooperative,,Baltimore,MD,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScSleD7Cvv04tJ2GWGfmQue_3WO4ncHHiEuuhgB7fSaKDSqpg/viewform,,,,
+Knollwood Neighborhood Covid-19 Response,Knollwood ,Baltimore ,MD,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeKfWok4FoQHJRXlmUEiaqtne7eOfuYWnrv69O4WX5e39jzYw/viewform?fbclid=IwAR33STBwrAQMZeHHT_5Obmy7HUVkTBHmg1G45bmgeTHZaR3hkNpRJlzTX2I,,,,
+Community Resources N. Calvert Southern Anne Arundel County,,Dunkirk,MD,,USA,"English, Spanish, ASL",,,,https://www.facebook.com/groups/1364487107085861,
+United Way of Central Maryland Covid 19 Support,,Frederick,MD,,USA,English,https://www.uwcm.org/main/,,,https://www.facebook.com/unitedwayofcentralMD,
+Fredrick MD-Covid-19 Supply Exchange,,Fredrick,MD,,USA,English,,,,https://www.facebook.com/groups/1083433605349760/about/,
+"Supporting Frederick, Maryland Small Businesses Through Covid-19",,Fredrick,MD,,USA,English,,,,https://www.facebook.com/groups/FrederickCoronaResponse/?ref=br_rs,
+Maryland / Alleghany County: Western MD Meal Response Program,,Frostburg,MD,,USA,English,,,,https://www.facebook.com/groups/2841150659293795/?ref=share,
+Communities Unbreakable Rockville,,Rockville,MD,,USA,English,http://unbreakable.community/,https://airtable.com/shroTqIywbBQoIbuk,https://airtable.com/shrUnijBFFmXknsbk,,
+Takoma Park Coronavirus Community Service Response,,Takoma Park,MD,,USA,English,https://takomaccsr.org,,,https://www.facebook.com/TakomaCCSR/?modal=admin_todo_tour,
+Covid-19 CommunityConnect Ways to Help,,,MD,,USA,English,https://businessvolunteersmd.org/waystohelp/,,,,
+QAC Neighbors Helping Neighbors,,Stevensville,MD,,USA,English,,,,https://www.facebook.com/groups/2988152084539331/,
+Good Neighbor Network - Bethesda,,Bethesda,MD,,USA,"English, Portuguese, Spanish, Ethiopian",https://www.churchinbethesda.org/gnn,,,,
+COVID-19 Volunteer Network - Paradise,Paradise,Catonsville,MD,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScdWWep2Oo0p1kCX7bNCKuyhNAUTuya2MtECtg3432qvibbBg/viewform,,,,
+Capital Area Food Bank COVID-19 Response,,,MD,,USA,English,https://www.capitalareafoodbank.org/covid19response/,,,,
+Meal on Wheels of Takoma Park,,Takoma Park,MD,,USA,English,https://www.mowtakoma.org/,,,,
+Manna Covid-19 Response,,Rockville,MD,,USA,English,https://www.mannafood.org/covidresponse/,https://docs.google.com/forms/d/e/1FAIpQLSf-mxJKp3iw1-bPUDV1Kx7OaQtndOT7avczbJooDG4qltMpQA/viewform,,,
+Montgomery County Food Bank,,Gaithersburg,MD,,USA,English,https://mcfoodbank.org/mcfb-response-to-covid-19/,,,,
+Senior Connection,Montgomery County,Silver Spring,MD,,USA,English,https://www.seniorconnectionmc.org/our-programs/pantryfillers/,,,,
+Hunting Ridge COVID-19,Hunting Ridge,Baltimore,MD,,USA,English,https://forms.gle/5kdyv6eyvyLu1WFv7,,,,
+Howard County Community Organizations Active in Disaster,,Columbia,MD,,USA,English,https://www.howardcountymd.gov/Departments/Fire-and-Rescue/Office-Of-Emergency-Management/Howard-County-Community-Organizations-Active-in-Disaster,,,,
+Portland Mutual Aid,,Portland,ME,,USA,English,https://docs.google.com/spreadsheets/d/1HYF1LMXfAQu6w2P_Zdp0s18EfE87ACPgg3-vuYfpPOA/edit?fbclid=IwAR01LKG9CDFUrsV-2NwghAx9VTD80dx4JKXMoUlGwmB4NExe-IHEhdp2LdQ#gid=296519225,,,,
+Mainers Together,,,ME,,USA,English,https://mainerstogether.com/,,,,
+Midcoast Maine Helpers,,Newcastle,ME,,USA,English,,,,https://www.facebook.com/groups/631981134013798/,
+Mutual Aid Maine,,Portland,ME,,USA,English,,,,https://www.facebook.com/pg/MutualAidMaine/about/?ref=page_internal,
+Midcoast Collective Care,,Rockland,ME,,USA,English,,,,https://www.facebook.com/groups/517135442496135/,
+Maine / Maine Coronavirus Community Assistance,,,ME,,USA,English,,,,https://www.facebook.com/groups/mainecoronaviruscommunityassistance/?ref=share,
+Maine COVID-19 Resources,,,ME,,USA,English,https://docs.google.com/document/d/1adYdqIA_VXgyYW07nfmLZKAN3KZHBGrI-SyFVN8Mecw/mobilebasic,,,,
+Hallowell All Age-Friendly Committee,,Hallowell,ME,,USA,English,http://age-friendly-hallowell.org,,,,
+Scarborough Helps,,Scarborough,ME,,USA,English,https://scarboroughhelps.weebly.com/,,,,
+Harpswell Aging at Home,,Harpswell,ME,,USA,English,https://www.hah.community,,,,
+Maine DSA Mutual Aid Network,,Portland,ME,,USA,English,http://southernmainedsa.org/,https://airtable.com/shrGK8A6fPoP0WwUC,https://airtable.com/shrOB3KOLE5rVD5zn,https://www.facebook.com/medemsoc/,
+Farmington NEEDS,,Farmington,ME,,USA,English,,,,https://www.facebook.com/groups/1474787729357184/?ref=group_header&view=group,
+Michigan / Grand Rapids Area: COVID-19 Mutual Aid Form,,Grand Rapids,MI,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfE599iT3ERP64rcKgxRzRRVI_1P8mhyJsIZjWjTwDvTV9_nA/viewform,,,https://www.facebook.com/GRAMutAid/,
+Michigan / Kalamazoo: Kzoo Covid-19 Mutual Aid List,,Kalamazoo,MI,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeW-Dmt_Z_QPu81ad0jo5gs4vjx2zREupOmdoLnn2JBntapGg/viewform,,,https://www.facebook.com/groups/225779971877883/?ref=search,
+West Michigan Mutual Aid Network,,Kalamazoo,MI,,USA,English,,,,https://www.facebook.com/groups/1346856708847856/?ref=br_rs,
+Kalamazoo Area Mutual Aid Network,,Kalamazoo,MI,,USA,English,,,,https://www.facebook.com/groups/226836875170785/?ref=br_rs,
+Michigan / Lansing: Lansing MI Mutual Aid Offerings for COVID-19,,Lansing,MI,,USA,English,,https://docs.google.com/forms/d/13GlyPG8gzXnI3Ksm_MpKJ4B2dz44zs2kqgTZlGqEVck/edit,https://docs.google.com/forms/d/e/1FAIpQLSdRUr-kqGbHiiAKpqWXh_urwD0ZOd8bXC22vtLhqUxMdTNjeQ/viewform,,
+Michigan / Detroit: Southwest Detroit COVID-19 Mutual Aid Form / Formulario de Ayuda Mutua,,Southwest Detroit,MI,,USA,English/Arabic,,,https://docs.google.com/forms/d/e/1FAIpQLSdrdIvdO3AHzCJBXloy-KExxQabrMUSbr_xgo4Y9NBI-GHnTA/viewform,https://www.facebook.com/groups/2554127328195074/,
+Northwest Michigan Mutual Aid,,Traverse City,MI,,USA,English,,,,https://www.facebook.com/groups/michiganmutualaid/?ref=br_rs,
+Bay Mills Mutual Aid Sheet,,Bay Mills,MI,,USA,English,https://docs.google.com/spreadsheets/u/1/d/1CduPghNgY92MufdZDoYjkcjmbYp-l_43EQPRhxlmVPU/htmlview?fbclid=IwAR0tCQI5Av8UgCe5XVcW_cb9TQarlhFoiJO4LcU90FF39JEnNic7F3FrnMc#,,,,(906) 248-8369
+Antrim County Mutual Aid,,Bellaire,MI,,USA,English/Spanish,,https://docs.google.com/forms/d/e/1FAIpQLSckdiDnfMenlqmraSxU7PjKi3M1GWK66E5GQsWnBIfd79Zx-A/viewform,https://docs.google.com/forms/d/e/1FAIpQLSckdiDnfMenlqmraSxU7PjKi3M1GWK66E5GQsWnBIfd79Zx-A/viewform,https://www.facebook.com/groups/2228122717494765,
+Benzie County - COVID19 Resources & Needs,,Beulah,MI,,USA,English,https://docs.google.com/document/d/1FYcqcbY2qMuuy75GIIM9UuqvFR_-YlVKfFcrqJOy9mw/edit?fbclid=IwAR1Lfd0mZrm4GgqOwmcXAeJGnTLUEQ0wmooezGvgnVYjXvKEZT8EYPU2tUI,,,,
+Charlevoix County Helping Hands,,Charlevoix,MI,,USA,English,,,,https://www.facebook.com/groups/696771177745067/about/,
+Belleville Area Mutual Aid,Belleville,Detroit,MI,,USA,English,,,,https://www.facebook.com/groups/782044495654026/,
+Berkley Community Coronavirus Response,Berkley,Detroit,MI,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSeyTN_io9PSnyQPbt1jemgzI7Dgua4paaSea4EDdIrizg6znw/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeyTN_io9PSnyQPbt1jemgzI7Dgua4paaSea4EDdIrizg6znw/viewform,,
+"Combating COVID-19 in Highland Park, MI (& Surrounding Communities)",Highland Park,Detroit,MI,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSfc15hrr6Fym_95gXA_drt18qrqZEKANTu0dgHI44BYfHL6tg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfc15hrr6Fym_95gXA_drt18qrqZEKANTu0dgHI44BYfHL6tg/viewform,https://www.facebook.com/groups/646455195924175/,
+Detroit-based COVID-19 Mutual Aid,,Detroit,MI,,USA,English,https://docs.google.com/spreadsheets/d/1-m6QBgqejlk2h6uJ0WGkphZuZ5MR3-uWCkv2vSZcHY8/edit?fbclid=IwAR2dcKuYe-I787XJLyl2I6DtTrPMrfxTkdPRQT6VE59CdoykxNOBgMvGIHs#gid=1727309836,,,,
+Metro Detroit COVID-19 Support,,Detroit,MI,,USA,English,,,,https://www.facebook.com/groups/2554127328195074/,
+Washtenaw County Mutual Aid Resources,,Washtenaw County,MI,,USA,English/Spanish,,https://docs.google.com/forms/d/e/1FAIpQLSdhW2voPOll9Jmy_QR0AXk1Pge1JGn3tByJ-SlPfKNsMjcHLg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdhW2voPOll9Jmy_QR0AXk1Pge1JGn3tByJ-SlPfKNsMjcHLg/viewform,https://www.facebook.com/groups/2424471741198383/?ref=share,
+Oakland County COVID Response,,Detroit,MI,,USA,English/Spanish/Korean/Hindi/Vietnamese/Chinese/Polish/Arabic/Russian/French/Punjabi,https://www.mycovidresponse.org/,https://www.mycovidresponse.org/signup/,https://www.mycovidresponse.org/signup/,,
+Shelby Township Utica Resiliency Network MI,Shelby Township,Detroit,MI,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSd0Cm7qZgrsijamUOCNAw431lKBEH5TRBfUSzAyM9L9JEPPsA/viewform,https://www.facebook.com/groups/1849304025203614/about,586-991-1303
+SWMI Mutual Aid,,Dowagiac,MI,,USA,English,,,,https://www.facebook.com/groups/3137606989603526/,
+Grand Rapids Area Pandemic Resources,,Grand Rapids,MI,,USA,English,,https://docs.google.com/forms/d/18YmQ6_kHv_Nw4go9NByNmI8PkmLq7NC7favSK-3PoyM/viewform?fbclid=IwAR2WgtKrfNYTCohrtNRx0V8mnduY7De8AtROvAYZlfGJn4tOkXVOEeRqj1I&edit_requested=true,https://docs.google.com/forms/d/1tVSwz0xYnrDJEjk3MWU32eS6q0eE5TSA0jOUL-frKcA/viewform?ts=5e766a19&fbclid=IwAR0Od69ftV6DJlqNpr_6knR6SQexBbZyodz2Mgi3k_C9HbNU318hTEJZGa4&edit_requested=true#responses,,
+Kalkaska Response Team,,Kalkaska,MI,,USA,English,https://elizabethannedunha.wixsite.com/kalkaskaresponseteam?fbclid=IwAR09WdGWtqzgC63_kaaN4ZoZvah4hTM521lOy_HvOnYw_PEfM0eG3BMAWQE,https://docs.google.com/forms/d/e/1FAIpQLSfvicU65rR5VWQ_OkKGT8tkFEm-z03JxI6G4ux4pv9_rV1Inw/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeEvhATd4ysgCLQjdmFUwT8ObkjcHIoPqoVOOuE08-ardDw0Q/viewform?fbclid=IwAR3g4LMGOjI66sK7Xt1tiMnumIPe3bTszF3cmf5cSyswZr44gTc-SEGCC-w,https://www.facebook.com/groups/209101217168617/,
+Emmet Couny Helping Hands,,Petoskey,MI,,USA,English,,https://docs.google.com/spreadsheets/d/1j3VAbHGdIKKP2-2poHX-hUABdu3NIm7eLjbw-NwjTQs/edit?fbclid=IwAR1iHvpz7tt5_dPvvMGhEMx-RtAby_wLw12oUBVuQm-3rmg2UncgDoxVfXo#gid=0,https://docs.google.com/forms/d/e/1FAIpQLSc1HSE7-la427QVGIDV27an6QaK7rNA-oSwRjv5YWingpbrJA/viewform?fbclid=IwAR3wHmqwTou2MRW1e6kg_y6wcSRr8ncyt245ssz_-gaSvVrtgB-n_eQAiX4,https://www.facebook.com/groups/234362584615594/,
+Pontiac Coronavirus Emergency Relief Food/Supplies,,Pontiac,MI,,USA,English,,,https://www.signupgenius.com/go/30e0b48aaa628a13-drive,,
+Grand Traverse County Mutual Aid,,Traverse City,MI,,USA,English/Spanish,,https://docs.google.com/forms/d/e/1FAIpQLScfSUoYchrIXnzTCdDIwsM-2YGa04XzTLE6xU5SGezE6rI1OA/viewform,https://docs.google.com/forms/d/e/1FAIpQLScfSUoYchrIXnzTCdDIwsM-2YGa04XzTLE6xU5SGezE6rI1OA/viewform,,
+Mutual Aid of North West Michigan,,Traverse City,MI,,USA,"English, Spanish",,,,https://www.facebook.com/groups/784134155443201/?hc_location=ufi,
+The Mutual Aid Network of Ypsilanti (MANY),,Ypsilanti,MI,,USA,English,,,,https://www.facebook.com/ypsimutualaid/,
+Logan Park/ NE Community Care/ Mutual Aid -- COVID 19,,Minneanapolis,MN,,USA,English,https://docs.google.com/spreadsheets/u/0/d/1boWmyIgW0UxZtmGF0hLPUq-V4U_aKZS27IJrTwTkAzE/htmlview#gid=0,,,,
+South Minneapolis Mutual Aid,,Minneapolis,MN,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1ZSLDZY4DD85gnGXTAeLtKCxofdOHRcX4zYWAQf7A_GU/htmlview,https://docs.google.com/spreadsheets/d/1ZSLDZY4DD85gnGXTAeLtKCxofdOHRcX4zYWAQf7A_GU/edit#gid=551919439,https://docs.google.com/spreadsheets/d/1ZSLDZY4DD85gnGXTAeLtKCxofdOHRcX4zYWAQf7A_GU/edit#gid=551919439,,
+Northeast Minneapolis Mutual Aid -- COVID 19,,Minneapolis,MN,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1vQjapmFHqD7YoopXZhZ9_th36qFMHitWxjoOKe3v4bU/edit#gid=0,https://docs.google.com/spreadsheets/d/1vQjapmFHqD7YoopXZhZ9_th36qFMHitWxjoOKe3v4bU/edit#gid=729553770,https://docs.google.com/spreadsheets/d/1vQjapmFHqD7YoopXZhZ9_th36qFMHitWxjoOKe3v4bU/edit#gid=551919439,,
+Twin Cities Mutual Aid,,Minneapolis,MN,,USA,English,https://docs.google.com/document/d/177tyL6xNVsyQWvttbMWg8QE-Gl4-qfnfsd7s4V8QXAM/edit?usp=sharing,,,,
+Twin Cities Logistics Collective,,Minneapolis ,MN,,USA,English,https://www.twincitieslogistics.org/,,,,
+Minnesota / Minneapolis–Saint Paul: Twin Cities Queer and Trans Mutual Aid,,Minneapolis ,MN,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdAlOLU9hOKMjwX4W2sQKF69FAF3ow_fSPzjKC67_iyYDRLaQ/viewform,,,
+Frogtown-Rondo Mutual Aid,Frogtown-Rondo,St Paul,MN,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSedTz2tat3qEx5YPpPjU4mTGskPkMredQGSuYIFUh5EVLDrMQ/viewform,,,https://www.facebook.com/groups/252741219087991/?ref=share,
+West St. Paul/West Side Mutual Aid -- COVID 19,,St. Paul,MN,,USA,English,https://docs.google.com/spreadsheets/d/1cgOjeFz1QEBmDaFnbmE0ghL8sJV6-kkNokOReCYgmGs/edit#gid=1056426301,https://docs.google.com/spreadsheets/d/1cgOjeFz1QEBmDaFnbmE0ghL8sJV6-kkNokOReCYgmGs/edit#gid=1056426301,https://docs.google.com/spreadsheets/d/1cgOjeFz1QEBmDaFnbmE0ghL8sJV6-kkNokOReCYgmGs/edit#gid=1056426301,,
+Sheridan Support Network,Sheridan Neighborhood (NE Minneapolis),Minneapolis,MN,,USA,"English, Spanish, Somali",https://www.sheridanneighborhood.org/news/sheridan-support-network-for-covid-19,https://forms.gle/bWdZGbzLE2vJE5387,https://forms.gle/bWdZGbzLE2vJE5387,https://www.facebook.com/snompls/,
+North Minneapolis Mutual Aid,North Minneapolis,Minneapolis,MN,,USA,English,https://docs.google.com/spreadsheets/d/1564JNEtSnynYC-20-ol-wbKnmW4YVcsUi_BGZb7gSKI/edit#gid=0,,,,
+St. Paul Neighborhoods Mutual Aid -- COVID-19,,St. Paul,MN,,USA,English,https://docs.google.com/spreadsheets/d/1B4AcGV5pDROT2NON5a8PAJMy3V5K5Pbd2pNwdKd66DY,,,,
+West St. Paul/West Side Mutual Aid -- COVID 19,West St. Paul,St. Paul,MN,,USA,English,https://docs.google.com/spreadsheets/d/1cgOjeFz1QEBmDaFnbmE0ghL8sJV6-kkNokOReCYgmGs/edit#gid=1056426301,,,,
+Lind-Bohanon Mutual Aid Network,Lind-Bohanon,Minneapolis,MN,,USA,English,https://docs.google.com/spreadsheets/d/1x9HAwKk_3j_oJ6UIobXnauto39Cqudw-ri2HhGbCCnk/edit#gid=0,,,,
+Wedge Neighbors,Wedge / Lowry Hill East,Minneapolis,MN,55408,USA,"English, Spanish",https://www.thewedge.org/covid.html,https://forms.gle/3HdniLMDrh7dPZEL7,https://forms.gle/3HdniLMDrh7dPZEL7,www.facebook.com/groups/wedgecares,
+Faith in Action for Cass County,,Hackensack,MN,,USA,English,https://www.faithinactioncass.com,,,,
+Twin Ports Queer/Trans Community Care,,Duluth,MN,,USA,"English, Spanish",https://twinportscommunity.wixsite.com/twinportscomcare,,,,
+CoMo Mutual Aid COVID-19 ,,Columbia,MO,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdrccUDSnR_MsOsaqHc0yq4w9MnmJI34-GxQbIlIcbHumXlyA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSei6e4PL2b2IhElw-PmY92wgn0hROhTZajZjRAkJ-cANcrmWQ/viewform,https://www.facebook.com/CoMo-Mutual-Aid-108120220819881/,
+Kansas City Mutual Aid FB Group,,Kansas City,MO,,USA,English,,,,https://www.facebook.com/groups/1596299170524391/?fref=mentions,
+St. Louis Community Mutual Aid Group,,St. Louis,MO,,USA,English,https://docs.google.com/document/u/0/d/1DnLlADsyUiGD2RugvE6k1AsBo-CsAA8MTr0-0VNEh3w/mobilebasic?fbclid=IwAR2DhobYUiThRwa-tDrMSLjs4EG3ZtDTaZVnaORysTXmSJMaZcpysICFq9w,,,,
+Mississippi Gulf Coast Mutual Aid Network,,Biloxi,MS,,USA,"English, Spanish",https://docs.google.com/spreadsheets/d/1JnEIIWFOH9H4yijk3V_NKWlhCJVfB9eYwpmLMpLXdi4,https://docs.google.com/spreadsheets/d/1JnEIIWFOH9H4yijk3V_NKWlhCJVfB9eYwpmLMpLXdi4,https://docs.google.com/spreadsheets/d/1JnEIIWFOH9H4yijk3V_NKWlhCJVfB9eYwpmLMpLXdi4,,
+DeSoto County Mutual Aid,,Hernando,MS,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdtB2x9GXJJvvZ6_Yd5Xr3L0ZnMKOBOdphaNzfB4qlsRqb1rg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdtB2x9GXJJvvZ6_Yd5Xr3L0ZnMKOBOdphaNzfB4qlsRqb1rg/viewform,https://www.facebook.com/groups/3470601999621221/,
+Tupelo Mutual Aid Project ,,Tupelo,MS,,USA,English,http://tinyurl.com/TupeloMutualAid,,,,
+UMiss and LOU Community Mutual Aid,,Oxford,MS,,USA,English,https://docs.google.com/spreadsheets/d/1j6rfTv8nRLhQk0TregwulVwS2Cb2QormbT_qaGcaAYk/edit#gid=0,,,https://www.facebook.com/groups/240691276965300/?ref=share,
+Mississippi Mutual Aid,,Jackson,MS,,USA,English,,,,https://www.facebook.com/groups/1406539106185829/about/,
+Mississippi Covid 19 Mutual Aid Group,,Jackson,MS,,USA,English,,,,https://www.facebook.com/pg/Mississippi-Covid-19-Mutual-Aid-Group-107422974233359/about/?ref=page_internal,
+Montana / Bozeman: Bozeman Solidarity and COVID-19,,Bozeman,MT,,USA,English,http://www.covidbozeman.org/,,https://form.jotform.com/200796915331053,,
+Montana / Missoula: Missoula COVID-19 Mutual Aid Community,,Missoula,MT,,USA,English,http://covidmissoula.org/,https://docs.google.com/forms/d/e/1FAIpQLSd3eiQXwEVk58_ovtit12dpEUfniKYy_nMeCo6PnmRBxcYBwg/viewform,https://docs.google.com/spreadsheets/d/172AjJSq50dOUzpk9VkocA3I7S-MD5kthdZIjlkXhJUo/edit#gid=411650815,,406-258-INFO
+Missoula COVID-19 Organizing Action,,Missoula,MT,,USA,English,,,,https://www.facebook.com/groups/covid.missoula/,
+Flathead Mutual Aid - Coronavirus,,Kalispell,MT,,USA,English,,,,https://www.facebook.com/groups/FlatheadMutualAid/about/,
+Helena Solidarity Network,,Helena,MT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeeJV55du1mnQqS9J8ffAmsAvy2W4RJdVQs_B3J_mUmk3eJzw/viewform,,,https://www.facebook.com/solidarityisaverb/,
+Co-operate WNC,,Asheville,NC,,USA,English,https://co-operatewnc.org,,,https://www.facebook.com/Gadugi13,
+Ashville Survival Program,,Ashville,NC,,USA,English,,,,https://www.facebook.com/groups/AshevilleSurvivalProgram,
+NC COVID-19 Aid Resources,,Cary,NC,,USA,"English, Mandsrin, Hindi, Vetnamese",,,,https://www.Facebook.com/groups/3042375422452781,
+North Carolina / CHP/Carrboro: Covid19 Support,,Chapel Hill,NC,,USA,English,,,,https://facebook.us19.list-manage.com/subscribe?u=db8c84c4a9e614983643e28fc&id=88cfb469ae,
+Food Not Bombs 919,,Chapel Hill,NC,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfQs5q_oQmr_hC07p37ppZCRxvO4yWjP3SmS_ojnF--0Ge1Kw/viewform,,,,
+Covid-19 Greater Charlotte Area Mutual Aid,,Charlotte,NC,,USA,English,http://www.covid-gca.org/?fbclid=IwAR3xzmgSXf8pAq7jVsadcYIcs-Z3K5xlWDiWNXe6CIK9kp2_8YZY9ie3Byc,,https://docs.google.com/forms/d/e/1FAIpQLSev29D62iEgFYrKwHEZQESbvzWdoH-a1iYk0xGj6-c6bqj1wg/viewform,https://www.facebook.com/groups/GCAMutualAid/,
+Charlotte Mutual Aid,,Charlotte,NC,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSeKAkPrUS-fERDcIHHDZ3hverUzpAKyVuCgY9RLQw4sFgh9Rg/formResponse,https://docs.google.com/forms/d/e/1FAIpQLSeKAkPrUS-fERDcIHHDZ3hverUzpAKyVuCgY9RLQw4sFgh9Rg/formResponse,https://www.facebook.com/charlottemutualaid/,
+COVID-19 Resource Spreadsheet - Durham,,Durham,NC,,USA,English,https://docs.google.com/spreadsheets/d/1oASQ_jeqC578BvcTtRLv7mj59TVJlR3Mx1LSTXaNpr0/edit?usp=drivesdk,,,,
+Boone Community Relief,,Boone,NC,,USA,English,,,,https://www.facebook.com/groups/567264050663936/?ref=share,
+Durham Help,,Durham,NC,,USA,English,https://docs.google.com/document/d/1q6sSt35JPjMsUJ02eeE9OTVXs1lxrj81pTDZdObgHpc/edit,,,,
+Durham Mutual Aid,,Durham,NC,,USA,"English, Spanish",,,,https://www.facebook.com/groups/durhammutualaid/,
+Duke Mutual Aid,,Durham,NC,,USA,English,,https://docs.google.com/forms/d/1XbbkH6BPzV6ANtZZqqyGQZeaVtAlFcZVO0i7cnKRb9c/viewform?,,https://www.facebook.com/groups/220471129333286/,
+COVID-19 Resource Spreadsheet,,Greensboro,NC,,USA,English,https://docs.google.com/spreadsheets/d/19ulf0RqGhtTijdL3urOq5DLSlXQ7YbuXWTTuGuK3MUo/edit?fbclid=IwAR1HvKMli_9j5XjkBjguiPgPeaRbsDfaGaBe_Wsx65-SHybWDzj-TEuRmOU#gid=0,,,,
+Surry County Mutual Aid,,Mount Airy,NC,,USA,English,,,,https://www.facebook.com/SurryCountyMutualAid/,
+Winston-Salem Mutual Aid,,Winston-Salem,NC,,USA,"English, Spanish",https://mailchi.mp/a5c83f43929c/winstonaid ,https://forms.gle/DY7X3mAmugC4kQya9,https://forms.gle/aywLSarY77vRAoyw8,,
+Caremongering Pittsboro,,Pittsboro,NC,,USA,English,https://www.facebook.com/groups/501891593829090/?ref=share,,,https://www.facebook.com/groups/501891593829090/?ref=share,
+Davidson Mutual Aid,,Davidson,NC,,USA,English,https://docs.google.com/document/d/16T3I8-NpBM7A4FEvP-W6tw9PDdD31ON6hu0IAu0mUK0/edit,,,,
+Hendersonville Mutual Aid,,Hendersonville,NC,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfIezktdFHeKId2noDYJGnpIzh280F1P2c0lymYw1NXBlcCTQ/viewform?vc=0&c=0&w=1,,,,
+Co-operate WNC,,Asheville,NC,,USA,"English, Spanish",https://www.co-operatewnc.org,,,https://www.facebook.com/Gadugi13/?__tn__=%2Cd%2CP-R&eid=ARDi2zJiw4TA8YKYR6cVe-ZlwEA2XL-grSAb0XIY6urt9Dg7Ma4NHpIS3B2Xam1scX-3KZ5Ik1Q8YaMQ,
+COVID-19 Greater Charlotte Area Mutual Aid,,Charlotte,NC,,USA,"Spanish, Chinese, Korean, Farsi",https://www.covid-gca.org/,,,https://www.facebook.com/groups/GCAMutualAid/,
+The Dandelion Network ,,Lincoln,NE,,USA,English,https://thedandelionnetwork.org/,,,https://www.facebook.com/thedandelionnetwork/,
+Omaha/Lincoln Mutual Aid,,Omaha,NE,,USA,English,,,,https://www.facebook.com/groups/668793277205015/,
+Midtown Mutual Aid Network,,Omaha,NE,,USA,"English, Spanish",,https://docs.google.com/forms/d/1LOyWcx-uq3y3G9B97Z3rWwpBsvyihRG-ELu1oMR9Pw4/viewform?edit_requested=true&fbclid=IwAR1VKztqNFZcL9vuA5NiMKXZ6mY0A6r7zj2Qptu_Vwxy6os3ecwAvZc8x_c,https://docs.google.com/forms/d/1yNTv6Cu1JOS57z8HxIPx5jKzf7mw6G5Ddd8aQHHydqs/viewform?edit_requested=true&fbclid=IwAR0OE1fLcEtd6aHqva2h_I2WNgdn6SML8JrKfCbxp1u6W4iffC5hiOdG78g,https://www.facebook.com/GiffordPark/posts/10157701179346418,
+Capital City Mutual Aid Network,,Concord,NH,,USA,English,https://docs.google.com/spreadsheets/d/18GciUxFymwlQYvhdUHQIAX-wbaKe2WrYFZTW8ka0svg/edit#gid=1637151619,,,,
+Manchester NH Mutual Aid Network,,Manchester,NH,,USA,English,https://docs.google.com/spreadsheets/d/1nsTIfaqbvnq_7d1mUei_8JJNULiWpmmcfk9kTa-gGGI/htmlview?fbclid=IwAR3eJDFJ9g52ODmKLZrf-4uekQTbdkMc5dklpqjPPiKAVUPg2aukPLHqd-Q#,,,,
+Seacoast Mutual Aid,,Rockingham County,NH,,USA,English,https://docs.google.com/spreadsheets/d/11k8bJ3ipHBWEJFHTlLeHsUAAqVXkjJ0AQeOTfa9zkNQ/edit?fbclid=IwAR0t0zCU1gm5h-0k4u8Ev4PyvMC4UjNPVkNhtf13Qeu9qT__9K6t8Fkm9lQ#gid=1430464348,,,,
+CommunityCare of Lyme,,Lyme,NH,,USA,English,https://cclyme.org/,,,,
+"COVID-19 Mutual Aid Chain (Morris County, NJ)",,Morristown,NJ,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSesZKyRbQPcSYoAMOYSVRWd_gw0q_FVyuq1vpmvJr09QeEpmA/viewform,,,,
+North Jersey Mutual Aid Resources,,Paterson,NJ,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSf0cqFpnzSuvbDxpgdG4Cs7l96xuOTqI8ydtFl_t-iO6A08NQ/viewform,,,https://www.facebook.com/groups/349149839305990/,
+Emergency Food Delivery Volunteers (Southern NJ),,Vineland,NJ,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdUTAWBd4f6XvZBgiS427DtGs7_vOuXWbBFVHtYSqMGa-yAYw/viewform?fbclid=IwAR32ZodUPu5yHUOjQoIHL5FxsB9_nR3FrUafbjQjHCWc4DhmCcUWB2jyO-Q&fbzx=-5100045008882770406,,,
+Mutual Morris,,Morristown,NJ,,USA,"Spanish, English, Greek",,,,https://www.facebook.com/MutualMorris/,
+Garfield Neighbor Network,,Garfield,NJ,,USA,English,,,,https://facebook.com/groups/536934810298819?ref=m_notif&notif_t=feedback_reaction_generic,
+Umbrella,,West Orange,NJ,,USA,English,https://www.askumbrella.com/covid-response,,,,
+"Albuquerque, What do you need?",,Albuquerque,NM,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeGo_Doo8bczJ1L0F7RKU76eTTUaqqbdljGtVMM1H08_JKqCQ/viewform?fbclid=IwAR3F9-CJ9hkLCbFxZinlGkLkMQoJ61NaWWg_Q36FIBPbyDsSxdesDoxCeWA,,,,
+CentralNMCovid19CommunityKrewe,,Albuquerque,NM,,USA,English,https://docs.google.com/document/d/1F-RV8HBIdI0miD7y4nFhUmpzLJyTmytJTi92xrUrUAk/mobilebasic?fbclid=IwAR1oWyk7GLMLQjD2gnOIOq0QR7Xfz5pQ92pWZpqiWae6pNJxw-nEUKovTMw,,,,
+Albuquerque Mutual Aid,,Albuquerque,NM,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdyWujg0aif-NtV-KdngGCR9-QBIzl59OvBzX74Lczdoo-1OQ/viewform,,,,
+Fight For Our Lives Albuquerque Mutual Aid,,Albuquerque,NM,,USA,English,http://www.ffol.org/mutualaid.html,,,,
+New Mexico / Albuquerque: Help Needed in Albuquerque COVID-19,,Albuquerque,NM,,USA,"English, Spanish",,,,https://www.facebook.com/groups/247465889623611/?ref=share,
+Santa Fe COVID-19 Mutual Aid Form,,Santa Fe,NM,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSc2k_Dci4goeRAG13VyXCOI4xgS-43IzEXsAFHvlcX-P3A58w/viewform,,,,
+New Mexico / Santa Fe: Community Resources during Covid-19,,Santa Fe,NM,,USA,English,https://docs.google.com/document/d/1Wtf64PfU2geObOMyO3EvTl4suGm-Ldgy/edit#,,,,
+COVID-19 Community Resources & Links - New Mexico,,,NM,,USA,English,https://docs.google.com/document/d/1Wtf64PfU2geObOMyO3EvTl4suGm-Ldgy/edit#,,,,
+COVID 19 RESOURCES_Southwest Focus,,,NM,,USA,English,https://docs.google.com/document/d/1bmcT0lgsLsG-qC4ZRx_Hmh7X4YUzv8V37J1s93V3vIo/edit,,,,
+Help Needed in Albuquerque COVID-19,,Albuquerque,NM,,USA,English,,,,https://www.facebook.com/groups/247465889623611/?multi_permalinks=247582216278645&notif_id=1584646671177003&notif_t=feedback_reaction_generic,
+Tewa Women United COVID-19 Community Resources,,,NM,,USA,English,http://tewawomenunited.org/covid19-community-resources/,,,,
+COVID-19 Trans/Queer Relief Form,,,NM,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfO1Ws5YgKFMXKu9CSh_WUVCznssExW6bnJpom5JsP24XwCLQ/viewform,,,,
+"DPBC COVID-19 Ways to Help, Ways to Get Help",,,NM,,USA,English,https://docs.google.com/document/d/1tsoapH-oS5wqYXBFj-SyMh1ZvOOKeSol4993HboYrFo/edit,,,,
+Santa Fe Mutual Aid Network,,Santa Fe,NM,,USA,"English, Spansih",https://docs.google.com/forms/d/e/1FAIpQLSc2k_Dci4goeRAG13VyXCOI4xgS-43IzEXsAFHvlcX-P3A58w/viewform,,,,
+Nevada / Las Vegas: Las Vegas DSA COVID-19 Mutual Aid Form,,Las Vegas,NV,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSeTcriSCf7XcSEC21ayAZmoytmrOkD7zB92z_d5UuTAynWo0g/viewform,,
+Nevada / Las Vegas: Las Vegas DSA COVID-19 Mutual Aid Form (Español),,Las Vegas,NV,,USA,Spanish,,,https://docs.google.com/forms/d/e/1FAIpQLSeTcriSCf7XcSEC21ayAZmoytmrOkD7zB92z_d5UuTAynWo0g/viewform,,
+LVDSA Covid-19 Mutual Aid,,Las Vegas,NV,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSeTcriSCf7XcSEC21ayAZmoytmrOkD7zB92z_d5UuTAynWo0g/viewform,,
+Washoe County Mutual Aid Solidarity Network,,Reno,NV,,USA,English,,,,https://twitter.com/WashoeCoMASN,
+Reno/Sparks Mutual Aid,,Reno,NV,,USA,"English, Spanish",,,,https://www.facebook.com/groups/186246196158115/,
+Upper Morningside Mutual Aid Network,Morningside Heights,New York City,NY,,USA,"English, Spanish",http://uppermorningsidemutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLSdcGT1uG1P6nX2tx6Z2RWmNQZEJWo4Pc9OITkbWFuKLzWtj1w/viewform,https://docs.google.com/forms/d/e/1FAIpQLScARzOBnJFBXlPb0raURQslKKOJo9wldvFNecLNoH8ZMSAwCQ/viewform,,202.330.3006
+New York / Albany: Mutual Aid South End Albany--Social Distance in Solidarity,,Albany,NY,,USA,English,https://docs.google.com/spreadsheets/d/1fLIO2jT-tlZU5C9X1FNl9LGXW9tj1w00frWTtOK-dL4/edit#gid=0,,,,
+Capital Region Corona Support,,Albany,NY,,USA,English,https://docs.google.com/spreadsheets/d/13UBm4YpvppqWqxrYHIn51dH8DtwCL3tIcaPgMv7GBts/edit#gid=613350993,,,,
+Astoria Mutual Aid Network,,New York City,NY,,USA,English,https://www.astoriamutualaid.com/,,,,
+Auburn support local businesses and Community positivity group,,Auburn,NY,,USA,English,https://www.facebook.com/groups/1052881391751558/,,,,
+Mutual Aid Beacon,,Beacon,NY,,USA,"English, Spanish",http://www.beaconmutualaid.com/,https://docs.google.com/forms/d/e/1FAIpQLSfG9js7cpzZ7rOIeANJVs94M9K5GsnPzs-xECUHW_LqszscTw/viewform,https://docs.google.com/forms/d/e/1FAIpQLScFO6dzjRb_5dc72tTMET__hAFLCGefUhKGY38joruKhED50g/viewform,https://facebook.com/groups/200367384605789,
+Bronx Mutual Aid Network,,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1EXAgeHCNMahBiqrO-cbpjP_CzeE0wyouzZbz1nCXMQk/edit#gid=1975280849,,,,
+Mutual Aid Crown Heights,Crown Heights,New York City,NY,,USA,"English, Spanish, French",,,,https://www.facebook.com/groups/496603171016990/,
+Bedstuy Strong,Bed Stuy,New York City,NY,,USA,"English, Spanish, Mandarin",https://bedstuystrong.com/,https://airtable.com/shrMH3m4eq8RDPhxf,https://www.notion.so/Bed-Stuy-Strong-0023fbdcae3c4beab4ef5fccd11d8902,,
+Buffalo Mutual Aid Network,,Buffalo,NY,,USA,English,https://docs.google.com/document/d/1VpoJr-0FA2Ud7WMalcEDqoKGKaYlAxhVdamUJddj7Bg/edit?,https://docs.google.com/forms/d/e/1FAIpQLSesNcKjEXtf-TInq2oQzh4JpGfk6dbkdwrVjkHnbCm0_tM_XA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSc0Ytm83OuVLzi6oOa4o6dEvjhitk4rqfB9bb1YEBLLwYesng/viewform,https://www.facebook.com/groups/740052889874229/?ref=br_rs,
+PUSH Buffalo,,Buffalo,NY,,USA,English,https://www.pushbuffalo.org/coronavirus/covid-19-mutual-aid/,,,,
+Community Care Planning: Main Hub,,Chatham,NY,,USA,English,https://www.facebook.com/groups/217429229632468/217783732930351/,,,,
+Welcome to Mutual Aid Geneseo / Groveland (MAGG),,Geneseo,NY,,USA,"English, Spanish",https://docs.google.com/document/d/1JE2LA-SHAz1w4SVQVMNuftMM5p3UhK3HvaR38WX-RnE/,,https://docs.google.com/forms/d/e/1FAIpQLSfTppqmGw63_V_doqLM0sReE6xm0CxAgHMl6HcRZRwvQNJ5SQ/viewform,,
+Nassau DSA Covid-19 Mutual Aid,,Hempstead,NY,,USA,English,https://docs.google.com/forms/d/15GHo2QWdoAd9RMqGChTpOIJbisLw0eNsXWJQ--_80gk/viewform?,,,,
+New York / Ithaca: Cornell University COVID Shutdown Housing Resources,,Ithaca,NY,,USA,English,https://docs.google.com/spreadsheets/d/1jWoDRMvJI_HxjO_iEUffwTUlR3z3uhvzpgQbK24Il1U/htmlview#gid=0,,,,
+Tompkins COVID-19 Mutual Aid Response,,Ithaca,NY,,USA,English,https://www.facebook.com/groups/209042093515340/?ref=share,,,https://www.facebook.com/groups/209042093515340/?ref=share,
+Kingston NY Mutual Aid,,Kingston,NY,,USA,English,https://www.facebook.com/groups/195204068593679/,,,,
+Kingston COVID-19 Volunteer Response Team,,Kingston,NY,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSfe2DFUBwtNF3kmTb52_dWjhhEOlqFIpp8kkA4VQpqRFlhjoA/viewform,,
+Long Island Coronavirus Action Network,,Hempstead,NY,,USA,English,,,,https://www.facebook.com/groups/lican516631/,
+Community Solidarity,,Hempstead,NY,,USA,English,https://communitysolidarity.org/,,,,
+New Rochelle Community Support,,New Rochelle,NY,,USA,English,https://www.facebook.com/groups/3024165470968117/?hc_location=group,,,,
+CUNY Mutual Aid,,New York City,NY,,USA,English,https://bit.ly/cunyaid,https://forms.gle/TMCDhn3pjjwintQHA,https://bit.ly/cunyaid,,
+NYC United Against Coronavirus - Resources and Information,,New York City,NY,,USA,English,https://docs.google.com/document/d/18WYGoVlJuXYc3QFN1RABnARZlwDG3aLQsnNokl1KhZQ/preview,,,,
+Invisible Hands Deliver,Brooklyn/Manhattan/Jersey City/Astoria,New York City,NY,,USA,English,https://www.invisiblehandsdeliver.com/,,,,
+Bushwick Mutual Aid - Coronavirus,Bushwick,New York City,NY,,USA,English,,,,https://www.facebook.com/groups/691761548028851/,
+Carroll Gardens Mutual Aid - Coronavirus,Carroll Gardens,New York City,NY,,USA,English,,,,https://www.facebook.com/groups/208815540435346/,
+Ditmas Park/Flatbush/Prospect Park South Coronavirus Neighborhood Hel,Ditmas Park/Flatbush/Prospect Park,New York City,NY,,USA,English,https://docs.google.com/document/d/1lQLOgWQXkno9ATaTMj1vJ0OKM9nAKa9ToUI6HHM3rAo/edit,,https://bit.ly/2U3Spna,https://www.facebook.com/groups/2775890899146167/,
+"Kensington, Brooklyn, Group for Mutual Aid (Coronavirus) ",Kensington,New York City,NY,,USA,English,,,,https://www.facebook.com/groups/884513918671186/,
+North Brooklyn Mutual Aid,North Brooklyn,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1knA71oKmslwEMjTfF7xIz6ewfIfuuQYB3t6FUh1W8gg/edit#gid=0,,,,
+Mutual Aid NYC,,New York City,NY,,USA,English,https://docs.google.com/document/d/1aevxXYQgeP-uJa0eSI0YYIJKZBNkn-6Rjy_fY7zpRLo/edit,,,,
+Red Hook Coronavirus Community Cooperative Committee,Red Hook,New York City,NY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfn5N5N6Wzu-zVG5nyPNs5wOgGjHj-y_EA4VoT4J74yQ2p6ag/viewform?fbclid=IwAR0OZJK8jmNSOF8tJf2HHkq22geATl2icixr0G6EvVexchgpWmMM3x7JQ74,,,,
+South Brooklyn Community - COVID-19 Neighborhood Volunteers,South Brooklyn,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1RduJEBqZFa9jXgDZskga06cH52mDR87yoNdXIajLOsU/edit?ts=5e6bbc0a#gid=1419997113,,,,
+All Brooklyn - Coronavirus Neighborhood Help,,New York City,NY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfRs_9b5T3jM7jU-OlAoU1VVg1M5SxSIAIG87E7sLAwUbuCfg/viewform,,,,
+Capital District of NY COVID-19 Mutual Aid,,New York City,NY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeT19CQCnINTwWj4_cZRKMFi4gW5NdDZYOx3I2OsuhYMcPPmw/viewform#518MutualAid,,,https://www.facebook.com/groups/209973416755110/?,
+LIC COVID-19 Support,Long Island City,New York City,NY,,USA,"English, Spanish, Mandarin, Korean, Polish",https://drive.google.com/file/d/1FYQ4r_moSkZ8w0wQi0uDTGDboX30MW-f/view,,,,
+Red Hook Mutual Aid,Red Hook,New York City,NY,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSdg6xAdsLeK3oDq2ATxy9wWLXB_BXDKdW1YFA6xuMVqlce20Q/viewform,http://tinyurl.com/redhookma,http://tinyurl.com/redhookma,https://www.facebook.com/RedHookMA/?,
+COVID 19 North Country Neighbors Helping Neighbors,,Plattsburgh,NY,,USA,English,https://www.facebook.com/groups/539812396667366/,https://docs.google.com/forms/d/e/1FAIpQLSfnqN_S0R75zyJSMZ9F-2yLw4r_qF2OcY8pd2TfUmv6ETsSIA/viewform,,,
+Hudson Valley Mutual Aid Network,,Poughkeepsie,NY,,USA,"English, Spanish, Bangla",https://docs.google.com/document/d/104kvih5tO84zfnqMtwrmFgkOcE_0MBe5mwrElY19T-8/edit,https://docs.google.com/forms/d/e/1FAIpQLSdaT8zQioNQyiFHliY2qR8mnDxZ5zcLBou3NN__-wm1wLA7fA/viewform,,https://www.facebook.com/groups/hvmutualaidnetwork/,
+Dutchess Orange Community Strong,,Poughkeepsie,NY,,USA,English,https://www.uwdor.org/covid19-communityresources,,,https://www.facebook.com/groups/docommunitystrongresources/,
+Queens Mutual Aid Network,Queens,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1wNNGfygBEQL3GiuNoonFk-jznd0VIrmXVBloytaK1gc/edit#gid=1975280849,,,,
+Ridgewood Mutual Aid Network,Ridgewood,New York City,NY,11385,USA,"English, Spanish",,,https://docs.google.com/forms/d/e/1FAIpQLScMvBdL54fMmQF8CL06tDXeNjdLNZuykK72In97L9LbBgsB0A/viewform,https://twitter.com/RidgewdTenantsU/status/1244451055519268864/photo/1,
+Project Resilience,,Rochester,NY,,USA,English,,https://forms.office.com/Pages/ResponsePage.aspx?id=0WrrnsA12ESOi_DlxEyioxtynIO7HpVFvTmeMHlXhMlUOENDNTlWUzkwQ0dORjM3QUlMSVRBVE41MiQlQCN0PWcu,,,
+Food Bank of Central New York,,Syracuse,NY,,USA,English,https://foodbankcny.org/,,https://donatenow.networkforgood.org/foodbankcny2020coronavirus,,
+Westcott Mutual Aid,,Syracuse,NY,,USA,English,https://docs.google.com/document/d/1B6uOeOhGlEK_EnSfXTijvFMfnObMWsxSgd6P0U2ycwk/edit,https://docs.google.com/forms/d/e/1FAIpQLScJ97nXqDEIvuNRcO91h06H0tAcNv53NPCEak1OISo_ioVQ1w/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfNeRctBJ33LgcwEuYm0KdCBpOXuWgRJ_scnBRQZ9KleH-NQg/viewform,,
+Troy Mutual Aid Society 2020,,Troy,NY,,USA,English,https://www.facebook.com/groups/220879635954876/,,,,
+Watertown/Ft Drum Area COVID-19 Community Support,,Watertown,NY,,USA,English,https://www.facebook.com/groups/870250380103693/,,,,
+NYC COVID Care Network,,New York City,NY,,USA,English,https://www.nyccovidcare.org/,https://www.nyccovidcare.org/request,https://www.nyccovidcare.org/offer,,
+Manhattan Mutual Aid Network - FAM,,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1fdiNMLxiwF2cj3tjjn0iZ_8W7kpiKVL_SX3UjRte1-8/edit#gid=1975280849,,,,
+Staten Island Mutual Aid Network,,New York City,NY,,USA,English,https://docs.google.com/spreadsheets/d/1Y1F8DokDKTSyCfZLimAFXeJgq6jLiPtcTp_oMtV1IlY/edit#gid=1975280849,,,,
+Sunnyside/Woodside Mutual Aid - Coronavirus,,Sunnyside,NY,,USA,English,,bit.ly/SunnysideAid,bit.ly/SunnysideVolunteer,https://www.facebook.com/groups/sunnysidemutualaid/,
+Harlem United Against Coronavirus,Harlem,New York City,NY,,USA,English,,,,https://www.facebook.com/groups/2437603463161630/,
+Brooklyn Shows Love,,New York City,NY,,USA,"English, Spanish, French, Mandarin, Kreyol",https://docs.google.com/document/d/1oUnMTV2mq8lg2GimHWc4XWRgI2D-bRvJo_v_0tqW_1Q/edit,,http://bit.ly/bkshowslovevolunteer,,(646) 820-6039
+Rockaway Mutual Aid & Support Network,Rockaway,New York City,NY,,USA,English,,,,https://www.facebook.com/groups/606774946834371/?ref=share,
+New Paltz Neighbor to Neighbor,,New Paltz,NY,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSdPvf109_31PMeVW1UJi2mc-cBoXqrNvxMZltbPXWRuObEyYw/viewform,,,,
+Mutual Aid of NY Southern Adirondacks,,Gloversville,NY,,USA,English,,,,https://www.facebook.com/groups/1573307162820055/,
+Canton Covid-19 Mutual Aid Group,,Canton,OH,,USA,English,,,,https://www.facebook.com/groups/2532290837040130/?ref=br_rs,
+Ohio / Cincinnati/SW: Cincinnati/SW Ohio Mutual Aid,,Cincinnati,OH,,USA,English,,,,https://www.facebook.com/groups/145264623412166/?ref=share,
+Mutual Aid Southeast Ohio,,Cincinnati,OH,,USA,English,,,,https://www.facebook.com/groups/202905537473660/?ref=br_rs,
+Ohio / Cleveland: Provide Aid in Cleveland,,Cleveland,OH,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSeta_pGNk6xHldU7yL18jf5C8KHHw-s1ujQdT6Zoj6g3goIMA/viewform,https://www.facebook.com/cprCLE/,
+Mutual Aid Northeast Ohio,,Cleveland,OH,,USA,English,,,,https://www.facebook.com/groups/833037507201791/?ref=br_rs,
+CPR-Cleveland Pandemic Response,,Cleveland,OH,,USA,English,,,,https://facebook.com/cprCLE/,
+Cleveland Food Share,,Cleveland Heights,OH,,USA,English,https://docs.google.com/forms/d/11qVMlouM_CJIah8HP_lCSrQUq2BIIRtJr7M4jirRQZA/viewform?edit_requested=true,,,,
+Mutual Aid Central Ohio,,Columbus,OH,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeJF-PBvxYP8d4gAEZ3y3dhs3RTqK3U4J9kcMS-1fGh9wEPnQ/viewform,,,https://www.facebook.com/groups/529751994623659/?ref=br_rs,
+Mutual Aid Dayton/Miami Valley,,Dayton,OH,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScdPCDu3-uo0t-JKNkm-J_yooPrin8nJagexqdt9l23XVgT_g/viewform,,,,
+Mutual Aid Toledo,,Toledo,OH,,USA,"English, Spanish, Arabic",,https://docs.google.com/forms/d/e/1FAIpQLScklOv-I_O8cEc4r2LQN4EcjnitHW3zTUNUy2AXgUIr5HxTvg/viewform,https://docs.google.com/forms/d/e/1FAIpQLScklOv-I_O8cEc4r2LQN4EcjnitHW3zTUNUy2AXgUIr5HxTvg/viewform,https://www.facebook.com/groups/226750158510262/?ref=br_rs,
+Mutual Aid Youngstown,,Youngstown,OH,,USA,English,,,,https://www.facebook.com/groups/220051295714284/?ref=br_rs,
+Delaware OH Panhandle Mutual Aid Group,Panhandle Road,Delaware,OH,,USA,English,https://www.facebook.com/groups/145491623463741/,https://forms.gle/hE2KDuP56FH81zTR9,https://forms.gle/6Wmmj4G94toGrw7U9,https://www.facebook.com/groups/145491623463741/,
+Stark Cares Community Network,,Canton,OH,,USA,English,http://starkcares.com/,,,https://www.facebook.com/groups/starkcarescommunitynetwork/,
+Norman Community Relief - Volunteer Sign-up Form,,Norman,OK,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeJzEhGGaXUZC60uiOScPq16JRt345oEvpL6H7evEj-4PVejg/viewform,,,,
+Oklahoma Mutual Aid,,Oklahoma City,OK,,USA,"English, Spanish",,https://docs.google.com/forms/d/e/1FAIpQLSfNiVjInx05emNlVD2mbPFQugOqvxeY63DwVDT75m1I3QCg-w/viewform,https://docs.google.com/forms/d/e/1FAIpQLScqh3ynOU0HyRljqu8zxLDYL3u5C3tpsIK1dNKWobc3_NePEg/viewform,https://www.facebook.com/groups/525919904995040/,
+NOISE and Raising Native Hope for unhouse Native folks,,Tulsa,OK,,USA,English,,,,https://www.facebook.com/raisinghope2017/,
+Okemah Helping Hands,,Okemah,OK,,USA,English,,,,https://www.facebook.com/groups/1095919797417666/,
+Southern Oregon COVID-19 Mutual Aid,,Ashland,OR,,USA,English,,https://docs.google.com/spreadsheets/d/1yHveqLT8-hVtLmn4NU2EaA3hx9KgD0QPes6fzx4wOE8/edit,https://docs.google.com/forms/d/e/1FAIpQLSdfWogf-uARZawjT9jWWjXdFC59CERFEKIzbOekSvLegAXtOQ/viewform,https://www.facebook.com/socovid19mutualaid/,
+Oregon / Bend: Pandemic Partners--Bend,,Bend,OR,,USA,English,,,,https://www.facebook.com/groups/PandemicPartnersBend/,
+Cascade Locks: Coronavirus Resources,,Cascade Locks,OR,,USA,English,https://docs.google.com/document/d/1aRR5UXXiHMbM94cAjc6p2SJ47_yyzPFnCNUGysYrrCs/edit?usp=drivesdk,,,,ENGLISH: 541-399-8022 // SPANISH: 541-399-8023
+"Douglas County OR., Mutual Aid Network- COVID-19 Response",Douglas County,Roseburg,OR,,USA,English,,,,https://www.facebook.com/groups/234199917629859/?ref=br_rs,
+Lane County Mutual Aid Network - COVID19 Response,,Eugene,OR,,USA,"English, Spanish",https://lanemutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLSfolHBhTkIvjayTasTf1TtAwpwhiAMPm5zsSwWvci05Bue32A/viewform,https://forms.gle/YiVcFnMBa8YTqyza7,https://www.facebook.com/groups/1354709024737163/?ref=br_rs,
+COVID19 Community Resources & Actions - Eugene/Springfield,,Eugene/Springfield,OR,,USA,English,,,https://docs.google.com/spreadsheets/d/1ReOQOWnQ-XRNkXUrrrB_X7eEWei1txeSrtO_Bb7r-fs/edit?fbclid=IwAR1CRFIPRBcu4m0-HtaPIQeMRI1urYM9EGp85IiDUf-9l5W2I6cUScdXlk8#gid=1657523487,,
+COVID19 Community Resources & Actions - Lane County,,Eugene,OR,,USA,English,https://docs.google.com/spreadsheets/d/1ReOQOWnQ-XRNkXUrrrB_X7eEWei1txeSrtO_Bb7r-fs/edit#gid=1657523487,,,,
+Oregon / Benton County: Benton County Family Response Team,,Philomath,OR,,USA,English,,,,https://www.facebook.com/groups/203009070792562/?ref=share,
+PDX Mutual Aid  ,,Portland,OR,,USA,English,https://linktr.ee/pdxmutualaid,https://docs.google.com/forms/d/e/1FAIpQLSdWmeBGnqdX14Q5ihC66u-bYzJ1oaJcigu_Vx44AJPRSoDMtQ/viewform?usp=send_form,https://docs.google.com/forms/d/e/1FAIpQLSfAMZHbn6md19Tb28SM53ayFAQK02xJv1NXVjL-J26tDZOQ-g/viewform,https://www.facebook.com/pdxcovid19mutualaid,
+Oregon / Portland: Covid-19 Portland-Area Community Support,,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/250351509316733/?ref=share,
+"Portland Area Covid-19 Mutual Aid (Childcare, Volunteer)",,Portland,OR,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfAMZHbn6md19Tb28SM53ayFAQK02xJv1NXVjL-J26tDZOQ-g/viewform,,,,
+PDX Mutual Aid Food Delivery,,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/786741751849155/?ref=br_rs,
+Buckman/Kerns Pandemic Neighborhood Mutual Aid,Buckman/Kerns,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/190919709008816/?ref=br_rs,
+Pandemic Neighborhood Mutual Aid - Lake Grove/Lake Oswego,Lake Grove/Lake Oswego,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/955963151472594/?ref=br_rs,
+Alameda/Irvington Pandemic Neighborhood Mutual Aid,Alameda/Irvington,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/822605521550300/?ref=br_rs,
+Gateway/Hazelwood Pandemic Neighborhood Mutual Aid,Gateway/Hazelwood ,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/527043194484155/?ref=br_rs,
+Team Beaverton,,Beaverton,OR,,USA,English,https://www.teambeaverton.com/,,,,
+Coast Mutual Aid,,Cannon Beach,OR,,USA,English,https://www.coastmutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLSfVyMTCFyWTtZ5lb-4IOjUsLZgVmT_6OPQeQkBH7cdkgj0JDg/viewform?c=0&vc=0&w=1,https://docs.google.com/forms/d/e/1FAIpQLSdW0C6pa-AD27iBDRHmH1x4Gcgde4JdqhiVtns3DDiO1NCnyg/viewform?c=0&vc=0&w=1,,
+"Covid-19 Support Network - Corvallis, Albany, Philomath",,Corvallis,OR,,USA,English,https://www.cge6069.org/caucuses/mutual-aid-caucus/,https://docs.google.com/forms/d/e/1FAIpQLSd5dD77ldBtXAIYLpYuWAN_Pkh3R40JVgeRW-a57ASm2WSZWA/viewform?usp=sf_link,https://docs.google.com/forms/d/e/1FAIpQLSc--oYvP2bLSWDC1VYjxt0pHXTclk6CeRnoRupsRGwz5eMWSA/viewform?usp=sf_link,https://www.facebook.com/cge6069/?eid=ARDzxY9p3gjJCd3D01BUkyRcySQUKce4kLu4UmRpY32A0d83h3JSt0M--kri8R_21yvuQY_j-2AlGXRS,
+Pandemic Neighborhood Mutual Aid - Portland,,Portland,OR,,USA,English,,,,https://www.facebook.com/PandemicNeighborhoodMAHub/,
+Burlington Coronavirus Mutual Aid,Burlington,Portland,OR,,USA,English,,,,https://www.facebook.com/groups/618241819020229/,
+Pandemic Partners-NE Portland,NE Portland,Portland,OR,,USA,English,,,https://airtable.com/shrhGCxcHCjhwjdtO?fbclid=IwAR0lkr-BYYGDBgwoMZ_zBezFteqdcB69PVC8S5Idgajb562dWhGXEuArzmM,https://www.facebook.com/groups/pandemicpartnersnepdx/,
+My NeighbOR,,,OR,,USA,English,https://everychildoregon.org/myneighbor/,,,,
+Coast to Cascades Covid 19 Mutual Aid,,Coos Bay,OR,,USA,"English, Spanish, French, German",https://coasttocascades.noblogs.org/,https://forms.gle/Re9ddHTDjKPt1LQ96,https://forms.gle/ZmDPZRRpQudch2yR6,,
+Pennsylvania / Philadelphia: Poor People’s Army Response to CoronaVirus Mutual Aid Page,,Philadelphia,PA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSetWMAof9YSOrM1agqDDj2vtedeH8zFkWlNu7mu46k5XsdH0w/viewform,,,https://www.facebook.com/groups/1093846127618163/?ref=share,
+Care Web for Philadelphia's Disability Community During COVID-19,,Philadelphia,PA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSeZIfm8VC6Jhrviz1t29UF3qRd5TqSWHpRBHHFlH5bLSp26rw/viewform,,,,
+Neighbors helping Neighbors: Request For Aid - Philly Mutual Aid for Folks affected by COVID-19,,Philadelphia,PA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSf4tHQTrOG0DDh6hytdw8rdN7sFkm74Q1yMii2YeOLis2qNvA/viewform,,,
+Collective Success Community Help for Displaced College Students,,Philadelphia,PA,,USA,English,https://www.collectivesuccess.org/,https://docs.google.com/forms/d/e/1FAIpQLSe4OmY3RSB3PwQ4ybrhGLZ3liOMVoVuFo2U_FGIob7JcereUA/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdpYGZTsI2tFEfC-eTqJaQP5Bheqp0Lz6s8mOqIVGqVG-xalg/viewform,,
+Kid Care Co-op,,Philadelphia,PA,,USA,English,https://www.kidcarecoop.org/philadelphia-healthcare-providers-in-need-of-childcare-during-covid,https://www.kidcarecoop.org/philadelphia-healthcare-providers-in-need-of-childcare-during-covid,https://www.kidcarecoop.org/childcare-for-medical-families-during-covid19-outbreak,,
+Centre County COVID-19 Community Response,,State College,PA,,USA,"English, Spanish, Chinese, Farsi",https://cccovid19response.org/,https://docs.google.com/forms/d/e/1FAIpQLSdPva7YDwdbBZNs0-MefbfpN6XF_Q5alomyGn035ajmy9nb4Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSd8Dq07fx2Pjda43h0X0RpQUKRj-ftA9bW693dXDWR4lFCiRQ/viewform,https://www.facebook.com/CentreCountyCOVID19Response/,
+COVID Mutual Aid: Friendship/Bloomfield,Friendship/Bloomfield,Pittsburgh,PA,,USA,English,,,,https://www.facebook.com/groups/2655530078016420/?ref=share,
+Pittsburgh Mutual Aid,,Pittsburgh,PA,,USA,English,https://docs.google.com/spreadsheets/d/1FQO1uLpHQgc3VU1GgFq1MnjhiGzQhpSN8GwKgHtbvdM/edit#gid=1942870066,https://docs.google.com/forms/d/e/1FAIpQLSdY2f73ZIwYMilNvCePKNk0b-XCCK8TbWpAUZp2JDmZRIU1pg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdY2f73ZIwYMilNvCePKNk0b-XCCK8TbWpAUZp2JDmZRIU1pg/viewform,,
+Bloomfield/Garfiend Cooperation,Bloomfield/Garfield,Pittsburgh,PA,,USA,English,https://bloomfield-garfield.org/uncategorized/covid-19-resources-get-help/,,,,
+State College Area Mutual Aid Network,,State College,PA,,USA,"English, Spanish, German",https://docs.google.com/forms/d/e/1FAIpQLSfkjuXi_C2n7e88d7aBjfYK5wsMPSq_1YraWd0LzAD-MmXkPA/viewform,,,,
+Mobilize Katahdin,Katahdin,Philadelphia,PA,,USA,English,http://mobilizekatahdin.org/,https://docs.google.com/forms/d/e/1FAIpQLSeFBtUz7_INgg0aTSfbWgd77qjbhO1yeLaB3fDSzOjFaPSyew/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdHxEYqBCzKIfyICO4Y6M3Ibi3qj-K98x0D47e4IDVN8S6sdw/viewform,,
+Riverwards COVID19 Awareness And Preparation,Riverwards,Philadelphia,PA,,USA,English,,,,https://www.facebook.com/groups/RiverwardsCOVID19AwarenessAndPreparation/,
+Berks Mutual Aid Society,,Reading,PA,,USA,"English, Spanish",,https://airtable.com/shr84jFSWVFn41v7o,https://airtable.com/shr84jFSWVFn41v7o,https://www.facebook.com/groups/224692268586202/,
+Cumberland Valley Cares,,Harrisburg,PA,,USA,English,https://www.cumberlandvalleycares.com/,https://www.cumberlandvalleycares.com/request-delivery,https://www.cumberlandvalleycares.com/request-delivery,https://www.facebook.com/cumberlandvalleycares/,
+Lawrenceville/Bloomfield/Garfield/Polish Hill Buddy System,Lawrenceville/Bloomfield/Garfield/Polish,Pittsburgh,PA,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe0Hev553cyD0avwMqE0B0LZwv36amVO09U8tC--qxCY_R7uQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSe0Hev553cyD0avwMqE0B0LZwv36amVO09U8tC--qxCY_R7uQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSe0Hev553cyD0avwMqE0B0LZwv36amVO09U8tC--qxCY_R7uQ/viewform,,"Lawrenceville: 412-802-7220, Bloomfield: 412-681-8800, Gaarfield: 412-426-5329"
+Sharpsburg Urgent Need Assessment,Sharpsburg,Pittsburgh,PA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdI3ZPUOmzXTcim5Aj8KSM_F-49j-VSxLHIf5_4o08bTF3eOA/viewform,,,
+Roots of Faith Food Distribution,Sharpsburg,Pittsburgh,PA,,USa,English,,https://www.facebook.com/931040436951291/photos/a.982949021760432/2724189550969695/?type=3&theater,,,
+West Chester IFC,,West Chester,PA,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSfRaAzoa_V0whmEN5mcLzyvmF40Z1X-D1rJyH6AV8g4O5UinQ/viewform?usp=sf_link,,,,
+"Mutual Aid - Lancaster County, PA",,Lancaster,PA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSfO7dIr7cpFODkx_bkxF3E7P2pgIkybFu0izgNKUAoMMZbqow/viewform?usp=sf_link,https://docs.google.com/forms/d/e/1FAIpQLSfO7dIr7cpFODkx_bkxF3E7P2pgIkybFu0izgNKUAoMMZbqow/viewform?usp=sf_link,https://www.facebook.com/groups/2455063764756069/,
+Levittown Helping Neighbors,,Levittown,PA,,USA,English,,,,https://www.facebook.com/groups/534997790489640/,
+Montgomery County PA COVID-19 Aid,,Norristown,PA,,USA,English,,,,https://www.facebook.com/groups/237679007369747,
+Rhode Island / Providence: Providence Community Mutual Aid,,Providence,RI,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSenjuUhXCRwz0AvamQTihj6WsK-EX0ukG-aC88i4lFVaH6Q4A/viewform,https://docs.google.com/spreadsheets/d/18zZMjfXlqeAp1GVsLuxSNNjLOqI2AVbN7qlYjpf9EUw/edit#gid=1055493001,,
+Providence Community Mutual Aid,,Providence,RI,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSenjuUhXCRwz0AvamQTihj6WsK-EX0ukG-aC88i4lFVaH6Q4A/viewform,,,,
+COVID-19 Mutual Aid: PVD,,Providence,RI,,USA,English,https://www.letserasethestigma.com/covid19,,,,
+COVID-19 PVD Area Mutual Aid and Community Assistance,,Providence,RI,,USA,English,,,,https://www.facebook.com/groups/648623035913789/about/,
+Rhode Island Pride COVID-19 Emergency Food/Toiletries/Sanitation Supply Drive,,Providence,RI,,USA,English,http://tinyurl.com/PrideRISupplyDrive,,,,
+AMOR - COVID19 Community Response Volunteer Sign Up,,Providence,RI,,USA,English / Spanish,https://docs.google.com/forms/d/e/1FAIpQLSch4w517Oqv5_KoH4sF14eorbmUQUBvlWgktvIuXZ8iDtFCUA/viewform,,https://docs.google.com/forms/d/e/1FAIpQLSe0YT2Zh9kOh4Yi6jfoDbPHXeE0CYzMbm4wjNN8KFrMNNr7vw/viewform,https://www.facebook.com/amornetwork/,
+SK Mutual Aid and Support,,South Kingston,RI,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSc4edntuEBjx1NgMWojVi8kFFO5Ra4yoZ-NkZbyEEhAnrhoxw/viewform?,,,,
+COVID-19 South County Mutual Aid and Support,,South Kingston,RI,,USA,English,,,,https://www.facebook.com/groups/210087673679116/?,
+Little Compton Locals Helping Locals,,Little Compton,RI,,USA,English,,,,https://www.facebook.com/groups/2401292766814760/about/,
+Columbia SC Mutual Aid,,Columbia,SC,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdw14ceghA97Q1zHmJ4xO6iMp93ZR1duxBXRJyczqj_YLp_2Q/viewform,https://docs.google.com/forms/d/e/1FAIpQLSd1AN6ebit6-tk1z1_Cq02UUMZUzhPNlWx5J62949ISLz3FIA/viewform?fbclid=IwAR3vUiGl1RMjiBb3U1bfBZ-AqWmwBkTjYF1DxMn_wzO0VUPPjZu_tBsdj68,https://www.facebook.com/groups/174031214047287/,
+Columbia Cares,,Columbia,SC,,USA,English,,,,https://www.facebook.com/groups/211165993311219/?ref=share,
+Columbia COVID Care Collective,,Columbia,SC,,USA,English,,,,https://www.facebook.com/groups/ColumbiaCOVIDCareCollective/?source_id=107060107600171,
+Tri-Cities TN/VA Mutual Aid Network,,Johnson City,TN,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSfMYhJ0wEYYVpE8Zuqino79A8EX9i0Xjh9Jt-7i84Zr0q28yQ/viewform,,,https://www.facebook.com/groups/tricitiesmutualaid/,
+First Aid Collective Knoxville,,Knoxville,TN,,USA,English,https://linktr.ee/firstaidcollectiveknox,,,,
+Memphis-Midsouth Mutual Aid for Covid-19,,Memphis,TN,,USA,English,,,,https://facebook.com/groups/2689224457972091/,
+Nashville Mutual Aid,,Nashville,TN,,USA,English,https://docs.google.com/spreadsheets/d/1Sx_rYU95zVizTW5FOAF6lYCq5AkYOpMppOsVA3wn3rg/edit#gid=0,,,,
+Covid Help Nashville,,Nashville,TN,,USA,English,https://www.covidhelpnashville.com/,https://www.covidhelpnashville.com/request-a-delivery,https://docs.google.com/forms/d/e/1FAIpQLSfWckeWzE58zb2a6rTl2PhD6RcDvoCb1PX8W_cIhe0qcjTS-A/viewform,https://twitter.com/covidhelpnash,615-447-8260
+Connecting Lincoln,,Fayetteville,TN,,USA,"English, Spanish",https://connectinglincoln.com/,,,https://www.facebook.com/connectinglincoln/,
+Proyecto Sol,,Nashville,TN,,USA,Spanish,https://docs.google.com/forms/d/e/1FAIpQLSeT2UmSE8uMOEXSuLCM8BDUBv2c7RReVS43BhixzBoukq42pg/viewform?vc=0&c=0&w=1,,,https://www.facebook.com/mixnashville/,
+Mutual Aid Austin,,Austin,TX,,USA,English,https://docs.google.com/document/d/1bDORfX5FdHRBVa8r3H5SSfXUoOkH_FqhH0NpJqsnV7c/edit,,https://docs.google.com/forms/d/1JeZheRj_S8WOEIqfqqPJqRJlvaeH7cssOJjkDzVmmKc/viewform?edit_requested=true,,
+Care Web Austin,,Austin,TX,,USA,English,https://docs.google.com/spreadsheets/d/1Eafuk2C9FZu5aW_gpPcDJPkbMCL6KA7UuBz2xfNAjug/edit?fbclid=IwAR2NAbQuIpG0E495_A6OqIEmMyXCuAdI_teuZtcXpxAeZRlHwKK8bRzB1xU#gid=744348015,,,,
+ATX Free Food Sharing,,Austin,TX,,USA,English,,,,https://www.facebook.com/groups/307913700125933/,
+Corpus Christ Mutual Aid,,Corpus Christi,TX,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLScZu7FTVoYqIrD6OU1sOAy2sDtUcG0-cjfKcp-iY1S00fzBrQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdlJRBXdjnbueuVBCsCYK1SGujEHTh4FjbYWjzYhFQlRIKJMw/viewform,https://www.facebook.com/CORPUSDSA/,
+361 Information & Resource Exchange,,Corpus Christi,TX,,USA,English,,,,https://www.facebook.com/groups/1459248917568349/?ref=group_header,
+North Texas Mutual Aid Coalition,North Texas,Dallas,TX,,USA,English,https://ntxmutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLScnL2Cna1QVYTdsFsiLL3cyoj7uCeRDqHNKWK9CzB8AOviYbQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLScnL2Cna1QVYTdsFsiLL3cyoj7uCeRDqHNKWK9CzB8AOviYbQ/viewform,,
+North Texas Covid-19 Mutual Aid,,Dallas,TX,,USA,"English, Spanish",https://ntxmutualaid.org/,,,,
+Laredo Mutual Aid/Ayuda Mutua Laredo,,Laredo,TX,,USA,English,https://docs.google.com/document/d/1dpMzMzsA83jbVEXS8m7QKOtK4nj6gIUk1U1t6P4wShY/preview?fbclid=IwAR2sbt30iaqzl6p00-Qb2kaYYAzip-73QW73YJl7DHuHlxFlWbm-LTzPINM,,,https://www.facebook.com/groups/2190227557872562,
+South Texas Food Bank,,Laredo,TX,,USA,English,http://www.southtexasfoodbank.org,,,https://www.facebook.com/southtexasfoodbank/,
+Texas / San Antonio: Puro Mutual Aid Network--Giving and Receiving Support in San Antonio,,San Antonio,TX,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSduVw7ubuyY2QhX_0dncWJlOB5xVfs-S-ySXki3kXLJCFpK_g/viewform,,,,
+Systema de ayuda mutua comunitaria — Dando y recibiendo apoyo en San Antonio,,San Antonio,TX,,USA,Spanish,https://docs.google.com/forms/d/e/1FAIpQLSc-Vh30rfu7-eCNZ4mzfZPH5-Jzosw9Z_h-n7Tr14r4JpaZ1A/viewform,,,,
+Austin Mutual Aid,,Austin,TX,,USA,English,,,,https://www.facebook.com/groups/1043810232661482/,
+ATX Mutual Aid for Covid19,,Austin,TX,,USA,English,,,,https://www.facebook.com/groups/2600062263571948/,
+Aid Network Denton,,Denton,TX,,USA,English,https://docs.google.com/document/d/1mNdlT_Yl9uhwDGuBxyYYfqXzdiM6R3BcSsBUbbRqzN4/edit?fbclid=IwAR3km02Ec2dU-Cz4SaxbpZFIHrggtqdqYO0zhIU7H_JG0ACmslnxk7r3MzA#,https://docs.google.com/forms/d/180eQT1XLxjkZMgJl54bL9Asv0JCH10T-_Cg07rZ5Lhc/viewform?edit_requested=true,https://docs.google.com/forms/d/1YTjMuCCquDnawbjAeDJSubQXuJkL8-1K22Z2rOPP9vM/viewform?edit_requested=true,,
+San Marcos Mutual Aid,,San Marcos,TX,,USA,"English, Spanish",,https://docs.google.com/forms/d/e/1FAIpQLSevebsg9PnLkl1Qc8EHCVezQKEvGjMWc8IuxgNG2ntUTLq0zQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSevebsg9PnLkl1Qc8EHCVezQKEvGjMWc8IuxgNG2ntUTLq0zQ/viewform,https://www.facebook.com/smtxmutualaid/,
+Harmony Food Pantry,,Dallas,TX,75237,USA,English,http://www.harmonycdc.org,,,,
+SLC COVID-19 Community Connections,,Salt Lake City,UT,,USA,English,,,,https://www.facebook.com/groups/2233166066785826/?ref=share,
+Bluff Area Mutual Aid (Coronavirus Response),,Bluff,UT,,USA,,https://canyonechojournal.com/bluff-area-mutual-aid/,https://docs.google.com/forms/d/e/1FAIpQLScr0tJaHQPuU-RriqMjkJa04rvD4gJSHrY7uglxI3EPyZESLQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeSh_LrP-7ZABU02tFvI0mIjNHlf87x3uQg_FfC69hnoLN4WA/viewform?usp=sf_link,,
+Utah / Salt Lake Valley: Salt Lake Valley COVID Mutual Aid,,Salt Lake City,UT,,USA,English/Spanish,https://www.covid19mutualaidslc.com,,,,
+Utah Valley Mutual Aid,,Saratoga Springs,UT,,USA,English,http://utahmutualaid.org/,https://docs.google.com/forms/d/e/1FAIpQLSdxm15E4lYHn1c3XrtrN7ze5eJbQiLizwKYsr_gq_NQA6R2tw/viewform?usp=sf_link,https://www.facebook.com/groups/utahmutualaid/,,
+Davis/Weber COVID-19 Community Connections,,Weber County,UT,,USA,English,,,,https://www.facebook.com/groups/866871440402154/?ref=share,
+Salt Lake Valley Covid19 Mutual Aid,,West Valley City,UT,,USA,English,https://www.covid19mutualaidslc.com/,,,,
+Cville Community Care Team: COVID Response,,Charlottesville,VA,,USA,"English, Spanish",https://congregatecville.com/,,https://cacf.iphiview.com/cacf/GIVENOW/AccountInformation/tabid/524/dispatch/accountselection_id$140734_hash$e621469f5bc6f507dea0f0c6253f9ce280a69c36/Default.aspx,https://www.facebook.com/cvilleareacf/,434-234-4490
+Mutual Aid Charlottesville,,Charlottesville,VA,,USA,English,,,,https://www.facebook.com/groups/500721927287565/?ref=br_rs,
+COVID-19 Mutual Aid- Occoquan VA,,Occoquan,VA,,USA,English,,,,https://www.facebook.com/groups/1234263820271838/,
+Richmond Mutual Aid Supply Drive,,Richmond,VA,,USA,English,https://twitter.com/MayDayRVA/status/1239408495075753984?s=20,,DM administrators,,804-404-2346
+RVA COVID-19 Mutual Aid + Community Care,,Richmond,VA,,USA,English,,,,https://www.facebook.com/groups/rvamutualaid/?multi_permalinks=1384853371903841%2C1384527925269719%2C1384298955292616%2C1384273458628499%2C1384257545296757&notif_id=1584555197368757&notif_t=group_activity,
+Shenandoah Mutual Aid - Volunteer Form,,Shenandoah,VA,,USA,English,https://www.shenandoahmutualaid.com/,https://docs.google.com/forms/d/e/1FAIpQLSe4fJopOY18TF7oU8FIuePijNgiao7Aqg9Dlc2AeVjfiX1t_g/viewform?fbclid=IwAR0S_fJ58Fwto0Rg9-jUwF6r8adNb3cGZyqgvaakHS1f7O7Vzj1O9c7mqP0,https://docs.google.com/forms/d/e/1FAIpQLSe28TtnAAgcjXnSGdSIV216I-7IKE_aMWKk3T5shzkGdxy-DA/viewform?fbclid=IwAR0-LIrGu2wo7g8F_HoHbuEJTdxIg6MyaP5DTTJMLxnpYAWYAX2ca2XThnY,https://www.facebook.com/shenandoahmutualaid,540-669-0420
+Rockbridge Community Aid: Covid-19,,Lexington,VA,,USA,"English, Spanish",https://www.50waysrockbridge.org/covid-19-lex-rockbridge-resources,https://docs.google.com/forms/d/e/1FAIpQLSdCn3O_4t8N9KtAzYCSoUtOyBbZjDowPAoI3K9vlg9lV0-lDQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSesh8iFpkEjQOnksop2vSMYXJ27Og8UzXxdBteFIGQD_OTUKQ/viewform,https://www.facebook.com/groups/3458331667526756/,801-609-4357
+Corona Aid 757,,Norfolk,VA,,USA,"English, Spanish",http://coronaaid757.com,http://bit.ly/coronaaid757,http://bit.ly/coronaaidvolunteersignup,http://facebook.com/groups/510830746536540,757-598-1480
+Upper Valley Response Team (UVRT),,Hartford,VT,,USA,"English, Spanish",http://www.transformationalpractice.org/covid,https://docs.google.com/forms/d/e/1FAIpQLSe-T8ViQkEh5P60c8t6eTky1KIyKBHsz1TFB2zZKFYcmNV6dQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSe-T8ViQkEh5P60c8t6eTky1KIyKBHsz1TFB2zZKFYcmNV6dQ/viewform,,(802) 727-031
+Upper Valley Mutual Aid,,Barnard,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe-T8ViQkEh5P60c8t6eTky1KIyKBHsz1TFB2zZKFYcmNV6dQ/viewform?usp=sf_link,,,,802.7270311
+Barre Town COVID-19 Mutual Aid Volunteer/Needs Sign-up,,Barre Town,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSd9g1jjGGEQxbaYgF19Y9hrJG-8I6vCtdikrjen7eTdBii7Ow/viewform?usp=send_form,,,,
+Bennington College Mutual Aid,,Bennington,VT,,USA,English,https://docs.google.com/spreadsheets/d/1qnOL1_DcE_E0o-pVLeALoIlC_RHPkHEPc2f2G2cfM5Q/edit#gid=1727309836,,,,
+Berlin area COVID-19 Mutual Aid Volunteer Signup,,Berlin,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSf4g1a9jAQZZbvtVqkp-C1yPWITX7yKNNWMUZ8xOiNYVYbHRA/viewform,,,,
+Bradford-Area COVID-19 Mutual Aid Volunteer Sign-up,,Bradford,VT,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLScDLwcYn4K0SwDLTICDmtvCEpe0_olt2XllwTxGSlWDBugzQA/viewform,,
+Vermont / Brattleboro: Brattleboro Area Mutual Aid (Neighborhood Help),,Brattleboro,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe70gcANLcUJSW1cFObNj826sH8fXGent-z6hP-c6feFN7O9A/viewform?fbclid=IwAR31w2E6sdfPNkl7Vd-XplJSm_1c8zPeNLr2a76BcckW1ZP3mg9I01h9zwo,,,,
+Brattleboro Area Mutual Aid,,Brattleboro,VT,,USA,English,https://linktr.ee/scoffsatgravity,https://docs.google.com/spreadsheets/d/1D-85W9O6WzZhnv5l4aIQnFJ6HDH-uoVT280SrwRin-A/edit?usp=drivesdk,https://docs.google.com/spreadsheets/d/1P0qfRBYbyCwoGgFiv_WQU4K0a-TTDpiI7yv9wPxuA4M/edit?usp=drivesdk,,
+Burlington Coronavirus Mutual Aid,,Burlington,VT,,USA,English,https://www.facebook.com/groups/618241819020229/,,,,
+Chittenden County Mutual Aid,,Burlington,VT,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdic_eBjoA-4_yqDEDoAqvsn3YGgQQK-InOVI8lRyOg3zimBw/viewform?fbclid=IwAR1OpmgZLiz_qFtOWzqfHHUEL9JqQWRuuMmvUEGQJykH6HOOeT5S-ZNvtjE,https://docs.google.com/forms/d/e/1FAIpQLSftjWoj2SptOV8-gQ0Vyzx5aBCYxRqd7z5kt87ivDKajviHFQ/viewform?fbclid=IwAR3ad-ECp_NEVUvLovOpOs9wFmlCuCVBi_U9Q4lmABBuAsjWIo5_bzWtcSo,,
+Chelsea/Vershire/Corinth/Tunbridge/Washington COVID-19 Mutual Aid,,Chelsea,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSe36fW0ogNFX8c3eWz45w5kiiWTAdzhHYFWdTDczXgBmiQeLA/viewform,,,,
+Northern NEK Mutual Aid,,Colebrook,VT,,USA,English,,https://forms.gle/GKunAFP7iyJrxz4B9,https://forms.gle/5ZSn35ZpVPpx2VvT9,,
+Craftsbury Area Coronavirus Needs & Volunteer Sign-up,,Craftbury,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfpBAkJV-hp2hdNZW6XkAEoNZTJoTRr00-s4l9ao4ho1CTU1g/viewform,,,,
+Deerfield Valley Mutual Aid,,Dover,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSc1-oWumdVXB4wo4eO76aNsQSpxkTjXO4my1_yiriERlKGilg/viewform,,,,
+Champlain Islands Mutual Aid sign up ,,Grand Isle,VT,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSdAFCT90nQa584y4rPGFPoyieGT_MG7ajBRuY2BJuDEFBy8ow/viewform,,
+Hartland-Area Mutual Aid,,Harland,VT,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSfG9nNy5tJlqN4yWXLIvX6abE1hHSUo7sw2SkRhsSy1h6sgaA/viewform?fbclid=IwAR0SC4N2J_cWXKv1u-SwLCXXGxWEp7GVXTUoQ5mm3ujf4USjT6rl9oxQFh0,,
+Addison County Mutual Aid,,Middlebury,VT,,USA,English,https://sites.google.com/view/acvtmutualaid/home,https://docs.google.com/forms/d/e/1FAIpQLSd0Vb6YwJbKRB1nWamFOzDalpzZTJ03k5Q0TGBF2iEarcwVRg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfQOlYvwEaiwzjC8RzgViwFFbZhMv2TwJiQUrikhpJcEOwlQg/viewform,,
+"Montpelier, VT COVID-19 Mutual Aid Effort ",,Montpelier,VT,,USA,English,https://sites.google.com/view/mtpvtmutualaid/home,https://docs.google.com/forms/d/e/1FAIpQLScvRnkqbFnARjS0XeqkERcgmQCUAYRkx2j7U3P8WrQAnyPoCA/viewform?fbclid=IwAR3FJeE1qMcX3npE8GQk8LrzDNNHHV7e_NO8uLTCUEHqtKh8Z4iFXtYsTaI,https://docs.google.com/forms/d/e/1FAIpQLSd_OzV19STtbZ7_UfRyr3GbbaFXygOscTmb1DV2LSH3XZsizA/viewform?fbclid=IwAR1b3RvLZFEaf2B8wwXP08_aPRv2jaVr0Mrdr5KgAw7PiTEqmO9_7ItiAx4,https://www.facebook.com/groups/253737125617700/,
+COVID-19 Mutual Aid-Central Vermont,,Montpelier,VT,,USA,English,,,,https://www.facebook.com/groups/253737125617700/,
+Southern NEK Mutual Aid,,Peacham,VT,,USA,English,,https://forms.gle/nWZGPctjhijd3Xi36,https://forms.gle/hMsFiqJ29LErgqs79,,
+Vermont / Putney: Putney Area Mutual Aid (Neighborhood Help),,Putney,VT,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLScjw546J7Ib-A3-h88izc3GL0jc_-MESsQDybKQ_0b1JpQxAw/viewform?fbclid=IwAR29cZbbz8VJvmIWNpC4gnhAi2JZj4pX1AU8oWGPUYlfr1n1o0EnQwBfJkg,,,,
+Vermont / Royalton: Royalton-Area COVID-19 Mutual Aid Volunteer Sign-up,,Royalton,VT,,USA,English,https://docs.google.com/forms/d/1EzLdwcNg39AMIOtDIMuZ522Mteb6-e6MgOc-pQ28XGw/viewform?fbclid=IwAR2zX4nYBBoKn2mhWUQ34Nvm0hWu5Nc_bqYH32pC9qZEo4C5mDQbun9PNpU&edit_requested=true,,,,
+Rutland County Mutual Aid,,Rutland,VT,,USA,English,https://sites.google.com/view/rutvtmutualaid?fbclid=IwAR0DE58yEqe4umAUwOyykjcLR6P7188uL5V7En2LCEH2mFiJeZTQlKNXcIM,,https://docs.google.com/forms/d/e/1FAIpQLSfhRQdUOXzUF-VhFgsmlqlDzNW4QMEqMr1ALtEzz_blzO3HGA/viewform,,
+Worcester Covid-19 Mutual Aid,,Worcester,VT,,USA,English,https://docs.google.com/forms/d/1HBrK1QB1W1ES2G2K6sdA51stmscdKohyC6R3zMXni2I/viewform?ts=5e6f6182&edit_requested=true,https://docs.google.com/forms/d/1i-ajw5xGi2ybiowBL1UvzyXoWl6EgbJL679ImBQscJY/viewform?ts=5e6f61bd&edit_requested=true,https://docs.google.com/forms/d/1HBrK1QB1W1ES2G2K6sdA51stmscdKohyC6R3zMXni2I/viewform?ts=5e6f6182&edit_requested=true,,
+Barre Mutual Aid,,Barre,VT,,USA,"English, Spanish",https://barremutualaid.recovers.org/,,,,
+Bethel VT Strong,,Bethel,VT,,USA,English,http://www.bethelvtstrong.org,,,,
+Whatcom Mutual Aid,,Bellingham,WA,,USA,English,,,,https://www.facebook.com/groups/2466079660320179/?ref=br_rs,
+Kitsap Community Mutual Aid,,Bremerton,WA,,USA,English,,,,https://www.facebook.com/kitsapcovid19solidarity/,
+"Snohomish County, Washington Mutual Aid",,Everett,WA,,USA,English,,,,https://www.facebook.com/groups/253259112349167/,
+Common Stash: Mutual Aid in So-called Olympia,,Olympia,WA,,USA,English,https://www.commonstash.org/,,,,
+Olympia Mutual Aid Collective,,Olympia,WA,,USA,English,,,,https://www.facebook.com/groups/210315513383928/?ref=br_rs,
+Whitman County COVID-19 Community Response and Recovery,,Pullman,WA,,USA,English,,,,https://www.facebook.com/groups/240389003760287/?multi_permalinks=240875103711677%2C240889617043559%2C240839907048530%2C240823527050168&notif_id=1584547150062936&notif_t=group_activity,
+Puget Sound Community Mutual Aid Intake,Puget Sound,Seattle,WA,,USA,English,https://docs.google.com/forms/d/10V7JhoWdPuOadYwa44q1DPm26gAMXicyDJ6FcGH90s0/viewform?fbclid=IwAR179fBcagquXHQOB0zLE2JK3FEw4vbRCCC3TtBf5r6hIp62O4xMrI924gs&edit_requested=true,,,,
+Washington / Seattle: Seattle-Area COVID-19 ,,Seattle,WA,,USA,"English, Spanish, Amharic, Tigrinya",,https://docs.google.com/forms/d/1rOkXW6ElVT0MH9oSI-TuW8L5szCt-ULbZhWebARRZNI/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeWvT_GQbcTTM2O1VVGJ6wsQeYW27PO1RvhSKSj45QR4lvNQQ/viewform?fbclid=IwAR0iXBhTQWeIPmcwWYltDO2FhoIrItsAN8f66IW-zDzMaLNXAxBQyiRvGmQ,,
+Washington / Seattle: #covid19mutualaid links,,Seattle,WA,,USA,English,https://docs.google.com/document/d/101hAWGpF4kowM1k2KkHgY5yjpKTvErCGa2FTEg3mGu4/mobilebasic?urp=gmail_link,,,,
+Washington / South Seattle and Eastside: COVID-19/Coronavirus South Seattle and Eastside Mutual Aid “Offer Support” / Volunteer Form,South Seattle and Eastside,Seattle,WA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLSdFzVouVJHJ2jRyrR90zDRr7iV-nPJZHjKBTKVYuobP29BZ5g/viewform,https://docs.google.com/forms/d/e/1FAIpQLSdqoK6a4mmYc2tpVPVTDfq2EDjsSMDct8Am5duoCx44i-fIoQ/viewform,https://www.facebook.com/groups/555635161739149/,
+Seattle Service+ Industry Mutual Aid Exchange,,Seattle,WA,,USA,English,,,,https://www.facebook.com/groups/SSIMAE/?ref=br_rs,
+Washington / Tacoma: Tacoma Mutual Aid Network,,Tacoma,WA,,USA,English,,https://docs.google.com/forms/d/e/1FAIpQLScQLH-RwSCAVCAm310EF91j74mvjIG49Za0F__8Mb1S3ZFEwA/viewform,https://docs.google.com/forms/d/1pFS8VjC5L5eihXWarB9UltjSaVJtFhAhsGpHpC1EFiY/viewform?edit_requested=true&fbclid=IwAR38dYzxf8yFOW2sgA3L2_CxH0BEdAspQZ80M_c445B8Es9lTpGIhoYFM_0,https://facebook.com/profile.php?id=189809985274895&ref=content_filter,
+Snohomish County COVID/Coronavirus Mutual Aid Group,,Edmonds,WA,,USA,"English, Spanish",,,,https://www.facebook.com/groups/142262693785689/,
+Spokane County Mutual Aid,,Spokane,WA,,USA,"English, Spanish",https://www.mutualaidspokanecounty.com/?fbclid=IwAR0IsCRA7iiVrvQvheqe5uIp7Pt03IFzQ8kJDBXyo9UcXGWL9AtrhZy42gY,https://docs.google.com/forms/d/e/1FAIpQLScmyNLY7AhhLyskYEEnMa-R9SsMJXP1uvF4_MJLLiRJ02F5eg/viewform,https://docs.google.com/forms/d/e/1FAIpQLSfll7ugjAmwwUFBbb7Y_zhi2QQrZvdwWXh0XNYTDe_ioNhLCw/viewform,https://www.facebook.com/SpokaneCountyMutualAid,
+Little Street Pantry - Hoquiam,,Hoquiam,WA,,USA,English,,,,https://www.facebook.com/Little-Street-Pantry-110374830435042/,
+Pandemic of Love Snohomish County,,Everett,WA,,USA,English,https://www.pandemicoflove.com/,https://forms.gle/9GsiMWKNLCp5JzmQ7,https://forms.gle/KnvRWqxPm1ASPGbk7,,
+Olympia Community Resilience,,Olympia,WA,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSeMSnUBSK918Jbt3WeGRfNtlBlXFAQvZHveucbtFLRpNo8xiQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLSeMSnUBSK918Jbt3WeGRfNtlBlXFAQvZHveucbtFLRpNo8xiQ/viewform,https://docs.google.com/forms/d/e/1FAIpQLScpehz7cj4sagZsxluR-c6i1nnGqwjm1dPW5VOGdtsiOJVqgw/viewform,,360-968-0442
+"Corona CareMongering: Milton, Edgewood, Fife and Federal Way",,Puyallup,WA,,USA,English,,,,https://www.facebook.com/groups/515275799385025/,
+Dane County Neighbors Helping Neighbors,,Dane County,WI,,USA,English,,,,https://www.facebook.com/groups/1978475378963725/,
+Rock County Mutual Aid Infohub,,Janesville,WI,,USA,English,https://docs.google.com/spreadsheets/d/1ym2k7Du-_UuxCeqA4qH2sQN744fPoV6q-H-L3-8Ub-Y/edit#gid=0,,,https://www.facebook.com/groups/494748384527251/,
+Wisconsin / Madison: COVID-19 Madison Mutual Aid,,Madison,WI,,USA,English,https://docs.google.com/spreadsheets/u/0/d/1P3fVeaCTFWLc9B1N9U6Ks2DhEOdPCoZZUgC3iduQgeg/htmlview?urp=gmail_link#gid=808612577,,,https://www.facebook.com/groups/502401850648815/?ref=share,
+DSA Mutual Aid | Solidarity Economy Milwaukee,,Milwaukee ,WI,,USA,"English, Spanish",http://milwaukee.dsawi.org/our-committees-and-working-groups/solidarity-economy-mutual-aid-working-group/,,,,
+Coronavirus Quarantine Support with the Madison General Defense Committee,,Madison,WI,,USA,"English, Spanish",https://docs.google.com/forms/d/e/1FAIpQLSdGqbTyMCsnrBQ3sqBfE9Cmkh_cDAu9qz-edGnLpwq6GRElEQ/viewform,https://tinyurl.com/quarantine-support .,https://tinyurl.com/quarantine-volunteer,https://www.facebook.com/madTownCommunitySelfDefense/,
+Coulee Region Mutual Aid,,La Crosse,WI,,USA,English,https://docs.google.com/spreadsheets/d/1FAkVneo2sz65WxntP9f14REKF5JiWEHy7AQ5ye-XbtA/edit#gid=1942124999,,,https://www.facebook.com/groups/1508364889328693/?ref=share,
+Greater Green Bay Mutual Aid Network,,Green Bay,WI,,USA,English,,,,https://www.facebook.com/groups/645928876235863/?ref=share,
+Chequamegon Bay Community Care,,Chequamegon Bay,WI,,USA,English,http://www.cheqbaycc.org/,http://www.cheqbaycc.org/support-request.html,http://www.cheqbaycc.org/volunteer-signup.html,,
+Chequamegon Bay Community Care Network,,Ashland,WI,,USA,English,http://www.cheqbaycc.org/,,,,
+CORE Community Resources,,Bayfield,WI,54814,USA,,https://www.corecr.org/,,,,
+Interfaith Caregivers of Polk County WI,,Milltown,WI,,USA,English,https://interfaithpolk.org/,,,,
+Neighbors Helping Neighbors- Barron County,,Barron,WI,,USA,English,,,,https://www.facebook.com/groups/650744355763474/?epa=SEARCH_BOX,
+Morgantown Delivery Team,,Morgantown,WV,,USA,English,https://docs.google.com/forms/d/e/1FAIpQLSfmNtj_qPev4UM5pThgNs169nxCryEsJrIu1a8XujY3WynGIg/viewform?fbclid=IwAR3ukqdosbB17C7luB5hr1roz76RI7hcx_Dvy2I6BwMKOT2cYxuxymnNAX0,,,,
+Huntington Delivery Team,,Huntington,WV,,USA,English,https://docs.google.com/forms/d/1HHE6cZKccnIBioAt0-qLuxeKuzU-DeG6gYNVIBjB_hs/viewform?fbclid=IwAR3AkXF5joHjl5LfqrsVEp5r0Y0RTmeK2BtaEMlXWbkZuekE4H3hyo9Eo0Y&edit_requested=true,,,,
+WV Food ER 2020 Volunteer Sign Up,,,WV,,USA,English,,,https://docs.google.com/forms/d/e/1FAIpQLSc710j6S-fgPpbYjJu3KTXKOMlfDtG4SNj7wHqqOJcWun37-w/viewform,,
+Faith in Action of the Greater Kanawha Valley,,Charleston,WV,,USA,English,https://www.faithinactiongkv.com/,,,https://www.facebook.com/FIAGKV/,
+Laramie Mutual Aid,,Laramie,WY,,USA,"Spanish, French, American Sign Language, Hindi, Swedish, Chinese, German, Telugu",https://docs.google.com/document/d/1d7aSkS1Fdxc2CIpiJSgh03CtJAFZIaUtgRSsytagyio/edit,https://docs.google.com/forms/d/1nCLqIOFlkmT4uXVeGsW8IRFKRX8K4OY4QoCO8L1zZtk/edit?usp=sharing,https://docs.google.com/forms/d/1I1vc4pP8nUOz02oA1EcdSGDfqrllOAkHcE2nXP3eD-E/viewform?edit_requested=true,,
+Wyoming Covid-19 Mutual Aid & Resource Page,,,WY,,USA,English,https://docs.google.com/document/d/14_GKzvsNFcs0ZHiGHwQ_2rOwIvBMqSUu6IzFwdxQFNs/edit,,,,
+Safe Neighbors,,Cheyenne,WY,,USA,English,,,,https://www.facebook.com/Safe-Neighbors-104569204510137/,
